@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 5a7697778e77b6946ba9501243f387af
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - arma: {instanceID: 0}
+  - bala: {fileID: 2641279193909655389, guid: 3b951d1405d28f64596725e8686d2cf6, type: 3}
+  - personagem: {fileID: 8075953697898311239, guid: ec1b89ed6903e064f97e324cb07f80e6, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
