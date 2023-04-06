@@ -23,5 +23,9 @@ public class balaPersonagem : MonoBehaviour
         projetil.transform.Translate(0, velocidade * Time.deltaTime, 0, Space.Self);
         DestroiBala();
     }
-    
+
+    private void OnDestroy()
+    {
+        GetComponentInChildren<TrailRenderer>()?.transform.SetParent(null);
+    }
 }
