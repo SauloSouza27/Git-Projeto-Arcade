@@ -5,7 +5,7 @@ using Unity.VisualScripting;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
-public class controlaPersonagem : MonoBehaviour
+public class ControlaPersonagem : MonoBehaviour
 {
     // Canhoes
     public GameObject pontaPetEsq, pontaPetDir;
@@ -13,7 +13,8 @@ public class controlaPersonagem : MonoBehaviour
     // Controle movimento personagem
     private float x, y;
     public float velocidadeMovimento = 1.0f;
-    public GameObject personagem, armaPrincipal, pet, alvoPet;
+    public GameObject personagem, armaPrincipal, pet;
+    private GameObject alvoPet;
     public float distanciaMinPetAtirar = 20.0f;
     // Pontos de vida
     public float pontosVida = 100.0f;
@@ -26,7 +27,7 @@ public class controlaPersonagem : MonoBehaviour
         //Lock cursor
         //Cursor.lockState = CursorLockMode.Confined;
         pet.SetActive(false);
-        GetComponent<disparoArmaPet>().enabled = false;
+        GetComponent<DisparoArmaPet>().enabled = false;
     }
 
     void Update()
@@ -38,7 +39,7 @@ public class controlaPersonagem : MonoBehaviour
         if(XP >= 100)
         {
             pet.SetActive(true);
-            GetComponent<disparoArmaPet>().enabled = true;
+            GetComponent<DisparoArmaPet>().enabled = true;
             MovimentoPets();
         }
         
@@ -117,12 +118,12 @@ public class controlaPersonagem : MonoBehaviour
         GameObject inimigo = colisor.gameObject;
         if (inimigo.name == "Inimigo Pequeno(Clone)")
         {
-            float dano = inimigo.GetComponent<movimentoInimigoPequeno>().danoContato;
+            float dano = inimigo.GetComponent<MovimentoInimigoPequeno>().danoContato;
             pontosVida -= dano;
         }
         if (inimigo.name == "Inimigo Grande(Clone)" || inimigo.name == "Inimigo Grande" || inimigo.name == "Inimigo Grande (1)")
         {
-            float dano = inimigo.GetComponent<movimentoInimigoGrande>().danoContato;
+            float dano = inimigo.GetComponent<MovimentoInimigoGrande>().danoContato;
             pontosVida -= dano;
         }
         if (pontosVida <= 0)

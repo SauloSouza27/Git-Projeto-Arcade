@@ -2,16 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class spawnInimigoPequeno : MonoBehaviour
+public class SpawnInimigoPequeno : MonoBehaviour
 {
     private float contadorCooldown;
-    public float cooldownSpawnInimigoPequeno = 3.0f;
+    public float cooldownSpawnInimigoPequeno;
     public GameObject inimigoPequeno;
     public bool ativar = true;
     
     void Start()
     {
-
+        cooldownSpawnInimigoPequeno = Random.Range(3, 8);
     }
 
     // Update is called once per frame

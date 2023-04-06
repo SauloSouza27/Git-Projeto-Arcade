@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class disparoArmaPet : MonoBehaviour
+public class DisparoArmaPet : MonoBehaviour
 {
     // Disparo arma
     public GameObject pontaArmaEsq, pontaArmaDir, balaPet;

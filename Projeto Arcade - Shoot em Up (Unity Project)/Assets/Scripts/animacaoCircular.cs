@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class animacaoCircular : MonoBehaviour
+public class AnimacaoCircular : MonoBehaviour
 {
     public Transform centro;
     public float raio;

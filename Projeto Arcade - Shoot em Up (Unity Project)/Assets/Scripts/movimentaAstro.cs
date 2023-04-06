@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class movimentaPlaneta2 : MonoBehaviour
+public class MovimentaPlaneta2 : MonoBehaviour
 {
     public float velocidade = 1.0f;
     public GameObject astro, spawnPoint;
@@ -13,7 +13,7 @@ public class movimentaPlaneta2 : MonoBehaviour
 
     void Update()
     {
-        velocidade = spawnPoint.GetComponent<spawnAstros>().velocidade;
+        velocidade = spawnPoint.GetComponent<SpawnAstros>().velocidade;
         astro.transform.Translate(0, 0, -velocidade * Time.deltaTime, Space.World);
     }
 }

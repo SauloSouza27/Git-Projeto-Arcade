@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class controleUI : MonoBehaviour
+public class ControleUI : MonoBehaviour
 {
     public GameObject barraXP, jogador;
 

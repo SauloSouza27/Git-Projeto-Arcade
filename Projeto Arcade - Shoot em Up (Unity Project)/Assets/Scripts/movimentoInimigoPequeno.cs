@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Animations;
 
-public class movimentoInimigoPequeno : MonoBehaviour
+public class MovimentoInimigoPequeno : MonoBehaviour
 {
     public GameObject alvo;
     public float velocidadeDeslocamento = 5.0f, velocidadeRotacao = 5.0f;
@@ -32,7 +32,7 @@ public class movimentoInimigoPequeno : MonoBehaviour
         if (colisor.gameObject.CompareTag("Bala Personagem"))
         {
             Destroy(colisor.gameObject);
-            float dano = alvo.GetComponent<disparoArma>().danoArmaPrincipal;
+            float dano = alvo.GetComponent<DisparoArma>().danoArmaPrincipal;
             if (pontosVida > 0)
             {
                 pontosVida -= dano;
@@ -42,14 +42,14 @@ public class movimentoInimigoPequeno : MonoBehaviour
             if (pontosVida <= 0)
             {
                 Destroy(gameObject);
-                alvo.GetComponent<controlaPersonagem>().SomaXP(xpInimigo);
-                Camera.main.GetComponent<controleUI>().SomaXPBarra(xpInimigo);
+                alvo.GetComponent<ControlaPersonagem>().SomaXP(xpInimigo);
+                Camera.main.GetComponent<ControleUI>().SomaXPBarra(xpInimigo);
             }
         }
         if (colisor.gameObject.CompareTag("Bala Pet"))
         {
             Destroy(colisor.gameObject);
-            float dano = alvo.GetComponent<disparoArmaPet>().danoArmaPet;
+            float dano = alvo.GetComponent<DisparoArmaPet>().danoArmaPet;
             if (pontosVida > 0)
             {
                 pontosVida -= dano;
@@ -59,14 +59,14 @@ public class movimentoInimigoPequeno : MonoBehaviour
             if (pontosVida <= 0)
             {
                 Destroy(gameObject);
-                alvo.GetComponent<controlaPersonagem>().SomaXP(xpInimigo);
-                Camera.main.GetComponent<controleUI>().SomaXPBarra(xpInimigo);
+                alvo.GetComponent<ControlaPersonagem>().SomaXP(xpInimigo);
+                Camera.main.GetComponent<ControleUI>().SomaXPBarra(xpInimigo);
 
             }
         }
         if (colisor.gameObject.CompareTag("Player"))
         {
-            float dano = alvo.GetComponent<controlaPersonagem>().danoContato;
+            float dano = alvo.GetComponent<ControlaPersonagem>().danoContato;
             if (pontosVida > 0)
             {
                 pontosVida -= dano;
@@ -76,8 +76,8 @@ public class movimentoInimigoPequeno : MonoBehaviour
             if (pontosVida <= 0)
             {
                 Destroy(gameObject);
-                alvo.GetComponent<controlaPersonagem>().SomaXP(xpInimigo);
-                Camera.main.GetComponent<controleUI>().SomaXPBarra(xpInimigo);
+                alvo.GetComponent<ControlaPersonagem>().SomaXP(xpInimigo);
+                Camera.main.GetComponent<ControleUI>().SomaXPBarra(xpInimigo);
             }
         }
     }

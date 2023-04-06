@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4995419994562903712}
   - component: {fileID: 7219213122609819186}
   - component: {fileID: 8724977089725538662}
-  - component: {fileID: 6082266789400917118}
+  - component: {fileID: 6968167818938079473}
   - component: {fileID: 3266537787728120705}
   - component: {fileID: -7353087688419901374}
   m_Layer: 0
@@ -87,7 +87,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &6082266789400917118
+--- !u!114 &6968167818938079473
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -99,8 +99,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d1b95509e97afb45ad56bb239a46003, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidade: 25
-  duracaoBala: 200
+  velocidade: 35
+  duracaoBala: 150
   projetil: {fileID: 8264596742114757972}
 --- !u!136 &3266537787728120705
 CapsuleCollider:

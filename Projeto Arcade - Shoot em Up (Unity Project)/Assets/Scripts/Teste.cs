@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class testea : MonoBehaviour
+public class Teste : MonoBehaviour
 {
     public float steps;
     public Vector3 p1, p2;

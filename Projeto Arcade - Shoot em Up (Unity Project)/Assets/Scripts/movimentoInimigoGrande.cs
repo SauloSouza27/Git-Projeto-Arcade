@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class movimentoInimigoGrande : MonoBehaviour
+public class MovimentoInimigoGrande : MonoBehaviour
 {
     public GameObject pontaArma, alvo;
-    // Variáveis do movimento                                //Colocar valor negativo para alterar a direção inicial
+    // Variaveis do movimento                                //Colocar valor negativo para alterar a direcao inicial
     public float contadorMovimento, limiteMovimento = 2.0f, velocidade = 10, velocidadeRotacao = 2.0f;
     // Pontos de vida
     public float pontosVida = 40.0f;
@@ -17,12 +17,11 @@ public class movimentoInimigoGrande : MonoBehaviour
         contadorMovimento = limiteMovimento;
     }
 
-    // Update is called once per frame
     void Update()
     {
         float t = Time.deltaTime;
-        
-        // Movimento vai e vem(padrão direita pra esquerda)
+
+        // Movimento vai e vem(padrao direita pra esquerda)
         if (contadorMovimento <= limiteMovimento && contadorMovimento >= 0)
         {
             transform.Translate(t * velocidade * Vector3.right, Space.World);
@@ -30,7 +29,7 @@ public class movimentoInimigoGrande : MonoBehaviour
         }
         if (contadorMovimento >= -limiteMovimento && contadorMovimento <= 0)
         {
-            transform.Translate(t * velocidade * - Vector3.right, Space.World);
+            transform.Translate(t * velocidade * -Vector3.right, Space.World);
             contadorMovimento -= t;
         }
         if (contadorMovimento < -limiteMovimento)
@@ -48,7 +47,7 @@ public class movimentoInimigoGrande : MonoBehaviour
         if (colisor.gameObject.CompareTag("Bala Personagem"))
         {
             Destroy(colisor.gameObject);
-            float dano = alvo.GetComponent<disparoArma>().danoArmaPrincipal;
+            float dano = alvo.GetComponent<DisparoArma>().danoArmaPrincipal;
             if (pontosVida > 0)
             {
                 pontosVida -= dano;
@@ -63,7 +62,7 @@ public class movimentoInimigoGrande : MonoBehaviour
         }
         if (colisor.gameObject.CompareTag("Player"))
         {
-            float dano = colisor.gameObject.GetComponent<controlaPersonagem>().danoContato;
+            float dano = colisor.gameObject.GetComponent<ControlaPersonagem>().danoContato;
             if (pontosVida > 0)
             {
                 pontosVida -= dano;

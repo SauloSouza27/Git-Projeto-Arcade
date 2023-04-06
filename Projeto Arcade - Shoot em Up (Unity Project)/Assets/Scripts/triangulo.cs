@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class triangulo : MonoBehaviour
+public class Triangulo : MonoBehaviour
 {
     Mesh malha;
     Vector3[] vertices;

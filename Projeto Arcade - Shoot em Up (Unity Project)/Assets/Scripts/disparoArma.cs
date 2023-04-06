@@ -1,14 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
-public class disparoArma : MonoBehaviour
+public class DisparoArma : MonoBehaviour
 {
     // Disparo arma
     public GameObject pontaArma, bala;
     // Tiro
-    [Range(0,1)] public float cooldown = 1.0f;
+    [Range(0, 1)] public float cooldown = 1.0f;
     private float contadorCooldown;
     // Alterar tiro altomatico
     public bool tiroAutomatico = true;

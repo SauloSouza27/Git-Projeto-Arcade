@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class spawnAstros : MonoBehaviour
+public class SpawnAstros : MonoBehaviour
 {
     public GameObject astro;
     public float velocidade = 2.0f;

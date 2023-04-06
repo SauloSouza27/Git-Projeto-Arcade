@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class balaInimigo : MonoBehaviour
+public class BalaInimigo : MonoBehaviour
 {
     public float velocidade = 1;
     // Start is called before the first frame update
