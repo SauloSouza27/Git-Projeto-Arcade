@@ -10,6 +10,8 @@ public class movimentoInimigoPequeno : MonoBehaviour
     // Pontos de vida
     public float pontosVida = 20.0f;
     public float danoContato = 20.0f;
+    // XP quando morre
+    public int xpInimigo = 5;
 
     void Start()
     {
@@ -40,7 +42,8 @@ public class movimentoInimigoPequeno : MonoBehaviour
             if (pontosVida <= 0)
             {
                 Destroy(gameObject);
-                Debug.Log("05 XP");
+                alvo.GetComponent<controlaPersonagem>().SomaXP(xpInimigo);
+                Camera.main.GetComponent<controleUI>().SomaXPBarra(xpInimigo);
             }
         }
         if (colisor.gameObject.CompareTag("Bala Pet"))
@@ -56,7 +59,9 @@ public class movimentoInimigoPequeno : MonoBehaviour
             if (pontosVida <= 0)
             {
                 Destroy(gameObject);
-                Debug.Log("05 XP");
+                alvo.GetComponent<controlaPersonagem>().SomaXP(xpInimigo);
+                Camera.main.GetComponent<controleUI>().SomaXPBarra(xpInimigo);
+
             }
         }
         if (colisor.gameObject.CompareTag("Player"))
@@ -71,7 +76,8 @@ public class movimentoInimigoPequeno : MonoBehaviour
             if (pontosVida <= 0)
             {
                 Destroy(gameObject);
-                Debug.Log("05 XP");
+                alvo.GetComponent<controlaPersonagem>().SomaXP(xpInimigo);
+                Camera.main.GetComponent<controleUI>().SomaXPBarra(xpInimigo);
             }
         }
     }

@@ -103,6 +103,7 @@ MonoBehaviour:
   velocidadeRotacao: 5
   pontosVida: 20
   danoContato: 20
+  xpInimigo: 10
 --- !u!65 &7575654313653995386
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -122,8 +123,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.965363, y: 1.8631076, z: 2.7831395}
-  m_Center: {x: 0, y: -0.008159949, z: -0.60290754}
+  m_Size: {x: 1.965363, y: 2.076911, z: 2.7831395}
+  m_Center: {x: 0, y: -0.11506165, z: -0.60290754}
 --- !u!54 &-6314341870656770170
 Rigidbody:
   m_ObjectHideFlags: 0

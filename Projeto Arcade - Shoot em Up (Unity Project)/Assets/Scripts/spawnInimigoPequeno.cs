@@ -5,23 +5,10 @@ using UnityEngine;
 public class spawnInimigoPequeno : MonoBehaviour
 {
     private float contadorCooldown;
-    public float cooldownSpawnInimigoPequeno = 1.0f;
+    public float cooldownSpawnInimigoPequeno = 3.0f;
     public GameObject inimigoPequeno;
     public bool ativar = true;
-    // Start is called before the first frame update
     
-    private void CalculaCooldown()
-    {
-        if (contadorCooldown > 0)
-        {
-            contadorCooldown -= Time.deltaTime;
-        }
-        if (contadorCooldown < 0)
-        {
-            contadorCooldown = 0;
-        }
-
-    }
     void Start()
     {
 
@@ -34,7 +21,20 @@ public class spawnInimigoPequeno : MonoBehaviour
         if (contadorCooldown == 0 && ativar == true)
         {
             Instantiate(inimigoPequeno, transform.position, transform.rotation);
+            cooldownSpawnInimigoPequeno = Random.Range(3, 8);
             contadorCooldown = cooldownSpawnInimigoPequeno;
         }
+    }
+    private void CalculaCooldown()
+    {
+        if (contadorCooldown > 0)
+        {
+            contadorCooldown -= Time.deltaTime;
+        }
+        if (contadorCooldown < 0)
+        {
+            contadorCooldown = 0;
+        }
+
     }
 }

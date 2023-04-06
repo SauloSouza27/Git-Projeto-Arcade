@@ -9,19 +9,24 @@ public class controlaPersonagem : MonoBehaviour
 {
     // Canhoes
     public GameObject pontaPetEsq, pontaPetDir;
-    [Range(0,1)] public float bonusAttackSpeed = 1.0f;
+    [Range(0, 1)] public float bonusAttackSpeed = 1.0f;
     // Controle movimento personagem
     private float x, y;
     public float velocidadeMovimento = 1.0f;
     public GameObject personagem, armaPrincipal, pet, alvoPet;
+    public float distanciaMinPetAtirar = 20.0f;
     // Pontos de vida
     public float pontosVida = 100.0f;
     public float danoContato = 20.0f;
+    // XP
+    public int XP = 0;
 
     void Start()
     {
         //Lock cursor
         //Cursor.lockState = CursorLockMode.Confined;
+        pet.SetActive(false);
+        GetComponent<disparoArmaPet>().enabled = false;
     }
 
     void Update()
@@ -30,7 +35,13 @@ public class controlaPersonagem : MonoBehaviour
 
         ControleArmaPrincipal();
 
-        MovimentoPets();
+        if(XP >= 100)
+        {
+            pet.SetActive(true);
+            GetComponent<disparoArmaPet>().enabled = true;
+            MovimentoPets();
+        }
+        
     }
 
     // Controle movimento personagem
@@ -57,9 +68,16 @@ public class controlaPersonagem : MonoBehaviour
     // controle movimento do pet
     private void MovimentoPets()
     {
-        alvoPet = GameObject.FindWithTag("Inimigo");
+        alvoPet = AcharInimigoMaisPerto();
         Vector3 dirAlvoPet = alvoPet.transform.position - pet.transform.position;
-        if (dirAlvoPet.magnitude <= 15.0f)
+        float distanciaAlvo = dirAlvoPet.magnitude;
+        if (distanciaAlvo > distanciaMinPetAtirar)
+        {
+            pet.transform.rotation = new Quaternion(0, 0, 0, 0);
+            pontaPetEsq.transform.rotation = new Quaternion(0, 0, 0, 0);
+            pontaPetDir.transform.rotation = new Quaternion(0, 0, 0, 0);
+        }
+        if (distanciaAlvo <= distanciaMinPetAtirar)
         {
             dirAlvoPet = dirAlvoPet.normalized;
             pet.transform.rotation = Quaternion.LookRotation(pet.transform.forward, dirAlvoPet);
@@ -70,12 +88,27 @@ public class controlaPersonagem : MonoBehaviour
             dirAlvoPetDir = dirAlvoPetDir.normalized;
             pontaPetDir.transform.rotation = Quaternion.LookRotation(pontaPetDir.transform.forward, dirAlvoPetDir);
         }
-        if (dirAlvoPet.magnitude > 15.0f)
+    }
+
+    // Achar inimigo mais perto
+    public GameObject AcharInimigoMaisPerto()
+    {
+        GameObject[] todosInimigos;
+        todosInimigos = GameObject.FindGameObjectsWithTag("Inimigo");
+        GameObject inimigoMaisProximo = null;
+        float distancia = Mathf.Infinity;
+        Vector3 posicao = pet.transform.position;
+        foreach (GameObject inimigoPerto in todosInimigos)
         {
-            pet.transform.rotation = new Quaternion(0, 0, 0, 0);
-            pontaPetEsq.transform.rotation = new Quaternion(0, 0, 0, 0);
-            pontaPetDir.transform.rotation = new Quaternion(0, 0, 0, 0);
+            Vector3 diferenca = inimigoPerto.transform.position - posicao;
+            float testeDistancia = diferenca.sqrMagnitude;
+            if(testeDistancia < distancia)
+            {
+                inimigoMaisProximo = inimigoPerto;
+                distancia = testeDistancia;
+            }
         }
+        return inimigoMaisProximo;
     }
 
     // Dano Inimigos
@@ -86,17 +119,20 @@ public class controlaPersonagem : MonoBehaviour
         {
             float dano = inimigo.GetComponent<movimentoInimigoPequeno>().danoContato;
             pontosVida -= dano;
-            Debug.Log(dano);
         }
         if (inimigo.name == "Inimigo Grande(Clone)" || inimigo.name == "Inimigo Grande" || inimigo.name == "Inimigo Grande (1)")
         {
             float dano = inimigo.GetComponent<movimentoInimigoGrande>().danoContato;
             pontosVida -= dano;
-            Debug.Log("Dano: " + dano);
         }
         if (pontosVida <= 0)
         {
             Destroy(personagem);
         }
+    }
+
+    public void SomaXP(int xpInimigo)
+    {
+        XP += xpInimigo;
     }
 }

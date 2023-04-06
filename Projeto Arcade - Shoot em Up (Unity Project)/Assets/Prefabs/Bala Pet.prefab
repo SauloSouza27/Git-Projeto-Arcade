@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocidade: 25
-  duracaoBala: 20
+  duracaoBala: 200
   projetil: {fileID: 8264596742114757972}
 --- !u!136 &3266537787728120705
 CapsuleCollider:
