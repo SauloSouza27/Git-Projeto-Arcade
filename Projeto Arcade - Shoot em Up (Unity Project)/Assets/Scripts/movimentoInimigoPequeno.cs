@@ -42,8 +42,8 @@ public class MovimentoInimigoPequeno : MonoBehaviour
             if (pontosVida <= 0)
             {
                 Destroy(gameObject);
-                alvo.GetComponent<ControlaPersonagem>().SomaXP(xpInimigo);
-                Camera.main.GetComponent<ControleUI>().SomaXPBarra(xpInimigo);
+                ControladorGame.instancia.SomaXP(xpInimigo);
+                ControladorGame.instancia.SomaXPBarra(xpInimigo);
             }
         }
         if (colisor.gameObject.CompareTag("Bala Pet"))
@@ -59,9 +59,8 @@ public class MovimentoInimigoPequeno : MonoBehaviour
             if (pontosVida <= 0)
             {
                 Destroy(gameObject);
-                alvo.GetComponent<ControlaPersonagem>().SomaXP(xpInimigo);
-                Camera.main.GetComponent<ControleUI>().SomaXPBarra(xpInimigo);
-
+                ControladorGame.instancia.SomaXP(xpInimigo);
+                ControladorGame.instancia.SomaXPBarra(xpInimigo);
             }
         }
         if (colisor.gameObject.CompareTag("Player"))
@@ -76,8 +75,8 @@ public class MovimentoInimigoPequeno : MonoBehaviour
             if (pontosVida <= 0)
             {
                 Destroy(gameObject);
-                alvo.GetComponent<ControlaPersonagem>().SomaXP(xpInimigo);
-                Camera.main.GetComponent<ControleUI>().SomaXPBarra(xpInimigo);
+                ControladorGame.instancia.SomaXP(xpInimigo);
+                ControladorGame.instancia.SomaXPBarra(xpInimigo);
             }
         }
     }

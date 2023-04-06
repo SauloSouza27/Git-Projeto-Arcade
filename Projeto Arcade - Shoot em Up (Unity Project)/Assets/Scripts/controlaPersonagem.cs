@@ -19,24 +19,22 @@ public class ControlaPersonagem : MonoBehaviour
     // Pontos de vida
     public float pontosVida = 100.0f;
     public float danoContato = 20.0f;
-    // XP
-    public int XP = 0;
 
     void Start()
     {
         //Lock cursor
         //Cursor.lockState = CursorLockMode.Confined;
-        pet.SetActive(false);
-        GetComponent<DisparoArmaPet>().enabled = false;
     }
 
     void Update()
     {
+        if (Time.timeScale == 0) return;
+
         ControleMovimentoPersonagem();
 
         ControleArmaPrincipal();
 
-        if(XP >= 100)
+        if(ControladorGame.instancia.XP > 100)
         {
             pet.SetActive(true);
             GetComponent<DisparoArmaPet>().enabled = true;
@@ -53,6 +51,7 @@ public class ControlaPersonagem : MonoBehaviour
         if (x != 0 || y != 0)
         {
             personagem.transform.Translate(x * Time.deltaTime * velocidadeMovimento, y * Time.deltaTime * velocidadeMovimento, 0, Space.World);
+            personagem.transform.position = Utilidades.TravaPosicao(personagem.transform.position);
         }
     }
 
@@ -130,10 +129,5 @@ public class ControlaPersonagem : MonoBehaviour
         {
             Destroy(personagem);
         }
-    }
-
-    public void SomaXP(int xpInimigo)
-    {
-        XP += xpInimigo;
     }
 }
