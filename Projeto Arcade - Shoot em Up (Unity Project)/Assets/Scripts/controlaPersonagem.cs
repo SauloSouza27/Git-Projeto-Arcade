@@ -7,15 +7,12 @@ using UnityEngine;
 
 public class ControlaPersonagem : MonoBehaviour
 {
-    // Canhoes
-    public GameObject pontaPetEsq, pontaPetDir;
-    // Controle movimento personagem
+    // Controle movimento personagem e armas
     private float x, y;
     public float velocidadeMovimento = 1.0f;
-    public float velocidadeCorMaterial = 2.0f;
-    public GameObject personagem, armaPrincipal, pet;
+    public GameObject personagem, armaPrincipal, armaPets, petEsq, petDir, pontaPetEsq, pontaPetDir;
     private GameObject alvoPet;
-    public float distanciaMinPetAtirar = 20.0f;
+    public float velocidadeRotacaoPet = 2.0f, distanciaMinPetAtirar = 20.0f;
     // Pontos de vida
     public float pontosVida = 100.0f;
     public float danoContato = 20.0f;
@@ -27,7 +24,7 @@ public class ControlaPersonagem : MonoBehaviour
 
     void Start()
     {
-        //Lock cursor
+        // Cursor Config
         //Cursor.lockState = CursorLockMode.Confined;
 
         MeshRenderer[] renderers = GetComponentsInChildren<MeshRenderer>();
@@ -48,7 +45,7 @@ public class ControlaPersonagem : MonoBehaviour
 
         ControleArmaPrincipal();
 
-        if(ControladorGame.instancia.armaPetAtivada == true)
+        if (ControladorGame.instancia.armaPetAtivada == true)
         {
             MovimentoPets();
         }
@@ -82,31 +79,6 @@ public class ControlaPersonagem : MonoBehaviour
         armaPrincipal.transform.rotation = Quaternion.LookRotation(armaPrincipal.transform.forward, dirMouse);
     }
 
-    // controle movimento do pet
-    public void MovimentoPets()
-    {
-        alvoPet = AcharInimigoMaisPerto();
-        Vector3 dirAlvoPet = alvoPet.transform.position - pet.transform.position;
-        float distanciaAlvo = dirAlvoPet.magnitude;
-        if (distanciaAlvo > distanciaMinPetAtirar)
-        {
-            pet.transform.rotation = new Quaternion(0, 0, 0, 0);
-            pontaPetEsq.transform.rotation = new Quaternion(0, 0, 0, 0);
-            pontaPetDir.transform.rotation = new Quaternion(0, 0, 0, 0);
-        }
-        if (distanciaAlvo <= distanciaMinPetAtirar)
-        {
-            dirAlvoPet = dirAlvoPet.normalized;
-            pet.transform.rotation = Quaternion.LookRotation(pet.transform.forward, dirAlvoPet);
-            Vector3 dirAlvoPetEsq = alvoPet.transform.position - pontaPetEsq.transform.position;
-            dirAlvoPetEsq = dirAlvoPetEsq.normalized;
-            pontaPetEsq.transform.rotation = Quaternion.LookRotation(pontaPetEsq.transform.forward, dirAlvoPetEsq);
-            Vector3 dirAlvoPetDir = alvoPet.transform.position - pontaPetDir.transform.position;
-            dirAlvoPetDir = dirAlvoPetDir.normalized;
-            pontaPetDir.transform.rotation = Quaternion.LookRotation(pontaPetDir.transform.forward, dirAlvoPetDir);
-        }
-    }
-
     // Achar inimigo mais perto
     public GameObject AcharInimigoMaisPerto()
     {
@@ -114,12 +86,12 @@ public class ControlaPersonagem : MonoBehaviour
         todosInimigos = GameObject.FindGameObjectsWithTag("Inimigo");
         GameObject inimigoMaisProximo = null;
         float distancia = Mathf.Infinity;
-        Vector3 posicao = pet.transform.position;
+        Vector3 posicao = armaPets.transform.position;
         foreach (GameObject inimigoPerto in todosInimigos)
         {
             Vector3 diferenca = inimigoPerto.transform.position - posicao;
             float testeDistancia = diferenca.sqrMagnitude;
-            if(testeDistancia < distancia)
+            if (testeDistancia < distancia)
             {
                 inimigoMaisProximo = inimigoPerto;
                 distancia = testeDistancia;
@@ -127,6 +99,36 @@ public class ControlaPersonagem : MonoBehaviour
         }
         return inimigoMaisProximo;
     }
+
+    // controle movimento do pet
+    public void MovimentoPets()
+    {
+        alvoPet = AcharInimigoMaisPerto();
+        Vector3 dirAlvoPet = alvoPet.transform.position - armaPets.transform.position;
+        float distanciaAlvo = dirAlvoPet.magnitude;
+        if (distanciaAlvo > distanciaMinPetAtirar)
+        {
+            petEsq.transform.rotation = Quaternion.Slerp(petEsq.transform.rotation, new Quaternion(0, 0, 0, 0), velocidadeRotacaoPet * Time.deltaTime);
+            petDir.transform.rotation = Quaternion.Slerp(petDir.transform.rotation, new Quaternion(0, 0, 0, 0), velocidadeRotacaoPet * Time.deltaTime);
+            pontaPetEsq.transform.rotation = Quaternion.Slerp(pontaPetEsq.transform.rotation, new Quaternion(0, 0, 0, 0), velocidadeRotacaoPet * Time.deltaTime);
+            pontaPetDir.transform.rotation = Quaternion.Slerp(pontaPetDir.transform.rotation, new Quaternion(0, 0, 0, 0), velocidadeRotacaoPet * Time.deltaTime);
+        }
+        if (distanciaAlvo <= distanciaMinPetAtirar)
+        {
+            Vector3 dirAlvoPetEsq = alvoPet.transform.position - pontaPetEsq.transform.position;
+            dirAlvoPetEsq = dirAlvoPetEsq.normalized;
+            //petEsq.transform.rotation = Quaternion.LookRotation(petEsq.transform.forward, dirAlvoPetEsq);
+            petEsq.transform.up = Vector3.Slerp(petEsq.transform.up, dirAlvoPetEsq, velocidadeRotacaoPet * Time.deltaTime);
+            pontaPetEsq.transform.rotation = Quaternion.LookRotation(pontaPetEsq.transform.forward, dirAlvoPetEsq);
+            Vector3 dirAlvoPetDir = alvoPet.transform.position - pontaPetDir.transform.position;
+            dirAlvoPetDir = dirAlvoPetDir.normalized;
+            //petDir.transform.rotation = Quaternion.LookRotation(petDir.transform.forward, dirAlvoPetDir);
+            petDir.transform.up = Vector3.Slerp(petDir.transform.up, dirAlvoPetEsq, velocidadeRotacaoPet * Time.deltaTime);
+            pontaPetDir.transform.rotation = Quaternion.LookRotation(pontaPetDir.transform.forward, dirAlvoPetDir);
+        }
+    }
+
+    
 
     void ReceberDano()
     {

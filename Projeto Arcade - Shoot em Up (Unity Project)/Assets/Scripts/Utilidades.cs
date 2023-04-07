@@ -44,16 +44,11 @@ public class Utilidades
         
     }
     // Pisca cor do objeto no Hit de algum tiro
-    public static IEnumerator PiscaCorRoutine(Material material, bool isPiscaCorAtivo)
+    public static IEnumerator PiscaCorRoutine(Material material)
     {
-        while (isPiscaCorAtivo == true)
-        {
-            material.color += Color.red;
-            yield return new WaitForSeconds(0.2f);
-            material.color -= Color.red;
-            yield return new WaitForSeconds(0.2f);
-            isPiscaCorAtivo = false;
-        }
+        material.color += Color.red;
+        yield return new WaitForSeconds(0.1f);
+        material.color -= Color.red;
     }
     public static bool AtivaPiscaCor(bool isPiscaCorAtivo)
     {

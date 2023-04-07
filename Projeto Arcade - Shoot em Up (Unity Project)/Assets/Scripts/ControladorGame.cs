@@ -13,7 +13,7 @@ public class ControladorGame : MonoBehaviour
     public GameObject barraXP, jogador;
     public TextMeshProUGUI txtNivel, txtXP;
     // Power UP
-    public GameObject uiPowerUP;
+    public GameObject uiPowerUP, buttonArmaPet;
     public bool armaPetAtivada = false;
 
     private void Awake()
@@ -38,6 +38,7 @@ public class ControladorGame : MonoBehaviour
     
     void Update()
     {
+        if (Time.timeScale == 0) return;
         CalculaBarraXP();
     }
 
@@ -89,6 +90,7 @@ public class ControladorGame : MonoBehaviour
         armaNova.SetActive(true);
         armaPetAtivada = true;
         jogador.GetComponent<DisparoArmaPet>().enabled = true;
+        Destroy(buttonArmaPet);
         uiPowerUP.SetActive(false);
         Time.timeScale = 1.0f;
     }
@@ -103,6 +105,13 @@ public class ControladorGame : MonoBehaviour
     public void PowerUPDiminuiCooldownArmaPrincipal()
     {
         jogador.GetComponent<DisparoArma>().cooldown *= 0.90f;
+        uiPowerUP.SetActive(false);
+        Time.timeScale = 1.0f;
+    }
+
+    public void PowerUPAumentaHP()
+    {
+        jogador.GetComponent<ControlaPersonagem>().pontosVida += 20.0f;
         uiPowerUP.SetActive(false);
         Time.timeScale = 1.0f;
     }
