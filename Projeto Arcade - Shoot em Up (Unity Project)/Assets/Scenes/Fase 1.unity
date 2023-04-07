@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 22726852}
   - component: {fileID: 22726851}
   m_Layer: 5
-  m_Name: Power UP Dir
+  m_Name: Power UP Arma Pet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -206,7 +206,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 22726852}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 199698640}
+        m_TargetAssemblyTypeName: ControladorGame, Assembly-CSharp
+        m_MethodName: PowerUPAtivaArmaNova
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1991612406}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Arma Pet
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &22726852
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -330,7 +342,7 @@ MonoBehaviour:
   m_Direction: 0
   m_MinValue: 0
   m_MaxValue: 100
-  m_WholeNumbers: 1
+  m_WholeNumbers: 0
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -366,11 +378,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   XP: 0
   nivel: 1
+  multiplicadorQuantidadeXPporNivel: 25
+  valorXPNivel: 100
   barraXP: {fileID: 89162490}
   jogador: {fileID: 1537027532}
   txtNivel: {fileID: 1409122166}
   txtXP: {fileID: 0}
   uiPowerUP: {fileID: 473472218}
+  armaPetAtivada: 0
 --- !u!4 &199698641
 Transform:
   m_ObjectHideFlags: 0
@@ -483,7 +498,7 @@ RectTransform:
   - {fileID: 1409122165}
   - {fileID: 1662360426}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -818,7 +833,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &473472218
 GameObject:
@@ -918,7 +933,7 @@ RectTransform:
   - {fileID: 1333448934}
   - {fileID: 22726850}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1090,7 +1105,7 @@ GameObject:
   - component: {fileID: 679065666}
   - component: {fileID: 679065665}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: txtAumentaDano
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1136,7 +1151,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '+
+  m_text: '+15%
+
 
     Dano'
   m_isRightToLeft: 0
@@ -1215,11 +1231,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 679065663}
   m_CullTransparentMesh: 1
---- !u!1 &694749505 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8531023409601964704, guid: e69eb5c40a227ed43a0c07d2dccbfba0, type: 3}
-  m_PrefabInstance: {fileID: 1713691633608697029}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1326,7 +1337,7 @@ GameObject:
   - component: {fileID: 752955346}
   - component: {fileID: 752955345}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: txtArmaPet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1605,7 +1616,7 @@ GameObject:
   - component: {fileID: 1032569038}
   - component: {fileID: 1032569037}
   m_Layer: 5
-  m_Name: Power UP Centro
+  m_Name: Power UP Dimiui Cooldown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1675,7 +1686,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1032569038}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 199698640}
+        m_TargetAssemblyTypeName: ControladorGame, Assembly-CSharp
+        m_MethodName: PowerUPDiminuiCooldownArmaPrincipal
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1032569038
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1904,7 +1927,7 @@ GameObject:
   - component: {fileID: 1333448936}
   - component: {fileID: 1333448935}
   m_Layer: 5
-  m_Name: Power UP Esq
+  m_Name: Power UP Aumenta Dano
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1974,7 +1997,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1333448936}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 199698640}
+        m_TargetAssemblyTypeName: ControladorGame, Assembly-CSharp
+        m_MethodName: PowerUPAumentaDanoArmaPrincipal
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1333448936
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2538,7 +2573,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pontaPetEsq: {fileID: 2025760491}
   pontaPetDir: {fileID: 1174198305}
-  bonusAttackSpeed: 0.543
   velocidadeMovimento: 15
   personagem: {fileID: 1537027532}
   armaPrincipal: {fileID: 231255097}
@@ -2562,7 +2596,7 @@ Transform:
   - {fileID: 231255096}
   - {fileID: 1583476879}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &1537027536
 Rigidbody:
@@ -2606,7 +2640,7 @@ MonoBehaviour:
   pontaArmaEsq: {fileID: 2025760491}
   pontaArmaDir: {fileID: 1174198305}
   balaPet: {fileID: 8264596742114757972, guid: 2371fa64feae60548a77e7d70afd7ad0, type: 3}
-  cooldown: 0.749
+  cooldown: 1
   tiroAutomatico: 1
   danoArmaPet: 5
 --- !u!114 &1537027539
@@ -2623,9 +2657,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pontaArma: {fileID: 303025140}
   bala: {fileID: 2641279193909655389, guid: 3b951d1405d28f64596725e8686d2cf6, type: 3}
-  cooldown: 0.823
+  cooldown: 1
   tiroAutomatico: 1
-  danoArmaPrincipal: 10
+  danoArmaPrincipal: 20
 --- !u!1001 &1583476878
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2636,7 +2670,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 949242903642461758, guid: ceb7126354322c644b17642531ed45f4, type: 3}
       propertyPath: m_Name
-      value: Pets
+      value: Arma Pet
       objectReference: {fileID: 0}
     - target: {fileID: 949242903642461758, guid: ceb7126354322c644b17642531ed45f4, type: 3}
       propertyPath: m_IsActive
@@ -3074,91 +3108,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1790972306}
   m_CullTransparentMesh: 1
---- !u!1001 &1908999845
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 5416844852386846561, guid: ab5e8d7993c402d4792ce97b2407cc67, type: 3}
-      propertyPath: m_RootOrder
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 5416844852386846561, guid: ab5e8d7993c402d4792ce97b2407cc67, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 29.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5416844852386846561, guid: ab5e8d7993c402d4792ce97b2407cc67, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 29.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5416844852386846561, guid: ab5e8d7993c402d4792ce97b2407cc67, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 29.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5416844852386846561, guid: ab5e8d7993c402d4792ce97b2407cc67, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 338.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 5416844852386846561, guid: ab5e8d7993c402d4792ce97b2407cc67, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -406.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 5416844852386846561, guid: ab5e8d7993c402d4792ce97b2407cc67, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 151.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5416844852386846561, guid: ab5e8d7993c402d4792ce97b2407cc67, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5416844852386846561, guid: ab5e8d7993c402d4792ce97b2407cc67, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5416844852386846561, guid: ab5e8d7993c402d4792ce97b2407cc67, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5416844852386846561, guid: ab5e8d7993c402d4792ce97b2407cc67, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5416844852386846561, guid: ab5e8d7993c402d4792ce97b2407cc67, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5416844852386846561, guid: ab5e8d7993c402d4792ce97b2407cc67, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5416844852386846561, guid: ab5e8d7993c402d4792ce97b2407cc67, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5416844852386846561, guid: ab5e8d7993c402d4792ce97b2407cc67, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5698672346563698974, guid: ab5e8d7993c402d4792ce97b2407cc67, type: 3}
-      propertyPath: m_Name
-      value: Estrela 01
-      objectReference: {fileID: 0}
-    - target: {fileID: 5698672346563698974, guid: ab5e8d7993c402d4792ce97b2407cc67, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5698672346563698974, guid: ab5e8d7993c402d4792ce97b2407cc67, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: ab5e8d7993c402d4792ce97b2407cc67, type: 3}
 --- !u!1 &1991612406 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 949242903642461758, guid: ceb7126354322c644b17642531ed45f4, type: 3}
@@ -3413,72 +3362,3 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2119107942}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1001 &1713691633608697029
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1295914338010208407, guid: e69eb5c40a227ed43a0c07d2dccbfba0, type: 3}
-      propertyPath: spawnPoint
-      value: 
-      objectReference: {fileID: 694749505}
-    - target: {fileID: 2175628738704358838, guid: e69eb5c40a227ed43a0c07d2dccbfba0, type: 3}
-      propertyPath: m_RootOrder
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 2175628738704358838, guid: e69eb5c40a227ed43a0c07d2dccbfba0, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -360
-      objectReference: {fileID: 0}
-    - target: {fileID: 2175628738704358838, guid: e69eb5c40a227ed43a0c07d2dccbfba0, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -642.75
-      objectReference: {fileID: 0}
-    - target: {fileID: 2175628738704358838, guid: e69eb5c40a227ed43a0c07d2dccbfba0, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 346
-      objectReference: {fileID: 0}
-    - target: {fileID: 2175628738704358838, guid: e69eb5c40a227ed43a0c07d2dccbfba0, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2175628738704358838, guid: e69eb5c40a227ed43a0c07d2dccbfba0, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2175628738704358838, guid: e69eb5c40a227ed43a0c07d2dccbfba0, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2175628738704358838, guid: e69eb5c40a227ed43a0c07d2dccbfba0, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2175628738704358838, guid: e69eb5c40a227ed43a0c07d2dccbfba0, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2175628738704358838, guid: e69eb5c40a227ed43a0c07d2dccbfba0, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2175628738704358838, guid: e69eb5c40a227ed43a0c07d2dccbfba0, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8531023409601964704, guid: e69eb5c40a227ed43a0c07d2dccbfba0, type: 3}
-      propertyPath: m_Name
-      value: Estrela 02
-      objectReference: {fileID: 0}
-    - target: {fileID: 8531023409601964704, guid: e69eb5c40a227ed43a0c07d2dccbfba0, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: e69eb5c40a227ed43a0c07d2dccbfba0, type: 3}

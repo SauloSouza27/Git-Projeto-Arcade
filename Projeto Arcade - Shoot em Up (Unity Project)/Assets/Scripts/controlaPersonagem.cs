@@ -9,7 +9,6 @@ public class ControlaPersonagem : MonoBehaviour
 {
     // Canhoes
     public GameObject pontaPetEsq, pontaPetDir;
-    [Range(0, 1)] public float bonusAttackSpeed = 1.0f;
     // Controle movimento personagem
     private float x, y;
     public float velocidadeMovimento = 1.0f;
@@ -34,10 +33,8 @@ public class ControlaPersonagem : MonoBehaviour
 
         ControleArmaPrincipal();
 
-        if(ControladorGame.instancia.XP > 100)
+        if(ControladorGame.instancia.armaPetAtivada == true)
         {
-            pet.SetActive(true);
-            GetComponent<DisparoArmaPet>().enabled = true;
             MovimentoPets();
         }
         
@@ -66,7 +63,7 @@ public class ControlaPersonagem : MonoBehaviour
     }
 
     // controle movimento do pet
-    private void MovimentoPets()
+    public void MovimentoPets()
     {
         alvoPet = AcharInimigoMaisPerto();
         Vector3 dirAlvoPet = alvoPet.transform.position - pet.transform.position;

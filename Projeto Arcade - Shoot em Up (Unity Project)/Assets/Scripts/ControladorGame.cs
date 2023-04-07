@@ -9,10 +9,12 @@ public class ControladorGame : MonoBehaviour
     public static ControladorGame instancia;
     // XP e nivel
     public int XP, nivel = 1;
+    public float multiplicadorQuantidadeXPporNivel = 50.0f, valorXPNivel = 100.0f;
     public GameObject barraXP, jogador;
     public TextMeshProUGUI txtNivel, txtXP;
     // Power UP
     public GameObject uiPowerUP;
+    public bool armaPetAtivada = false;
 
     private void Awake()
     {
@@ -50,18 +52,29 @@ public class ControladorGame : MonoBehaviour
 
     private void CalculaBarraXP()
     {
-        txtNivel.text = "Nível: " + nivel;
         Slider sliderXP = barraXP.GetComponent<Slider>();
-        int valorMaxSlider = (int)sliderXP.maxValue;
-        int valorSlider = (int)sliderXP.value;
-        txtNivel.text = "Nível: " + nivel;
-        txtXP.text = XP + "/" + valorMaxSlider;
+        float valorMaxSlider = sliderXP.maxValue;
+        float valorSlider = sliderXP.value;
         if (valorSlider == valorMaxSlider)
         {
             SubirNivel();
-            barraXP.GetComponent<Slider>().value = 0;
-            barraXP.GetComponent<Slider>().maxValue += 50;
+            if (XP - valorXPNivel == 0)
+            {
+                sliderXP.value = 0;
+                sliderXP.maxValue += (nivel * multiplicadorQuantidadeXPporNivel);
+                valorXPNivel += sliderXP.maxValue;
+            }
+            if (XP - valorXPNivel > 0)
+            {
+                float diferenca = XP - valorXPNivel;
+                sliderXP.value = 0;
+                sliderXP.value += diferenca;
+                sliderXP.maxValue += (nivel * multiplicadorQuantidadeXPporNivel);
+                valorXPNivel += sliderXP.maxValue;
+            }
         }
+        txtNivel.text = "Nível: " + nivel;
+        txtXP.text = XP + "/" + valorXPNivel;
     }
 
     private void SubirNivel()
@@ -69,5 +82,28 @@ public class ControladorGame : MonoBehaviour
         nivel += 1;
         uiPowerUP.SetActive(true);
         Time.timeScale = 0.0f;
+    }
+    
+    public void PowerUPAtivaArmaNova(GameObject armaNova)
+    {
+        armaNova.SetActive(true);
+        armaPetAtivada = true;
+        jogador.GetComponent<DisparoArmaPet>().enabled = true;
+        uiPowerUP.SetActive(false);
+        Time.timeScale = 1.0f;
+    }
+
+    public void PowerUPAumentaDanoArmaPrincipal()
+    {
+        jogador.GetComponent<DisparoArma>().danoArmaPrincipal *= 1.15f;
+        uiPowerUP.SetActive(false);
+        Time.timeScale = 1.0f;
+    }
+
+    public void PowerUPDiminuiCooldownArmaPrincipal()
+    {
+        jogador.GetComponent<DisparoArma>().cooldown *= 0.90f;
+        uiPowerUP.SetActive(false);
+        Time.timeScale = 1.0f;
     }
 }

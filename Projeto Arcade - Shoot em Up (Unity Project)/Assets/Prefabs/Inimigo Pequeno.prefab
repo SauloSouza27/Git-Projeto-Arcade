@@ -103,7 +103,7 @@ MonoBehaviour:
   velocidadeRotacao: 5
   pontosVida: 20
   danoContato: 20
-  xpInimigo: 10
+  xpInimigo: 20
 --- !u!65 &7575654313653995386
 BoxCollider:
   m_ObjectHideFlags: 0
