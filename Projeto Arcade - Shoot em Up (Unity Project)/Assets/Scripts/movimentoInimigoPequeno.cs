@@ -12,8 +12,6 @@ public class MovimentoInimigoPequeno : MonoBehaviour
     public float danoContato = 20.0f;
     // XP quando morre
     public int xpInimigo = 5;
-    // hit projetil pisca cor
-    private bool isPiscaCorAtivo = false;
 
     void Start()
     {
@@ -27,12 +25,9 @@ public class MovimentoInimigoPequeno : MonoBehaviour
         transform.position += Time.deltaTime * velocidadeDeslocamento * dir.normalized;
         //rotaçao
         transform.up = Vector3.Slerp(transform.up, -1 * dir, velocidadeRotacao * Time.deltaTime);
-        Debug.DrawRay(transform.position, dir, Color.green);
     }
     private void OnCollisionEnter(Collision colisor)
     {
-        bool ativapiscaCor = Utilidades.AtivaPiscaCor(isPiscaCorAtivo);
-
         if (colisor.gameObject.CompareTag("Bala Personagem"))
         {
             Destroy(colisor.gameObject);
@@ -41,9 +36,7 @@ public class MovimentoInimigoPequeno : MonoBehaviour
             {
                 pontosVida -= dano;
                 Material material = gameObject.GetComponent<Renderer>().material;
-                isPiscaCorAtivo = ativapiscaCor;
-                StartCoroutine(Utilidades.PiscaCorRoutine(material, isPiscaCorAtivo));
-                isPiscaCorAtivo = false;
+                StartCoroutine(Utilidades.PiscaCorRoutine(material));
             }
             if (pontosVida <= 0)
             {
@@ -60,9 +53,7 @@ public class MovimentoInimigoPequeno : MonoBehaviour
             {
                 pontosVida -= dano;
                 Material material = gameObject.GetComponent<Renderer>().material;
-                isPiscaCorAtivo = ativapiscaCor;
-                StartCoroutine(Utilidades.PiscaCorRoutine(material, isPiscaCorAtivo));
-                isPiscaCorAtivo = false;
+                StartCoroutine(Utilidades.PiscaCorRoutine(material));
             }
             if (pontosVida <= 0)
             {
@@ -78,9 +69,7 @@ public class MovimentoInimigoPequeno : MonoBehaviour
             {
                 pontosVida -= dano;
                 Material material = gameObject.GetComponent<Renderer>().material;
-                isPiscaCorAtivo = ativapiscaCor;
-                StartCoroutine(Utilidades.PiscaCorRoutine(material, isPiscaCorAtivo));
-                isPiscaCorAtivo = false;
+                StartCoroutine(Utilidades.PiscaCorRoutine(material));
             }
             if (pontosVida <= 0)
             {
