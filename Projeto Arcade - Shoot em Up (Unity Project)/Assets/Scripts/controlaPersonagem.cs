@@ -9,7 +9,7 @@ public class ControlaPersonagem : MonoBehaviour
 {
     // Controle movimento personagem e armas
     private float x, y;
-    public float velocidadeMovimento = 1.0f;
+    public float velocidadeMovimento = 1.0f, velocidadeCorMaterial = 2.0f;
     public GameObject personagem, armaPrincipal, armaPets, petEsq, petDir, pontaPetEsq, pontaPetDir;
     private GameObject alvoPet;
     public float velocidadeRotacaoPet = 2.0f, distanciaMinPetAtirar = 20.0f;
