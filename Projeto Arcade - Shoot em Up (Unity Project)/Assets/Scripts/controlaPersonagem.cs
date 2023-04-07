@@ -12,6 +12,7 @@ public class ControlaPersonagem : MonoBehaviour
     // Controle movimento personagem
     private float x, y;
     public float velocidadeMovimento = 1.0f;
+    public float velocidadeCorMaterial = 2.0f;
     public GameObject personagem, armaPrincipal, pet;
     private GameObject alvoPet;
     public float distanciaMinPetAtirar = 20.0f;
@@ -19,10 +20,24 @@ public class ControlaPersonagem : MonoBehaviour
     public float pontosVida = 100.0f;
     public float danoContato = 20.0f;
 
+    public ParticleSystem particulasDano;
+
+    Material[] materiais;
+    Color[] coresOriginais;
+
     void Start()
     {
         //Lock cursor
         //Cursor.lockState = CursorLockMode.Confined;
+
+        MeshRenderer[] renderers = GetComponentsInChildren<MeshRenderer>();
+        materiais = new Material[renderers.Length];
+        coresOriginais = new Color[renderers.Length];
+        for(int i = 0; i < renderers.Length; i++) 
+        {
+            materiais[i] = renderers[i].material;
+            coresOriginais[i] = materiais[i].color;
+        }
     }
 
     void Update()
@@ -37,7 +52,12 @@ public class ControlaPersonagem : MonoBehaviour
         {
             MovimentoPets();
         }
-        
+
+        //mudança da cor do material
+        for(int i = 0; i < materiais.Length; i++) 
+        {
+            materiais[i].color = Color.Lerp(materiais[i].color, coresOriginais[i], velocidadeCorMaterial * Time.deltaTime);
+        }
     }
 
     // Controle movimento personagem
@@ -108,6 +128,17 @@ public class ControlaPersonagem : MonoBehaviour
         return inimigoMaisProximo;
     }
 
+    void ReceberDano()
+    {
+        if (particulasDano)
+            particulasDano.Play();
+
+        foreach(Material mat in materiais)
+        {
+            mat.color += Color.red;
+        }
+    }
+
     // Dano Inimigos
     private void OnCollisionEnter(Collision colisor)
     {
@@ -116,11 +147,15 @@ public class ControlaPersonagem : MonoBehaviour
         {
             float dano = inimigo.GetComponent<MovimentoInimigoPequeno>().danoContato;
             pontosVida -= dano;
+
+            ReceberDano();
         }
         if (inimigo.name == "Inimigo Grande(Clone)" || inimigo.name == "Inimigo Grande" || inimigo.name == "Inimigo Grande (1)")
         {
             float dano = inimigo.GetComponent<MovimentoInimigoGrande>().danoContato;
             pontosVida -= dano;
+
+            ReceberDano();
         }
         if (pontosVida <= 0)
         {
