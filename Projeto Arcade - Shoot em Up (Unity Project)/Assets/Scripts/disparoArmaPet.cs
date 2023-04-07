@@ -24,25 +24,15 @@ public class DisparoArmaPet : MonoBehaviour
     void Update()
     {
         // Cooldown e controle tiro
-        CalculaCooldown();
+        Utilidades.CalculaCooldown(contadorCooldown);
+        contadorCooldown = Utilidades.CalculaCooldown(contadorCooldown);
         if ((tiroAutomatico == true) && contadorCooldown == 0)
         {
             Tiro();
             contadorCooldown = cooldown;
         }
     }
-    private void CalculaCooldown()
-    {
-        if (contadorCooldown > 0)
-        {
-            contadorCooldown -= Time.deltaTime;
-        }
-        if (contadorCooldown < 0)
-        {
-            contadorCooldown = 0;
-        }
 
-    }
     // Tiro
     public void Tiro()
     {

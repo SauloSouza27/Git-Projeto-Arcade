@@ -14,37 +14,25 @@ public class DisparoArma : MonoBehaviour
     // Dano arma
     public float danoArmaPrincipal = 10.0f;
 
-    // Update is called once per frame
+    void Start()
+    {
+
+    }
     void Update()
     {
         // Cooldown e controle tiro
-        CalculaCooldown();
+        Utilidades.CalculaCooldown(contadorCooldown);
+        contadorCooldown = Utilidades.CalculaCooldown(contadorCooldown);
         if ((Input.GetButton("Fire1") == true || tiroAutomatico == true) && contadorCooldown == 0)
         {
             Tiro();
             contadorCooldown = cooldown;
         }
     }
-    private void CalculaCooldown()
-    {
-        if (contadorCooldown > 0)
-        {
-            contadorCooldown -= Time.deltaTime;
-        }
-        if (contadorCooldown < 0)
-        {
-            contadorCooldown = 0;
-        }
-
-    }
 
     // Tiro
     public void Tiro()
     {
         Instantiate(bala, pontaArma.transform.position, pontaArma.transform.rotation);
-    }
-    void Start()
-    {
-
     }
 }

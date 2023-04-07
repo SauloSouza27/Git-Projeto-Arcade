@@ -12,6 +12,8 @@ public class MovimentoInimigoPequeno : MonoBehaviour
     public float danoContato = 20.0f;
     // XP quando morre
     public int xpInimigo = 5;
+    // hit projetil pisca cor
+    private bool isPiscaCorAtivo = false;
 
     void Start()
     {
@@ -29,6 +31,8 @@ public class MovimentoInimigoPequeno : MonoBehaviour
     }
     private void OnCollisionEnter(Collision colisor)
     {
+        bool ativapiscaCor = Utilidades.AtivaPiscaCor(isPiscaCorAtivo);
+
         if (colisor.gameObject.CompareTag("Bala Personagem"))
         {
             Destroy(colisor.gameObject);
@@ -37,7 +41,9 @@ public class MovimentoInimigoPequeno : MonoBehaviour
             {
                 pontosVida -= dano;
                 Material material = gameObject.GetComponent<Renderer>().material;
-                material.color += 0.5f * Color.red;
+                isPiscaCorAtivo = ativapiscaCor;
+                StartCoroutine(Utilidades.PiscaCorRoutine(material, isPiscaCorAtivo));
+                isPiscaCorAtivo = false;
             }
             if (pontosVida <= 0)
             {
@@ -54,7 +60,9 @@ public class MovimentoInimigoPequeno : MonoBehaviour
             {
                 pontosVida -= dano;
                 Material material = gameObject.GetComponent<Renderer>().material;
-                material.color += 0.5f * Color.red;
+                isPiscaCorAtivo = ativapiscaCor;
+                StartCoroutine(Utilidades.PiscaCorRoutine(material, isPiscaCorAtivo));
+                isPiscaCorAtivo = false;
             }
             if (pontosVida <= 0)
             {
@@ -70,7 +78,9 @@ public class MovimentoInimigoPequeno : MonoBehaviour
             {
                 pontosVida -= dano;
                 Material material = gameObject.GetComponent<Renderer>().material;
-                material.color += 0.5f * Color.red;
+                isPiscaCorAtivo = ativapiscaCor;
+                StartCoroutine(Utilidades.PiscaCorRoutine(material, isPiscaCorAtivo));
+                isPiscaCorAtivo = false;
             }
             if (pontosVida <= 0)
             {
