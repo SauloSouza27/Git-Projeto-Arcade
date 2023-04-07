@@ -119,12 +119,14 @@ public class ControlaPersonagem : MonoBehaviour
             dirAlvoPetEsq = dirAlvoPetEsq.normalized;
             //petEsq.transform.rotation = Quaternion.LookRotation(petEsq.transform.forward, dirAlvoPetEsq);
             petEsq.transform.up = Vector3.Slerp(petEsq.transform.up, dirAlvoPetEsq, velocidadeRotacaoPet * Time.deltaTime);
-            pontaPetEsq.transform.rotation = Quaternion.LookRotation(pontaPetEsq.transform.forward, dirAlvoPetEsq);
+            //pontaPetEsq.transform.rotation = Quaternion.LookRotation(pontaPetEsq.transform.forward, dirAlvoPetEsq);
+            pontaPetEsq.transform.up = Vector3.Slerp(pontaPetEsq.transform.up, dirAlvoPetEsq, velocidadeRotacaoPet * Time.deltaTime);
             Vector3 dirAlvoPetDir = alvoPet.transform.position - pontaPetDir.transform.position;
             dirAlvoPetDir = dirAlvoPetDir.normalized;
             //petDir.transform.rotation = Quaternion.LookRotation(petDir.transform.forward, dirAlvoPetDir);
-            petDir.transform.up = Vector3.Slerp(petDir.transform.up, dirAlvoPetEsq, velocidadeRotacaoPet * Time.deltaTime);
-            pontaPetDir.transform.rotation = Quaternion.LookRotation(pontaPetDir.transform.forward, dirAlvoPetDir);
+            petDir.transform.up = Vector3.Slerp(petDir.transform.up, dirAlvoPetDir, velocidadeRotacaoPet * Time.deltaTime);
+            //pontaPetDir.transform.rotation = Quaternion.LookRotation(pontaPetDir.transform.forward, dirAlvoPetDir);
+            pontaPetDir.transform.up = Vector3.Slerp(pontaPetDir.transform.up, dirAlvoPetDir, velocidadeRotacaoPet * Time.deltaTime);
         }
     }
 
