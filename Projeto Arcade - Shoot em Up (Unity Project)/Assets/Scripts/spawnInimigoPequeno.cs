@@ -11,7 +11,7 @@ public class SpawnInimigoPequeno : MonoBehaviour
     
     void Start()
     {
-        cooldownSpawnInimigoPequeno = Random.Range(5, 10);
+        cooldownSpawnInimigoPequeno = Random.Range(6, 15);
     }
 
     // Update is called once per frame

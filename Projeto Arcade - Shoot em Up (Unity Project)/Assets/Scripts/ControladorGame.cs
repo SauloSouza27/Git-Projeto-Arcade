@@ -39,19 +39,15 @@ public class ControladorGame : MonoBehaviour
     void Update()
     {
         if (Time.timeScale == 0) return;
-        CalculaBarraXP();
-    }
-
-    public void SomaXPBarra(int xpInimigo)
-    {
-        barraXP.GetComponent<Slider>().value += xpInimigo;
+        AtualizaBarraXP();
     }
     public void SomaXP(int xpInimigo)
     {
         XP += xpInimigo;
+        barraXP.GetComponent<Slider>().value += xpInimigo;
     }
 
-    private void CalculaBarraXP()
+    private void AtualizaBarraXP()
     {
         Slider sliderXP = barraXP.GetComponent<Slider>();
         float valorMaxSlider = sliderXP.maxValue;

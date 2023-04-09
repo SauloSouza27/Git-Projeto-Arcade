@@ -16,7 +16,7 @@ public class ControlaPersonagem : MonoBehaviour
     // Pontos de vida
     public float pontosVida = 100.0f;
     public float danoContato = 20.0f;
-
+    // Particulas
     public ParticleSystem particulasDano;
 
     Material[] materiais;
@@ -53,6 +53,30 @@ public class ControlaPersonagem : MonoBehaviour
 
         //mudança da cor do material
         RetornaCorOriginal();
+    }
+
+    // Dano Inimigos
+    private void OnCollisionEnter(Collision colisor)
+    {
+        GameObject inimigo = colisor.gameObject;
+        if (inimigo.name == "Inimigo Pequeno(Clone)")
+        {
+            float dano = inimigo.GetComponent<MovimentoInimigoPequeno>().danoContato;
+            pontosVida -= dano;
+
+            ReceberDano();
+        }
+        if (inimigo.name == "Inimigo Piramide(Clone)" || inimigo.name == "Inimigo Piramide" || inimigo.name == "Inimigo Grande (1)")
+        {
+            float dano = inimigo.GetComponent<MovimentoInimigoPiramide>().danoContato;
+            pontosVida -= dano;
+
+            ReceberDano();
+        }
+        if (pontosVida <= 0)
+        {
+            Destroy(personagem);
+        }
     }
 
     // Controle movimento personagem
@@ -108,22 +132,23 @@ public class ControlaPersonagem : MonoBehaviour
         {
             petEsq.transform.rotation = Quaternion.Slerp(petEsq.transform.rotation, new Quaternion(0, 0, 0, 1), velocidadeRotacaoPet * Time.deltaTime);
             petDir.transform.rotation = Quaternion.Slerp(petDir.transform.rotation, new Quaternion(0, 0, 0, 1), velocidadeRotacaoPet * Time.deltaTime);
+
             pontaPetEsq.transform.rotation = Quaternion.Slerp(pontaPetEsq.transform.rotation, new Quaternion(0, 0, 0, 1), velocidadeRotacaoPet * Time.deltaTime);
             pontaPetDir.transform.rotation = Quaternion.Slerp(pontaPetDir.transform.rotation, new Quaternion(0, 0, 0, 1), velocidadeRotacaoPet * Time.deltaTime);
         }
         if (distanciaAlvo <= distanciaMinPetAtirar)
         {
+
+            // (opcao de rotacao instantanea) gameObject.transform.rotation = Quaternion.LookRotation(pontaPetDir.transform.forward, dirAlvoPetDir);
+
             Vector3 dirAlvoPetEsq = alvoPet.transform.position - pontaPetEsq.transform.position;
             dirAlvoPetEsq = dirAlvoPetEsq.normalized;
-            //petEsq.transform.rotation = Quaternion.LookRotation(petEsq.transform.forward, dirAlvoPetEsq);
             petEsq.transform.up = Vector3.Slerp(petEsq.transform.up, dirAlvoPetEsq, velocidadeRotacaoPet * Time.deltaTime);
-            //pontaPetEsq.transform.rotation = Quaternion.LookRotation(pontaPetEsq.transform.forward, dirAlvoPetEsq);
             pontaPetEsq.transform.up = Vector3.Slerp(pontaPetEsq.transform.up, dirAlvoPetEsq, velocidadeRotacaoPet * Time.deltaTime);
+
             Vector3 dirAlvoPetDir = alvoPet.transform.position - pontaPetDir.transform.position;
             dirAlvoPetDir = dirAlvoPetDir.normalized;
-            //petDir.transform.rotation = Quaternion.LookRotation(petDir.transform.forward, dirAlvoPetDir);
             petDir.transform.up = Vector3.Slerp(petDir.transform.up, dirAlvoPetDir, velocidadeRotacaoPet * Time.deltaTime);
-            //pontaPetDir.transform.rotation = Quaternion.LookRotation(pontaPetDir.transform.forward, dirAlvoPetDir);
             pontaPetDir.transform.up = Vector3.Slerp(pontaPetDir.transform.up, dirAlvoPetDir, velocidadeRotacaoPet * Time.deltaTime);
         }
     }
@@ -145,30 +170,6 @@ public class ControlaPersonagem : MonoBehaviour
         for (int i = 0; i < materiais.Length; i++)
         {
             materiais[i].color = Color.Lerp(materiais[i].color, coresOriginais[i], velocidadeCorMaterial * Time.deltaTime);
-        }
-    }
-
-    // Dano Inimigos
-    private void OnCollisionEnter(Collision colisor)
-    {
-        GameObject inimigo = colisor.gameObject;
-        if (inimigo.name == "Inimigo Pequeno(Clone)")
-        {
-            float dano = inimigo.GetComponent<MovimentoInimigoPequeno>().danoContato;
-            pontosVida -= dano;
-
-            ReceberDano();
-        }
-        if (inimigo.name == "Inimigo Grande(Clone)" || inimigo.name == "Inimigo Grande" || inimigo.name == "Inimigo Grande (1)")
-        {
-            float dano = inimigo.GetComponent<MovimentoInimigoGrande>().danoContato;
-            pontosVida -= dano;
-
-            ReceberDano();
-        }
-        if (pontosVida <= 0)
-        {
-            Destroy(personagem);
         }
     }
 }

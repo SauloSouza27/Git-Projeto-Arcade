@@ -4,10 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Inimigo
-  - Bala Personagem
-  - Bala Pet
   - PowerUPButton
+  - BalaPet
+  - BalaPersonagem
+  - Inimigo
   layers:
   - Default
   - TransparentFX

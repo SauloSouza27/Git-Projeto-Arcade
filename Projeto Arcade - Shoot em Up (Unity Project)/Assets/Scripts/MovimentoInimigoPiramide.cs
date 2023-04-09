@@ -1,17 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Animations;
 
-public class MovimentoInimigoPequeno : MonoBehaviour
+public class MovimentoInimigoPiramide : MonoBehaviour
 {
     private GameObject alvo;
-    public float velocidadeDeslocamento = 5.0f, velocidadeRotacao = 5.0f;
+    public GameObject cabecaPiramide, pontaArma;
+    // Controle rotaçao
+    public float velocidadeRotacao = 2.0f;
     // Pontos de vida
-    public float pontosVida = 20.0f;
-    public float danoContato = 20.0f;
-    // XP quando morre
-    public int xpInimigo = 20;
+    public float pontosVida = 40.0f;
+    public float danoContato = 40.0f;
+    public int xpInimigo = 100;
 
     private void Awake()
     {
@@ -24,8 +24,9 @@ public class MovimentoInimigoPequeno : MonoBehaviour
 
     void Update()
     {
-        MovimentaInimigoPequeno();
+        MovimentaInimigoPiramide();
     }
+
     private void OnCollisionEnter(Collision colisor)
     {
         if (colisor.gameObject.CompareTag("BalaPersonagem"))
@@ -62,7 +63,7 @@ public class MovimentoInimigoPequeno : MonoBehaviour
         }
         if (colisor.gameObject.CompareTag("Player"))
         {
-            float dano = alvo.GetComponent<ControlaPersonagem>().danoContato;
+            float dano = colisor.gameObject.GetComponent<ControlaPersonagem>().danoContato;
             if (pontosVida > 0)
             {
                 pontosVida -= dano;
@@ -76,12 +77,14 @@ public class MovimentoInimigoPequeno : MonoBehaviour
             }
         }
     }
-    private void MovimentaInimigoPequeno()
+
+    private void MovimentaInimigoPiramide()
     {
-        //Movimento de seguir jogador
-        Vector3 dir = alvo.transform.position - transform.position;
-        transform.position += Time.deltaTime * velocidadeDeslocamento * dir.normalized;
-        //rotaçao
-        transform.up = Vector3.Slerp(transform.up, -1 * dir, velocidadeRotacao * Time.deltaTime);
+        // Rotacao corpo
+        Vector3 direcao = alvo.transform.position - transform.position;
+        direcao = direcao.normalized;
+        transform.up = Vector3.Slerp(transform.up, -1 * direcao, velocidadeRotacao * Time.deltaTime);
+        // Mira cabeca
+        cabecaPiramide.transform.rotation = Quaternion.LookRotation(cabecaPiramide.transform.forward, direcao);
     }
 }

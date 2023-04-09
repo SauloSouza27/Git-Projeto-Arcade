@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -7353087688419901374}
   m_Layer: 0
   m_Name: Bala Pet
-  m_TagString: Bala Pet
+  m_TagString: BalaPet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

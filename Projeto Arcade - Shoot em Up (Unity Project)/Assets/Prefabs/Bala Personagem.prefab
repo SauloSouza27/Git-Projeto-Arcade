@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 199651809054491352}
   m_Layer: 0
   m_Name: Bala Personagem
-  m_TagString: Bala Personagem
+  m_TagString: BalaPersonagem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
