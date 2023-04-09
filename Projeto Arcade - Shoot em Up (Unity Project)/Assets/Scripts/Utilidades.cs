@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Utilidades
 {
-    public static Vector3 maxPersonagem = new Vector3(23.0f, 22.5f, 0.0f);
-    public static Vector3 minPersonagem = new Vector3(-23.0f, -3.5f, 0.0f);
+    public static Vector3 maxPersonagem = new Vector3(23.0f, 21.5f, 0.0f);
+    public static Vector3 minPersonagem = new Vector3(-23.0f, -5.0f, 0.0f);
 
     public static Vector3 TravaPosicao(Vector3 pos)
     {
@@ -49,10 +49,5 @@ public class Utilidades
         material.color += Color.red;
         yield return new WaitForSeconds(0.1f);
         material.color -= Color.red;
-    }
-    public static bool AtivaPiscaCor(bool isPiscaCorAtivo)
-    {
-        isPiscaCorAtivo = true;
-        return isPiscaCorAtivo;
     }
 }

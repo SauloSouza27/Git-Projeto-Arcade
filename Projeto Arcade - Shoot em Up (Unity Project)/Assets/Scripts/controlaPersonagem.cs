@@ -46,16 +46,13 @@ public class ControlaPersonagem : MonoBehaviour
 
         ControleArmaPrincipal();
 
-        if (ControladorGame.instancia.armaPetAtivada == true)
+        if (ControladorGame.instancia.armaPetAtivada)
         {
             MovimentoPets();
         }
 
         //mudança da cor do material
-        for(int i = 0; i < materiais.Length; i++) 
-        {
-            materiais[i].color = Color.Lerp(materiais[i].color, coresOriginais[i], velocidadeCorMaterial * Time.deltaTime);
-        }
+        RetornaCorOriginal();
     }
 
     // Controle movimento personagem
@@ -131,7 +128,8 @@ public class ControlaPersonagem : MonoBehaviour
         }
     }
 
-    void ReceberDano()
+    // mudar cor e partícula de dano
+    private void ReceberDano()
     {
         if (particulasDano)
             particulasDano.Play();
@@ -139,6 +137,14 @@ public class ControlaPersonagem : MonoBehaviour
         foreach(Material mat in materiais)
         {
             mat.color += Color.red;
+        }
+    }
+
+    private void RetornaCorOriginal()
+    {
+        for (int i = 0; i < materiais.Length; i++)
+        {
+            materiais[i].color = Color.Lerp(materiais[i].color, coresOriginais[i], velocidadeCorMaterial * Time.deltaTime);
         }
     }
 
