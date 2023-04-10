@@ -31,7 +31,7 @@ public class DisparoArma : MonoBehaviour
     }
 
     // Tiro
-    public void Tiro()
+    private void Tiro()
     {
         Instantiate(bala, pontaArma.transform.position, pontaArma.transform.rotation);
     }

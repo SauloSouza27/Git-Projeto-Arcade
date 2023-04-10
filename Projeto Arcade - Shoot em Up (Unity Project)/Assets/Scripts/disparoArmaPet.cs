@@ -14,13 +14,11 @@ public class DisparoArmaPet : MonoBehaviour
     // Dano arma
     public float danoArmaPet = 2.5f;
 
-    // Start is called before the first frame update
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         // Cooldown e controle tiro
@@ -34,7 +32,7 @@ public class DisparoArmaPet : MonoBehaviour
     }
 
     // Tiro
-    public void Tiro()
+    private void Tiro()
     {
         Instantiate(balaPet, pontaArmaEsq.transform.position, pontaArmaEsq.transform.rotation);
         Instantiate(balaPet, pontaArmaDir.transform.position, pontaArmaDir.transform.rotation);

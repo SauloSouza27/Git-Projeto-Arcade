@@ -24,7 +24,6 @@ public class ControlaUiPowerUp : MonoBehaviour
         {
             ordemLista.Add(n);
         }
-        Debug.Log(ordemLista.Count);
         buttonsParaDestruir = CarregaPowerUPsAleatoriamente();
     }
 
@@ -47,7 +46,6 @@ public class ControlaUiPowerUp : MonoBehaviour
             if (go.CompareTag("PowerUPButton"))
             {
                 buttonsCena.Add(go);
-                Debug.Log(go.name);
             }
         }
         return buttonsCena;

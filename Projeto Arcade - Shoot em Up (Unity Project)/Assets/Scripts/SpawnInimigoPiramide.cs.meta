@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 61017792a7126f247b158129f484d083
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - inimigoPiramide: {fileID: 2654179050399584760, guid: 0d71d0d044cbff94aa6173a6676da963, type: 3}
+  - spawnPoint: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

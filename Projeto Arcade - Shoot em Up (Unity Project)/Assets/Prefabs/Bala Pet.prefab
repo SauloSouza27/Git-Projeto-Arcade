@@ -102,6 +102,10 @@ MonoBehaviour:
   velocidade: 35
   duracaoBala: 150
   projetil: {fileID: 8264596742114757972}
+  rotacaoTiro: 0
+  projetilRotacao: {fileID: 0}
+  fonteTiro: {fileID: 9074662426996894289, guid: 6470e112d76167b4bac48cdaad12ef5d, type: 3}
+  velocidadeRotacao: 0
 --- !u!136 &3266537787728120705
 CapsuleCollider:
   m_ObjectHideFlags: 0

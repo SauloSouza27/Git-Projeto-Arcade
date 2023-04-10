@@ -8,6 +8,9 @@ TagManager:
   - BalaPet
   - BalaPersonagem
   - Inimigo
+  - BalaPiramide
+  - SpawnInimigoPiramide
+  - ControladorGame
   layers:
   - Default
   - TransparentFX

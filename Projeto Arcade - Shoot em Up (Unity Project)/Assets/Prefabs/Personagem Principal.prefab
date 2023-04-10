@@ -158,7 +158,7 @@ MonoBehaviour:
   velocidadeRotacaoPet: 2
   distanciaMinPetAtirar: 15
   pontosVida: 9999
-  danoContato: 100
+  danoContato: 150
   particulasDano: {fileID: 1346597017377448381}
 --- !u!114 &7773611179429094950
 MonoBehaviour:
@@ -802,7 +802,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2d5b67fdc009e6040bf5ce3b2abf3e7d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.17
+      value: -2.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2d5b67fdc009e6040bf5ce3b2abf3e7d, type: 3}
       propertyPath: m_LocalPosition.y

@@ -39,8 +39,10 @@ public class ControladorGame : MonoBehaviour
     void Update()
     {
         if (Time.timeScale == 0) return;
+
         AtualizaBarraXP();
     }
+
     public void SomaXP(int xpInimigo)
     {
         XP += xpInimigo;

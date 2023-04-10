@@ -5,36 +5,24 @@ using UnityEngine;
 public class SpawnInimigoPequeno : MonoBehaviour
 {
     private float contadorCooldown;
-    public float cooldownSpawnInimigoPequeno;
+    public float cooldownSpawnInimigoPequeno, minTempo = 6.0f, maxTempo = 15.0f;
     public GameObject inimigoPequeno;
     public bool ativar = true;
     
     void Start()
     {
-        cooldownSpawnInimigoPequeno = Random.Range(6, 15);
+        cooldownSpawnInimigoPequeno = Random.Range(minTempo, maxTempo);
     }
 
-    // Update is called once per frame
     void Update()
     {
-        CalculaCooldown();
+        Utilidades.CalculaCooldown(contadorCooldown);
+        contadorCooldown = Utilidades.CalculaCooldown(contadorCooldown);
         if (contadorCooldown == 0 && ativar == true)
         {
             Instantiate(inimigoPequeno, transform.position, transform.rotation);
-            cooldownSpawnInimigoPequeno = Random.Range(3, 8);
+            cooldownSpawnInimigoPequeno = Random.Range(minTempo, maxTempo);
             contadorCooldown = cooldownSpawnInimigoPequeno;
         }
-    }
-    private void CalculaCooldown()
-    {
-        if (contadorCooldown > 0)
-        {
-            contadorCooldown -= Time.deltaTime;
-        }
-        if (contadorCooldown < 0)
-        {
-            contadorCooldown = 0;
-        }
-
     }
 }

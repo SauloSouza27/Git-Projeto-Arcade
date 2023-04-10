@@ -13,9 +13,18 @@ public class MovimentoInimigoPequeno : MonoBehaviour
     // XP quando morre
     public int xpInimigo = 20;
 
+    MeshRenderer[] renderers;
+    Material[] materiais;
     private void Awake()
     {
         alvo = GameObject.FindGameObjectWithTag("Player");
+        // Busca materiais do inimigo
+        renderers = GetComponentsInChildren<MeshRenderer>();
+        materiais = new Material[renderers.Length];
+        for (int i = 0; i < renderers.Length; i++)
+        {
+            materiais[i] = renderers[i].material;
+        }
     }
     void Start()
     {
@@ -35,8 +44,11 @@ public class MovimentoInimigoPequeno : MonoBehaviour
             if (pontosVida > 0)
             {
                 pontosVida -= dano;
-                Material material = gameObject.GetComponent<Renderer>().material;
-                StartCoroutine(Utilidades.PiscaCorRoutine(material));
+
+                foreach (Material material in materiais)
+                {
+                    StartCoroutine(Utilidades.PiscaCorRoutine(material));
+                }
             }
             if (pontosVida <= 0)
             {
@@ -51,8 +63,11 @@ public class MovimentoInimigoPequeno : MonoBehaviour
             if (pontosVida > 0)
             {
                 pontosVida -= dano;
-                Material material = gameObject.GetComponent<Renderer>().material;
-                StartCoroutine(Utilidades.PiscaCorRoutine(material));
+
+                foreach (Material material in materiais)
+                {
+                    StartCoroutine(Utilidades.PiscaCorRoutine(material));
+                }
             }
             if (pontosVida <= 0)
             {
@@ -66,8 +81,11 @@ public class MovimentoInimigoPequeno : MonoBehaviour
             if (pontosVida > 0)
             {
                 pontosVida -= dano;
-                Material material = gameObject.GetComponent<Renderer>().material;
-                StartCoroutine(Utilidades.PiscaCorRoutine(material));
+
+                foreach (Material material in materiais)
+                {
+                    StartCoroutine(Utilidades.PiscaCorRoutine(material));
+                }
             }
             if (pontosVida <= 0)
             {

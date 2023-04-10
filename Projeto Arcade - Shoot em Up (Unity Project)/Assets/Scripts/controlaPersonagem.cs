@@ -59,23 +59,13 @@ public class ControlaPersonagem : MonoBehaviour
     private void OnCollisionEnter(Collision colisor)
     {
         GameObject inimigo = colisor.gameObject;
-        if (inimigo.name == "Inimigo Pequeno(Clone)")
+        if (pontosVida > 0)
         {
-            float dano = inimigo.GetComponent<MovimentoInimigoPequeno>().danoContato;
-            pontosVida -= dano;
-
-            ReceberDano();
+            ReceberDano(inimigo);
         }
-        if (inimigo.name == "Inimigo Piramide(Clone)" || inimigo.name == "Inimigo Piramide" || inimigo.name == "Inimigo Grande (1)")
+        else
         {
-            float dano = inimigo.GetComponent<MovimentoInimigoPiramide>().danoContato;
-            pontosVida -= dano;
-
-            ReceberDano();
-        }
-        if (pontosVida <= 0)
-        {
-            Destroy(personagem);
+            Time.timeScale = 0;
         }
     }
 
@@ -153,8 +143,8 @@ public class ControlaPersonagem : MonoBehaviour
         }
     }
 
-    // mudar cor e partícula de dano
-    private void ReceberDano()
+    // Calcula dano, mudar cor e partícula de dano
+    private void ReceberDano(GameObject inimigo)
     {
         if (particulasDano)
             particulasDano.Play();
@@ -162,6 +152,23 @@ public class ControlaPersonagem : MonoBehaviour
         foreach(Material mat in materiais)
         {
             mat.color += Color.red;
+        }
+
+        if (inimigo.name == "Inimigo Pequeno(Clone)")
+        {
+            float dano = inimigo.GetComponent<MovimentoInimigoPequeno>().danoContato;
+            pontosVida -= dano;
+        }
+        if (inimigo.name == "Inimigo Piramide Esq" || inimigo.name == "Inimigo Piramide Esq(Clone)" || inimigo.name == "Inimigo Piramide Dir" || inimigo.name == "Inimigo Piramide Dir(Clone)")
+        {
+            float dano = inimigo.GetComponent<MovimentoInimigoPiramide>().danoContato;
+            pontosVida -= dano;
+        }
+        if (inimigo.CompareTag("BalaPiramide"))
+        {
+            float dano = inimigo.GetComponent<BalaPersonagem>().danoProjetil;
+            pontosVida -= dano;
+            Destroy(inimigo);
         }
     }
 
