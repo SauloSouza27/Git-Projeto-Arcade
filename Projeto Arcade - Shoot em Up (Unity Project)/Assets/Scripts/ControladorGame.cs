@@ -10,14 +10,17 @@ public class ControladorGame : MonoBehaviour
     // XP e nivel
     public int XP, nivel = 1;
     public float multiplicadorQuantidadeXPporNivel = 50.0f, valorXPNivel = 100.0f;
-    public GameObject barraXP, jogador;
+    public GameObject barraHP, barraXP, jogador;
     public TextMeshProUGUI txtNivel, txtXP;
+    private Slider sliderXP, sliderHP;
     // Power UP
     public GameObject uiPowerUP, buttonArmaPet;
     public bool armaPetAtivada = false;
 
     private void Awake()
     {
+        sliderHP = barraHP.GetComponent<Slider>();
+        sliderXP = barraXP.GetComponent<Slider>();
         txtNivel = GameObject.Find("txtNível").GetComponent<TextMeshProUGUI>();
         txtXP = GameObject.Find("txtXP").GetComponent<TextMeshProUGUI>();
     }
@@ -40,7 +43,15 @@ public class ControladorGame : MonoBehaviour
     {
         if (Time.timeScale == 0) return;
 
+        AtualizaBarraHP();
+
         AtualizaBarraXP();
+    }
+
+    public void AtualizaBarraHP()
+    {
+        float hpAtual = jogador.GetComponent<ControlaPersonagem>().pontosVida;
+        sliderHP.value = hpAtual;
     }
 
     public void SomaXP(int xpInimigo)
@@ -51,7 +62,7 @@ public class ControladorGame : MonoBehaviour
 
     private void AtualizaBarraXP()
     {
-        Slider sliderXP = barraXP.GetComponent<Slider>();
+        
         float valorMaxSlider = sliderXP.maxValue;
         float valorSlider = sliderXP.value;
         if (valorSlider == valorMaxSlider)
@@ -109,6 +120,7 @@ public class ControladorGame : MonoBehaviour
 
     public void PowerUPAumentaHP()
     {
+        sliderHP.maxValue += 20.0f;
         jogador.GetComponent<ControlaPersonagem>().pontosVida += 20.0f;
         uiPowerUP.SetActive(false);
         Time.timeScale = 1.0f;

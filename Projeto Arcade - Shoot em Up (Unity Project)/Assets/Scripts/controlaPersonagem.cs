@@ -72,8 +72,8 @@ public class ControlaPersonagem : MonoBehaviour
     // Controle movimento personagem
     public void ControleMovimentoPersonagem()
     {
-        x = Input.GetAxisRaw("Horizontal");
-        y = Input.GetAxisRaw("Vertical");
+        x = Input.GetAxis("Horizontal");
+        y = Input.GetAxis("Vertical");
         if (x != 0 || y != 0)
         {
             personagem.transform.Translate(x * Time.deltaTime * velocidadeMovimento, y * Time.deltaTime * velocidadeMovimento, 0, Space.World);
@@ -142,30 +142,36 @@ public class ControlaPersonagem : MonoBehaviour
             pontaPetDir.transform.up = Vector3.Slerp(pontaPetDir.transform.up, dirAlvoPetDir, velocidadeRotacaoPet * Time.deltaTime);
         }
     }
-
-    // Calcula dano, mudar cor e partícula de dano
-    private void ReceberDano(GameObject inimigo)
+    // Muda cor para vermelho
+    private void MudaCorVermelho()
     {
         if (particulasDano)
             particulasDano.Play();
 
-        foreach(Material mat in materiais)
+        foreach (Material mat in materiais)
         {
             mat.color += Color.red;
         }
+    }
+    // Calcula dano, mudar cor e partícula de dano
+    private void ReceberDano(GameObject inimigo)
+    {
 
         if (inimigo.name == "Inimigo Pequeno(Clone)")
         {
+            MudaCorVermelho();
             float dano = inimigo.GetComponent<MovimentoInimigoPequeno>().danoContato;
             pontosVida -= dano;
         }
         if (inimigo.name == "Inimigo Piramide Esq" || inimigo.name == "Inimigo Piramide Esq(Clone)" || inimigo.name == "Inimigo Piramide Dir" || inimigo.name == "Inimigo Piramide Dir(Clone)")
         {
+            MudaCorVermelho();
             float dano = inimigo.GetComponent<MovimentoInimigoPiramide>().danoContato;
             pontosVida -= dano;
         }
         if (inimigo.CompareTag("BalaPiramide"))
         {
+            MudaCorVermelho();
             float dano = inimigo.GetComponent<BalaPersonagem>().danoProjetil;
             pontosVida -= dano;
             Destroy(inimigo);

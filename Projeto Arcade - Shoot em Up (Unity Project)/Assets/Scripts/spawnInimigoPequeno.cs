@@ -4,11 +4,18 @@ using UnityEngine;
 
 public class SpawnInimigoPequeno : MonoBehaviour
 {
+    private GameObject controladorGame;
     private float contadorCooldown;
+    private int nivelJogador;
     public float cooldownSpawnInimigoPequeno, minTempo = 6.0f, maxTempo = 15.0f;
     public GameObject inimigoPequeno;
     public bool ativar = true;
-    
+
+    private void Awake()
+    {
+        controladorGame = GameObject.Find("Controlador Game");
+    }
+
     void Start()
     {
         cooldownSpawnInimigoPequeno = Random.Range(minTempo, maxTempo);
@@ -16,6 +23,8 @@ public class SpawnInimigoPequeno : MonoBehaviour
 
     void Update()
     {
+        nivelJogador = controladorGame.GetComponent<ControladorGame>().nivel;
+
         Utilidades.CalculaCooldown(contadorCooldown);
         contadorCooldown = Utilidades.CalculaCooldown(contadorCooldown);
         if (contadorCooldown == 0 && ativar == true)
@@ -24,5 +33,10 @@ public class SpawnInimigoPequeno : MonoBehaviour
             cooldownSpawnInimigoPequeno = Random.Range(minTempo, maxTempo);
             contadorCooldown = cooldownSpawnInimigoPequeno;
         }
+        if (nivelJogador == 3)
+        {
+            ativar = false;
+        }
+        else ativar = true;
     }
 }

@@ -14,10 +14,12 @@ public class DisparoArma : MonoBehaviour
     // Dano arma
     public float danoArmaPrincipal = 10.0f;
 
-    void Start()
-    {
 
+    private void Awake()
+    {
+        contadorCooldown = cooldown;
     }
+  
     void Update()
     {
         // Cooldown e controle tiro

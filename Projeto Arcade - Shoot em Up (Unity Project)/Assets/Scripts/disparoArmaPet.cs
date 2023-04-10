@@ -14,9 +14,9 @@ public class DisparoArmaPet : MonoBehaviour
     // Dano arma
     public float danoArmaPet = 2.5f;
 
-    void Start()
+    private void Awake()
     {
-        
+        contadorCooldown = cooldown;
     }
 
     void Update()

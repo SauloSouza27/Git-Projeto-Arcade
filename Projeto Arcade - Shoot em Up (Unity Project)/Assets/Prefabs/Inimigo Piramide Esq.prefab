@@ -763,7 +763,7 @@ MonoBehaviour:
   pontosVida: 40
   danoContato: 40
   danoTiro: 40
-  xpInimigo: 60
+  xpInimigo: 110
   cooldown: 2.09
   inverteRotacaoTiro: 1
 --- !u!54 &3884708744966067646
