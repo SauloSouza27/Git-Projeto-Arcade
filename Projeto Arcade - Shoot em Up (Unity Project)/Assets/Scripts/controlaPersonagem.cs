@@ -1,8 +1,8 @@
-//using OpenCover.Framework.Model;
+//using OpenCover.Framework.Model; (deu erro no build)
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
-//using UnityEditor.Experimental.GraphView;
+//using UnityEditor.Experimental.GraphView; (deu erro no build)
 using UnityEngine;
 
 public class ControlaPersonagem : MonoBehaviour
