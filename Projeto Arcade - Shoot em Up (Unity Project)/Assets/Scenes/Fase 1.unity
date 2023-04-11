@@ -371,7 +371,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   XP: 0
-  nivel: 1
+  nivel: 3
   multiplicadorQuantidadeXPporNivel: 25
   valorXPNivel: 100
   barraHP: {fileID: 31673593}
