@@ -15,6 +15,8 @@ public class SpawnInimigoPiramide : MonoBehaviour
 
     void Update()
     {
+        if (Time.timeScale == 0) return;
+
         nivelJogador = controladorGame.GetComponent<ControladorGame>().nivel;
 
         if (ativar && nivelJogador == 3)

@@ -45,7 +45,14 @@ public class ControladorGame : MonoBehaviour
 
         AtualizaBarraHP();
 
-        AtualizaBarraXP();
+        if(sliderHP.value > 0)
+        {
+            AtualizaBarraXP();
+        }
+        if(sliderHP.value <= 0)
+        {
+            jogador.GetComponent<ControlaPersonagem>().MorteJogador();
+        }
     }
 
     public void AtualizaBarraHP()

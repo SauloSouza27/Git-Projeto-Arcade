@@ -13,6 +13,8 @@ public class BalaPersonagem : MonoBehaviour
     
     void Update()
     {
+        if (Time.timeScale == 0) return;
+
         MovimentoProjetil();
 
         DestroiBala();

@@ -22,6 +22,8 @@ public class DisparoArma : MonoBehaviour
   
     void Update()
     {
+        if (Time.timeScale == 0) return;
+
         // Cooldown e controle tiro
         Utilidades.CalculaCooldown(contadorCooldown);
         contadorCooldown = Utilidades.CalculaCooldown(contadorCooldown);

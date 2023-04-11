@@ -63,10 +63,13 @@ public class ControlaPersonagem : MonoBehaviour
         {
             ReceberDano(inimigo);
         }
-        else
-        {
-            Time.timeScale = 0;
-        }
+    }
+
+    // Morte Personagem
+    public void MorteJogador()
+    {
+        Destroy(gameObject);
+        Time.timeScale = 0;
     }
 
     // Controle movimento personagem
@@ -116,30 +119,33 @@ public class ControlaPersonagem : MonoBehaviour
     public void ControleArmaPets()
     {
         alvoPet = AcharInimigoMaisPerto();
-        Vector3 dirAlvoPet = alvoPet.transform.position - armaPets.transform.position;
-        float distanciaAlvo = dirAlvoPet.magnitude;
-        if (distanciaAlvo > distanciaMinPetAtirar)
+        if (alvoPet != null)
         {
-            petEsq.transform.rotation = Quaternion.Slerp(petEsq.transform.rotation, new Quaternion(0, 0, 0, 1), velocidadeRotacaoPet * Time.deltaTime);
-            petDir.transform.rotation = Quaternion.Slerp(petDir.transform.rotation, new Quaternion(0, 0, 0, 1), velocidadeRotacaoPet * Time.deltaTime);
+            Vector3 dirAlvoPet = alvoPet.transform.position - armaPets.transform.position;
+            float distanciaAlvo = dirAlvoPet.magnitude;
+            if (distanciaAlvo > distanciaMinPetAtirar)
+            {
+                petEsq.transform.rotation = Quaternion.Slerp(petEsq.transform.rotation, new Quaternion(0, 0, 0, 1), velocidadeRotacaoPet * Time.deltaTime);
+                petDir.transform.rotation = Quaternion.Slerp(petDir.transform.rotation, new Quaternion(0, 0, 0, 1), velocidadeRotacaoPet * Time.deltaTime);
 
-            pontaPetEsq.transform.rotation = Quaternion.Slerp(pontaPetEsq.transform.rotation, new Quaternion(0, 0, 0, 1), velocidadeRotacaoPet * Time.deltaTime);
-            pontaPetDir.transform.rotation = Quaternion.Slerp(pontaPetDir.transform.rotation, new Quaternion(0, 0, 0, 1), velocidadeRotacaoPet * Time.deltaTime);
-        }
-        if (distanciaAlvo <= distanciaMinPetAtirar)
-        {
+                pontaPetEsq.transform.rotation = Quaternion.Slerp(pontaPetEsq.transform.rotation, new Quaternion(0, 0, 0, 1), velocidadeRotacaoPet * Time.deltaTime);
+                pontaPetDir.transform.rotation = Quaternion.Slerp(pontaPetDir.transform.rotation, new Quaternion(0, 0, 0, 1), velocidadeRotacaoPet * Time.deltaTime);
+            }
+            if (distanciaAlvo <= distanciaMinPetAtirar)
+            {
 
-            // (opcao de rotacao instantanea) gameObject.transform.rotation = Quaternion.LookRotation(pontaPetDir.transform.forward, dirAlvoPetDir);
+                // (opcao de rotacao instantanea) gameObject.transform.rotation = Quaternion.LookRotation(pontaPetDir.transform.forward, dirAlvoPetDir);
 
-            Vector3 dirAlvoPetEsq = alvoPet.transform.position - pontaPetEsq.transform.position;
-            dirAlvoPetEsq = dirAlvoPetEsq.normalized;
-            petEsq.transform.up = Vector3.Slerp(petEsq.transform.up, dirAlvoPetEsq, velocidadeRotacaoPet * Time.deltaTime);
-            pontaPetEsq.transform.up = Vector3.Slerp(pontaPetEsq.transform.up, dirAlvoPetEsq, velocidadeRotacaoPet * Time.deltaTime);
+                Vector3 dirAlvoPetEsq = alvoPet.transform.position - pontaPetEsq.transform.position;
+                dirAlvoPetEsq = dirAlvoPetEsq.normalized;
+                petEsq.transform.up = Vector3.Slerp(petEsq.transform.up, dirAlvoPetEsq, velocidadeRotacaoPet * Time.deltaTime);
+                pontaPetEsq.transform.up = Vector3.Slerp(pontaPetEsq.transform.up, dirAlvoPetEsq, velocidadeRotacaoPet * Time.deltaTime);
 
-            Vector3 dirAlvoPetDir = alvoPet.transform.position - pontaPetDir.transform.position;
-            dirAlvoPetDir = dirAlvoPetDir.normalized;
-            petDir.transform.up = Vector3.Slerp(petDir.transform.up, dirAlvoPetDir, velocidadeRotacaoPet * Time.deltaTime);
-            pontaPetDir.transform.up = Vector3.Slerp(pontaPetDir.transform.up, dirAlvoPetDir, velocidadeRotacaoPet * Time.deltaTime);
+                Vector3 dirAlvoPetDir = alvoPet.transform.position - pontaPetDir.transform.position;
+                dirAlvoPetDir = dirAlvoPetDir.normalized;
+                petDir.transform.up = Vector3.Slerp(petDir.transform.up, dirAlvoPetDir, velocidadeRotacaoPet * Time.deltaTime);
+                pontaPetDir.transform.up = Vector3.Slerp(pontaPetDir.transform.up, dirAlvoPetDir, velocidadeRotacaoPet * Time.deltaTime);
+            }
         }
     }
     // Muda cor para vermelho

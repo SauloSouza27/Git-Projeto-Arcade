@@ -33,6 +33,8 @@ public class MovimentoInimigoPequeno : MonoBehaviour
 
     void Update()
     {
+        if (Time.timeScale == 0) return;
+
         MovimentaInimigoPequeno();
     }
     private void OnCollisionEnter(Collision colisor)

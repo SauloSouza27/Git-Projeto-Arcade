@@ -40,6 +40,8 @@ public class MovimentoInimigoPiramide : MonoBehaviour
 
     void Update()
     {
+        if (Time.timeScale == 0) return;
+
         MovimentaInimigoPiramide();
 
         // Cooldown e controle tiro
