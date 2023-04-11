@@ -127,13 +127,12 @@ public class MovimentoInimigoPiramide : MonoBehaviour
     {
         if (inverteRotacaoTiro)
         {
-            Quaternion rotacaoPontaArma = pontaArma.transform.rotation;
-            rotacaoPontaArma = new Quaternion(rotacaoPontaArma.x, rotacaoPontaArma.y, -rotacaoPontaArma.z, rotacaoPontaArma.w);
             Instantiate(balaPiramide, pontaArma.transform.position, pontaArma.transform.rotation);
         }
         else
         {
-            Instantiate(balaPiramide, pontaArma.transform.position, pontaArma.transform.rotation);
+            GameObject instaciaBala = Instantiate(balaPiramide, pontaArma.transform.position, pontaArma.transform.rotation);
+            instaciaBala.GetComponent<BalaPersonagem>().velocidadeRotacao *= -1;
         }
     }
 }
