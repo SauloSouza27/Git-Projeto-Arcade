@@ -68,7 +68,8 @@ public class ControlaPersonagem : MonoBehaviour
     // Morte Personagem
     public void MorteJogador()
     {
-        Destroy(gameObject);
+        EfeitoTomaDano();
+        gameObject.SetActive(false);
         Time.timeScale = 0;
     }
 
@@ -149,7 +150,7 @@ public class ControlaPersonagem : MonoBehaviour
         }
     }
     // Muda cor para vermelho
-    private void MudaCorVermelho()
+    public void EfeitoTomaDano()
     {
         if (particulasDano)
             particulasDano.Play();
@@ -165,19 +166,19 @@ public class ControlaPersonagem : MonoBehaviour
 
         if (inimigo.name == "Inimigo Pequeno(Clone)")
         {
-            MudaCorVermelho();
+            EfeitoTomaDano();
             float dano = inimigo.GetComponent<MovimentoInimigoPequeno>().danoContato;
             pontosVida -= dano;
         }
         if (inimigo.name == "Inimigo Piramide Esq" || inimigo.name == "Inimigo Piramide Esq(Clone)" || inimigo.name == "Inimigo Piramide Dir" || inimigo.name == "Inimigo Piramide Dir(Clone)")
         {
-            MudaCorVermelho();
+            EfeitoTomaDano();
             float dano = inimigo.GetComponent<MovimentoInimigoPiramide>().danoContato;
             pontosVida -= dano;
         }
         if (inimigo.CompareTag("BalaPiramide"))
         {
-            MudaCorVermelho();
+            EfeitoTomaDano();
             float dano = inimigo.GetComponent<BalaPersonagem>().danoProjetil;
             pontosVida -= dano;
             Destroy(inimigo);

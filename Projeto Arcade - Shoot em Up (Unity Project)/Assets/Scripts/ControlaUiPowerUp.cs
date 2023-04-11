@@ -12,10 +12,6 @@ public class ControlaUiPowerUp : MonoBehaviour
     public GameObject controladorGame, buttonCentro, buttonEsq, buttonDir;
     private GameObject[] buttonsParaDestruir;
 
-    private void Start()
-    {
-        
-    }
     public void OnEnable()
     {
         listaPowerUPs = AchaPowerUPButtons();

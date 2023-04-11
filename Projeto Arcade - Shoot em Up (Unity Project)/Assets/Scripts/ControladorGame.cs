@@ -7,14 +7,16 @@ using TMPro;
 public class ControladorGame : MonoBehaviour
 {
     public static ControladorGame instancia;
+
     // XP e nivel
     public int XP, nivel = 1;
+    public float HP;
     public float multiplicadorQuantidadeXPporNivel = 50.0f, valorXPNivel = 100.0f;
     public GameObject barraHP, barraXP, jogador;
     public TextMeshProUGUI txtNivel, txtXP;
     private Slider sliderXP, sliderHP;
     // Power UP
-    public GameObject uiPowerUP, buttonArmaPet;
+    public GameObject uiGameOver, uiPowerUP, buttonArmaPet;
     public bool armaPetAtivada = false;
 
     private void Awake()
@@ -27,6 +29,8 @@ public class ControladorGame : MonoBehaviour
 
     void Start()
     {
+        Time.timeScale = 1;
+
         if (instancia == null)
         {
             instancia = this;
@@ -35,36 +39,35 @@ public class ControladorGame : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
-        DontDestroyOnLoad(this.gameObject);
     }
-
     
     void Update()
     {
         if (Time.timeScale == 0) return;
 
-        AtualizaBarraHP();
+        HP = jogador.GetComponent<ControlaPersonagem>().pontosVida;
+        AtualizaBarraHP(HP);
 
-        if(sliderHP.value > 0)
+        if (sliderHP.value > 0)
         {
             AtualizaBarraXP();
         }
-        if(sliderHP.value <= 0)
+        if (sliderHP.value <= 0)
         {
             jogador.GetComponent<ControlaPersonagem>().MorteJogador();
+            uiGameOver.SetActive(true);
         }
     }
 
-    public void AtualizaBarraHP()
+    public void AtualizaBarraHP(float hpAtual)
     {
-        float hpAtual = jogador.GetComponent<ControlaPersonagem>().pontosVida;
         sliderHP.value = hpAtual;
     }
 
     public void SomaXP(int xpInimigo)
     {
         XP += xpInimigo;
-        barraXP.GetComponent<Slider>().value += xpInimigo;
+        sliderXP.value += xpInimigo;
     }
 
     private void AtualizaBarraXP()
