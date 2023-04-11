@@ -48,7 +48,7 @@ public class ControlaPersonagem : MonoBehaviour
 
         if (ControladorGame.instancia.armaPetAtivada)
         {
-            MovimentoPets();
+            ControleArmaPets();
         }
 
         //mudança da cor do material
@@ -113,7 +113,7 @@ public class ControlaPersonagem : MonoBehaviour
     }
 
     // controle movimento do pet
-    public void MovimentoPets()
+    public void ControleArmaPets()
     {
         alvoPet = AcharInimigoMaisPerto();
         Vector3 dirAlvoPet = alvoPet.transform.position - armaPets.transform.position;

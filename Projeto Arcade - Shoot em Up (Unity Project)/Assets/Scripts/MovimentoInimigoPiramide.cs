@@ -119,8 +119,9 @@ public class MovimentoInimigoPiramide : MonoBehaviour
         direcao = direcao.normalized;
         transform.up = Vector3.Slerp(transform.up, -1 * direcao, velocidadeRotacao * Time.deltaTime);
         // Mira cabeca
-        cabecaPiramide.transform.up = Vector3.Slerp(cabecaPiramide.transform.up, -1 * direcao, 3 * velocidadeRotacao * Time.deltaTime);
-        //cabecaPiramide.transform.rotation = Quaternion.LookRotation(cabecaPiramide.transform.forward, direcao);
+        //cabecaPiramide.transform.up = Vector3.Slerp(cabecaPiramide.transform.up, -1 * direcao, 3 * velocidadeRotacao * Time.deltaTime);
+        cabecaPiramide.transform.rotation = Quaternion.LookRotation(cabecaPiramide.transform.forward, - direcao);
+        pontaArma.transform.rotation = Quaternion.LookRotation(pontaArma.transform.forward, direcao);
     }
 
     // Tiro
