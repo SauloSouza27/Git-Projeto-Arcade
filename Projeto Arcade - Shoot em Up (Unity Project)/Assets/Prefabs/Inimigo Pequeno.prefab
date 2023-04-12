@@ -98,7 +98,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d6ad46aa12366042a62602a1b771a5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  alvo: {fileID: 0}
   velocidadeDeslocamento: 5
   velocidadeRotacao: 5
   pontosVida: 20
@@ -123,8 +122,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.3209412, y: 2.076911, z: 2.7831395}
-  m_Center: {x: 0, y: -0.11506165, z: -0.60290754}
+  m_Size: {x: 2.52094, y: 2.076911, z: 4.1333957}
+  m_Center: {x: 0, y: -0.115061685, z: 0.0722228}
 --- !u!54 &-6314341870656770170
 Rigidbody:
   m_ObjectHideFlags: 0
