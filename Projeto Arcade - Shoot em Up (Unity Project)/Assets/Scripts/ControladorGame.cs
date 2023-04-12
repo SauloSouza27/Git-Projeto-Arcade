@@ -16,8 +16,8 @@ public class ControladorGame : MonoBehaviour
     public TextMeshProUGUI txtNivel, txtXP;
     private Slider sliderXP, sliderHP;
     // Power UP
-    public GameObject uiGameOver, uiPowerUP, buttonArmaPet;
-    public bool armaPetAtivada = false;
+    public GameObject uiGameOver, uiPowerUP, buttonArmaPet, buttonArmaOrbeGiratorio;
+    public bool armaPetAtivada = false, armaOrbeGiratorioAtivada = false;
 
     private void Awake()
     {
@@ -103,31 +103,36 @@ public class ControladorGame : MonoBehaviour
         uiPowerUP.SetActive(true);
         Time.timeScale = 0.0f;
     }
-    
-    public void PowerUPAtivaArmaNova(GameObject armaNova)
+    public void PowerUPAtivaArmaPet(GameObject armaPet)
     {
-        armaNova.SetActive(true);
+        armaPet.SetActive(true);
         armaPetAtivada = true;
         jogador.GetComponent<DisparoArmaPet>().enabled = true;
         Destroy(buttonArmaPet);
         uiPowerUP.SetActive(false);
         Time.timeScale = 1.0f;
     }
-
+    public void PowerUPAtivaArmaOrbeGiratorio(GameObject armaOrbeGiratorio)
+    {
+        armaOrbeGiratorio.SetActive(true);
+        armaOrbeGiratorioAtivada = true;
+        jogador.GetComponent<RespostaOrbeGiratorio>().enabled = true;
+        Destroy(buttonArmaOrbeGiratorio);
+        uiPowerUP.SetActive(false);
+        Time.timeScale = 1.0f;
+    }
     public void PowerUPAumentaDanoArmaPrincipal()
     {
         jogador.GetComponent<DisparoArma>().danoArmaPrincipal *= 1.15f;
         uiPowerUP.SetActive(false);
         Time.timeScale = 1.0f;
     }
-
     public void PowerUPDiminuiCooldownArmaPrincipal()
     {
         jogador.GetComponent<DisparoArma>().cooldown *= 0.90f;
         uiPowerUP.SetActive(false);
         Time.timeScale = 1.0f;
     }
-
     public void PowerUPAumentaHP()
     {
         sliderHP.maxValue += 20.0f;

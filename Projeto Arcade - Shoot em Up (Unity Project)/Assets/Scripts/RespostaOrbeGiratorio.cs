@@ -5,6 +5,4 @@ using UnityEngine;
 public class RespostaOrbeGiratorio : MonoBehaviour
 {
     public float danoOrbeGiratorio = 10.0f;
-
-
 }

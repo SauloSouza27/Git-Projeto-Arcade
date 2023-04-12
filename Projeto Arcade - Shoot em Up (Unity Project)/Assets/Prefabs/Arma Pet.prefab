@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 3773459500842476348}
   m_Layer: 0
   m_Name: Arma Pet
-  m_TagString: Untagged
+  m_TagString: ArmasExtras
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

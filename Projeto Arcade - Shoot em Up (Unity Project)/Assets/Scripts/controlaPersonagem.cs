@@ -53,6 +53,11 @@ public class ControlaPersonagem : MonoBehaviour
             ControleArmaPets();
         }
 
+        if (ControladorGame.instancia.armaOrbeGiratorioAtivada)
+        {
+            ControleOrbeGiratorio();
+        }
+
         //mudança da cor do material
         RetornaCorOriginal();
     }

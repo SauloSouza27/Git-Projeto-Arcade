@@ -12,6 +12,7 @@ TagManager:
   - SpawnInimigoPiramide
   - ControladorGame
   - OrbeGiratorio
+  - ArmasExtras
   layers:
   - Default
   - TransparentFX
