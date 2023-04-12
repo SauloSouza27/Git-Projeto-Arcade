@@ -15,10 +15,12 @@ public class ControlaUiPowerUp : MonoBehaviour
     public void OnEnable()
     {
         listaPowerUPs = AchaPowerUPButtons();
+        Debug.Log(listaPowerUPs.Count);
         quantidadePowerUps = listaPowerUPs.Count;
         for (int n = 0; n < quantidadePowerUps; n++)
         {
             ordemLista.Add(n);
+            Debug.Log(n);
         }
         buttonsParaDestruir = CarregaPowerUPsAleatoriamente();
     }
@@ -42,6 +44,7 @@ public class ControlaUiPowerUp : MonoBehaviour
             if (go.CompareTag("PowerUPButton"))
             {
                 buttonsCena.Add(go);
+                Debug.Log(go.name);
             }
         }
         return buttonsCena;
@@ -59,14 +62,14 @@ public class ControlaUiPowerUp : MonoBehaviour
         GameObject esq = Instantiate(itemLista.gameObject, buttonEsq.transform.position, buttonEsq.transform.rotation, this.transform);
         esq.SetActive(true);
 
-        index = Random.Range(0, ordemLista.Count);
+        index = Random.Range(1, ordemLista.Count);
         posicaoLista = ordemLista[index];
         ordemLista.RemoveAt(index);
         itemLista = listaPowerUPs[posicaoLista];
         GameObject centro = Instantiate(itemLista.gameObject, buttonCentro.transform.position, buttonCentro.transform.rotation, this.transform);
         centro.SetActive(true);
 
-        index = Random.Range(0, ordemLista.Count);
+        index = Random.Range(1, ordemLista.Count);
         posicaoLista = ordemLista[index];
         ordemLista.RemoveAt(index);
         itemLista = listaPowerUPs[posicaoLista];
