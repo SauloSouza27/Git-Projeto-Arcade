@@ -50,6 +50,7 @@ MonoBehaviour:
   velocidade: 15
   duracaoBala: 400
   projetil: {fileID: 2466213106853831192}
+  projetilInimigo: 1
   rotacaoTiro: 1
   projetilRotacao: {fileID: 6338376812386022329}
   fonteTiro: {fileID: 2654179050399584760, guid: 0d71d0d044cbff94aa6173a6676da963, type: 3}

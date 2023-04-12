@@ -10,9 +10,9 @@ public class ControlaPersonagem : MonoBehaviour
     // Controle movimento personagem e armas
     private float x, y;
     public float velocidadeMovimento = 1.0f, velocidadeCorMaterial = 2.0f;
-    public GameObject personagem, armaPrincipal, armaPets, petEsq, petDir, pontaPetEsq, pontaPetDir;
+    public GameObject personagem, armaPrincipal, armaPets, petEsq, petDir, pontaPetEsq, pontaPetDir, armaOrbeGiratorio;
     private GameObject alvoPet;
-    public float velocidadeRotacaoPet = 2.0f, distanciaMinPetAtirar = 20.0f;
+    public float velocidadeRotacaoPet = 2.0f, distanciaMinPetAtirar = 20.0f, velocidadeRotacaoOrbeGiratorio = 15.0f;
     // Pontos de vida
     public float pontosVida = 100.0f;
     public float danoContato = 20.0f;
@@ -46,6 +46,8 @@ public class ControlaPersonagem : MonoBehaviour
 
         ControleArmaPrincipal();
 
+        ControleOrbeGiratorio();
+
         if (ControladorGame.instancia.armaPetAtivada)
         {
             ControleArmaPets();
@@ -74,7 +76,7 @@ public class ControlaPersonagem : MonoBehaviour
     }
 
     // Controle movimento personagem
-    public void ControleMovimentoPersonagem()
+    private void ControleMovimentoPersonagem()
     {
         x = Input.GetAxis("Horizontal");
         y = Input.GetAxis("Vertical");
@@ -117,7 +119,7 @@ public class ControlaPersonagem : MonoBehaviour
     }
 
     // controle movimento do pet
-    public void ControleArmaPets()
+    private void ControleArmaPets()
     {
         alvoPet = AcharInimigoMaisPerto();
         if (alvoPet != null)
@@ -149,6 +151,13 @@ public class ControlaPersonagem : MonoBehaviour
             }
         }
     }
+
+    // Arma orbe giratorio
+    private void ControleOrbeGiratorio()
+    {
+        armaOrbeGiratorio.transform.RotateAround(transform.position, transform.forward, velocidadeRotacaoOrbeGiratorio * Time.deltaTime);
+    }
+
     // Muda cor para vermelho
     public void EfeitoTomaDano()
     {

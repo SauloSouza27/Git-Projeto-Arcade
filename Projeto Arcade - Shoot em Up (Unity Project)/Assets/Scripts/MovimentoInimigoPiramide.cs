@@ -94,6 +94,24 @@ public class MovimentoInimigoPiramide : MonoBehaviour
                 ControladorGame.instancia.SomaXP(xpInimigo);
             }
         }
+        if (colisor.gameObject.CompareTag("OrbeGiratorio"))
+        {
+            float dano = alvo.GetComponent<RespostaOrbeGiratorio>().danoOrbeGiratorio;
+            if (pontosVida > 0)
+            {
+                pontosVida -= dano;
+
+                foreach (Material material in materiais)
+                {
+                    StartCoroutine(Utilidades.PiscaCorRoutine(material));
+                }
+            }
+            if (pontosVida <= 0)
+            {
+                Destroy(gameObject);
+                ControladorGame.instancia.SomaXP(xpInimigo);
+            }
+        }
         if (colisor.gameObject.CompareTag("Player"))
         {
             float dano = colisor.gameObject.GetComponent<ControlaPersonagem>().danoContato;

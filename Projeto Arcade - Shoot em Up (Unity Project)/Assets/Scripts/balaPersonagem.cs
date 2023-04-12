@@ -6,7 +6,7 @@ public class BalaPersonagem : MonoBehaviour
 {
     public float velocidade = 15.0f, duracaoBala = 200.0f;
     public GameObject projetil;
-    public bool rotacaoTiro = false;
+    public bool projetilInimigo = false, rotacaoTiro = false;
     public GameObject projetilRotacao, fonteTiro;
     public float velocidadeRotacao = 200.0f, danoProjetil;
 
@@ -33,6 +33,14 @@ public class BalaPersonagem : MonoBehaviour
         if (rotacaoTiro)
         {
             projetilRotacao.transform.Rotate(Time.deltaTime * velocidadeRotacao * transform.forward);
+        }
+    }
+
+    private void OnCollisionEnter(Collision colidido)
+    {
+        if(colidido.gameObject.CompareTag("OrbeGiratorio") && projetilInimigo)
+        {
+            Destroy(gameObject);
         }
     }
 }

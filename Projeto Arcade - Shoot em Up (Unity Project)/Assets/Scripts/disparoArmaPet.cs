@@ -12,7 +12,7 @@ public class DisparoArmaPet : MonoBehaviour
     // Alterar tiro altomatico
     public bool tiroAutomatico = true;
     // Dano arma
-    public float danoArmaPet = 2.5f;
+    public float danoArmaPet = 10.0f;
 
     private void Awake()
     {
