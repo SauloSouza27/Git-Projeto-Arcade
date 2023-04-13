@@ -123,6 +123,72 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &82990351
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 834191079}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.92
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_Name
+      value: Drone Morcego Inimigo (12)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+--- !u!4 &82990352 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+  m_PrefabInstance: {fileID: 82990351}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &199698639
 GameObject:
   m_ObjectHideFlags: 0
@@ -270,11 +336,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 1.58
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 2.75
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -315,8 +381,16 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 543450653420225167}
   m_SourcePrefab: {fileID: 100100000, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+--- !u!1 &279733606 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+  m_PrefabInstance: {fileID: 279733605}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &357138630
 GameObject:
   m_ObjectHideFlags: 0
@@ -385,6 +459,72 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &492212268
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 834191079}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.48
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.11
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_Name
+      value: Drone Morcego Inimigo (10)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+--- !u!4 &492212269 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+  m_PrefabInstance: {fileID: 492212268}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &554554185
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -399,11 +539,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.773
+      value: 3.28
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.471
+      value: 4.12
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -450,6 +590,72 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
   m_PrefabInstance: {fileID: 554554185}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &654679859
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 834191079}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.76
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.88
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_Name
+      value: Drone Morcego Inimigo (4)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+--- !u!4 &654679860 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+  m_PrefabInstance: {fileID: 654679859}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &671152016
 GameObject:
@@ -693,11 +899,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.866
+      value: -0.08
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.664
+      value: 3.36
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -738,12 +944,107 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 775350312}
   m_SourcePrefab: {fileID: 100100000, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
 --- !u!4 &775350310 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
   m_PrefabInstance: {fileID: 775350309}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &775350311 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+  m_PrefabInstance: {fileID: 775350309}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &775350312
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 775350311}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.0668103, y: 1.357132, z: 2.269015}
+  m_Center: {x: 0, y: 0.6224254, z: 0}
+--- !u!1001 &781899068
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 834191079}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.69
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.32
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_Name
+      value: Drone Morcego Inimigo (8)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+--- !u!4 &781899069 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+  m_PrefabInstance: {fileID: 781899068}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &834191076
 GameObject:
@@ -754,7 +1055,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 834191079}
-  - component: {fileID: 834191078}
   - component: {fileID: 834191077}
   m_Layer: 0
   m_Name: Inimigo Morcego Drone
@@ -762,7 +1062,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!95 &834191077
 Animator:
   serializedVersion: 5
@@ -784,27 +1084,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!65 &834191078
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 834191076}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1.0386889, y: 1.5097818, z: 1.9831507}
-  m_Center: {x: 0, y: 0.68274355, z: 0.14565197}
 --- !u!4 &834191079
 Transform:
   m_ObjectHideFlags: 0
@@ -814,12 +1093,23 @@ Transform:
   m_GameObject: {fileID: 834191076}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -37.6, y: 26.4, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.24, y: 1.24, z: 1.24}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 543450653420225166}
   - {fileID: 775350310}
   - {fileID: 554554186}
+  - {fileID: 1115604530}
+  - {fileID: 654679860}
+  - {fileID: 1607373508}
+  - {fileID: 1388180246}
+  - {fileID: 2076433330}
+  - {fileID: 781899069}
+  - {fileID: 953591045}
+  - {fileID: 492212269}
+  - {fileID: 1668730714}
+  - {fileID: 82990352}
+  - {fileID: 1300044562}
   m_Father: {fileID: 0}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -871,6 +1161,72 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &953591044
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 834191079}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.32
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.99
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_Name
+      value: Drone Morcego Inimigo (9)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+--- !u!4 &953591045 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+  m_PrefabInstance: {fileID: 953591044}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -1098,6 +1454,75 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1040410984}
   m_CullTransparentMesh: 1
+--- !u!1001 &1115604529
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 834191079}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.29
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.9
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_Name
+      value: Drone Morcego Inimigo (3)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2137432113}
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+--- !u!4 &1115604530 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+  m_PrefabInstance: {fileID: 1115604529}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1261362279
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1159,6 +1584,138 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cc3d70f9628e64546a7507bab6e9d031, type: 3}
+--- !u!1001 &1300044561
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 834191079}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4.99
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.09
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_Name
+      value: Drone Morcego Inimigo (13)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+--- !u!4 &1300044562 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+  m_PrefabInstance: {fileID: 1300044561}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1388180245
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 834191079}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.51
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 6.88
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_Name
+      value: Drone Morcego Inimigo (6)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+--- !u!4 &1388180246 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+  m_PrefabInstance: {fileID: 1388180245}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1406167430 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7907283024871918819, guid: 03f3941b644c2e545bd41455bd1092b6, type: 3}
@@ -1254,6 +1811,138 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cc3d70f9628e64546a7507bab6e9d031, type: 3}
+--- !u!1001 &1607373507
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 834191079}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.43
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 7.33
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_Name
+      value: Drone Morcego Inimigo (5)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+--- !u!4 &1607373508 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+  m_PrefabInstance: {fileID: 1607373507}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1668730713
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 834191079}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.56
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.38
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_Name
+      value: Drone Morcego Inimigo (11)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+--- !u!4 &1668730714 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+  m_PrefabInstance: {fileID: 1668730713}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2070909400
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1319,6 +2008,155 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cc3d70f9628e64546a7507bab6e9d031, type: 3}
+--- !u!1001 &2076433329
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 834191079}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4.61
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.77
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+      propertyPath: m_Name
+      value: Drone Morcego Inimigo (7)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+--- !u!4 &2076433330 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+  m_PrefabInstance: {fileID: 2076433329}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2137432112
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2137432113}
+  - component: {fileID: 2137432115}
+  - component: {fileID: 2137432114}
+  m_Layer: 0
+  m_Name: Circle.004 (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2137432113
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2137432112}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 3.087145e-15, y: 0.5071075, z: 0.007353127}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1115604530}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!23 &2137432114
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2137432112}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 9185737683893222716, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &2137432115
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2137432112}
+  m_Mesh: {fileID: -6857689473578963052, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
 --- !u!1 &115082223984218475
 GameObject:
   m_ObjectHideFlags: 0
@@ -1635,6 +2473,27 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 24fac8bb000ce8746b2f3e8d0f44934d, type: 3}
   m_PrefabInstance: {fileID: 279733605}
   m_PrefabAsset: {fileID: 0}
+--- !u!65 &543450653420225167
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 279733606}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.0668103, y: 1.357132, z: 2.269015}
+  m_Center: {x: 0, y: 0.6224254, z: 0}
 --- !u!224 &582484222430959943
 RectTransform:
   m_ObjectHideFlags: 0
