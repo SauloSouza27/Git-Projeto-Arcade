@@ -1,24 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Animations;
 
-public class MovimentoInimigoPiramide : MonoBehaviour
+public class MovimentoInimigoMorcegoDrone : MonoBehaviour
 {
-    private GameObject alvo;
-    public GameObject cabecaPiramide, pontaArma, balaPiramide;
-    // Controle rotaçao
-    public float velocidadeRotacao = 2.0f;
+    GameObject alvo;
     // Pontos de vida
-    public float pontosVida = 40.0f;
-    public float danoContato = 40.0f;
-    public float danoTiro = 40.0f;
+    public float pontosVida = 10.0f;
+    public float danoContato = 10.0f;
     // XP quando morre
-    public int xpInimigo = 100;
-    // Tiro
-    [Range(0, 3)] public float cooldown = 1.0f;
-    private float contadorCooldown;
-    public bool inverteRotacaoTiro = false;
+    public int xpInimigo = 10;
     // Materiais
     MeshRenderer[] renderers;
     Material[] materiais;
@@ -33,27 +24,6 @@ public class MovimentoInimigoPiramide : MonoBehaviour
             materiais[i] = renderers[i].material;
         }
     }
-    void Start()
-    {
-        contadorCooldown = 4.0f;
-    }
-
-    void Update()
-    {
-        if (Time.timeScale == 0) return;
-
-        MovimentaInimigoPiramide();
-
-        // Cooldown e controle tiro
-        Utilidades.CalculaCooldown(contadorCooldown);
-        contadorCooldown = Utilidades.CalculaCooldown(contadorCooldown);
-        if (contadorCooldown == 0)
-        {
-            Tiro();
-            contadorCooldown = cooldown;
-        }
-    }
-
     private void OnCollisionEnter(Collision colisor)
     {
         if (colisor.gameObject.CompareTag("BalaPersonagem"))
@@ -64,7 +34,7 @@ public class MovimentoInimigoPiramide : MonoBehaviour
             {
                 pontosVida -= dano;
 
-                foreach(Material material in materiais)
+                foreach (Material material in materiais)
                 {
                     StartCoroutine(Utilidades.PiscaCorRoutine(material));
                 }
@@ -82,7 +52,7 @@ public class MovimentoInimigoPiramide : MonoBehaviour
             if (pontosVida > 0)
             {
                 pontosVida -= dano;
-                
+
                 foreach (Material material in materiais)
                 {
                     StartCoroutine(Utilidades.PiscaCorRoutine(material));
@@ -114,7 +84,7 @@ public class MovimentoInimigoPiramide : MonoBehaviour
         }
         if (colisor.gameObject.CompareTag("Player"))
         {
-            float dano = colisor.gameObject.GetComponent<ControlaPersonagem>().danoContato;
+            float dano = alvo.GetComponent<ControlaPersonagem>().danoContato;
             if (pontosVida > 0)
             {
                 pontosVida -= dano;
@@ -131,30 +101,6 @@ public class MovimentoInimigoPiramide : MonoBehaviour
             }
         }
     }
-
-    private void MovimentaInimigoPiramide()
-    {
-        // Rotacao corpo
-        Vector3 direcao = alvo.transform.position - transform.position;
-        direcao = direcao.normalized;
-        transform.up = Vector3.Slerp(transform.up, -1 * direcao, velocidadeRotacao * Time.deltaTime);
-        // Mira cabeca
-        //cabecaPiramide.transform.up = Vector3.Slerp(cabecaPiramide.transform.up, -1 * direcao, 3 * velocidadeRotacao * Time.deltaTime);
-        cabecaPiramide.transform.rotation = Quaternion.LookRotation(cabecaPiramide.transform.forward, - direcao);
-        pontaArma.transform.rotation = Quaternion.LookRotation(pontaArma.transform.forward, direcao);
-    }
-
-    // Tiro
-    private void Tiro()
-    {
-        if (inverteRotacaoTiro)
-        {
-            Instantiate(balaPiramide, pontaArma.transform.position, pontaArma.transform.rotation);
-        }
-        else
-        {
-            GameObject instaciaBala = Instantiate(balaPiramide, pontaArma.transform.position, pontaArma.transform.rotation);
-            instaciaBala.GetComponent<BalaPersonagem>().velocidadeRotacao *= -1;
-        }
-    }
 }
+
+    

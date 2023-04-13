@@ -17,10 +17,6 @@ public class SpawnInimigoPequeno : MonoBehaviour
         cooldownSpawnInimigoPequeno = Random.Range(minTempo, maxTempo);
     }
 
-    void Start()
-    {
-        
-    }
 
     void Update()
     {
@@ -36,10 +32,5 @@ public class SpawnInimigoPequeno : MonoBehaviour
             cooldownSpawnInimigoPequeno = Random.Range(minTempo, maxTempo);
             contadorCooldown = cooldownSpawnInimigoPequeno;
         }
-        if (nivelJogador == 3)
-        {
-            ativar = false;
-        }
-        else ativar = true;
     }
 }

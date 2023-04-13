@@ -13,6 +13,8 @@ TagManager:
   - ControladorGame
   - OrbeGiratorio
   - ArmasExtras
+  - SpawnInimigoPequeno
+  - SpawnInimigoMorcegoDrone
   layers:
   - Default
   - TransparentFX

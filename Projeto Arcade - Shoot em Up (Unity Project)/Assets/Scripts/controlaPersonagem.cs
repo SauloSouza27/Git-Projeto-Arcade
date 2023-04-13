@@ -177,7 +177,6 @@ public class ControlaPersonagem : MonoBehaviour
     // Calcula dano, mudar cor e partícula de dano
     private void ReceberDano(GameObject inimigo)
     {
-
         if (inimigo.name == "Inimigo Pequeno(Clone)")
         {
             EfeitoTomaDano();
@@ -196,6 +195,12 @@ public class ControlaPersonagem : MonoBehaviour
             float dano = inimigo.GetComponent<BalaPersonagem>().danoProjetil;
             pontosVida -= dano;
             Destroy(inimigo);
+        }
+        if (inimigo.transform.root.gameObject.name == "Inimigo Morcego Drone" || inimigo.transform.root.gameObject.name == "Inimigo Morcego Drone(Clone)")
+        {
+            EfeitoTomaDano();
+            float dano = inimigo.GetComponent<MovimentoInimigoMorcegoDrone>().danoContato;
+            pontosVida -= dano;
         }
     }
 

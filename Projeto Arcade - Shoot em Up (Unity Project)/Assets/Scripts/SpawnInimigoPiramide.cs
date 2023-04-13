@@ -4,31 +4,8 @@ using UnityEngine;
 
 public class SpawnInimigoPiramide : MonoBehaviour
 {
-    public GameObject inimigoPiramide, spawnPoint, controladorGame;
-    private int nivelJogador;
+    public GameObject inimigoPiramide, spawnPoint;
     public bool ativar = true;
-
-    private void Awake()
-    {
-        controladorGame = GameObject.Find("Controlador Game");
-    }
-
-    void Update()
-    {
-        if (Time.timeScale == 0) return;
-
-        nivelJogador = controladorGame.GetComponent<ControladorGame>().nivel;
-
-        if (ativar && nivelJogador == 3)
-        {
-            for (int i = 0; i < 1; i++)
-            {
-                AtivaSpawnInimigoPiramide();
-                ativar = false;
-            }
-        }
-        
-    }
 
     public void AtivaSpawnInimigoPiramide()
     {

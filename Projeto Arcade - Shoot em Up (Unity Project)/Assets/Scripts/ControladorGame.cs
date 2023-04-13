@@ -15,6 +15,9 @@ public class ControladorGame : MonoBehaviour
     public GameObject barraHP, barraXP, jogador;
     public TextMeshProUGUI txtNivel, txtXP;
     private Slider sliderXP, sliderHP;
+    // spawn inimigos
+    private GameObject[] spawnInimigoPequeno, spawnInimigoPiramide, spawnInimigoDroneMorcego;
+    private bool paraSpawnInimigoPiramide = false, paraSpawnInimigoDroneMorcego = false;
     // Power UP
     public GameObject uiGameOver, uiPowerUP, buttonArmaPet, buttonArmaOrbeGiratorio;
     public bool armaPetAtivada = false, armaOrbeGiratorioAtivada = false;
@@ -25,6 +28,10 @@ public class ControladorGame : MonoBehaviour
         sliderXP = barraXP.GetComponent<Slider>();
         txtNivel = GameObject.Find("txtNível").GetComponent<TextMeshProUGUI>();
         txtXP = GameObject.Find("txtXP").GetComponent<TextMeshProUGUI>();
+        //busca pontos de spawn na cena
+        spawnInimigoPequeno = GameObject.FindGameObjectsWithTag("SpawnInimigoPequeno");
+        spawnInimigoPiramide = GameObject.FindGameObjectsWithTag("SpawnInimigoPiramide");
+        spawnInimigoDroneMorcego = GameObject.FindGameObjectsWithTag("SpawnInimigoMorcegoDrone");
     }
 
     void Start()
@@ -57,6 +64,31 @@ public class ControladorGame : MonoBehaviour
             jogador.GetComponent<ControlaPersonagem>().MorteJogador();
             uiGameOver.SetActive(true);
         }
+        if (nivel == 3)
+        {
+            foreach (GameObject go in spawnInimigoDroneMorcego)
+            {
+                SpawnInimigoMorcegoDrone spawn = go.GetComponent<SpawnInimigoMorcegoDrone>();
+                if (paraSpawnInimigoDroneMorcego == false)
+                {
+                    spawn.AtivaSpawnInimigoMorcegoDrone();
+                }
+            }
+            paraSpawnInimigoDroneMorcego = true;
+        }
+        if (nivel == 5)
+        {
+            foreach (GameObject go in spawnInimigoPiramide)
+            {
+                SpawnInimigoPiramide spawn = go.GetComponent<SpawnInimigoPiramide>();
+                if(paraSpawnInimigoPiramide == false)
+                {
+                    spawn.AtivaSpawnInimigoPiramide();
+                }
+            }
+            paraSpawnInimigoPiramide = true;
+        }
+
     }
 
     public void AtualizaBarraHP(float hpAtual)
