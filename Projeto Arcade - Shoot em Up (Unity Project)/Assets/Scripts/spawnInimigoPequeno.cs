@@ -15,6 +15,7 @@ public class SpawnInimigoPequeno : MonoBehaviour
     {
         controladorGame = GameObject.Find("Controlador Game");
         cooldownSpawnInimigoPequeno = Random.Range(minTempo, maxTempo);
+        contadorCooldown = cooldownSpawnInimigoPequeno;
     }
 
 
