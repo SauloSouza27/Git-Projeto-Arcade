@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3690882433130654724
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4752495584213673447}
+  m_Layer: 0
+  m_Name: PontaSaidaSerra
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4752495584213673447
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3690882433130654724}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4962514270277505481}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4540772588862264049
 GameObject:
   m_ObjectHideFlags: 0
@@ -106,6 +137,7 @@ GameObject:
   - component: {fileID: 7773611179429094950}
   - component: {fileID: 1827807818842465192}
   - component: {fileID: 5995971232770565429}
+  - component: {fileID: 4974276118539672254}
   - component: {fileID: 5690551041489826068}
   - component: {fileID: 1859866850645625244}
   - component: {fileID: 4993856337061519684}
@@ -134,8 +166,9 @@ Transform:
   - {fileID: 2161081479380777188}
   - {fileID: 4935189340669724948}
   - {fileID: 6816385901124600142}
+  - {fileID: 4962514270277505481}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8950388453384976238
 MonoBehaviour:
@@ -159,9 +192,10 @@ MonoBehaviour:
   pontaPetEsq: {fileID: 1622539231730008893}
   pontaPetDir: {fileID: 4122977006382051712}
   armaOrbeGiratorio: {fileID: 7862313496857138636}
+  armaSerra: {fileID: 6955476533840584894}
   velocidadeRotacaoPet: 2
-  distanciaMinPetAtirar: 15
-  velocidadeRotacaoOrbeGiratorio: 200
+  distanciaMinPetAtirar: 18
+  velocidadeRotacaoOrbeGiratorio: 90
   pontosVida: 100
   danoContato: 150
   particulasDano: {fileID: 1346597017377448381}
@@ -212,7 +246,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3b0f91f5ad19ad419162a858e3ab463, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  danoOrbeGiratorio: 10
+  danoOrbeGiratorio: 20
+--- !u!114 &4974276118539672254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9074662426996894289}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fa6ab67a0ae81945933615768dc9919, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projetilSerra: {fileID: 4037887501447905336, guid: 25b6f54121918d14aac6d39143a0fb5b, type: 3}
+  pontaSaidaSerra: {fileID: 3690882433130654724}
+  cooldown: 3
+  danoSerra: 40
+  danoSerraDPS: 10
 --- !u!65 &5690551041489826068
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -342,9 +393,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6261919567971739747, guid: f01f1d9becf1c3640913ec989b8b58c6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7134874424386571655, guid: f01f1d9becf1c3640913ec989b8b58c6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.2
+      objectReference: {fileID: 0}
     - target: {fileID: 8045413695001352628, guid: f01f1d9becf1c3640913ec989b8b58c6, type: 3}
       propertyPath: m_Name
       value: Orbe Giratorio Base
+      objectReference: {fileID: 0}
+    - target: {fileID: 8045413695001352628, guid: f01f1d9becf1c3640913ec989b8b58c6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -360,6 +423,121 @@ Transform:
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8045413695001352628, guid: f01f1d9becf1c3640913ec989b8b58c6, type: 3}
   m_PrefabInstance: {fileID: 196893228064279672}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &294141088294109408
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 776616345876304713}
+    m_Modifications:
+    - target: {fileID: 1101634648479089081, guid: e28e95908764891429639377ecf424e0, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 2040036811728651290, guid: e28e95908764891429639377ecf424e0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2040036811728651290, guid: e28e95908764891429639377ecf424e0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2040036811728651290, guid: e28e95908764891429639377ecf424e0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 2040036811728651290, guid: e28e95908764891429639377ecf424e0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 2040036811728651290, guid: e28e95908764891429639377ecf424e0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2040036811728651290, guid: e28e95908764891429639377ecf424e0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2040036811728651290, guid: e28e95908764891429639377ecf424e0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4668715132550680873, guid: e28e95908764891429639377ecf424e0, type: 3}
+      propertyPath: m_RootOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4668715132550680873, guid: e28e95908764891429639377ecf424e0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4668715132550680873, guid: e28e95908764891429639377ecf424e0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4668715132550680873, guid: e28e95908764891429639377ecf424e0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4668715132550680873, guid: e28e95908764891429639377ecf424e0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4668715132550680873, guid: e28e95908764891429639377ecf424e0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4668715132550680873, guid: e28e95908764891429639377ecf424e0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4668715132550680873, guid: e28e95908764891429639377ecf424e0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4668715132550680873, guid: e28e95908764891429639377ecf424e0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4668715132550680873, guid: e28e95908764891429639377ecf424e0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4668715132550680873, guid: e28e95908764891429639377ecf424e0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7246906206830993502, guid: e28e95908764891429639377ecf424e0, type: 3}
+      propertyPath: m_Name
+      value: Arma Serra
+      objectReference: {fileID: 0}
+    - target: {fileID: 7246906206830993502, guid: e28e95908764891429639377ecf424e0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7246906206830993502, guid: e28e95908764891429639377ecf424e0, type: 3}
+      propertyPath: m_TagString
+      value: ArmaSerra
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 7097347225869210419, guid: e28e95908764891429639377ecf424e0, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 4668715132550680873, guid: e28e95908764891429639377ecf424e0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4752495584213673447}
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e28e95908764891429639377ecf424e0, type: 3}
+--- !u!4 &4962514270277505481 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4668715132550680873, guid: e28e95908764891429639377ecf424e0, type: 3}
+  m_PrefabInstance: {fileID: 294141088294109408}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6955476533840584894 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7246906206830993502, guid: e28e95908764891429639377ecf424e0, type: 3}
+  m_PrefabInstance: {fileID: 294141088294109408}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1892922535325613676
 PrefabInstance:

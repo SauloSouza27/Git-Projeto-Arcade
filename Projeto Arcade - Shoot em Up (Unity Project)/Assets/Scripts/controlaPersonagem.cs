@@ -10,7 +10,7 @@ public class ControlaPersonagem : MonoBehaviour
     // Controle movimento personagem e armas
     private float x, y;
     public float velocidadeMovimento = 1.0f, velocidadeCorMaterial = 2.0f;
-    public GameObject personagem, armaPrincipal, armaPets, petEsq, petDir, pontaPetEsq, pontaPetDir, armaOrbeGiratorio;
+    public GameObject personagem, armaPrincipal, armaPets, petEsq, petDir, pontaPetEsq, pontaPetDir, armaOrbeGiratorio, armaSerra;
     private GameObject alvoPet;
     public float velocidadeRotacaoPet = 2.0f, distanciaMinPetAtirar = 20.0f, velocidadeRotacaoOrbeGiratorio = 15.0f;
     // Pontos de vida
@@ -25,7 +25,7 @@ public class ControlaPersonagem : MonoBehaviour
     void Start()
     {
         // Cursor Config
-        //Cursor.lockState = CursorLockMode.Confined;
+        // Cursor.lockState = CursorLockMode.Confined;
 
         // Busca materiais do personagem
         MeshRenderer[] renderers = GetComponentsInChildren<MeshRenderer>();
@@ -174,6 +174,8 @@ public class ControlaPersonagem : MonoBehaviour
             mat.color += Color.red;
         }
     }
+    
+
     // Calcula dano, mudar cor e partícula de dano
     private void ReceberDano(GameObject inimigo)
     {

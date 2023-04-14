@@ -19,8 +19,10 @@ public class ControladorGame : MonoBehaviour
     private GameObject[] spawnInimigoPequeno, spawnInimigoPiramide, spawnInimigoDroneMorcego;
     private bool paraSpawnInimigoPiramide = false, paraSpawnInimigoDroneMorcego = false;
     // Power UP
-    public GameObject uiGameOver, uiPowerUP, buttonArmaPet, buttonArmaOrbeGiratorio;
-    public bool armaPetAtivada = false, armaOrbeGiratorioAtivada = false;
+    public GameObject uiGameOver, uiPowerUP, buttonArmaPet, buttonArmaOrbeGiratorio, buttonArmaSerra;
+    public bool armaPetAtivada = false, armaOrbeGiratorioAtivada = false, armaSerraAtivada = false;
+    // dano nos inimigos
+    private float vidaInimigo;
 
     private void Awake()
     {
@@ -153,6 +155,16 @@ public class ControladorGame : MonoBehaviour
         uiPowerUP.SetActive(false);
         Time.timeScale = 1.0f;
     }
+
+    public void PowerUPAtivaArmaSerra(GameObject armaOrbeArmaSerra)
+    {
+        armaOrbeArmaSerra.SetActive(true);
+        armaSerraAtivada = true;
+        jogador.GetComponent<DisparoArmaSerra>().enabled = true;
+        Destroy(buttonArmaSerra);
+        uiPowerUP.SetActive(false);
+        Time.timeScale = 1.0f;
+    }
     public void PowerUPAumentaDanoArmaPrincipal()
     {
         jogador.GetComponent<DisparoArma>().danoArmaPrincipal *= 1.15f;
@@ -171,5 +183,108 @@ public class ControladorGame : MonoBehaviour
         jogador.GetComponent<ControlaPersonagem>().pontosVida += 20.0f;
         uiPowerUP.SetActive(false);
         Time.timeScale = 1.0f;
+    }
+
+    // Dano nos inimigos
+    public float CalculaDanoNosInimigos(Collision colidido, float pontosVida, int xpInimigo, Material[] materiais)
+    {
+        if (colidido.gameObject.CompareTag("BalaPersonagem"))
+        {
+            Destroy(colidido.gameObject);
+            float dano = jogador.GetComponent<DisparoArma>().danoArmaPrincipal;
+            if (pontosVida > 0)
+            {
+                pontosVida -= dano;
+                vidaInimigo = pontosVida;
+
+                foreach (Material material in materiais)
+                {
+                    StartCoroutine(Utilidades.PiscaCorRoutine(material));
+                }
+            }
+            if (pontosVida <= 0)
+            {
+                Destroy(colidido.gameObject);
+                SomaXP(xpInimigo);
+            }
+        }
+        if (colidido.gameObject.CompareTag("BalaPet"))
+        {
+            Destroy(colidido.gameObject);
+            float dano = jogador.GetComponent<DisparoArmaPet>().danoArmaPet;
+            if (pontosVida > 0)
+            {
+                pontosVida -= dano;
+                vidaInimigo = pontosVida;
+
+                foreach (Material material in materiais)
+                {
+                    StartCoroutine(Utilidades.PiscaCorRoutine(material));
+                }
+            }
+            if (pontosVida <= 0)
+            {
+                Destroy(colidido.gameObject);
+                SomaXP(xpInimigo);
+            }
+        }
+        if (colidido.gameObject.CompareTag("OrbeGiratorio"))
+        {
+            float dano = jogador.GetComponent<RespostaOrbeGiratorio>().danoOrbeGiratorio;
+            if (pontosVida > 0)
+            {
+                pontosVida -= dano;
+                vidaInimigo = pontosVida;
+
+                foreach (Material material in materiais)
+                {
+                    StartCoroutine(Utilidades.PiscaCorRoutine(material));
+                }
+            }
+            if (pontosVida <= 0)
+            {
+                Destroy(colidido.gameObject);
+                SomaXP(xpInimigo);
+            }
+        }
+        if (colidido.gameObject.CompareTag("ProjetilSerra"))
+        {
+            float dano = jogador.GetComponent<DisparoArmaSerra>().danoSerra;
+            if (pontosVida > 0)
+            {
+                pontosVida -= dano;
+                vidaInimigo = pontosVida;
+
+                foreach (Material material in materiais)
+                {
+                    StartCoroutine(Utilidades.PiscaCorRoutine(material));
+                }
+            }
+            if (pontosVida <= 0)
+            {
+                Destroy(colidido.gameObject);
+                SomaXP(xpInimigo);
+            }
+        }
+        if (colidido.gameObject.CompareTag("Player"))
+        {
+            float dano = jogador.GetComponent<ControlaPersonagem>().danoContato;
+            if (pontosVida > 0)
+            {
+                pontosVida -= dano;
+                vidaInimigo = pontosVida;
+
+                foreach (Material material in materiais)
+                {
+                    StartCoroutine(Utilidades.PiscaCorRoutine(material));
+                }
+            }
+            if (pontosVida <= 0)
+            {
+                Destroy(colidido.gameObject);
+                SomaXP(xpInimigo);
+            }
+        }
+        return vidaInimigo;
     }
 }

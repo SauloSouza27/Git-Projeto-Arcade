@@ -82,12 +82,58 @@ public class MovimentoInimigoMorcegoDrone : MonoBehaviour
                 ControladorGame.instancia.SomaXP(xpInimigo);
             }
         }
+        if (colisor.gameObject.CompareTag("ProjetilSerra"))
+        {
+            float dano = alvo.GetComponent<DisparoArmaSerra>().danoSerra;
+            if (pontosVida > 0)
+            {
+                pontosVida -= dano;
+
+                foreach (Material material in materiais)
+                {
+                    StartCoroutine(Utilidades.PiscaCorRoutine(material));
+                }
+            }
+            if (pontosVida <= 0)
+            {
+                Destroy(gameObject);
+                ControladorGame.instancia.SomaXP(xpInimigo);
+            }
+        }
         if (colisor.gameObject.CompareTag("Player"))
         {
             float dano = alvo.GetComponent<ControlaPersonagem>().danoContato;
             if (pontosVida > 0)
             {
                 pontosVida -= dano;
+
+                foreach (Material material in materiais)
+                {
+                    StartCoroutine(Utilidades.PiscaCorRoutine(material));
+                }
+            }
+            if (pontosVida <= 0)
+            {
+                Destroy(gameObject);
+                ControladorGame.instancia.SomaXP(xpInimigo);
+            }
+        }
+    }
+    
+    private void OnCollisionStay(Collision colisor)
+    {
+
+        if (colisor.gameObject.CompareTag("ProjetilSerra"))
+        {
+            float contadorCooldown = 0;
+            float cooldownDano = 0.5f;
+            float dano = alvo.GetComponent<DisparoArmaSerra>().danoSerraDPS;
+            Utilidades.CalculaCooldown(contadorCooldown);
+            contadorCooldown = Utilidades.CalculaCooldown(contadorCooldown);
+            if(contadorCooldown == 0 && pontosVida > 0)
+            {
+                pontosVida -= dano;
+                contadorCooldown = cooldownDano;
 
                 foreach (Material material in materiais)
                 {

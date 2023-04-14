@@ -15,6 +15,9 @@ TagManager:
   - ArmasExtras
   - SpawnInimigoPequeno
   - SpawnInimigoMorcegoDrone
+  - ProjetilSerra
+  - ArmaSerra
+  - BaseSerra
   layers:
   - Default
   - TransparentFX
