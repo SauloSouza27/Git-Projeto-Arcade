@@ -6,7 +6,7 @@ public class ProjetilSerra : MonoBehaviour
 {
 
     // Arma Serra
-    private bool estaMexendo = true;
+    private bool estaMexendo = false;
     private bool go;
     private Vector3 posicaoAnterior;
     public GameObject projetilSerra;
@@ -24,6 +24,8 @@ public class ProjetilSerra : MonoBehaviour
 
         serraMaior = transform.GetChild(1).gameObject;
 
+        serraMaior.GetComponent<MeshRenderer>().enabled = false;
+
         serraBase = GameObject.Find("Serra Base");
 
         locationInFrontOfPlayer = new Vector3(jogador.transform.position.x, jogador.transform.position.y + 1, jogador.transform.position.z) + jogador.transform.up * 15f;
@@ -40,7 +42,7 @@ public class ProjetilSerra : MonoBehaviour
 
     private void ControleArmaSerra()
     {
-        transform.Rotate(0, 0, Time.deltaTime * 500);
+        transform.Rotate(0, 0, Time.deltaTime * 250);
 
         if (go)
         {
