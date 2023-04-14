@@ -13,6 +13,8 @@ public class DisparoArma : MonoBehaviour
     public bool tiroAutomatico = true;
     // Dano arma
     public float danoArmaPrincipal = 20.0f;
+    // som tiro
+    public AudioSource somTiro;
 
 
     private void Awake()
@@ -38,5 +40,6 @@ public class DisparoArma : MonoBehaviour
     private void Tiro()
     {
         Instantiate(bala, pontaArma.transform.position, pontaArma.transform.rotation);
+        somTiro.Play();
     }
 }
