@@ -96,6 +96,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa7684fff32067241a41b798f7f0c6f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidade: 2
+  velocidade: 0.2
   astro: {fileID: 3393070838517454978}
   spawnPoint: {fileID: 0}
