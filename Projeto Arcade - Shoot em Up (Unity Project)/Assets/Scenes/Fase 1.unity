@@ -203,6 +203,7 @@ MonoBehaviour:
   txtXP: {fileID: 4297906681101940198}
   uiGameOver: {fileID: 8189803636662094654}
   uiPowerUP: {fileID: 115082223984218475}
+  buttonSubirNivel: {fileID: 810495767}
   buttonArmaPet: {fileID: 1453189896861480562}
   buttonArmaOrbeGiratorio: {fileID: 671152016}
   buttonArmaSerra: {fileID: 1966890836}
@@ -721,7 +722,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &810495768
 RectTransform:
   m_ObjectHideFlags: 0

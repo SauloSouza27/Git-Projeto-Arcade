@@ -18,7 +18,7 @@ public class ControladorGame : MonoBehaviour
     private GameObject[] spawnInimigoPequeno, spawnInimigoPiramide, spawnInimigoDroneMorcego;
     private bool paraSpawnInimigoPiramide = false, paraSpawnInimigoDroneMorcego = false;
     // Power UP
-    public GameObject uiGameOver, uiPowerUP, buttonArmaPet, buttonArmaOrbeGiratorio, buttonArmaSerra;
+    public GameObject uiGameOver, uiPowerUP, buttonSubirNivel, buttonArmaPet, buttonArmaOrbeGiratorio, buttonArmaSerra;
     public bool armaPetAtivada = false, armaOrbeGiratorioAtivada = false, armaSerraAtivada = false;
     // dano nos inimigos
     private float vidaInimigo;
@@ -110,6 +110,7 @@ public class ControladorGame : MonoBehaviour
         float valorSlider = sliderXP.value;
         if (valorSlider == valorMaxSlider)
         {
+            buttonSubirNivel.SetActive(true);
             SubirNivel();
             if (XP - valorXPNivel == 0)
             {
