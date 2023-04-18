@@ -9,7 +9,7 @@ public class DisparoArmaSerra : MonoBehaviour
     [Range(0, 6)] public float cooldown = 6.0f;
     private float contadorCooldown;
     // Dano
-    public float danoSerra = 40.0f, danoSerraDPS = 10.0f;
+    public int danoSerra = 1, danoSerraDPS = 1;
 
     private void Awake()
     {

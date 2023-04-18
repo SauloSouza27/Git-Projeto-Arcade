@@ -365,8 +365,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64d11a1cc014b1a4d853f33264c0f005, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pontosVida: 10
-  danoContato: 10
+  pontosVida: 1
+  danoContato: 1
   xpInimigo: 10
 --- !u!1 &220412381777439112
 GameObject:
@@ -2227,8 +2227,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64d11a1cc014b1a4d853f33264c0f005, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pontosVida: 10
-  danoContato: 10
+  pontosVida: 1
+  danoContato: 1
   xpInimigo: 10
 --- !u!1 &836761881417263774
 GameObject:
@@ -2346,8 +2346,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64d11a1cc014b1a4d853f33264c0f005, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pontosVida: 10
-  danoContato: 10
+  pontosVida: 1
+  danoContato: 1
   xpInimigo: 10
 --- !u!1 &960977170134652742
 GameObject:
@@ -3545,8 +3545,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64d11a1cc014b1a4d853f33264c0f005, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pontosVida: 10
-  danoContato: 10
+  pontosVida: 1
+  danoContato: 1
   xpInimigo: 10
 --- !u!1 &1119043472758973697
 GameObject:
@@ -4660,8 +4660,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64d11a1cc014b1a4d853f33264c0f005, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pontosVida: 10
-  danoContato: 10
+  pontosVida: 1
+  danoContato: 1
   xpInimigo: 10
 --- !u!1 &1624468303513163143
 GameObject:
@@ -6273,8 +6273,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64d11a1cc014b1a4d853f33264c0f005, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pontosVida: 10
-  danoContato: 10
+  pontosVida: 1
+  danoContato: 1
   xpInimigo: 10
 --- !u!1 &1982589120701266429
 GameObject:
@@ -13945,8 +13945,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64d11a1cc014b1a4d853f33264c0f005, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pontosVida: 10
-  danoContato: 10
+  pontosVida: 1
+  danoContato: 1
   xpInimigo: 10
 --- !u!1 &4528335764916112522
 GameObject:
@@ -16388,8 +16388,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64d11a1cc014b1a4d853f33264c0f005, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pontosVida: 10
-  danoContato: 10
+  pontosVida: 1
+  danoContato: 1
   xpInimigo: 10
 --- !u!1 &5456793111744162946
 GameObject:
@@ -16507,8 +16507,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64d11a1cc014b1a4d853f33264c0f005, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pontosVida: 10
-  danoContato: 10
+  pontosVida: 1
+  danoContato: 1
   xpInimigo: 10
 --- !u!1 &5467680479899399067
 GameObject:
@@ -16709,8 +16709,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64d11a1cc014b1a4d853f33264c0f005, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pontosVida: 10
-  danoContato: 10
+  pontosVida: 1
+  danoContato: 1
   xpInimigo: 10
 --- !u!1 &5514267300694971230
 GameObject:
@@ -16911,8 +16911,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64d11a1cc014b1a4d853f33264c0f005, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pontosVida: 10
-  danoContato: 10
+  pontosVida: 1
+  danoContato: 1
   xpInimigo: 10
 --- !u!1 &5756244832512057771
 GameObject:
@@ -19271,8 +19271,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64d11a1cc014b1a4d853f33264c0f005, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pontosVida: 10
-  danoContato: 10
+  pontosVida: 1
+  danoContato: 1
   xpInimigo: 10
 --- !u!1 &6604751079518086291
 GameObject:
@@ -22544,8 +22544,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64d11a1cc014b1a4d853f33264c0f005, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pontosVida: 10
-  danoContato: 10
+  pontosVida: 1
+  danoContato: 1
   xpInimigo: 10
 --- !u!1 &7716892441018471333
 GameObject:
@@ -26077,7 +26077,7 @@ Transform:
   - {fileID: 1066872822279099548}
   - {fileID: 545062820197949298}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &843444265098905052
 Animator:
@@ -26963,8 +26963,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64d11a1cc014b1a4d853f33264c0f005, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pontosVida: 10
-  danoContato: 10
+  pontosVida: 1
+  danoContato: 1
   xpInimigo: 10
 --- !u!1 &9082058525359081983
 GameObject:

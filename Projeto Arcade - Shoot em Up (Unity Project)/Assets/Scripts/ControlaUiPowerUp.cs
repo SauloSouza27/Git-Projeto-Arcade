@@ -15,11 +15,6 @@ public class ControlaUiPowerUp : MonoBehaviour
     public void OnEnable()
     {
         listaPowerUPs = AchaPowerUPButtons();
-        quantidadePowerUps = listaPowerUPs.Count;
-        for (int n = 0; n < quantidadePowerUps; n++)
-        {
-            ordemLista.Add(n);
-        }
         buttonsParaDestruir = CarregaPowerUPsAleatoriamente();
     }
 
@@ -52,26 +47,23 @@ public class ControlaUiPowerUp : MonoBehaviour
         int index;
         Button itemLista;
 
-        index = Random.Range(0, ordemLista.Count - 1);
-        int posicaoLista = ordemLista[index];
-        ordemLista.RemoveAt(index);
-        itemLista = listaPowerUPs[posicaoLista];
+        index = Random.Range(0, listaPowerUPs.Count);
+        itemLista = listaPowerUPs[index];
         GameObject esq = Instantiate(itemLista.gameObject, buttonEsq.transform.position, buttonEsq.transform.rotation, this.transform);
         esq.SetActive(true);
+        listaPowerUPs.Remove(itemLista);
 
-        index = Random.Range(0, ordemLista.Count - 1);
-        posicaoLista = ordemLista[index];
-        ordemLista.RemoveAt(index);
-        itemLista = listaPowerUPs[posicaoLista];
+        index = Random.Range(0, listaPowerUPs.Count);
+        itemLista = listaPowerUPs[index];
         GameObject centro = Instantiate(itemLista.gameObject, buttonCentro.transform.position, buttonCentro.transform.rotation, this.transform);
         centro.SetActive(true);
+        listaPowerUPs.Remove(itemLista);
 
-        index = Random.Range(0, ordemLista.Count - 1);
-        posicaoLista = ordemLista[index];
-        ordemLista.RemoveAt(index);
-        itemLista = listaPowerUPs[posicaoLista];
+        index = Random.Range(0, listaPowerUPs.Count);
+        itemLista = listaPowerUPs[index];
         GameObject dir = Instantiate(itemLista.gameObject, buttonDir.transform.position, buttonDir.transform.rotation, this.transform);
         dir.SetActive(true);
+        listaPowerUPs.Remove(itemLista);
 
         GameObject[] buttonsAtivos = new GameObject[] {esq, centro, dir};
         return buttonsAtivos;

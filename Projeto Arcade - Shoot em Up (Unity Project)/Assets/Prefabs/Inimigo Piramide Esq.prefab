@@ -721,9 +721,9 @@ MonoBehaviour:
   pontaArma: {fileID: 2567122900640731861}
   balaPiramide: {fileID: 2466213106853831192, guid: e8eeddd74b3d0394b8b15db06cd2fced, type: 3}
   velocidadeRotacao: 2
-  pontosVida: 40
-  danoContato: 40
-  danoTiro: 40
+  pontosVida: 3
+  danoContato: 1
+  danoTiro: 1
   xpInimigo: 110
   cooldown: 2
   inverteRotacaoTiro: 1

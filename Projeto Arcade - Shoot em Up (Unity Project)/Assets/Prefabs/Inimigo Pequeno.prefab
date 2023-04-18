@@ -49,8 +49,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocidadeDeslocamento: 5
   velocidadeRotacao: 5
-  pontosVida: 20
-  danoContato: 20
+  pontosVida: 1
+  danoContato: 1
   xpInimigo: 20
 --- !u!65 &7575654313653995386
 BoxCollider:
@@ -98,7 +98,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 120
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!1001 &4694389133390440524
 PrefabInstance:

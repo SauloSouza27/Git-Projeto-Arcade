@@ -1167,7 +1167,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -61.2}
+  m_AnchoredPosition: {x: 0, y: -56.1}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1396410394
@@ -1223,7 +1223,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 32
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -1957,9 +1957,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 100
-  m_WholeNumbers: 0
-  m_Value: 100
+  m_MaxValue: 3
+  m_WholeNumbers: 1
+  m_Value: 3
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -3307,9 +3307,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '+ 10%
-
-    Velocidade
+  m_text: '+ Velocidade
 
     de
 
@@ -3503,7 +3501,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &2532585637661308266
 GameObject:
   m_ObjectHideFlags: 0
@@ -7001,7 +6999,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "+20 HP\n\nM\xE1ximo"
+  m_text: '+ 1
+
+
+    Vida'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 96108e193623eff4ea040c154cad1760, type: 2}
   m_sharedMaterial: {fileID: -6913583736706566341, guid: 96108e193623eff4ea040c154cad1760, type: 2}
@@ -7570,9 +7571,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1827807818842465192, guid: 6470e112d76167b4bac48cdaad12ef5d, type: 3}
+      propertyPath: danoArmaPet
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4974276118539672254, guid: 6470e112d76167b4bac48cdaad12ef5d, type: 3}
+      propertyPath: danoSerra
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4974276118539672254, guid: 6470e112d76167b4bac48cdaad12ef5d, type: 3}
       propertyPath: danoSerraDPS
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5349464373578631912, guid: 6470e112d76167b4bac48cdaad12ef5d, type: 3}
       propertyPath: m_IsActive
@@ -7580,7 +7589,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5995971232770565429, guid: 6470e112d76167b4bac48cdaad12ef5d, type: 3}
       propertyPath: danoOrbeGiratorio
-      value: 10
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6955476533840584894, guid: 6470e112d76167b4bac48cdaad12ef5d, type: 3}
       propertyPath: m_IsActive
@@ -7590,13 +7599,21 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7773611179429094950, guid: 6470e112d76167b4bac48cdaad12ef5d, type: 3}
+      propertyPath: cooldown
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7773611179429094950, guid: 6470e112d76167b4bac48cdaad12ef5d, type: 3}
+      propertyPath: danoArmaPrincipal
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7862313496857138636, guid: 6470e112d76167b4bac48cdaad12ef5d, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8950388453384976238, guid: 6470e112d76167b4bac48cdaad12ef5d, type: 3}
       propertyPath: pontosVida
-      value: 100
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 9074662426996894289, guid: 6470e112d76167b4bac48cdaad12ef5d, type: 3}
       propertyPath: m_Name

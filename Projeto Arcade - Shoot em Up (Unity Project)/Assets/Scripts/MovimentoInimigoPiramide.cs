@@ -10,9 +10,9 @@ public class MovimentoInimigoPiramide : MonoBehaviour
     // Controle rotaçao
     public float velocidadeRotacao = 2.0f;
     // Pontos de vida
-    public float pontosVida = 40.0f;
-    public float danoContato = 40.0f;
-    public float danoTiro = 40.0f;
+    public int pontosVida = 3;
+    public int danoContato = 1;
+    public int danoTiro = 1;
     // XP quando morre
     public int xpInimigo = 100;
     // Tiro
@@ -59,7 +59,7 @@ public class MovimentoInimigoPiramide : MonoBehaviour
         if (colisor.gameObject.CompareTag("BalaPersonagem"))
         {
             Destroy(colisor.gameObject);
-            float dano = alvo.GetComponent<DisparoArma>().danoArmaPrincipal;
+            int dano = alvo.GetComponent<DisparoArma>().danoArmaPrincipal;
             if (pontosVida > 0)
             {
                 pontosVida -= dano;
@@ -78,7 +78,7 @@ public class MovimentoInimigoPiramide : MonoBehaviour
         if (colisor.gameObject.CompareTag("BalaPet"))
         {
             Destroy(colisor.gameObject);
-            float dano = alvo.GetComponent<DisparoArmaPet>().danoArmaPet;
+            int dano = alvo.GetComponent<DisparoArmaPet>().danoArmaPet;
             if (pontosVida > 0)
             {
                 pontosVida -= dano;
@@ -96,7 +96,7 @@ public class MovimentoInimigoPiramide : MonoBehaviour
         }
         if (colisor.gameObject.CompareTag("OrbeGiratorio"))
         {
-            float dano = alvo.GetComponent<RespostaOrbeGiratorio>().danoOrbeGiratorio;
+            int dano = alvo.GetComponent<RespostaOrbeGiratorio>().danoOrbeGiratorio;
             if (pontosVida > 0)
             {
                 pontosVida -= dano;
@@ -114,7 +114,7 @@ public class MovimentoInimigoPiramide : MonoBehaviour
         }
         if (colisor.gameObject.CompareTag("ProjetilSerra"))
         {
-            float dano = alvo.GetComponent<DisparoArmaSerra>().danoSerra;
+            int dano = alvo.GetComponent<DisparoArmaSerra>().danoSerra;
             if (pontosVida > 0)
             {
                 pontosVida -= dano;
@@ -132,37 +132,10 @@ public class MovimentoInimigoPiramide : MonoBehaviour
         }
         if (colisor.gameObject.CompareTag("Player"))
         {
-            float dano = alvo.GetComponent<ControlaPersonagem>().danoContato;
+            int dano = alvo.GetComponent<ControlaPersonagem>().danoContato;
             if (pontosVida > 0)
             {
                 pontosVida -= dano;
-
-                foreach (Material material in materiais)
-                {
-                    StartCoroutine(Utilidades.PiscaCorRoutine(material));
-                }
-            }
-            if (pontosVida <= 0)
-            {
-                Destroy(gameObject);
-                ControladorGame.instancia.SomaXP(xpInimigo);
-            }
-        }
-    }
-    private void OnCollisionStay(Collision colisor)
-    {
-
-        if (colisor.gameObject.CompareTag("ProjetilSerra"))
-        {
-            float contadorCooldown = 0;
-            float cooldownDano = 0.5f;
-            float dano = alvo.GetComponent<DisparoArmaSerra>().danoSerraDPS;
-            Utilidades.CalculaCooldown(contadorCooldown);
-            contadorCooldown = Utilidades.CalculaCooldown(contadorCooldown);
-            if (contadorCooldown == 0 && pontosVida > 0)
-            {
-                pontosVida -= dano;
-                contadorCooldown = cooldownDano;
 
                 foreach (Material material in materiais)
                 {

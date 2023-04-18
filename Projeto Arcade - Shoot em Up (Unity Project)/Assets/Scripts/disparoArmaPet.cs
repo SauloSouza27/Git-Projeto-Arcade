@@ -12,7 +12,7 @@ public class DisparoArmaPet : MonoBehaviour
     // Alterar tiro altomatico
     public bool tiroAutomatico = true;
     // Dano arma
-    public float danoArmaPet = 10.0f;
+    public int danoArmaPet = 1;
     // som tiro
     public AudioSource somTiro;
 

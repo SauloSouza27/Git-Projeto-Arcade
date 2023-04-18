@@ -675,9 +675,10 @@ GameObject:
   - component: {fileID: 3140687705557449505}
   - component: {fileID: -815455314420455351}
   - component: {fileID: -4409557773756952048}
+  - component: {fileID: 5249085334081899295}
   m_Layer: 0
   m_Name: Inimigo Morcego Drone Unidade
-  m_TagString: Untagged
+  m_TagString: Inimigo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -717,7 +718,7 @@ Transform:
   - {fileID: 8141843794632493524}
   - {fileID: 7028711259356773704}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &-815455314420455351
 BoxCollider:
@@ -767,6 +768,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &5249085334081899295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2743475196320168649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64d11a1cc014b1a4d853f33264c0f005, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pontosVida: 1
+  danoContato: 1
+  xpInimigo: 10
 --- !u!1 &2752124546896030796
 GameObject:
   m_ObjectHideFlags: 0

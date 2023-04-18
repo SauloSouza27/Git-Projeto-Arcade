@@ -9,8 +9,7 @@ public class ControladorGame : MonoBehaviour
     public static ControladorGame instancia;
 
     // XP e nivel
-    public int XP, nivel = 1;
-    public float HP;
+    public int XP, nivel = 1, HP;
     public float multiplicadorQuantidadeXPporNivel = 50.0f, valorXPNivel = 100.0f;
     public GameObject barraHP, barraXP, jogador;
     public TextMeshProUGUI txtNivel, txtXP;
@@ -93,7 +92,7 @@ public class ControladorGame : MonoBehaviour
 
     }
 
-    public void AtualizaBarraHP(float hpAtual)
+    public void AtualizaBarraHP(int hpAtual)
     {
         sliderHP.value = hpAtual;
     }
@@ -167,31 +166,30 @@ public class ControladorGame : MonoBehaviour
     }
     public void PowerUPAumentaDanoArmaPrincipal()
     {
-        jogador.GetComponent<DisparoArma>().danoArmaPrincipal *= 1.15f;
+        jogador.GetComponent<DisparoArma>().danoArmaPrincipal += 1;
         uiPowerUP.SetActive(false);
         Time.timeScale = 1.0f;
     }
     public void PowerUPDiminuiCooldownArmaPrincipal()
     {
-        jogador.GetComponent<DisparoArma>().cooldown *= 0.90f;
+        jogador.GetComponent<DisparoArma>().cooldown *= 0.70f;
         uiPowerUP.SetActive(false);
         Time.timeScale = 1.0f;
     }
     public void PowerUPAumentaHP()
     {
-        sliderHP.maxValue += 20.0f;
-        jogador.GetComponent<ControlaPersonagem>().pontosVida += 20.0f;
+        jogador.GetComponent<ControlaPersonagem>().pontosVida += 1;
         uiPowerUP.SetActive(false);
         Time.timeScale = 1.0f;
     }
 
     // Dano nos inimigos
-    public float CalculaDanoNosInimigos(Collision colidido, float pontosVida, int xpInimigo, Material[] materiais)
+    public void CalculaDanoNosInimigos(Collision colidido, int pontosVida, int xpInimigo, Material[] materiais)
     {
         if (colidido.gameObject.CompareTag("BalaPersonagem"))
         {
             Destroy(colidido.gameObject);
-            float dano = jogador.GetComponent<DisparoArma>().danoArmaPrincipal;
+            int dano = jogador.GetComponent<DisparoArma>().danoArmaPrincipal;
             if (pontosVida > 0)
             {
                 pontosVida -= dano;
@@ -211,7 +209,7 @@ public class ControladorGame : MonoBehaviour
         if (colidido.gameObject.CompareTag("BalaPet"))
         {
             Destroy(colidido.gameObject);
-            float dano = jogador.GetComponent<DisparoArmaPet>().danoArmaPet;
+            int dano = jogador.GetComponent<DisparoArmaPet>().danoArmaPet;
             if (pontosVida > 0)
             {
                 pontosVida -= dano;
@@ -230,7 +228,7 @@ public class ControladorGame : MonoBehaviour
         }
         if (colidido.gameObject.CompareTag("OrbeGiratorio"))
         {
-            float dano = jogador.GetComponent<RespostaOrbeGiratorio>().danoOrbeGiratorio;
+            int dano = jogador.GetComponent<RespostaOrbeGiratorio>().danoOrbeGiratorio;
             if (pontosVida > 0)
             {
                 pontosVida -= dano;
@@ -249,7 +247,7 @@ public class ControladorGame : MonoBehaviour
         }
         if (colidido.gameObject.CompareTag("ProjetilSerra"))
         {
-            float dano = jogador.GetComponent<DisparoArmaSerra>().danoSerra;
+            int dano = jogador.GetComponent<DisparoArmaSerra>().danoSerra;
             if (pontosVida > 0)
             {
                 pontosVida -= dano;
@@ -268,7 +266,7 @@ public class ControladorGame : MonoBehaviour
         }
         if (colidido.gameObject.CompareTag("Player"))
         {
-            float dano = jogador.GetComponent<ControlaPersonagem>().danoContato;
+            int dano = jogador.GetComponent<ControlaPersonagem>().danoContato;
             if (pontosVida > 0)
             {
                 pontosVida -= dano;
@@ -285,6 +283,5 @@ public class ControladorGame : MonoBehaviour
                 SomaXP(xpInimigo);
             }
         }
-        return vidaInimigo;
     }
 }

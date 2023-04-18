@@ -14,8 +14,8 @@ public class ControlaPersonagem : MonoBehaviour
     private GameObject alvoPet;
     public float velocidadeRotacaoPet = 2.0f, distanciaMinPetAtirar = 20.0f, velocidadeRotacaoOrbeGiratorio = 15.0f;
     // Pontos de vida
-    public float pontosVida = 100.0f;
-    public float danoContato = 20.0f;
+    public int pontosVida = 3;
+    public int danoContato = 3;
     // Particulas
     public ParticleSystem particulasDano;
 
@@ -65,10 +65,12 @@ public class ControlaPersonagem : MonoBehaviour
     // Dano Inimigos
     private void OnCollisionEnter(Collision colisor)
     {
-        GameObject inimigo = colisor.gameObject;
-        if (pontosVida > 0)
+        if (colisor.gameObject.CompareTag("Inimigo"))
         {
-            ReceberDano(inimigo);
+            if (pontosVida > 0)
+            {
+                ReceberDano();
+            }
         }
     }
 
@@ -177,33 +179,11 @@ public class ControlaPersonagem : MonoBehaviour
     
 
     // Calcula dano, mudar cor e partícula de dano
-    private void ReceberDano(GameObject inimigo)
+    private void ReceberDano()
     {
-        if (inimigo.name == "Inimigo Pequeno(Clone)")
-        {
-            EfeitoTomaDano();
-            float dano = inimigo.GetComponent<MovimentoInimigoPequeno>().danoContato;
-            pontosVida -= dano;
-        }
-        if (inimigo.name == "Inimigo Piramide Esq" || inimigo.name == "Inimigo Piramide Esq(Clone)" || inimigo.name == "Inimigo Piramide Dir" || inimigo.name == "Inimigo Piramide Dir(Clone)")
-        {
-            EfeitoTomaDano();
-            float dano = inimigo.GetComponent<MovimentoInimigoPiramide>().danoContato;
-            pontosVida -= dano;
-        }
-        if (inimigo.CompareTag("BalaPiramide"))
-        {
-            EfeitoTomaDano();
-            float dano = inimigo.GetComponent<BalaPersonagem>().danoProjetil;
-            pontosVida -= dano;
-            Destroy(inimigo);
-        }
-        if (inimigo.transform.root.gameObject.name == "Inimigo Morcego Drone" || inimigo.transform.root.gameObject.name == "Inimigo Morcego Drone(Clone)")
-        {
-            EfeitoTomaDano();
-            float dano = inimigo.GetComponent<MovimentoInimigoMorcegoDrone>().danoContato;
-            pontosVida -= dano;
-        }
+        EfeitoTomaDano();
+        int dano = 1;
+        pontosVida -= dano;
     }
 
     private void RetornaCorOriginal()
