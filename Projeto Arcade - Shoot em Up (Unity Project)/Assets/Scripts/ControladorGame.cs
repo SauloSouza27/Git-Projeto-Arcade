@@ -27,7 +27,7 @@ public class ControladorGame : MonoBehaviour
     {
         sliderHP = barraHP.GetComponent<Slider>();
         sliderXP = barraXP.GetComponent<Slider>();
-        txtNivel = GameObject.Find("txtNível").GetComponent<TextMeshProUGUI>();
+        txtNivel = GameObject.Find("txtNivel").GetComponent<TextMeshProUGUI>();
         txtXP = GameObject.Find("txtXP").GetComponent<TextMeshProUGUI>();
         //busca pontos de spawn na cena
         spawnInimigoPequeno = GameObject.FindGameObjectsWithTag("SpawnInimigoPequeno");
@@ -127,7 +127,7 @@ public class ControladorGame : MonoBehaviour
                 valorXPNivel += sliderXP.maxValue;
             }
         }
-        txtNivel.text = "Nível: " + nivel;
+        txtNivel.text = "Nivel: " + nivel;
         txtXP.text = XP + "/" + valorXPNivel;
     }
 

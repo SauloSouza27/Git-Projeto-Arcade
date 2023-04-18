@@ -94,7 +94,7 @@ public class ControlaPersonagem : MonoBehaviour
         }
     }
 
-    // Controle rotação arma principal
+    // Controle rotacao arma principal
     private void ControleArmaPrincipal()
     {
         Vector3 position = Input.mousePosition;
@@ -178,7 +178,7 @@ public class ControlaPersonagem : MonoBehaviour
     }
     
 
-    // Calcula dano, mudar cor e partícula de dano
+    // Calcula dano, mudar cor e particula de dano
     private void ReceberDano()
     {
         EfeitoTomaDano();

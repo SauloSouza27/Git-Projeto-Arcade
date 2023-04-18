@@ -2245,7 +2245,7 @@ GameObject:
   - component: {fileID: 4894019154596557502}
   - component: {fileID: 6368778564936041901}
   m_Layer: 5
-  m_Name: "txtN\xEDvel"
+  m_Name: txtNivel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
