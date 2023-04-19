@@ -28,12 +28,12 @@ Transform:
   m_GameObject: {fileID: 7482730593119905099}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.67, y: 0.67, z: 0.67}
+  m_LocalScale: {x: 0.53, y: 0.53, z: 0.53}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 5093407858189242279}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4402322911335657669
 MonoBehaviour:
@@ -50,7 +50,6 @@ MonoBehaviour:
   velocidadeDeslocamento: 5
   velocidadeRotacao: 5
   pontosVida: 1
-  danoContato: 1
   xpInimigo: 20
 --- !u!65 &7575654313653995386
 BoxCollider:
