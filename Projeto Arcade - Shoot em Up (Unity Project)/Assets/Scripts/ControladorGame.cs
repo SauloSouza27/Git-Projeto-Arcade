@@ -19,7 +19,6 @@ public class ControladorGame : MonoBehaviour
     private bool paraSpawnInimigoPiramide = false, paraSpawnInimigoDroneMorcego = false;
     // Power UP
     public GameObject uiGameOver, uiPowerUP, buttonSubirNivel, buttonArmaPet, buttonArmaOrbeGiratorio, buttonArmaSerra;
-    private Vector3 tamanhoOriginalButtonSubirNivel;
     public bool armaPetAtivada = false, armaOrbeGiratorioAtivada = false, armaSerraAtivada = false;
     // dano nos inimigos
     private float vidaInimigo;
@@ -114,16 +113,6 @@ public class ControladorGame : MonoBehaviour
             sliderXP.value = valorMaxSlider;
             XP = (int)valorXPNivel;
             buttonSubirNivel.SetActive(true);
-            Transform btTransform = buttonSubirNivel.transform;
-            tamanhoOriginalButtonSubirNivel = buttonSubirNivel.transform.localScale;
-            if(btTransform.localScale == tamanhoOriginalButtonSubirNivel)
-            {
-                btTransform.localScale = Vector3.Slerp(btTransform.localScale, btTransform.localScale * 1.5f, 10.0f);
-            }
-            if(btTransform.localScale == tamanhoOriginalButtonSubirNivel * 1.5f)
-            {
-                btTransform.localScale = Vector3.Slerp(btTransform.localScale, tamanhoOriginalButtonSubirNivel, 10.0f);
-            }
         }
         txtNivel.text = "Nivel: " + nivel;
         txtXP.text = XP + "/" + valorXPNivel;
