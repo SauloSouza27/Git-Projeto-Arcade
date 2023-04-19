@@ -17,11 +17,11 @@ public class ControladorGame : MonoBehaviour
     // spawn inimigos
     private GameObject[] spawnInimigoPequeno, spawnInimigoPiramide;
     private bool paraSpawnInimigoPiramide = false;
-    // inimigos piramide
-    public GameObject droneBaixoCima;
     // Power UP
     public GameObject uiGameOver, uiPowerUP, buttonSubirNivel, buttonArmaPet, buttonArmaOrbeGiratorio, buttonArmaSerra;
     public bool armaPetAtivada = false, armaOrbeGiratorioAtivada = false, armaSerraAtivada = false;
+    // inimigos Morcego Drone
+    public GameObject droneCimaBaixo, droneEsquerdaDireita, droneDireitaEsquerdaTransversal, droneEsquerdaDireitaTransversal;
 
     private void Awake()
     {
@@ -67,10 +67,21 @@ public class ControladorGame : MonoBehaviour
 
         if (nivel == 2)
         {
-            droneBaixoCima.SetActive(true);
+            StartCoroutine(AtivaMorcegoDrone(droneCimaBaixo, 3f));
         }
 
-        if (nivel == 5)
+        if(nivel == 4)
+        {
+            StartCoroutine(AtivaMorcegoDrone(droneEsquerdaDireita, 4f));
+        }
+
+        if(nivel == 5)
+        {
+            StartCoroutine(AtivaMorcegoDrone(droneDireitaEsquerdaTransversal, 5f));
+            StartCoroutine(AtivaMorcegoDrone(droneEsquerdaDireitaTransversal, 12f));
+        }
+
+        if (nivel == 6)
         {
             foreach (GameObject go in spawnInimigoPiramide)
             {
@@ -106,6 +117,10 @@ public class ControladorGame : MonoBehaviour
             sliderXP.value = valorMaxSlider;
             XP = (int)valorXPNivel;
             buttonSubirNivel.SetActive(true);
+            foreach (GameObject go in spawnInimigoPequeno)
+            {
+                go.SetActive(false);
+            }
         }
         txtNivel.text = "Nivel: " + nivel;
         txtXP.text = XP + "/" + valorXPNivel;
@@ -120,6 +135,18 @@ public class ControladorGame : MonoBehaviour
         Time.timeScale = 0.0f;
         buttonSubirNivel.SetActive(false);
     }
+    private void AtivaSpawnInimigosPequenos()
+    {
+        foreach(GameObject go in spawnInimigoPequeno)
+        {
+            go.SetActive(true);
+        }
+    }
+    private IEnumerator AtivaMorcegoDrone(GameObject morcegoDrone, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        morcegoDrone.SetActive(true);
+    }
     public void PowerUPAtivaArmaPet(GameObject armaPet)
     {
         armaPet.SetActive(true);
@@ -128,6 +155,7 @@ public class ControladorGame : MonoBehaviour
         Destroy(buttonArmaPet);
         uiPowerUP.SetActive(false);
         Time.timeScale = 1.0f;
+        AtivaSpawnInimigosPequenos();
     }
     public void PowerUPAtivaArmaOrbeGiratorio(GameObject armaOrbeGiratorio)
     {
@@ -137,6 +165,7 @@ public class ControladorGame : MonoBehaviour
         Destroy(buttonArmaOrbeGiratorio);
         uiPowerUP.SetActive(false);
         Time.timeScale = 1.0f;
+        AtivaSpawnInimigosPequenos();
     }
 
     public void PowerUPAtivaArmaSerra(GameObject armaOrbeArmaSerra)
@@ -147,23 +176,27 @@ public class ControladorGame : MonoBehaviour
         Destroy(buttonArmaSerra);
         uiPowerUP.SetActive(false);
         Time.timeScale = 1.0f;
+        AtivaSpawnInimigosPequenos();
     }
     public void PowerUPAumentaDanoArmaPrincipal()
     {
         jogador.GetComponent<DisparoArma>().danoArmaPrincipal += 1;
         uiPowerUP.SetActive(false);
         Time.timeScale = 1.0f;
+        AtivaSpawnInimigosPequenos();
     }
     public void PowerUPDiminuiCooldownArmaPrincipal()
     {
         jogador.GetComponent<DisparoArma>().cooldown *= 0.70f;
         uiPowerUP.SetActive(false);
         Time.timeScale = 1.0f;
+        AtivaSpawnInimigosPequenos();
     }
     public void PowerUPAumentaHP()
     {
         jogador.GetComponent<ControlaPersonagem>().pontosVida += 1;
         uiPowerUP.SetActive(false);
         Time.timeScale = 1.0f;
+        AtivaSpawnInimigosPequenos();
     }
 }
