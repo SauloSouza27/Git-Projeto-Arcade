@@ -9,7 +9,6 @@ public class MovimentoInimigoPequeno : MonoBehaviour
     public float velocidadeDeslocamento = 5.0f, velocidadeRotacao = 5.0f;
     // Pontos de vida
     public int pontosVida = 1;
-    public int danoContato = 1;
     // XP quando morre
     public int xpInimigo = 20;
 

@@ -19,6 +19,7 @@ public class ControladorGame : MonoBehaviour
     private bool paraSpawnInimigoPiramide = false, paraSpawnInimigoDroneMorcego = false;
     // Power UP
     public GameObject uiGameOver, uiPowerUP, buttonSubirNivel, buttonArmaPet, buttonArmaOrbeGiratorio, buttonArmaSerra;
+    private Vector3 tamanhoOriginalButtonSubirNivel;
     public bool armaPetAtivada = false, armaOrbeGiratorioAtivada = false, armaSerraAtivada = false;
     // dano nos inimigos
     private float vidaInimigo;
@@ -106,36 +107,36 @@ public class ControladorGame : MonoBehaviour
     private void AtualizaBarraXP()
     {
         
-        float valorMaxSlider = sliderXP.maxValue;
-        float valorSlider = sliderXP.value;
-        if (valorSlider == valorMaxSlider)
+        int valorMaxSlider = (int)sliderXP.maxValue;
+        int valorSlider = (int)sliderXP.value;
+        if (valorSlider >= valorMaxSlider)
         {
+            sliderXP.value = valorMaxSlider;
+            XP = (int)valorXPNivel;
             buttonSubirNivel.SetActive(true);
-            SubirNivel();
-            if (XP - valorXPNivel == 0)
+            Transform btTransform = buttonSubirNivel.transform;
+            tamanhoOriginalButtonSubirNivel = buttonSubirNivel.transform.localScale;
+            if(btTransform.localScale == tamanhoOriginalButtonSubirNivel)
             {
-                sliderXP.value = 0;
-                sliderXP.maxValue += (nivel * multiplicadorQuantidadeXPporNivel);
-                valorXPNivel += sliderXP.maxValue;
+                btTransform.localScale = Vector3.Slerp(btTransform.localScale, btTransform.localScale * 1.5f, 10.0f);
             }
-            if (XP - valorXPNivel > 0)
+            if(btTransform.localScale == tamanhoOriginalButtonSubirNivel * 1.5f)
             {
-                float diferenca = XP - valorXPNivel;
-                sliderXP.value = 0;
-                sliderXP.value += diferenca;
-                sliderXP.maxValue += (nivel * multiplicadorQuantidadeXPporNivel);
-                valorXPNivel += sliderXP.maxValue;
+                btTransform.localScale = Vector3.Slerp(btTransform.localScale, tamanhoOriginalButtonSubirNivel, 10.0f);
             }
         }
         txtNivel.text = "Nivel: " + nivel;
         txtXP.text = XP + "/" + valorXPNivel;
     }
-
-    private void SubirNivel()
+    public void SubirNivel()
     {
         nivel += 1;
+        sliderXP.value = 0;
+        sliderXP.maxValue += (nivel * multiplicadorQuantidadeXPporNivel);
+        valorXPNivel += sliderXP.maxValue;
         uiPowerUP.SetActive(true);
         Time.timeScale = 0.0f;
+        buttonSubirNivel.SetActive(false);
     }
     public void PowerUPAtivaArmaPet(GameObject armaPet)
     {

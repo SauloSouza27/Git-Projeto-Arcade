@@ -7,7 +7,6 @@ public class MovimentoInimigoMorcegoDrone : MonoBehaviour
     GameObject alvo;
     // Pontos de vida
     public int pontosVida = 1;
-    public int danoContato = 1;
     // XP quando morre
     public int xpInimigo = 10;
     // Materiais

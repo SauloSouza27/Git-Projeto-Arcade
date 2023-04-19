@@ -11,7 +11,6 @@ public class MovimentoInimigoPiramide : MonoBehaviour
     public float velocidadeRotacao = 2.0f;
     // Pontos de vida
     public int pontosVida = 3;
-    public int danoContato = 1;
     public int danoTiro = 1;
     // XP quando morre
     public int xpInimigo = 100;
