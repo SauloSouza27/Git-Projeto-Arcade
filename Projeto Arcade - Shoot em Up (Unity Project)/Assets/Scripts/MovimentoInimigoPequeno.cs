@@ -133,7 +133,7 @@ public class MovimentoInimigoPequeno : MonoBehaviour
         //Movimento de seguir jogador
         Vector3 dir = alvo.transform.position - transform.position;
         transform.position += Time.deltaTime * velocidadeDeslocamento * dir.normalized;
-        //rotaçao
+        //rotaÃ§ao
         transform.up = Vector3.Slerp(transform.up, -1 * dir, velocidadeRotacao * Time.deltaTime);
     }
 }
