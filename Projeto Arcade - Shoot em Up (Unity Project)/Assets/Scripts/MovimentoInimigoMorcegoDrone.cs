@@ -23,6 +23,10 @@ public class MovimentoInimigoMorcegoDrone : MonoBehaviour
             materiais[i] = renderers[i].material;
         }
     }
+    private void Update()
+    {
+
+    }
     private void OnCollisionEnter(Collision colisor)
     {
         if (colisor.gameObject.CompareTag("BalaPersonagem"))

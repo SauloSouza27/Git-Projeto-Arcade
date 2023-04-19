@@ -15,13 +15,13 @@ public class ControladorGame : MonoBehaviour
     public TextMeshProUGUI txtNivel, txtXP;
     private Slider sliderXP, sliderHP;
     // spawn inimigos
-    private GameObject[] spawnInimigoPequeno, spawnInimigoPiramide, spawnInimigoDroneMorcego;
-    private bool paraSpawnInimigoPiramide = false, paraSpawnInimigoDroneMorcego = false;
+    private GameObject[] spawnInimigoPequeno, spawnInimigoPiramide;
+    private bool paraSpawnInimigoPiramide = false;
+    // inimigos piramide
+    public GameObject droneBaixoCima;
     // Power UP
     public GameObject uiGameOver, uiPowerUP, buttonSubirNivel, buttonArmaPet, buttonArmaOrbeGiratorio, buttonArmaSerra;
     public bool armaPetAtivada = false, armaOrbeGiratorioAtivada = false, armaSerraAtivada = false;
-    // dano nos inimigos
-    private float vidaInimigo;
 
     private void Awake()
     {
@@ -32,7 +32,6 @@ public class ControladorGame : MonoBehaviour
         //busca pontos de spawn na cena
         spawnInimigoPequeno = GameObject.FindGameObjectsWithTag("SpawnInimigoPequeno");
         spawnInimigoPiramide = GameObject.FindGameObjectsWithTag("SpawnInimigoPiramide");
-        spawnInimigoDroneMorcego = GameObject.FindGameObjectsWithTag("SpawnInimigoMorcegoDrone");
     }
 
     void Start()
@@ -65,18 +64,12 @@ public class ControladorGame : MonoBehaviour
             jogador.GetComponent<ControlaPersonagem>().MorteJogador();
             uiGameOver.SetActive(true);
         }
-        if (nivel == 3)
+
+        if (nivel == 2)
         {
-            foreach (GameObject go in spawnInimigoDroneMorcego)
-            {
-                SpawnInimigoMorcegoDrone spawn = go.GetComponent<SpawnInimigoMorcegoDrone>();
-                if (paraSpawnInimigoDroneMorcego == false)
-                {
-                    spawn.AtivaSpawnInimigoMorcegoDrone();
-                }
-            }
-            paraSpawnInimigoDroneMorcego = true;
+            droneBaixoCima.SetActive(true);
         }
+
         if (nivel == 5)
         {
             foreach (GameObject go in spawnInimigoPiramide)
@@ -172,107 +165,5 @@ public class ControladorGame : MonoBehaviour
         jogador.GetComponent<ControlaPersonagem>().pontosVida += 1;
         uiPowerUP.SetActive(false);
         Time.timeScale = 1.0f;
-    }
-
-    // Dano nos inimigos
-    public void CalculaDanoNosInimigos(Collision colidido, int pontosVida, int xpInimigo, Material[] materiais)
-    {
-        if (colidido.gameObject.CompareTag("BalaPersonagem"))
-        {
-            Destroy(colidido.gameObject);
-            int dano = jogador.GetComponent<DisparoArma>().danoArmaPrincipal;
-            if (pontosVida > 0)
-            {
-                pontosVida -= dano;
-                vidaInimigo = pontosVida;
-
-                foreach (Material material in materiais)
-                {
-                    StartCoroutine(Utilidades.PiscaCorRoutine(material));
-                }
-            }
-            if (pontosVida <= 0)
-            {
-                Destroy(colidido.gameObject);
-                SomaXP(xpInimigo);
-            }
-        }
-        if (colidido.gameObject.CompareTag("BalaPet"))
-        {
-            Destroy(colidido.gameObject);
-            int dano = jogador.GetComponent<DisparoArmaPet>().danoArmaPet;
-            if (pontosVida > 0)
-            {
-                pontosVida -= dano;
-                vidaInimigo = pontosVida;
-
-                foreach (Material material in materiais)
-                {
-                    StartCoroutine(Utilidades.PiscaCorRoutine(material));
-                }
-            }
-            if (pontosVida <= 0)
-            {
-                Destroy(colidido.gameObject);
-                SomaXP(xpInimigo);
-            }
-        }
-        if (colidido.gameObject.CompareTag("OrbeGiratorio"))
-        {
-            int dano = jogador.GetComponent<RespostaOrbeGiratorio>().danoOrbeGiratorio;
-            if (pontosVida > 0)
-            {
-                pontosVida -= dano;
-                vidaInimigo = pontosVida;
-
-                foreach (Material material in materiais)
-                {
-                    StartCoroutine(Utilidades.PiscaCorRoutine(material));
-                }
-            }
-            if (pontosVida <= 0)
-            {
-                Destroy(colidido.gameObject);
-                SomaXP(xpInimigo);
-            }
-        }
-        if (colidido.gameObject.CompareTag("ProjetilSerra"))
-        {
-            int dano = jogador.GetComponent<DisparoArmaSerra>().danoSerra;
-            if (pontosVida > 0)
-            {
-                pontosVida -= dano;
-                vidaInimigo = pontosVida;
-
-                foreach (Material material in materiais)
-                {
-                    StartCoroutine(Utilidades.PiscaCorRoutine(material));
-                }
-            }
-            if (pontosVida <= 0)
-            {
-                Destroy(colidido.gameObject);
-                SomaXP(xpInimigo);
-            }
-        }
-        if (colidido.gameObject.CompareTag("Player"))
-        {
-            int dano = jogador.GetComponent<ControlaPersonagem>().danoContato;
-            if (pontosVida > 0)
-            {
-                pontosVida -= dano;
-                vidaInimigo = pontosVida;
-
-                foreach (Material material in materiais)
-                {
-                    StartCoroutine(Utilidades.PiscaCorRoutine(material));
-                }
-            }
-            if (pontosVida <= 0)
-            {
-                Destroy(colidido.gameObject);
-                SomaXP(xpInimigo);
-            }
-        }
     }
 }

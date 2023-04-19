@@ -6,8 +6,6 @@ using UnityEditor;
 
 public class ControlaUiPowerUp : MonoBehaviour
 {
-    List<int> ordemLista = new List<int>();
-    public int quantidadePowerUps;
     List<Button> listaPowerUPs;
     public GameObject controladorGame, buttonCentro, buttonEsq, buttonDir;
     private GameObject[] buttonsParaDestruir;
@@ -21,7 +19,6 @@ public class ControlaUiPowerUp : MonoBehaviour
     private void OnDisable()
     {
         listaPowerUPs.Clear();
-        ordemLista.Clear();
         foreach(GameObject button in buttonsParaDestruir)
         {
             Destroy(button);
