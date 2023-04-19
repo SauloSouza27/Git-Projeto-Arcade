@@ -23,6 +23,7 @@ public class ProjetilSerra : MonoBehaviour
         jogador = GameObject.FindWithTag("Player");
 
         serraMaior = transform.GetChild(1).gameObject;
+        Debug.Log(serraMaior.name);
 
         serraMaior.GetComponent<MeshRenderer>().enabled = false;
 
