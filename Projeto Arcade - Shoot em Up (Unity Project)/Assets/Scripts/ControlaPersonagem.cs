@@ -58,7 +58,7 @@ public class ControlaPersonagem : MonoBehaviour
             ControleOrbeGiratorio();
         }
 
-        //mudança da cor do material
+        //mudanÃ§a da cor do material
         RetornaCorOriginal();
     }
 
