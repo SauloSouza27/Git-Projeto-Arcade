@@ -9833,26 +9833,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3060901810611120313, guid: 6470e112d76167b4bac48cdaad12ef5d, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4029662136992464683, guid: 6470e112d76167b4bac48cdaad12ef5d, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4791149126563372558, guid: 6470e112d76167b4bac48cdaad12ef5d, type: 3}
-      propertyPath: cooldown
-      value: 0.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 4791149126563372558, guid: 6470e112d76167b4bac48cdaad12ef5d, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7773611179429094950, guid: 6470e112d76167b4bac48cdaad12ef5d, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 9074662426996894289, guid: 6470e112d76167b4bac48cdaad12ef5d, type: 3}
       propertyPath: m_Name
       value: Personagem Principal

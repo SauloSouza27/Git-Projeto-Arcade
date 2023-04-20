@@ -15,7 +15,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5099994352488957292
 Transform:
   m_ObjectHideFlags: 0
@@ -41,6 +41,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5099994352488957292}
     m_Modifications:
+    - target: {fileID: -7615922843168572959, guid: 8d8098c28cf980749a34d06fef2eaaa3, type: 3}
+      propertyPath: m_Constraints
+      value: 126
+      objectReference: {fileID: 0}
     - target: {fileID: 5010226303068119321, guid: 8d8098c28cf980749a34d06fef2eaaa3, type: 3}
       propertyPath: m_Name
       value: Orbe Giratorio (1)
@@ -63,7 +67,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9192073545778730771, guid: 8d8098c28cf980749a34d06fef2eaaa3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.7
+      value: -4.2
       objectReference: {fileID: 0}
     - target: {fileID: 9192073545778730771, guid: 8d8098c28cf980749a34d06fef2eaaa3, type: 3}
       propertyPath: m_LocalPosition.y
@@ -119,6 +123,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5099994352488957292}
     m_Modifications:
+    - target: {fileID: -7615922843168572959, guid: 8d8098c28cf980749a34d06fef2eaaa3, type: 3}
+      propertyPath: m_Constraints
+      value: 126
+      objectReference: {fileID: 0}
     - target: {fileID: 5010226303068119321, guid: 8d8098c28cf980749a34d06fef2eaaa3, type: 3}
       propertyPath: m_Name
       value: Orbe Giratorio
@@ -141,7 +149,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9192073545778730771, guid: 8d8098c28cf980749a34d06fef2eaaa3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.7
+      value: 4.2
       objectReference: {fileID: 0}
     - target: {fileID: 9192073545778730771, guid: 8d8098c28cf980749a34d06fef2eaaa3, type: 3}
       propertyPath: m_LocalPosition.y
