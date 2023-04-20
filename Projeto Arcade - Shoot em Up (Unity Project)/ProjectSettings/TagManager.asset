@@ -18,6 +18,9 @@ TagManager:
   - ProjetilSerra
   - ArmaSerra
   - BaseSerra
+  - ArmaPrincipal
+  - PowerUPArmaPrincipal
+  - PowerUPVida
   layers:
   - Default
   - TransparentFX

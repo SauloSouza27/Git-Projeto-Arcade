@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Utilidades
 {
-    public static Vector3 maxPersonagem = new Vector3(23.5f, 28f, 0.0f);
-    public static Vector3 minPersonagem = new Vector3(-23.5f, 2.0f, 0.0f);
+    public static Vector3 maxPersonagem = new Vector3(26.0f, 28f, 0.0f);
+    public static Vector3 minPersonagem = new Vector3(-26.5f, 2.0f, 0.0f);
 
     public static Vector3 TravaPosicao(Vector3 pos)
     {

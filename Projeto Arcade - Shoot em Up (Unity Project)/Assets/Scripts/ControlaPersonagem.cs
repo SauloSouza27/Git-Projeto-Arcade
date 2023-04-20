@@ -16,6 +16,8 @@ public class ControlaPersonagem : MonoBehaviour
     // Pontos de vida
     public int pontosVida = 3;
     public int danoContato = 3;
+    // Dano arma
+    public int danoArmaPrincipal = 1;
     // Particulas
     public ParticleSystem particulasDano;
 
@@ -44,7 +46,8 @@ public class ControlaPersonagem : MonoBehaviour
 
         ControleMovimentoPersonagem();
 
-        ControleArmaPrincipal();
+        armaPrincipal = GameObject.FindWithTag("ArmaPrincipal");
+        ControleArmaPrincipal(armaPrincipal);
 
         ControleOrbeGiratorio();
 
@@ -95,13 +98,13 @@ public class ControlaPersonagem : MonoBehaviour
     }
 
     // Controle rotacao arma principal
-    private void ControleArmaPrincipal()
+    private void ControleArmaPrincipal(GameObject armaPrincipalAtiva)
     {
         Vector3 position = Input.mousePosition;
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(new Vector3(position.x, position.y, 30));
-        Vector3 dirMouse = mousePos - armaPrincipal.transform.position;
+        Vector3 dirMouse = mousePos - armaPrincipalAtiva.transform.position;
         dirMouse = dirMouse.normalized;
-        armaPrincipal.transform.rotation = Quaternion.LookRotation(armaPrincipal.transform.forward, dirMouse);
+        armaPrincipalAtiva.transform.rotation = Quaternion.LookRotation(armaPrincipalAtiva.transform.forward, dirMouse);
     }
 
     // Achar inimigo mais perto

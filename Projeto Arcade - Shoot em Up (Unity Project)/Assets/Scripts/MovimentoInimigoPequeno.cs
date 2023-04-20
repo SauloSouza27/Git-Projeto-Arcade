@@ -37,7 +37,7 @@ public class MovimentoInimigoPequeno : MonoBehaviour
         if (colisor.gameObject.CompareTag("BalaPersonagem"))
         {
             Destroy(colisor.gameObject);
-            int dano = alvo.GetComponent<DisparoArma>().danoArmaPrincipal;
+            int dano = alvo.GetComponent<ControlaPersonagem>().danoArmaPrincipal;
             if (pontosVida > 0)
             {
                 pontosVida -= dano;

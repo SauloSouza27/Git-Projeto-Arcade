@@ -18,8 +18,9 @@ public class ControladorGame : MonoBehaviour
     private GameObject[] spawnInimigoPequeno, spawnInimigoPiramide;
     private bool paraSpawnInimigoPiramide = false;
     // Power UP
-    public GameObject uiGameOver, uiPowerUP, buttonSubirNivel, buttonArmaPet, buttonArmaOrbeGiratorio, buttonArmaSerra;
-    public bool armaPetAtivada = false, armaOrbeGiratorioAtivada = false, armaSerraAtivada = false;
+    public GameObject uiGameOver, uiPowerUP, armaPrincipal, armaDouble, armaTriple, buttonSubirNivel, buttonArmaDouble, buttonArmaTriple, buttonArmaPet, buttonArmaOrbeGiratorio, buttonArmaSerra, buttonDiminuiCooldown;
+    public bool armaPrincipalAtivada = true, armaDoubleAtivada = false, armaTripleAtivada = false, armaPetAtivada = false, armaOrbeGiratorioAtivada = false, armaSerraAtivada = false;
+    private int contadorMaxVelocidadeAtaque = 0;
     // inimigos Morcego Drone
     public GameObject droneCimaBaixo, droneEsquerdaDireita, droneDireitaEsquerdaTransversal, droneEsquerdaDireitaTransversal;
 
@@ -86,7 +87,7 @@ public class ControladorGame : MonoBehaviour
             foreach (GameObject go in spawnInimigoPiramide)
             {
                 SpawnInimigoPiramide spawn = go.GetComponent<SpawnInimigoPiramide>();
-                if(paraSpawnInimigoPiramide == false)
+                if (paraSpawnInimigoPiramide == false)
                 {
                     spawn.AtivaSpawnInimigoPiramide();
                 }
@@ -178,19 +179,55 @@ public class ControladorGame : MonoBehaviour
         Time.timeScale = 1.0f;
         AtivaSpawnInimigosPequenos();
     }
-    public void PowerUPAumentaDanoArmaPrincipal()
+    public void PowerUPArmaDouble()
     {
-        jogador.GetComponent<DisparoArma>().danoArmaPrincipal += 1;
+        armaDouble.SetActive(true);
+        armaPrincipal.SetActive(false);
+        jogador.GetComponent<DisparoArma>().enabled = false;
+        jogador.GetComponent<DisparoArmaDouble>().enabled = true;
+        armaPrincipalAtivada = false;
+        armaDoubleAtivada = true;
+        Destroy(buttonArmaDouble);
+        uiPowerUP.SetActive(false);
+        Time.timeScale = 1.0f;
+        AtivaSpawnInimigosPequenos();
+    }
+    public void PowerUPArmaTriple()
+    {
+        armaTriple.SetActive(true);
+        armaDouble.SetActive(false);
+        jogador.GetComponent<DisparoArmaDouble>().enabled = false;
+        jogador.GetComponent<DisparoArmaTriple>().enabled = true;
+        armaDoubleAtivada = false;
+        armaTripleAtivada = true;
+        Destroy(buttonArmaTriple);
         uiPowerUP.SetActive(false);
         Time.timeScale = 1.0f;
         AtivaSpawnInimigosPequenos();
     }
     public void PowerUPDiminuiCooldownArmaPrincipal()
     {
-        jogador.GetComponent<DisparoArma>().cooldown *= 0.70f;
-        uiPowerUP.SetActive(false);
-        Time.timeScale = 1.0f;
-        AtivaSpawnInimigosPequenos();
+        if(contadorMaxVelocidadeAtaque < 3)
+        {
+            jogador.GetComponent<DisparoArma>().cooldown *= 0.70f;
+            jogador.GetComponent<DisparoArmaDouble>().cooldown *= 0.70f;
+            jogador.GetComponent<DisparoArmaTriple>().cooldown *= 0.70f;
+            uiPowerUP.SetActive(false);
+            Time.timeScale = 1.0f;
+            AtivaSpawnInimigosPequenos();
+            contadorMaxVelocidadeAtaque++;
+        }
+        if(contadorMaxVelocidadeAtaque >= 3)
+        {
+            jogador.GetComponent<DisparoArma>().cooldown *= 0.70f;
+            jogador.GetComponent<DisparoArmaDouble>().cooldown *= 0.70f;
+            jogador.GetComponent<DisparoArmaTriple>().cooldown *= 0.70f;
+            Destroy(buttonDiminuiCooldown);
+            uiPowerUP.SetActive(false);
+            Time.timeScale = 1.0f;
+            AtivaSpawnInimigosPequenos();
+        }
+        
     }
     public void PowerUPAumentaHP()
     {
