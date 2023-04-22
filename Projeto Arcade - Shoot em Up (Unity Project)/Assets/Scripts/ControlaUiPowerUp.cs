@@ -34,14 +34,12 @@ public class ControlaUiPowerUp : MonoBehaviour
             if (go.CompareTag("PowerUPButton"))
             {
                 buttonsCena.Add(go);
-                Debug.Log(go.name);
             }
             if (controladorGame.GetComponent<ControladorGame>().armaDoubleAtivada == true)
             {
                 if (go.CompareTag("PowerUPArmaPrincipal"))
                 {
                     buttonsCena.Add(go);
-                    Debug.Log(go.name);
                 }
             }
             if (controladorGame.GetComponent<ControladorGame>().HP < 3)
@@ -49,7 +47,6 @@ public class ControlaUiPowerUp : MonoBehaviour
                 if (go.CompareTag("PowerUPVida"))
                 {
                     buttonsCena.Add(go);
-                    Debug.Log(go.name);
                 }
             }
         }

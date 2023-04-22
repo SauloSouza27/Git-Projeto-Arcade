@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class MovimentoInimigoMorcegoDrone : MonoBehaviour
 {
-    GameObject alvo;
+    private GameObject alvo, controladorGame;
     // Pontos de vida
-    public int pontosVida = 1;
+    public int pontosVida = 2;
     // XP quando morre
     public int xpInimigo = 10;
     // Materiais
@@ -14,6 +14,7 @@ public class MovimentoInimigoMorcegoDrone : MonoBehaviour
     Material[] materiais;
     private void Awake()
     {
+        controladorGame = GameObject.FindGameObjectWithTag("ControladorGame");
         alvo = GameObject.FindGameObjectWithTag("Player");
         // Busca materiais do inimigo
         renderers = GetComponentsInChildren<MeshRenderer>();
@@ -23,9 +24,17 @@ public class MovimentoInimigoMorcegoDrone : MonoBehaviour
             materiais[i] = renderers[i].material;
         }
     }
+
+    private void OnEnable()
+    {
+        if (controladorGame.GetComponent<ControladorGame>().nivel == 7)
+        {
+            pontosVida = 3;
+        }
+    }
     private void Update()
     {
-
+        
     }
     private void OnCollisionEnter(Collision colisor)
     {
@@ -110,6 +119,31 @@ public class MovimentoInimigoMorcegoDrone : MonoBehaviour
             {
                 pontosVida -= dano;
 
+                foreach (Material material in materiais)
+                {
+                    StartCoroutine(Utilidades.PiscaCorRoutine(material));
+                }
+            }
+            if (pontosVida <= 0)
+            {
+                Destroy(gameObject);
+                ControladorGame.instancia.SomaXP(xpInimigo);
+            }
+        }
+    }
+    private void OnCollisionStay(Collision colisor)
+    {
+        float contadorCooldown, cooldown = 1.0f;
+        contadorCooldown = cooldown;
+        Utilidades.CalculaCooldown(contadorCooldown);
+        contadorCooldown = Utilidades.CalculaCooldown(contadorCooldown);
+        if (colisor.gameObject.CompareTag("ProjetilSerra"))
+        {
+            int dano = alvo.GetComponent<DisparoArmaSerra>().danoSerra;
+            if (pontosVida > 0 && contadorCooldown == 0)
+            {
+                pontosVida -= dano;
+                contadorCooldown = cooldown;
                 foreach (Material material in materiais)
                 {
                     StartCoroutine(Utilidades.PiscaCorRoutine(material));

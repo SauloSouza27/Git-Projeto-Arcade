@@ -18,11 +18,12 @@ public class ControladorGame : MonoBehaviour
     private GameObject[] spawnInimigoPequeno, spawnInimigoPiramide;
     private bool paraSpawnInimigoPiramide = false;
     // Power UP
-    public GameObject uiGameOver, uiPowerUP, armaPrincipal, armaDouble, armaTriple, buttonSubirNivel, buttonArmaDouble, buttonArmaTriple, buttonArmaPet, buttonArmaOrbeGiratorio, buttonArmaSerra, buttonDiminuiCooldown;
+    public GameObject uiGameOver, uiPowerUP, armaPrincipal, armaDouble, armaTriple, buttonSubirNivel, buttonArmaDouble,
+        buttonArmaTriple, buttonArmaPet, buttonArmaOrbeGiratorio, buttonArmaSerra, buttonDiminuiCooldown;
     public bool armaPrincipalAtivada = true, armaDoubleAtivada = false, armaTripleAtivada = false, armaPetAtivada = false, armaOrbeGiratorioAtivada = false, armaSerraAtivada = false;
     private int contadorMaxVelocidadeAtaque = 0;
     // inimigos Morcego Drone
-    public GameObject droneCimaBaixo, droneEsquerdaDireita, droneDireitaEsquerdaTransversal, droneEsquerdaDireitaTransversal;
+    public GameObject droneCimaBaixo, droneEsquerdaDireita, droneDireitaEsquerdaTransversal, droneEsquerdaDireitaTransversal, droneCruzado;
 
     private void Awake()
     {
@@ -93,6 +94,11 @@ public class ControladorGame : MonoBehaviour
                 }
             }
             paraSpawnInimigoPiramide = true;
+        }
+
+        if (nivel == 7)
+        {
+            StartCoroutine(AtivaMorcegoDrone(droneCruzado, 4f));
         }
 
     }

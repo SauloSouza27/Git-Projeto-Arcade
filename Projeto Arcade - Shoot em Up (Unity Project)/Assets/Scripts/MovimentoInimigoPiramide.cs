@@ -148,6 +148,31 @@ public class MovimentoInimigoPiramide : MonoBehaviour
             }
         }
     }
+    private void OnCollisionStay(Collision colisor)
+    {
+        float contadorCooldown, cooldown = 1.0f;
+        contadorCooldown = cooldown;
+        Utilidades.CalculaCooldown(contadorCooldown);
+        contadorCooldown = Utilidades.CalculaCooldown(contadorCooldown);
+        if (colisor.gameObject.CompareTag("ProjetilSerra"))
+        {
+            int dano = alvo.GetComponent<DisparoArmaSerra>().danoSerra;
+            if (pontosVida > 0 && contadorCooldown == 0)
+            {
+                pontosVida -= dano;
+                contadorCooldown = cooldown;
+                foreach (Material material in materiais)
+                {
+                    StartCoroutine(Utilidades.PiscaCorRoutine(material));
+                }
+            }
+            if (pontosVida <= 0)
+            {
+                Destroy(gameObject);
+                ControladorGame.instancia.SomaXP(xpInimigo);
+            }
+        }
+    }
 
     private void MovimentaInimigoPiramide()
     {

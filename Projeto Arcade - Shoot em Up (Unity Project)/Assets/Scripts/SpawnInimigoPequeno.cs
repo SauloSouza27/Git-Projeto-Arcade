@@ -25,6 +25,12 @@ public class SpawnInimigoPequeno : MonoBehaviour
 
         nivelJogador = controladorGame.GetComponent<ControladorGame>().nivel;
 
+        if(nivelJogador >= 3)
+        {
+            minTempo = 4.0f;
+            maxTempo = 8.0f;
+        }
+
         Utilidades.CalculaCooldown(contadorCooldown);
         contadorCooldown = Utilidades.CalculaCooldown(contadorCooldown);
         if (contadorCooldown == 0 && ativar == true)

@@ -13,7 +13,7 @@ public class DisparoArmaSerra : MonoBehaviour
 
     private void Awake()
     {
-        contadorCooldown = 0;
+        //contadorCooldown = 0;
     }
 
     void Update()

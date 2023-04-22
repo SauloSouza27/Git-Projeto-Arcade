@@ -18,7 +18,7 @@ public class DisparoArmaPet : MonoBehaviour
 
     private void Awake()
     {
-        contadorCooldown = cooldown;
+        //contadorCooldown = cooldown;
     }
 
     void Update()

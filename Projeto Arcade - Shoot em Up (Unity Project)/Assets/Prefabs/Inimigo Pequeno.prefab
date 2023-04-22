@@ -50,7 +50,7 @@ MonoBehaviour:
   velocidadeDeslocamento: 5
   velocidadeRotacao: 5
   pontosVida: 1
-  xpInimigo: 20
+  xpInimigo: 10
 --- !u!65 &7575654313653995386
 BoxCollider:
   m_ObjectHideFlags: 0

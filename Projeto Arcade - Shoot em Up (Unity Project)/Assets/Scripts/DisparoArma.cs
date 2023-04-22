@@ -17,7 +17,7 @@ public class DisparoArma : MonoBehaviour
 
     private void Awake()
     {
-        contadorCooldown = cooldown;
+        //contadorCooldown = cooldown;
     }
   
     void Update()
