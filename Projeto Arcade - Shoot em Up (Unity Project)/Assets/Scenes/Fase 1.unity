@@ -842,7 +842,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: f5dc2de5c6ec34f4683da60421b9a8c4, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.8
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -6704,7 +6704,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4941080145082082195, guid: cc3d70f9628e64546a7507bab6e9d031, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5396784111322911157, guid: cc3d70f9628e64546a7507bab6e9d031, type: 3}
       propertyPath: m_RootOrder
@@ -6712,7 +6712,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5396784111322911157, guid: cc3d70f9628e64546a7507bab6e9d031, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9.6
+      value: -23.37
       objectReference: {fileID: 0}
     - target: {fileID: 5396784111322911157, guid: cc3d70f9628e64546a7507bab6e9d031, type: 3}
       propertyPath: m_LocalPosition.y
@@ -7540,7 +7540,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4941080145082082195, guid: cc3d70f9628e64546a7507bab6e9d031, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5396784111322911157, guid: cc3d70f9628e64546a7507bab6e9d031, type: 3}
       propertyPath: m_RootOrder
@@ -7548,11 +7548,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5396784111322911157, guid: cc3d70f9628e64546a7507bab6e9d031, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 10.1
+      value: 23.79
       objectReference: {fileID: 0}
     - target: {fileID: 5396784111322911157, guid: cc3d70f9628e64546a7507bab6e9d031, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.299999
+      value: -6
       objectReference: {fileID: 0}
     - target: {fileID: 5396784111322911157, guid: cc3d70f9628e64546a7507bab6e9d031, type: 3}
       propertyPath: m_LocalPosition.z

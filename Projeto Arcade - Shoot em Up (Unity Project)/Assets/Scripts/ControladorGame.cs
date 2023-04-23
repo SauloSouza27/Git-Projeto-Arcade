@@ -38,10 +38,6 @@ public class ControladorGame : MonoBehaviour
         //busca pontos de spawn na cena
         spawnInimigoPiramide = GameObject.FindGameObjectsWithTag("SpawnInimigoPiramide");
         spawnsInimigoPequeno = GameObject.FindGameObjectsWithTag("SpawnInimigoPequeno");
-        foreach (GameObject go in spawnsBaixo)
-        {
-            go.SetActive(false);
-        }
     }
 
     void Start()
@@ -117,10 +113,11 @@ public class ControladorGame : MonoBehaviour
 
         if (nivel == 9)
         {
-            foreach(GameObject go in spawnsBaixo)
+            foreach (GameObject go in spawnsBaixo)
             {
                 go.SetActive(true);
             }
+            spawnsInimigoPequeno = GameObject.FindGameObjectsWithTag("SpawnInimigoPequeno");
             StartCoroutine(AtivaMorcegoDrone(piramideLaterais, 4f));
         }
     }
