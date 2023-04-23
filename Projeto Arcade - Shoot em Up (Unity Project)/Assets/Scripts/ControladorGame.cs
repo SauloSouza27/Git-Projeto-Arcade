@@ -38,6 +38,10 @@ public class ControladorGame : MonoBehaviour
         //busca pontos de spawn na cena
         spawnInimigoPiramide = GameObject.FindGameObjectsWithTag("SpawnInimigoPiramide");
         spawnsInimigoPequeno = GameObject.FindGameObjectsWithTag("SpawnInimigoPequeno");
+        foreach (GameObject go in spawnsBaixo)
+        {
+            go.SetActive(false);
+        }
     }
 
     void Start()
