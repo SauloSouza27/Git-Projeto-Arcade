@@ -6,7 +6,7 @@ public class MovimentoInimigoMorcegoDrone : MonoBehaviour
 {
     private GameObject alvo, controladorGame;
     // Pontos de vida
-    public int pontosVida = 2;
+    public int pontosVida = 1;
     // XP quando morre
     public int xpInimigo = 10;
     // Materiais
@@ -27,9 +27,13 @@ public class MovimentoInimigoMorcegoDrone : MonoBehaviour
 
     private void OnEnable()
     {
-        if (controladorGame.GetComponent<ControladorGame>().nivel == 7)
+        if (controladorGame.GetComponent<ControladorGame>().nivel >= 3)
         {
-            pontosVida = 4;
+            pontosVida = 2;
+        }
+        if (controladorGame.GetComponent<ControladorGame>().nivel >= 7)
+        {
+            pontosVida = 3;
         }
     }
     private void Update()
@@ -133,7 +137,7 @@ public class MovimentoInimigoMorcegoDrone : MonoBehaviour
     }
     private void OnCollisionStay(Collision colisor)
     {
-        float contadorCooldown, cooldown = 1.0f;
+        float contadorCooldown, cooldown = 0.5f;
         contadorCooldown = cooldown;
         Utilidades.CalculaCooldown(contadorCooldown);
         contadorCooldown = Utilidades.CalculaCooldown(contadorCooldown);

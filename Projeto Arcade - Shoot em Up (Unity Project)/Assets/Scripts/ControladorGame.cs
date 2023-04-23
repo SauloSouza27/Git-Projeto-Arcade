@@ -26,6 +26,8 @@ public class ControladorGame : MonoBehaviour
     private readonly float multVelAtak = 0.75f;
     // inimigos Morcego Drone
     public GameObject droneCimaBaixo, droneEsqDirHori, droneDirEsqTrans, droneEsqDirTrans, droneCruzado, droneCascadeDirEsqTrans, droneCascadeDirEsqHori;
+    // inimigos Piramide
+    public GameObject piramideLaterais;
 
     private void Awake()
     {
@@ -109,6 +111,14 @@ public class ControladorGame : MonoBehaviour
             StartCoroutine(AtivaMorcegoDrone(droneCascadeDirEsqHori, 12f));
         }
 
+        if (nivel == 9)
+        {
+            foreach(GameObject go in spawnsBaixo)
+            {
+                go.SetActive(true);
+            }
+            StartCoroutine(AtivaMorcegoDrone(piramideLaterais, 4f));
+        }
     }
 
     public void AtualizaBarraHP(int hpAtual)

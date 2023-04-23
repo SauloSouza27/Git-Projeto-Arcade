@@ -34,7 +34,7 @@ public class SpawnInimigoPequeno : MonoBehaviour
         if (nivelJogador >= 7)
         {
             minTempo = 3.0f;
-            maxTempo = 6.0f;
+            maxTempo = 7.0f;
         }
 
         Utilidades.CalculaCooldown(contadorCooldown);

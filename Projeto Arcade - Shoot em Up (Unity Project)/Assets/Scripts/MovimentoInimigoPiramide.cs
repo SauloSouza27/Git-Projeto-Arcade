@@ -150,7 +150,7 @@ public class MovimentoInimigoPiramide : MonoBehaviour
     }
     private void OnCollisionStay(Collision colisor)
     {
-        float contadorCooldown, cooldown = 1.0f;
+        float contadorCooldown, cooldown = 0.5f;
         contadorCooldown = cooldown;
         Utilidades.CalculaCooldown(contadorCooldown);
         contadorCooldown = Utilidades.CalculaCooldown(contadorCooldown);

@@ -29,14 +29,14 @@ public class MovimentoInimigoPequeno : MonoBehaviour
 
     private void Start()
     {
-        velocidadeDeslocamento *= Mathf.Pow(1.05f, controladorGame.GetComponent<ControladorGame>().nivel);
+        velocidadeDeslocamento *= Mathf.Pow(1.03f, controladorGame.GetComponent<ControladorGame>().nivel);
     }
 
     private void OnEnable()
     {
         if (controladorGame.GetComponent<ControladorGame>().nivel == 8)
         {
-            pontosVida = 4;
+            pontosVida = 2;
         }
     }
 
@@ -143,7 +143,7 @@ public class MovimentoInimigoPequeno : MonoBehaviour
     }
     private void OnCollisionStay(Collision colisor)
     {
-        float contadorCooldown, cooldown = 1.0f;
+        float contadorCooldown, cooldown = 0.5f;
         contadorCooldown = cooldown;
         Utilidades.CalculaCooldown(contadorCooldown);
         contadorCooldown = Utilidades.CalculaCooldown(contadorCooldown);

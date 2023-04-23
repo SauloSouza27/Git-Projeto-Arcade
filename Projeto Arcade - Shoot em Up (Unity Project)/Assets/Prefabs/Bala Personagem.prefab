@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4766731505477333079}
   - component: {fileID: 8087977096538107891}
   - component: {fileID: 168933173958685423}
-  - component: {fileID: 2168741266785781092}
+  - component: {fileID: 3933754776774701297}
   - component: {fileID: 199651809054491352}
   m_Layer: 0
   m_Name: Bala Personagem
@@ -35,7 +35,7 @@ Transform:
   m_Children:
   - {fileID: 6912663538142740109}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &4766731505477333079
 MeshFilter:
@@ -108,8 +108,8 @@ MonoBehaviour:
   fonteTiro: {fileID: 9074662426996894289, guid: 6470e112d76167b4bac48cdaad12ef5d, type: 3}
   velocidadeRotacao: 0
   danoProjetil: 0
---- !u!136 &2168741266785781092
-CapsuleCollider:
+--- !u!65 &3933754776774701297
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -126,10 +126,8 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.06450689
-  m_Height: 0.59335655
-  m_Direction: 1
+  serializedVersion: 3
+  m_Size: {x: 0.17688695, y: 0.59335655, z: 1.5023572}
   m_Center: {x: 0.000058747824, y: -0.00013993679, z: 0}
 --- !u!54 &199651809054491352
 Rigidbody:
