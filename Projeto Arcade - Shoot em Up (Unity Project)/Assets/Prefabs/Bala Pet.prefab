@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d1b95509e97afb45ad56bb239a46003, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidade: 50
+  velocidade: 60
   duracaoBala: 200
   projetil: {fileID: 8264596742114757972}
   projetilInimigo: 0

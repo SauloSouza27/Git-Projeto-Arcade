@@ -15,15 +15,17 @@ public class ControladorGame : MonoBehaviour
     public TextMeshProUGUI txtNivel, txtXP;
     private Slider sliderXP, sliderHP;
     // spawn inimigos
-    private GameObject[] spawnInimigoPequeno, spawnInimigoPiramide;
+    public List<GameObject> spawnsCima, spawnsLaterais, spawnsBaixo;
+    private GameObject[] spawnInimigoPiramide, spawnsInimigoPequeno;
     private bool paraSpawnInimigoPiramide = false;
     // Power UP
     public GameObject uiGameOver, uiPowerUP, armaPrincipal, armaDouble, armaTriple, buttonSubirNivel, buttonArmaDouble,
         buttonArmaTriple, buttonArmaPet, buttonArmaOrbeGiratorio, buttonArmaSerra, buttonDiminuiCooldown;
     public bool armaPrincipalAtivada = true, armaDoubleAtivada = false, armaTripleAtivada = false, armaPetAtivada = false, armaOrbeGiratorioAtivada = false, armaSerraAtivada = false;
     private int contadorMaxVelocidadeAtaque = 0;
+    private readonly float multVelAtak = 0.75f;
     // inimigos Morcego Drone
-    public GameObject droneCimaBaixo, droneEsquerdaDireita, droneDireitaEsquerdaTransversal, droneEsquerdaDireitaTransversal, droneCruzado;
+    public GameObject droneCimaBaixo, droneEsqDirHori, droneDirEsqTrans, droneEsqDirTrans, droneCruzado, droneCascadeDirEsqTrans, droneCascadeDirEsqHori;
 
     private void Awake()
     {
@@ -32,8 +34,8 @@ public class ControladorGame : MonoBehaviour
         txtNivel = GameObject.Find("txtNivel").GetComponent<TextMeshProUGUI>();
         txtXP = GameObject.Find("txtXP").GetComponent<TextMeshProUGUI>();
         //busca pontos de spawn na cena
-        spawnInimigoPequeno = GameObject.FindGameObjectsWithTag("SpawnInimigoPequeno");
         spawnInimigoPiramide = GameObject.FindGameObjectsWithTag("SpawnInimigoPiramide");
+        spawnsInimigoPequeno = GameObject.FindGameObjectsWithTag("SpawnInimigoPequeno");
     }
 
     void Start()
@@ -74,13 +76,13 @@ public class ControladorGame : MonoBehaviour
 
         if(nivel == 4)
         {
-            StartCoroutine(AtivaMorcegoDrone(droneEsquerdaDireita, 4f));
+            StartCoroutine(AtivaMorcegoDrone(droneEsqDirHori, 4f));
         }
 
         if(nivel == 5)
         {
-            StartCoroutine(AtivaMorcegoDrone(droneDireitaEsquerdaTransversal, 5f));
-            StartCoroutine(AtivaMorcegoDrone(droneEsquerdaDireitaTransversal, 12f));
+            StartCoroutine(AtivaMorcegoDrone(droneDirEsqTrans, 5f));
+            StartCoroutine(AtivaMorcegoDrone(droneEsqDirTrans, 12f));
         }
 
         if (nivel == 6)
@@ -99,6 +101,12 @@ public class ControladorGame : MonoBehaviour
         if (nivel == 7)
         {
             StartCoroutine(AtivaMorcegoDrone(droneCruzado, 4f));
+        }
+
+        if (nivel == 8)
+        {
+            StartCoroutine(AtivaMorcegoDrone(droneCascadeDirEsqTrans, 4f));
+            StartCoroutine(AtivaMorcegoDrone(droneCascadeDirEsqHori, 12f));
         }
 
     }
@@ -124,9 +132,9 @@ public class ControladorGame : MonoBehaviour
             sliderXP.value = valorMaxSlider;
             XP = (int)valorXPNivel;
             buttonSubirNivel.SetActive(true);
-            foreach (GameObject go in spawnInimigoPequeno)
+            foreach (GameObject a in spawnsInimigoPequeno)
             {
-                go.SetActive(false);
+                a.SetActive(false);
             }
         }
         txtNivel.text = "Nivel: " + nivel;
@@ -144,7 +152,7 @@ public class ControladorGame : MonoBehaviour
     }
     private void AtivaSpawnInimigosPequenos()
     {
-        foreach(GameObject go in spawnInimigoPequeno)
+        foreach(GameObject go in spawnsInimigoPequeno)
         {
             go.SetActive(true);
         }
@@ -215,9 +223,10 @@ public class ControladorGame : MonoBehaviour
     {
         if(contadorMaxVelocidadeAtaque < 3)
         {
-            jogador.GetComponent<DisparoArma>().cooldown *= 0.70f;
-            jogador.GetComponent<DisparoArmaDouble>().cooldown *= 0.70f;
-            jogador.GetComponent<DisparoArmaTriple>().cooldown *= 0.70f;
+            jogador.GetComponent<DisparoArma>().cooldown *= multVelAtak;
+            jogador.GetComponent<DisparoArmaDouble>().cooldown *= multVelAtak;
+            jogador.GetComponent<DisparoArmaTriple>().cooldown *= multVelAtak;
+            jogador.GetComponent<DisparoArmaPet>().cooldown *= multVelAtak;
             uiPowerUP.SetActive(false);
             Time.timeScale = 1.0f;
             AtivaSpawnInimigosPequenos();
@@ -225,9 +234,10 @@ public class ControladorGame : MonoBehaviour
         }
         if(contadorMaxVelocidadeAtaque >= 3)
         {
-            jogador.GetComponent<DisparoArma>().cooldown *= 0.70f;
-            jogador.GetComponent<DisparoArmaDouble>().cooldown *= 0.70f;
-            jogador.GetComponent<DisparoArmaTriple>().cooldown *= 0.70f;
+            jogador.GetComponent<DisparoArma>().cooldown *= multVelAtak;
+            jogador.GetComponent<DisparoArmaDouble>().cooldown *= multVelAtak;
+            jogador.GetComponent<DisparoArmaTriple>().cooldown *= multVelAtak;
+            jogador.GetComponent<DisparoArmaPet>().cooldown *= multVelAtak;
             Destroy(buttonDiminuiCooldown);
             uiPowerUP.SetActive(false);
             Time.timeScale = 1.0f;

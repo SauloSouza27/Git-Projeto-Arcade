@@ -26,11 +26,17 @@ public class MovimentoInimigoPequeno : MonoBehaviour
             materiais[i] = renderers[i].material;
         }
     }
+
+    private void Start()
+    {
+        velocidadeDeslocamento *= Mathf.Pow(1.05f, controladorGame.GetComponent<ControladorGame>().nivel);
+    }
+
     private void OnEnable()
     {
         if (controladorGame.GetComponent<ControladorGame>().nivel == 8)
         {
-            pontosVida = 2;
+            pontosVida = 4;
         }
     }
 
