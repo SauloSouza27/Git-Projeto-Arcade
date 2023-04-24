@@ -73,6 +73,10 @@ public class ControlaPersonagem : MonoBehaviour
             if (pontosVida > 0)
             {
                 ReceberDano();
+                if (colisor.gameObject.CompareTag("BalaPiramide"))
+                {
+                    Destroy(colisor.gameObject);
+                }
             }
         }
     }

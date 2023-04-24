@@ -15,9 +15,8 @@ public class ControladorGame : MonoBehaviour
     public TextMeshProUGUI txtNivel, txtXP;
     private Slider sliderXP, sliderHP;
     // spawn inimigos
+    public GameObject spawnsInimigoPequeno;
     public List<GameObject> spawnsCima, spawnsLaterais, spawnsBaixo;
-    private GameObject[] spawnInimigoPiramide, spawnsInimigoPequeno;
-    private bool paraSpawnInimigoPiramide = false;
     // Power UP
     public GameObject uiGameOver, uiPowerUP, armaPrincipal, armaDouble, armaTriple, buttonSubirNivel, buttonArmaDouble,
         buttonArmaTriple, buttonArmaPet, buttonArmaOrbeGiratorio, buttonArmaSerra, buttonDiminuiCooldown;
@@ -27,7 +26,7 @@ public class ControladorGame : MonoBehaviour
     // inimigos Morcego Drone
     public GameObject droneCimaBaixo, droneEsqDirHori, droneDirEsqTrans, droneEsqDirTrans, droneCruzado, droneCascadeDirEsqTrans, droneCascadeDirEsqHori;
     // inimigos Piramide
-    public GameObject piramideLaterais;
+    public GameObject piramideSuperiores, piramideLaterais;
 
     private void Awake()
     {
@@ -35,9 +34,6 @@ public class ControladorGame : MonoBehaviour
         sliderXP = barraXP.GetComponent<Slider>();
         txtNivel = GameObject.Find("txtNivel").GetComponent<TextMeshProUGUI>();
         txtXP = GameObject.Find("txtXP").GetComponent<TextMeshProUGUI>();
-        //busca pontos de spawn na cena
-        spawnInimigoPiramide = GameObject.FindGameObjectsWithTag("SpawnInimigoPiramide");
-        spawnsInimigoPequeno = GameObject.FindGameObjectsWithTag("SpawnInimigoPequeno");
     }
 
     void Start()
@@ -89,15 +85,7 @@ public class ControladorGame : MonoBehaviour
 
         if (nivel == 6)
         {
-            foreach (GameObject go in spawnInimigoPiramide)
-            {
-                SpawnInimigoPiramide spawn = go.GetComponent<SpawnInimigoPiramide>();
-                if (paraSpawnInimigoPiramide == false)
-                {
-                    spawn.AtivaSpawnInimigoPiramide();
-                }
-            }
-            paraSpawnInimigoPiramide = true;
+            StartCoroutine(AtivaMorcegoDrone(piramideSuperiores, 4f));
         }
 
         if (nivel == 7)
@@ -108,7 +96,7 @@ public class ControladorGame : MonoBehaviour
         if (nivel == 8)
         {
             StartCoroutine(AtivaMorcegoDrone(droneCascadeDirEsqTrans, 4f));
-            StartCoroutine(AtivaMorcegoDrone(droneCascadeDirEsqHori, 12f));
+            StartCoroutine(AtivaMorcegoDrone(droneCascadeDirEsqHori, 18f));
         }
 
         if (nivel == 9)
@@ -117,7 +105,6 @@ public class ControladorGame : MonoBehaviour
             {
                 go.SetActive(true);
             }
-            spawnsInimigoPequeno = GameObject.FindGameObjectsWithTag("SpawnInimigoPequeno");
             StartCoroutine(AtivaMorcegoDrone(piramideLaterais, 4f));
         }
     }
@@ -143,10 +130,7 @@ public class ControladorGame : MonoBehaviour
             sliderXP.value = valorMaxSlider;
             XP = (int)valorXPNivel;
             buttonSubirNivel.SetActive(true);
-            foreach (GameObject a in spawnsInimigoPequeno)
-            {
-                a.SetActive(false);
-            }
+            spawnsInimigoPequeno.SetActive(false);
         }
         txtNivel.text = "Nivel: " + nivel;
         txtXP.text = XP + "/" + valorXPNivel;
@@ -163,10 +147,7 @@ public class ControladorGame : MonoBehaviour
     }
     private void AtivaSpawnInimigosPequenos()
     {
-        foreach(GameObject go in spawnsInimigoPequeno)
-        {
-            go.SetActive(true);
-        }
+        spawnsInimigoPequeno.SetActive(true);
     }
     private IEnumerator AtivaMorcegoDrone(GameObject morcegoDrone, float delay)
     {

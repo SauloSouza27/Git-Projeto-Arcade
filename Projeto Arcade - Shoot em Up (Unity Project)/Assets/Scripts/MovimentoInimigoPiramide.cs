@@ -5,7 +5,7 @@ using UnityEngine.Animations;
 
 public class MovimentoInimigoPiramide : MonoBehaviour
 {
-    private GameObject alvo;
+    private GameObject alvo, controladorGame;
     public GameObject cabecaPiramide, pontaArma, balaPiramide;
     // Controle rotaçao
     public float velocidadeRotacao = 2.0f;
@@ -23,6 +23,7 @@ public class MovimentoInimigoPiramide : MonoBehaviour
     Material[] materiais;
     private void Awake()
     {
+        controladorGame = GameObject.FindGameObjectWithTag("ControladorGame");
         alvo = GameObject.FindGameObjectWithTag("Player");
         // Busca materiais do inimigo
         renderers = GetComponentsInChildren<MeshRenderer>();
@@ -35,6 +36,14 @@ public class MovimentoInimigoPiramide : MonoBehaviour
     void Start()
     {
         contadorCooldown = 4.0f;
+    }
+    private void OnEnable()
+    {
+        if(controladorGame.GetComponent<ControladorGame>().nivel >= 8)
+        {
+            pontosVida = 12;
+            xpInimigo = 130;
+        }
     }
 
     void Update()
