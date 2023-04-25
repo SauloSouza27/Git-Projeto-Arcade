@@ -33,17 +33,18 @@ public class MovimentoBoss : MonoBehaviour
     }
     private void Start()
     {
-        ativaArma = true;
+        ativaArma = false;
+        StartCoroutine(IntervaloDisparo(12.0f));
     }
 
     private void Update()
     {
         if (Time.timeScale == 0) return;
 
+        Debug.Log(ativaArma);
+
         MovimentaBossPiramide();
 
-        Debug.Log(ativaArma);
-        Debug.Log("Contagem tiros: " + contadorDisparos);
         if (ativaArma)
         {
             // Cooldown e controle tiro
@@ -60,7 +61,7 @@ public class MovimentoBoss : MonoBehaviour
                 {
                     contadorDisparos = 0;
                     ativaArma = false;
-                    StartCoroutine(IntervaloDisparo());
+                    StartCoroutine(IntervaloDisparo(tempoDisparo));
                 }
             }
         }
@@ -75,9 +76,9 @@ public class MovimentoBoss : MonoBehaviour
         //cabecaPiramide.transform.up = Vector3.Slerp(cabecaPiramide.transform.up, -1 * direcao, 3 * velocidadeRotacao * Time.deltaTime);
         cabecaPiramide.transform.rotation = Quaternion.LookRotation(cabecaPiramide.transform.forward, - direcao);
     }
-    private IEnumerator IntervaloDisparo()
+    private IEnumerator IntervaloDisparo(float cooldown)
     {
-        yield return new WaitForSeconds(tempoDisparo);
+        yield return new WaitForSeconds(cooldown);
         ativaArma = true;
     }
 }
