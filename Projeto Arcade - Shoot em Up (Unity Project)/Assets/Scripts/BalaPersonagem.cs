@@ -7,7 +7,7 @@ public class BalaPersonagem : MonoBehaviour
     public float velocidade = 15.0f, duracaoBala = 200.0f;
     public GameObject projetil;
     public bool projetilInimigo = false, rotacaoTiro = false;
-    public GameObject projetilRotacao, fonteTiro;
+    public GameObject projetilRotacao;
     public float velocidadeRotacao = 200.0f;
     public int danoProjetil = 1;
 
