@@ -9,6 +9,7 @@ public class MovimentoInimigoPiramide : MonoBehaviour
     public GameObject cabecaPiramide, pontaArma, balaPiramide;
     // Controle rotaçao
     public float velocidadeRotacao = 2.0f;
+    public bool petBoss = false;
     // Pontos de vida
     public int pontosVida = 3;
     public int danoTiro = 1;
@@ -50,7 +51,10 @@ public class MovimentoInimigoPiramide : MonoBehaviour
     {
         if (Time.timeScale == 0) return;
 
-        MovimentaInimigoPiramide();
+        if (!petBoss)
+        {
+            MovimentaInimigoPiramide();
+        }
 
         // Cooldown e controle tiro
         Utilidades.CalculaCooldown(contadorCooldown);
