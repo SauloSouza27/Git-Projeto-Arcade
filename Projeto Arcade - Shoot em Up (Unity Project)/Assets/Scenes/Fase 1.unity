@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.11617968, g: 0.121183775, b: 0.14280277, a: 1}
+  m_IndirectSpecularColor: {r: 0.116188206, g: 0.12118856, b: 0.14280945, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -14700,6 +14700,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3455644833076648795, guid: 6470e112d76167b4bac48cdaad12ef5d, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0669bbfb8bad7e347a760c08766c9332, type: 2}
+    - target: {fileID: 3771207673077407791, guid: 6470e112d76167b4bac48cdaad12ef5d, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 15e7422449c710242a4cab5f3d278aa1, type: 2}
     - target: {fileID: 9074662426996894289, guid: 6470e112d76167b4bac48cdaad12ef5d, type: 3}
       propertyPath: m_Name
       value: Personagem Principal
