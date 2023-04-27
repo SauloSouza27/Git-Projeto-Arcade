@@ -110,7 +110,7 @@ public class ControladorGame : MonoBehaviour
             StartCoroutine(AtivaInimigo(piramideLaterais, 4.0f));
         }
 
-        if (nivel == 10)
+        if (nivel == 1)
         {
             spawnsInimigoPequeno.SetActive(false);
             StartCoroutine(AtivaInimigo(boss, 6.0f));
@@ -222,7 +222,7 @@ public class ControladorGame : MonoBehaviour
     }
     public void PowerUPDiminuiCooldownArmaPrincipal()
     {
-        if(contadorMaxVelocidadeAtaque < 3)
+        if(contadorMaxVelocidadeAtaque < 6)
         {
             jogador.GetComponent<DisparoArma>().cooldown *= multVelAtak;
             jogador.GetComponent<DisparoArmaDouble>().cooldown *= multVelAtak;
@@ -233,7 +233,7 @@ public class ControladorGame : MonoBehaviour
             AtivaSpawnInimigosPequenos();
             contadorMaxVelocidadeAtaque++;
         }
-        if(contadorMaxVelocidadeAtaque >= 3)
+        if(contadorMaxVelocidadeAtaque >= 6)
         {
             jogador.GetComponent<DisparoArma>().cooldown *= multVelAtak;
             jogador.GetComponent<DisparoArmaDouble>().cooldown *= multVelAtak;

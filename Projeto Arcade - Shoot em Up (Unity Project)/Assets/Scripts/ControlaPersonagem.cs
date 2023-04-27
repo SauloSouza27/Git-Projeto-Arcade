@@ -49,8 +49,6 @@ public class ControlaPersonagem : MonoBehaviour
         armaPrincipal = GameObject.FindWithTag("ArmaPrincipal");
         ControleArmaPrincipal(armaPrincipal);
 
-        ControleOrbeGiratorio();
-
         if (ControladorGame.instancia.armaPetAtivada)
         {
             ControleArmaPets();
