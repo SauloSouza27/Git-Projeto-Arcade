@@ -6,27 +6,46 @@ using UnityEngine.UI;
 
 public class ControlaMenuConfig : MonoBehaviour
 {
-    public GameObject jogador;
+    private static ControlaMenuConfig instancia;
+    public GameObject[] botoesFase;
+    public List<AudioSource> musicas, SFXs;
     // som musica
-    public AudioSource musicaMenuInicial, musicaFase1;
     public Slider sliderMusica;
+    private float[] volumesOriginaisMusicas;
     // som SFX
-    public AudioSource[] listaSFX;
     public Slider sliderSFX;
-    float[] volumesOriginais;
+    private float[] volumesOriginaisSFX;
 
     private void Start()
     {
-        // guarda som original de cada SFX
-        if (jogador != null)
+        if(instancia == null)
         {
-            listaSFX = jogador.GetComponents<AudioSource>();
-            volumesOriginais = new float[listaSFX.Length];
-            for (int i = 0; i < listaSFX.Length; i++)
+            instancia = this;
+        }else
+        {
+            Destroy(this.gameObject);
+        }
+        DontDestroyOnLoad(this.gameObject);
+
+        gameObject.SetActive(false);
+    }
+    private void OnEnable()
+    {
+        if (SceneManager.GetActiveScene().name == "Menu Inicial")
+        {
+            foreach(GameObject go in botoesFase)
             {
-                volumesOriginais[i] = listaSFX[i].volume;
+                go.SetActive(false);
             }
         }
+        if (SceneManager.GetActiveScene().name == "Fase 1" || SceneManager.GetActiveScene().name == "Fase 2")
+        {
+            foreach (GameObject go in botoesFase)
+            {
+                go.SetActive(true);
+            }
+        }
+
     }
     private void Update()
     {
@@ -54,20 +73,16 @@ public class ControlaMenuConfig : MonoBehaviour
     // Controla soms
     private void ControlaMusica()
     {
-        if (musicaFase1 != null)
+        for (int i = 0; i < musicas.Count; i++)
         {
-            musicaFase1.volume = sliderMusica.value;
-        }
-        if (musicaMenuInicial != null)
-        {
-            musicaMenuInicial.volume = sliderMusica.value;
+            musicas[i].volume = volumesOriginaisMusicas[i] * sliderMusica.value;
         }
     }
     private void ControlaSFX()
     {
-        for (int i = 0; i < listaSFX.Length; i++)
+        for (int i = 0; i < SFXs.Count; i++)
         {
-            listaSFX[i].volume = volumesOriginais[i] * sliderSFX.value;
+            SFXs[i].volume = volumesOriginaisSFX[i] * sliderSFX.value;
         }
     }
 }

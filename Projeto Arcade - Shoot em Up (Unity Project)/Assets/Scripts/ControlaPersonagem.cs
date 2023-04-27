@@ -66,7 +66,7 @@ public class ControlaPersonagem : MonoBehaviour
     // Dano Inimigos
     private void OnCollisionEnter(Collision colisor)
     {
-        if (colisor.gameObject.CompareTag("Inimigo") || colisor.gameObject.CompareTag("BalaPiramide") || colisor.gameObject.CompareTag("BalaBossPiramide"))
+        if (colisor.gameObject.CompareTag("Inimigo") || colisor.gameObject.CompareTag("BalaPiramide") || colisor.gameObject.CompareTag("BalaBossPiramide") || colisor.gameObject.CompareTag("BossFase1"))
         {
             if (pontosVida > 0)
             {
