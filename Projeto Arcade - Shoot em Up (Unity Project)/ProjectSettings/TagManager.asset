@@ -21,6 +21,10 @@ TagManager:
   - ArmaPrincipal
   - PowerUPArmaPrincipal
   - PowerUPVida
+  - BalaBossPiramide
+  - BossPetPiramide
+  - ArmaBoss
+  - BossFase1
   layers:
   - Default
   - TransparentFX
@@ -28,8 +32,8 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - BossFase1
+  - ArmaBossFase1
   - 
   - 
   - 

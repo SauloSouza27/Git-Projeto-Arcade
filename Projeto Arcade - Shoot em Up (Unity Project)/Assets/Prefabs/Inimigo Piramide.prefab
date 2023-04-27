@@ -117,7 +117,7 @@ Transform:
   - {fileID: 2898442863233629077}
   - {fileID: 7896575432135047854}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5634495346817257190
 MonoBehaviour:
@@ -135,6 +135,7 @@ MonoBehaviour:
   pontaArma: {fileID: 5323510009893981563}
   balaPiramide: {fileID: 2466213106853831192, guid: e8eeddd74b3d0394b8b15db06cd2fced, type: 3}
   velocidadeRotacao: 2
+  petBoss: 0
   pontosVida: 8
   danoTiro: 1
   xpInimigo: 110

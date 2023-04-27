@@ -27,6 +27,8 @@ public class ControladorGame : MonoBehaviour
     public GameObject droneCimaBaixo, droneEsqDirHori, droneDirEsqTrans, droneEsqDirTrans, droneCruzado, droneCascadeDirEsqTrans, droneCascadeDirEsqHori;
     // inimigos Piramide
     public GameObject piramideSuperiores, piramideLaterais;
+    // boss
+    public GameObject boss, armaBoss, petsBoss;
 
     private void Awake()
     {
@@ -69,34 +71,34 @@ public class ControladorGame : MonoBehaviour
 
         if (nivel == 2)
         {
-            StartCoroutine(AtivaMorcegoDrone(droneCimaBaixo, 3f));
+            StartCoroutine(AtivaInimigo(droneCimaBaixo, 3.0f));
         }
 
         if(nivel == 4)
         {
-            StartCoroutine(AtivaMorcegoDrone(droneEsqDirHori, 4f));
+            StartCoroutine(AtivaInimigo(droneEsqDirHori, 4.0f));
         }
 
         if(nivel == 5)
         {
-            StartCoroutine(AtivaMorcegoDrone(droneDirEsqTrans, 5f));
-            StartCoroutine(AtivaMorcegoDrone(droneEsqDirTrans, 12f));
+            StartCoroutine(AtivaInimigo(droneDirEsqTrans, 5.0f));
+            StartCoroutine(AtivaInimigo(droneEsqDirTrans, 12.0f));
         }
 
         if (nivel == 6)
         {
-            StartCoroutine(AtivaMorcegoDrone(piramideSuperiores, 4f));
+            StartCoroutine(AtivaInimigo(piramideSuperiores, 4.0f));
         }
 
         if (nivel == 7)
         {
-            StartCoroutine(AtivaMorcegoDrone(droneCruzado, 4f));
+            StartCoroutine(AtivaInimigo(droneCruzado, 4.0f));
         }
 
         if (nivel == 8)
         {
-            StartCoroutine(AtivaMorcegoDrone(droneCascadeDirEsqTrans, 4f));
-            StartCoroutine(AtivaMorcegoDrone(droneCascadeDirEsqHori, 18f));
+            StartCoroutine(AtivaInimigo(droneCascadeDirEsqTrans, 4.0f));
+            StartCoroutine(AtivaInimigo(droneCascadeDirEsqHori, 24.0f));
         }
 
         if (nivel == 9)
@@ -105,7 +107,13 @@ public class ControladorGame : MonoBehaviour
             {
                 go.SetActive(true);
             }
-            StartCoroutine(AtivaMorcegoDrone(piramideLaterais, 4f));
+            StartCoroutine(AtivaInimigo(piramideLaterais, 4.0f));
+        }
+
+        if (nivel == 1)
+        {
+            StartCoroutine(AtivaInimigo(boss, 6.0f));
+            StartCoroutine(AtivaInimigo(petsBoss, 16.0f));
         }
     }
 
@@ -125,7 +133,7 @@ public class ControladorGame : MonoBehaviour
         
         int valorMaxSlider = (int)sliderXP.maxValue;
         int valorSlider = (int)sliderXP.value;
-        if (valorSlider >= valorMaxSlider)
+        if (valorSlider >= valorMaxSlider && nivel < 10)
         {
             sliderXP.value = valorMaxSlider;
             XP = (int)valorXPNivel;
@@ -149,10 +157,10 @@ public class ControladorGame : MonoBehaviour
     {
         spawnsInimigoPequeno.SetActive(true);
     }
-    private IEnumerator AtivaMorcegoDrone(GameObject morcegoDrone, float delay)
+    public IEnumerator AtivaInimigo(GameObject inimgo, float delay)
     {
         yield return new WaitForSeconds(delay);
-        morcegoDrone.SetActive(true);
+        inimgo.SetActive(true);
     }
     public void PowerUPAtivaArmaPet(GameObject armaPet)
     {

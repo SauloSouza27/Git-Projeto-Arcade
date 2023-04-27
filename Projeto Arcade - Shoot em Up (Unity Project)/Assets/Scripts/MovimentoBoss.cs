@@ -9,13 +9,12 @@ public class MovimentoBoss : MonoBehaviour
     public GameObject cabecaPiramide, corpoPiramide;
     public float velocidadeRotacao = 2.0f;
     // arma cabeca
-    public GameObject armaEsq, armaDir, bala;
-    // Tiro
-    [Range(0, 5)] public float cooldown = 0.3f, tempoDisparo = 3.0f;
-    private float contadorCooldown;
-    private float contadorDisparos;
-    public int numeroDisparos = 10;
-    private bool ativaArma = false;
+    public int controleArmasDestruidas = 0;
+    // pets boss
+    public GameObject petsBoss;
+    // vidas do boss
+    private bool tomaDano = false;
+    public int vidaCorpo = 40, vidaCabeca = 20;
     // Materiais
     MeshRenderer[] renderers;
     Material[] materiais;
@@ -30,39 +29,138 @@ public class MovimentoBoss : MonoBehaviour
         {
             materiais[i] = renderers[i].material;
         }
-    }
-    private void Start()
-    {
-        ativaArma = false;
-        StartCoroutine(IntervaloDisparo(12.0f));
+
+        GetComponent<BoxCollider>().enabled = false;
     }
 
     private void Update()
     {
         if (Time.timeScale == 0) return;
 
-        Debug.Log(ativaArma);
-
         MovimentaBossPiramide();
 
-        if (ativaArma)
+        if (controleArmasDestruidas == 2)
         {
-            // Cooldown e controle tiro
-            Utilidades.CalculaCooldown(contadorCooldown);
-            contadorCooldown = Utilidades.CalculaCooldown(contadorCooldown);
-            if (contadorCooldown == 0)
+            GetComponent<BoxCollider>().enabled = true;
+            tomaDano = true;
+        }
+    }
+    // controle vida boss
+    private void OnCollisionEnter(Collision colisor)
+    {
+        if (tomaDano)
+        {
+            if (colisor.gameObject.CompareTag("BalaPersonagem"))
             {
-                Instantiate(bala, armaEsq.transform.position, armaEsq.transform.rotation);
-                Instantiate(bala, armaDir.transform.position, armaDir.transform.rotation);
-                contadorCooldown = cooldown;
-                contadorDisparos++;
-                if(contadorDisparos < numeroDisparos) return;
-                else
+                Destroy(colisor.gameObject);
+                int dano = alvo.GetComponent<ControlaPersonagem>().danoArmaPrincipal;
+                if (vidaCorpo > 0)
                 {
-                    contadorDisparos = 0;
-                    ativaArma = false;
-                    StartCoroutine(IntervaloDisparo(tempoDisparo));
+                    vidaCorpo -= dano;
+
+                    foreach (Material material in materiais)
+                    {
+                        StartCoroutine(Utilidades.PiscaCorRoutine(material));
+                    }
                 }
+                if (vidaCorpo <= 0)
+                {
+                    Destroy(corpoPiramide);
+                }
+            }
+            if (colisor.gameObject.CompareTag("BalaPet"))
+            {
+                Destroy(colisor.gameObject);
+                int dano = alvo.GetComponent<DisparoArmaPet>().danoArmaPet;
+                if (vidaCorpo > 0)
+                {
+                    vidaCorpo -= dano;
+
+                    foreach (Material material in materiais)
+                    {
+                        StartCoroutine(Utilidades.PiscaCorRoutine(material));
+                    }
+                }
+                if (vidaCorpo <= 0)
+                {
+                    Destroy(corpoPiramide);
+                }
+            }
+            if (colisor.gameObject.CompareTag("OrbeGiratorio"))
+            {
+                int dano = alvo.GetComponent<RespostaOrbeGiratorio>().danoOrbeGiratorio;
+                if (vidaCorpo > 0)
+                {
+                    vidaCorpo -= dano;
+
+                    foreach (Material material in materiais)
+                    {
+                        StartCoroutine(Utilidades.PiscaCorRoutine(material));
+                    }
+                }
+                if (vidaCorpo <= 0)
+                {
+                    Destroy(corpoPiramide);
+                }
+            }
+            if (colisor.gameObject.CompareTag("ProjetilSerra"))
+            {
+                int dano = alvo.GetComponent<DisparoArmaSerra>().danoSerra;
+                if (vidaCorpo > 0)
+                {
+                    vidaCorpo -= dano;
+
+                    foreach (Material material in materiais)
+                    {
+                        StartCoroutine(Utilidades.PiscaCorRoutine(material));
+                    }
+                }
+                if (vidaCorpo <= 0)
+                {
+                    Destroy(corpoPiramide);
+                }
+            }
+            if (colisor.gameObject.CompareTag("Player"))
+            {
+                int dano = alvo.GetComponent<ControlaPersonagem>().danoContato;
+                if (vidaCorpo > 0)
+                {
+                    vidaCorpo -= dano;
+
+                    foreach (Material material in materiais)
+                    {
+                        StartCoroutine(Utilidades.PiscaCorRoutine(material));
+                    }
+                }
+                if (vidaCorpo <= 0)
+                {
+                    Destroy(corpoPiramide);
+                }
+            }
+        }
+    }
+    private void OnCollisionStay(Collision colisor)
+    {
+        float contadorCooldown, cooldown = 0.5f;
+        contadorCooldown = cooldown;
+        Utilidades.CalculaCooldown(contadorCooldown);
+        contadorCooldown = Utilidades.CalculaCooldown(contadorCooldown);
+        if (colisor.gameObject.CompareTag("ProjetilSerra"))
+        {
+            int dano = alvo.GetComponent<DisparoArmaSerra>().danoSerra;
+            if (vidaCorpo > 0 && contadorCooldown == 0)
+            {
+                vidaCorpo -= dano;
+                contadorCooldown = cooldown;
+                foreach (Material material in materiais)
+                {
+                    StartCoroutine(controladorGame.GetComponent<ControladorGame>().AtivaInimigo(petsBoss, 4.0f));
+                    StartCoroutine(Utilidades.PiscaCorRoutine(material));
+                }
+            }
+            if (vidaCorpo <= 0)
+            {
+                Destroy(corpoPiramide);
             }
         }
     }
@@ -72,13 +170,9 @@ public class MovimentoBoss : MonoBehaviour
         Vector3 direcao = alvo.transform.position - transform.position;
         direcao = direcao.normalized;
         corpoPiramide.transform.up = Vector3.Slerp(corpoPiramide.transform.up, - direcao, velocidadeRotacao * Time.deltaTime);
+        
         // Mira cabeca
         //cabecaPiramide.transform.up = Vector3.Slerp(cabecaPiramide.transform.up, -1 * direcao, 3 * velocidadeRotacao * Time.deltaTime);
         cabecaPiramide.transform.rotation = Quaternion.LookRotation(cabecaPiramide.transform.forward, - direcao);
-    }
-    private IEnumerator IntervaloDisparo(float cooldown)
-    {
-        yield return new WaitForSeconds(cooldown);
-        ativaArma = true;
     }
 }
