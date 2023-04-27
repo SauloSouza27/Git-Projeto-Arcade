@@ -103,15 +103,16 @@ public class ControladorGame : MonoBehaviour
 
         if (nivel == 9)
         {
-            foreach (GameObject go in spawnsBaixo)
-            {
-                go.SetActive(true);
-            }
+            //foreach (GameObject go in spawnsBaixo)
+            //{
+            //    go.SetActive(true);
+            //}
             StartCoroutine(AtivaInimigo(piramideLaterais, 4.0f));
         }
 
-        if (nivel == 1)
+        if (nivel == 10)
         {
+            spawnsInimigoPequeno.SetActive(false);
             StartCoroutine(AtivaInimigo(boss, 6.0f));
             StartCoroutine(AtivaInimigo(petsBoss, 16.0f));
         }

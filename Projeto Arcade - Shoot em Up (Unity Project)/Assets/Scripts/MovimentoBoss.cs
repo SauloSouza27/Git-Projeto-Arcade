@@ -33,6 +33,7 @@ public class MovimentoBoss : MonoBehaviour
         GetComponent<BoxCollider>().enabled = false;
     }
 
+
     private void Update()
     {
         if (Time.timeScale == 0) return;

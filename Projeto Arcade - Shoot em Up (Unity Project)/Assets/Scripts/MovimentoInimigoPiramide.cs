@@ -51,7 +51,14 @@ public class MovimentoInimigoPiramide : MonoBehaviour
     {
         if (Time.timeScale == 0) return;
 
-        MovimentaInimigoPiramide();
+        if (!petBoss)
+        {
+            MovimentaInimigoPiramide();
+        }
+         if (petBoss)
+        {
+            MovimentaInimigoPiramideBossPet();
+        }
 
         // Cooldown e controle tiro
         Utilidades.CalculaCooldown(contadorCooldown);
@@ -158,31 +165,6 @@ public class MovimentoInimigoPiramide : MonoBehaviour
             }
         }
     }
-    private void OnCollisionStay(Collision colisor)
-    {
-        float contadorCooldown, cooldown = 0.5f;
-        contadorCooldown = cooldown;
-        Utilidades.CalculaCooldown(contadorCooldown);
-        contadorCooldown = Utilidades.CalculaCooldown(contadorCooldown);
-        if (colisor.gameObject.CompareTag("ProjetilSerra"))
-        {
-            int dano = alvo.GetComponent<DisparoArmaSerra>().danoSerra;
-            if (pontosVida > 0 && contadorCooldown == 0)
-            {
-                pontosVida -= dano;
-                contadorCooldown = cooldown;
-                foreach (Material material in materiais)
-                {
-                    StartCoroutine(Utilidades.PiscaCorRoutine(material));
-                }
-            }
-            if (pontosVida <= 0)
-            {
-                Destroy(gameObject);
-                ControladorGame.instancia.SomaXP(xpInimigo);
-            }
-        }
-    }
 
     private void MovimentaInimigoPiramide()
     {
@@ -194,6 +176,13 @@ public class MovimentoInimigoPiramide : MonoBehaviour
         //cabecaPiramide.transform.up = Vector3.Slerp(cabecaPiramide.transform.up, -1 * direcao, 3 * velocidadeRotacao * Time.deltaTime);
         cabecaPiramide.transform.rotation = Quaternion.LookRotation(cabecaPiramide.transform.forward, - direcao);
         pontaArma.transform.rotation = Quaternion.LookRotation(pontaArma.transform.forward, direcao);
+    }
+
+    private void MovimentaInimigoPiramideBossPet()
+    {
+        Vector3 direcao = alvo.transform.position - cabecaPiramide.transform.position;
+        direcao = direcao.normalized;
+        cabecaPiramide.transform.rotation = Quaternion.LookRotation(cabecaPiramide.transform.forward, - direcao);
     }
 
     // Tiro

@@ -64,6 +64,7 @@ public class ControleVidaArmasBoss : MonoBehaviour
     {
         // Rotacao armas
         Vector3 dir = alvo.transform.position - arma.transform.position;
+        dir = dir.normalized;
         arma.transform.rotation = Quaternion.LookRotation(arma.transform.forward, dir);
     }
     private IEnumerator IntervaloDisparo(float cooldown)
@@ -154,31 +155,6 @@ public class ControleVidaArmasBoss : MonoBehaviour
             {
                 vidaArma -= dano;
 
-                foreach (Material material in materiais)
-                {
-                    StartCoroutine(Utilidades.PiscaCorRoutine(material));
-                }
-            }
-            if (vidaArma <= 0)
-            {
-                boss.GetComponent<MovimentoBoss>().controleArmasDestruidas += 1;
-                Destroy(gameObject);
-            }
-        }
-    }
-    private void OnCollisionStay(Collision colisor)
-    {
-        float contadorCooldown, cooldown = 0.5f;
-        contadorCooldown = cooldown;
-        Utilidades.CalculaCooldown(contadorCooldown);
-        contadorCooldown = Utilidades.CalculaCooldown(contadorCooldown);
-        if (colisor.gameObject.CompareTag("ProjetilSerra"))
-        {
-            int dano = alvo.GetComponent<DisparoArmaSerra>().danoSerra;
-            if (vidaArma > 0 && contadorCooldown == 0)
-            {
-                vidaArma -= dano;
-                contadorCooldown = cooldown;
                 foreach (Material material in materiais)
                 {
                     StartCoroutine(Utilidades.PiscaCorRoutine(material));
