@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7346889372580258323}
   m_Layer: 0
   m_Name: PiramideBossPetEsq
-  m_TagString: BossPetPiramide
+  m_TagString: Inimigo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -54,15 +54,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a1dc5963afc067499a29344258a6be9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cabecaPiramide: {fileID: 1020439306236847287}
+  cabecaPiramide: {fileID: 0}
   pontaArma: {fileID: 6942046825578026850}
   balaPiramide: {fileID: 2466213106853831192, guid: e8eeddd74b3d0394b8b15db06cd2fced, type: 3}
   velocidadeRotacao: 2
   petBoss: 1
-  pontosVida: 16
+  pontosVida: 12
   danoTiro: 1
   xpInimigo: 110
-  cooldown: 1
+  cooldown: 1.5
   inverteRotacaoTiro: 1
 --- !u!54 &8378225842709477541
 Rigidbody:

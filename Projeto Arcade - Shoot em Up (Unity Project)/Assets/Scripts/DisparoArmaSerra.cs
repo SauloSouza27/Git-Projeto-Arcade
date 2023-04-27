@@ -11,11 +11,6 @@ public class DisparoArmaSerra : MonoBehaviour
     // Dano
     public int danoSerra = 3;
 
-    private void Awake()
-    {
-        //contadorCooldown = 0;
-    }
-
     void Update()
     {
         if (Time.timeScale == 0) return;

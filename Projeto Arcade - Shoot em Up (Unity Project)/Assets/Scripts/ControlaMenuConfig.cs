@@ -8,17 +8,18 @@ public class ControlaMenuConfig : MonoBehaviour
 {
     private static ControlaMenuConfig instancia;
     public GameObject[] botoesFase;
-    public List<AudioSource> musicas, SFXs;
+    public AudioSource musica;
+    public List<AudioSource> SFXs;
     // som musica
     public Slider sliderMusica;
-    private float[] volumesOriginaisMusicas;
+    private float volumeOriginalMusica;
     // som SFX
     public Slider sliderSFX;
     private float[] volumesOriginaisSFX;
 
     private void Start()
     {
-        if(instancia == null)
+        if (instancia == null)
         {
             instancia = this;
         }else
@@ -27,7 +28,7 @@ public class ControlaMenuConfig : MonoBehaviour
         }
         DontDestroyOnLoad(this.gameObject);
 
-        gameObject.SetActive(false);
+        volumeOriginalMusica = musica.volume;
     }
     private void OnEnable()
     {
@@ -50,7 +51,6 @@ public class ControlaMenuConfig : MonoBehaviour
     private void Update()
     {
         ControlaMusica();
-        ControlaSFX();
     }
     public void CarregaCena(string nomeCena)
     {
@@ -73,10 +73,7 @@ public class ControlaMenuConfig : MonoBehaviour
     // Controla soms
     private void ControlaMusica()
     {
-        for (int i = 0; i < musicas.Count; i++)
-        {
-            musicas[i].volume = volumesOriginaisMusicas[i] * sliderMusica.value;
-        }
+        musica.volume = volumeOriginalMusica * sliderMusica.value;
     }
     private void ControlaSFX()
     {

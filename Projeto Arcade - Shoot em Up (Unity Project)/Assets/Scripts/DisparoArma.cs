@@ -13,12 +13,6 @@ public class DisparoArma : MonoBehaviour
     public bool tiroAutomatico = true;
     // som tiro
     public AudioSource somTiro;
-
-
-    private void Awake()
-    {
-        //contadorCooldown = cooldown;
-    }
   
     void Update()
     {

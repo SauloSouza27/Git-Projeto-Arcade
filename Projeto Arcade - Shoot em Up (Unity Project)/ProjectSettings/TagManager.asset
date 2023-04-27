@@ -22,12 +22,8 @@ TagManager:
   - PowerUPArmaPrincipal
   - PowerUPVida
   - BalaBossPiramide
-  - BossPetPiramide
-  - ArmaBoss
-  - BossFase1
   - ControladorAudio
   - Musica
-  - SFX
   layers:
   - Default
   - TransparentFX

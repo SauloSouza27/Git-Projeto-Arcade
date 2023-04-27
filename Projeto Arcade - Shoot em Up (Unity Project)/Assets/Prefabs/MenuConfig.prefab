@@ -116,11 +116,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7893f2e64e815b948be3a6221fe7d6bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jogador: {fileID: 0}
-  musicaMenuInicial: {fileID: 0}
-  musicaFase1: {fileID: 0}
+  botoesFase: []
+  musicas: []
+  SFXs: []
   sliderMusica: {fileID: 4281347333097942884}
-  listaSFX: []
   sliderSFX: {fileID: 7103655049181790272}
 --- !u!1 &1297922531168076329
 GameObject:

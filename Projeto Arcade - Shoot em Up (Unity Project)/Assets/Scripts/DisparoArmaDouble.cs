@@ -14,12 +14,6 @@ public class DisparoArmaDouble : MonoBehaviour
     // som tiro
     public AudioSource somTiro;
 
-
-    private void Awake()
-    {
-        contadorCooldown = cooldown;
-    }
-
     void Update()
     {
         if (Time.timeScale == 0) return;

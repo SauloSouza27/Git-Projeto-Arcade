@@ -14,7 +14,8 @@ public class MovimentoBoss : MonoBehaviour
     public GameObject petsBoss;
     // vidas do boss
     private bool tomaDano = false;
-    public int vidaCorpo = 40, vidaCabeca = 20;
+    public int vidaCorpo = 40, vidaCabeca = 40;
+    public bool bossIsDead = false;
     // Materiais
     MeshRenderer[] renderers;
     Material[] materiais;
@@ -30,6 +31,7 @@ public class MovimentoBoss : MonoBehaviour
             materiais[i] = renderers[i].material;
         }
 
+        controleArmasDestruidas = 0;
         GetComponent<BoxCollider>().enabled = false;
     }
 
@@ -40,7 +42,7 @@ public class MovimentoBoss : MonoBehaviour
 
         MovimentaBossPiramide();
 
-        if (controleArmasDestruidas == 2)
+        if (controleArmasDestruidas >= 2)
         {
             GetComponent<BoxCollider>().enabled = true;
             tomaDano = true;
@@ -49,7 +51,7 @@ public class MovimentoBoss : MonoBehaviour
     // controle vida boss
     private void OnCollisionEnter(Collision colisor)
     {
-        if (tomaDano)
+        if (tomaDano && corpoPiramide != null)
         {
             if (colisor.gameObject.CompareTag("BalaPersonagem"))
             {
@@ -139,6 +141,101 @@ public class MovimentoBoss : MonoBehaviour
                 }
             }
         }
+        if (tomaDano && corpoPiramide == null)
+        {
+            if (colisor.gameObject.CompareTag("BalaPersonagem"))
+            {
+                Destroy(colisor.gameObject);
+                int dano = alvo.GetComponent<ControlaPersonagem>().danoArmaPrincipal;
+                if (vidaCabeca > 0)
+                {
+                    vidaCabeca -= dano;
+
+                    foreach (Material material in materiais)
+                    {
+                        StartCoroutine(Utilidades.PiscaCorRoutine(material));
+                    }
+                }
+                if (vidaCabeca <= 0)
+                {
+                    bossIsDead = true;
+                    Destroy(cabecaPiramide);
+                }
+            }
+            if (colisor.gameObject.CompareTag("BalaPet"))
+            {
+                Destroy(colisor.gameObject);
+                int dano = alvo.GetComponent<DisparoArmaPet>().danoArmaPet;
+                if (vidaCabeca > 0)
+                {
+                    vidaCabeca -= dano;
+
+                    foreach (Material material in materiais)
+                    {
+                        StartCoroutine(Utilidades.PiscaCorRoutine(material));
+                    }
+                }
+                if (vidaCabeca <= 0)
+                {
+                    bossIsDead = true;
+                    Destroy(cabecaPiramide);
+                }
+            }
+            if (colisor.gameObject.CompareTag("OrbeGiratorio"))
+            {
+                int dano = alvo.GetComponent<RespostaOrbeGiratorio>().danoOrbeGiratorio;
+                if (vidaCabeca > 0)
+                {
+                    vidaCabeca -= dano;
+
+                    foreach (Material material in materiais)
+                    {
+                        StartCoroutine(Utilidades.PiscaCorRoutine(material));
+                    }
+                }
+                if (vidaCabeca <= 0)
+                {
+                    bossIsDead = true;
+                    Destroy(cabecaPiramide);
+                }
+            }
+            if (colisor.gameObject.CompareTag("ProjetilSerra"))
+            {
+                int dano = alvo.GetComponent<DisparoArmaSerra>().danoSerra;
+                if (vidaCabeca > 0)
+                {
+                    vidaCabeca -= dano;
+
+                    foreach (Material material in materiais)
+                    {
+                        StartCoroutine(Utilidades.PiscaCorRoutine(material));
+                    }
+                }
+                if (vidaCabeca <= 0)
+                {
+                    bossIsDead = true;
+                    Destroy(cabecaPiramide);
+                }
+            }
+            if (colisor.gameObject.CompareTag("Player"))
+            {
+                int dano = alvo.GetComponent<ControlaPersonagem>().danoContato;
+                if (vidaCabeca > 0)
+                {
+                    vidaCabeca -= dano;
+
+                    foreach (Material material in materiais)
+                    {
+                        StartCoroutine(Utilidades.PiscaCorRoutine(material));
+                    }
+                }
+                if (vidaCabeca <= 0)
+                {
+                    bossIsDead = true;
+                    Destroy(cabecaPiramide);
+                }
+            }
+        }
     }
     private void OnCollisionStay(Collision colisor)
     {
@@ -161,19 +258,25 @@ public class MovimentoBoss : MonoBehaviour
             }
             if (vidaCorpo <= 0)
             {
-                Destroy(corpoPiramide);
+                Destroy(gameObject);
             }
         }
     }
     private void MovimentaBossPiramide()
     {
-        // Rotacao corpo
         Vector3 direcao = alvo.transform.position - transform.position;
         direcao = direcao.normalized;
-        corpoPiramide.transform.up = Vector3.Slerp(corpoPiramide.transform.up, - direcao, velocidadeRotacao * Time.deltaTime);
-        
-        // Mira cabeca
-        //cabecaPiramide.transform.up = Vector3.Slerp(cabecaPiramide.transform.up, -1 * direcao, 3 * velocidadeRotacao * Time.deltaTime);
-        cabecaPiramide.transform.rotation = Quaternion.LookRotation(cabecaPiramide.transform.forward, - direcao);
+
+        if (corpoPiramide != null)
+        {
+            // Rotacao corpo
+            corpoPiramide.transform.up = Vector3.Slerp(corpoPiramide.transform.up, - direcao, velocidadeRotacao * Time.deltaTime);
+        }
+        if (cabecaPiramide != null)
+        {
+            // Mira cabeca
+            //cabecaPiramide.transform.up = Vector3.Slerp(cabecaPiramide.transform.up, -1 * direcao, 3 * velocidadeRotacao * Time.deltaTime);
+            cabecaPiramide.transform.rotation = Quaternion.LookRotation(cabecaPiramide.transform.forward, -direcao);
+        }
     }
 }

@@ -18,7 +18,7 @@ public class ControladorGame : MonoBehaviour
     public GameObject spawnsInimigoPequeno;
     public List<GameObject> spawnsCima, spawnsLaterais, spawnsBaixo;
     // Power UP
-    public GameObject uiGameOver, uiPowerUP, armaPrincipal, armaDouble, armaTriple, buttonSubirNivel, buttonArmaDouble,
+    public GameObject uiGameOver, uiVitoria, uiPowerUP, armaPrincipal, armaDouble, armaTriple, buttonSubirNivel, buttonArmaDouble,
         buttonArmaTriple, buttonArmaPet, buttonArmaOrbeGiratorio, buttonArmaSerra, buttonDiminuiCooldown;
     public bool armaPrincipalAtivada = true, armaDoubleAtivada = false, armaTripleAtivada = false, armaPetAtivada = false, armaOrbeGiratorioAtivada = false, armaSerraAtivada = false;
     private int contadorMaxVelocidadeAtaque = 0;
@@ -116,6 +116,11 @@ public class ControladorGame : MonoBehaviour
             StartCoroutine(AtivaInimigo(boss, 6.0f));
             StartCoroutine(AtivaInimigo(petsBoss, 16.0f));
         }
+
+        if (boss.GetComponent<MovimentoBoss>().bossIsDead == true)
+        {
+            StartCoroutine(AtivaMenuVitoria(uiVitoria, 4.0f));
+        }
     }
 
     public void AtualizaBarraHP(int hpAtual)
@@ -163,6 +168,15 @@ public class ControladorGame : MonoBehaviour
         yield return new WaitForSeconds(delay);
         inimgo.SetActive(true);
     }
+
+    private IEnumerator AtivaMenuVitoria(GameObject uiVitoria, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        uiVitoria.SetActive(true);
+        Time.timeScale = 0.0f;
+    }
+
+    // powerUp buttons
     public void PowerUPAtivaArmaPet(GameObject armaPet)
     {
         armaPet.SetActive(true);
