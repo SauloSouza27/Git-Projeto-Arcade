@@ -49,7 +49,7 @@ GameObject:
   - component: {fileID: 2610356802882828831}
   m_Layer: 7
   m_Name: Arma Esq
-  m_TagString: Inimigo
+  m_TagString: ArmaBoss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -137,7 +137,7 @@ MonoBehaviour:
   arma: {fileID: 2835777295160593200}
   pontArma: {fileID: 5281422836647917308}
   bala: {fileID: 509821602030246837, guid: 6c2b632ec64b5bd49a472784e2dbd773, type: 3}
-  cooldown: 0.3
+  cooldown: 0.2
   tempoDisparo: 3
   numeroDisparos: 10
 --- !u!136 &9179852513658427633
@@ -295,6 +295,9 @@ MonoBehaviour:
   corpoPiramide: {fileID: 8991734798726551137}
   velocidadeRotacao: 0.5
   controleArmasDestruidas: 0
+  armasBoss:
+  - {fileID: 2835777295160593200}
+  - {fileID: 7514584705783465394}
   petsBoss: {fileID: 0}
   vidaCorpo: 60
   vidaCabeca: 40
@@ -394,7 +397,7 @@ GameObject:
   - component: {fileID: 422064171220508324}
   m_Layer: 7
   m_Name: Arma Dir
-  m_TagString: Inimigo
+  m_TagString: ArmaBoss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -482,7 +485,7 @@ MonoBehaviour:
   arma: {fileID: 7514584705783465394}
   pontArma: {fileID: 7200798433666004446}
   bala: {fileID: 509821602030246837, guid: 6c2b632ec64b5bd49a472784e2dbd773, type: 3}
-  cooldown: 0.3
+  cooldown: 0.2
   tempoDisparo: 3
   numeroDisparos: 10
 --- !u!136 &4682262229010567465

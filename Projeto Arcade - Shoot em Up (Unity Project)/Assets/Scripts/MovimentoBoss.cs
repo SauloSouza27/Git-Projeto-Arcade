@@ -9,7 +9,6 @@ public class MovimentoBoss : MonoBehaviour
     public GameObject cabecaPiramide, corpoPiramide;
     public float velocidadeRotacao = 2.0f;
     // arma cabeca
-    public int controleArmasDestruidas = 0;
     public GameObject[] armasBoss;
     // pets boss
     public GameObject petsBoss;
@@ -42,7 +41,7 @@ public class MovimentoBoss : MonoBehaviour
 
         MovimentaBossPiramide();
 
-        if (armasBoss == null)
+        if (armasBoss[0] == null && armasBoss[1] == null)
         {
             GetComponent<BoxCollider>().enabled = true;
             tomaDano = true;

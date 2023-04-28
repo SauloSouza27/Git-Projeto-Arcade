@@ -101,7 +101,6 @@ public class ControleVidaArmasBoss : MonoBehaviour
             }
             if (vidaArma <= 0)
             {
-                boss.GetComponent<MovimentoBoss>().controleArmasDestruidas += 1;
                 Destroy(gameObject);
             }
         }
@@ -120,7 +119,6 @@ public class ControleVidaArmasBoss : MonoBehaviour
             }
             if (vidaArma <= 0)
             {
-                boss.GetComponent<MovimentoBoss>().controleArmasDestruidas += 1;
                 Destroy(gameObject);
             }
         }
@@ -138,7 +136,6 @@ public class ControleVidaArmasBoss : MonoBehaviour
             }
             if (vidaArma <= 0)
             {
-                boss.GetComponent<MovimentoBoss>().controleArmasDestruidas += 1;
                 Destroy(gameObject);
             }
         }
@@ -156,7 +153,6 @@ public class ControleVidaArmasBoss : MonoBehaviour
             }
             if (vidaArma <= 0)
             {
-                boss.GetComponent<MovimentoBoss>().controleArmasDestruidas += 1;
                 Destroy(gameObject);
             }
         }
@@ -174,7 +170,6 @@ public class ControleVidaArmasBoss : MonoBehaviour
             }
             if (vidaArma <= 0)
             {
-                boss.GetComponent<MovimentoBoss>().controleArmasDestruidas += 1;
                 Destroy(gameObject);
             }
         }

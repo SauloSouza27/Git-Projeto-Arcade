@@ -24,6 +24,7 @@ TagManager:
   - BalaBossPiramide
   - ControladorAudio
   - Musica
+  - ArmaBoss
   layers:
   - Default
   - TransparentFX
