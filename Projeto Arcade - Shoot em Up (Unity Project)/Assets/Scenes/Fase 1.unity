@@ -778,7 +778,7 @@ Transform:
   - {fileID: 1777545596}
   - {fileID: 2024107712}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &199698639
 GameObject:
@@ -1813,7 +1813,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &359394992
 GameObject:
@@ -2621,7 +2621,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1142848961}
         m_TargetAssemblyTypeName: ControlaUiGameOver, Assembly-CSharp
         m_MethodName: CarregaCena
         m_Mode: 5
@@ -3098,7 +3098,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1142848961}
         m_TargetAssemblyTypeName: ControlaUiGameOver, Assembly-CSharp
         m_MethodName: CarregaCena
         m_Mode: 5
@@ -4511,7 +4511,7 @@ Transform:
   m_Children:
   - {fileID: 916952103}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &916952102
 GameObject:
@@ -5579,6 +5579,7 @@ GameObject:
   - component: {fileID: 1142848959}
   - component: {fileID: 1142848958}
   - component: {fileID: 1142848957}
+  - component: {fileID: 1142848961}
   m_Layer: 5
   m_Name: UI Vitoria
   m_TagString: Untagged
@@ -5665,13 +5666,25 @@ RectTransform:
   - {fileID: 521365939}
   - {fileID: 2050112044}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1142848961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1142848955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebc6ac8b1d8ff9c49a029dc655e6605d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1165176173 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7024383780055595582, guid: 6470e112d76167b4bac48cdaad12ef5d, type: 3}
@@ -9455,7 +9468,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1142848961}
         m_TargetAssemblyTypeName: ControlaUiGameOver, Assembly-CSharp
         m_MethodName: CarregaCena
         m_Mode: 5
@@ -9918,7 +9931,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 994422458169673258, guid: 3d06c5954b18c7443801e0546e2a2d19, type: 3}
       propertyPath: pontosVida
-      value: 20
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 994422458169673258, guid: 3d06c5954b18c7443801e0546e2a2d19, type: 3}
       propertyPath: cabecaPiramide
@@ -10983,7 +10996,7 @@ RectTransform:
   - {fileID: 5334189915521768082}
   - {fileID: 7202352574623498897}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -14101,7 +14114,7 @@ RectTransform:
   - {fileID: 3628167321093232663}
   - {fileID: 5968687141836597213}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -14738,7 +14751,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6222514411736813381, guid: 7ce3050619c84464da2ed08a96f99817, type: 3}
       propertyPath: pontosVida
-      value: 20
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 6222514411736813381, guid: 7ce3050619c84464da2ed08a96f99817, type: 3}
       propertyPath: cabecaPiramide
@@ -15418,7 +15431,7 @@ RectTransform:
   - {fileID: 3063963190978795481}
   - {fileID: 3505506569775507813}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -15784,7 +15797,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 776616345876304713, guid: 6470e112d76167b4bac48cdaad12ef5d, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 776616345876304713, guid: 6470e112d76167b4bac48cdaad12ef5d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -15899,7 +15912,7 @@ RectTransform:
   - {fileID: 5118499524164865106}
   - {fileID: 810495768}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
