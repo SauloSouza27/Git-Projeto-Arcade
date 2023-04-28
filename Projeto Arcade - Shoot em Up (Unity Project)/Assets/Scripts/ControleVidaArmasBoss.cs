@@ -32,7 +32,7 @@ public class ControleVidaArmasBoss : MonoBehaviour
             materiais[i] = renderers[i].material;
         }
         // busca colisor
-        colisor = alvo.GetComponent<CapsuleCollider>();
+        colisor = GetComponent<CapsuleCollider>();
         colisor.enabled = false;
     }
     private void Start()

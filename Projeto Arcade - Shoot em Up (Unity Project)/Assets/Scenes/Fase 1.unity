@@ -2621,7 +2621,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1142848956}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ControlaUiGameOver, Assembly-CSharp
         m_MethodName: CarregaCena
         m_Mode: 5
@@ -3098,7 +3098,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1142848956}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ControlaUiGameOver, Assembly-CSharp
         m_MethodName: CarregaCena
         m_Mode: 5
@@ -5579,7 +5579,6 @@ GameObject:
   - component: {fileID: 1142848959}
   - component: {fileID: 1142848958}
   - component: {fileID: 1142848957}
-  - component: {fileID: 1142848956}
   m_Layer: 5
   m_Name: UI Vitoria
   m_TagString: Untagged
@@ -5587,18 +5586,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!114 &1142848956
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1142848955}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ebc6ac8b1d8ff9c49a029dc655e6605d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1142848957
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9468,7 +9455,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1142848956}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ControlaUiGameOver, Assembly-CSharp
         m_MethodName: CarregaCena
         m_Mode: 5
@@ -15617,9 +15604,17 @@ PrefabInstance:
       propertyPath: petsBoss
       value: 
       objectReference: {fileID: 625901196}
+    - target: {fileID: 4293315003338424314, guid: dbb1d80f114cad14bb49b2d3a0bda164, type: 3}
+      propertyPath: cooldown
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 5512186861642180245, guid: dbb1d80f114cad14bb49b2d3a0bda164, type: 3}
       propertyPath: m_Name
       value: Boss
+      objectReference: {fileID: 0}
+    - target: {fileID: 5512186861642180245, guid: dbb1d80f114cad14bb49b2d3a0bda164, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8685267284019799110, guid: dbb1d80f114cad14bb49b2d3a0bda164, type: 3}
       propertyPath: m_RootOrder
@@ -15664,6 +15659,10 @@ PrefabInstance:
     - target: {fileID: 8685267284019799110, guid: dbb1d80f114cad14bb49b2d3a0bda164, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9022370625549711023, guid: dbb1d80f114cad14bb49b2d3a0bda164, type: 3}
+      propertyPath: cooldown
+      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
