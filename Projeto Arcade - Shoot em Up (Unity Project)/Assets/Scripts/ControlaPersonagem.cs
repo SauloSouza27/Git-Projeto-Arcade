@@ -15,7 +15,7 @@ public class ControlaPersonagem : MonoBehaviour
     public float velocidadeRotacaoPet = 2.0f, distanciaMinPetAtirar = 20.0f, velocidadeRotacaoOrbeGiratorio = 15.0f;
     // Pontos de vida
     public int pontosVida = 3;
-    public int danoContato = 3;
+    public int danoContato = 5;
     // Dano arma
     public int danoArmaPrincipal = 1;
     // Particulas

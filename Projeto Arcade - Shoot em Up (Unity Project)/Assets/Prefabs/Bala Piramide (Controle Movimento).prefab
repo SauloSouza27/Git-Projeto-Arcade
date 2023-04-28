@@ -48,12 +48,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocidade: 15
-  duracaoBala: 800
+  duracaoBala: 1500
   projetil: {fileID: 2466213106853831192}
   projetilInimigo: 1
   rotacaoTiro: 1
   projetilRotacao: {fileID: 6338376812386022329}
-  fonteTiro: {fileID: 2654179050399584760, guid: 0d71d0d044cbff94aa6173a6676da963, type: 3}
   velocidadeRotacao: 200
   danoProjetil: 40
 --- !u!65 &531126692626444058

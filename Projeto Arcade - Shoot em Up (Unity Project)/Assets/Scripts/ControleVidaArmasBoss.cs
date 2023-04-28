@@ -18,6 +18,8 @@ public class ControleVidaArmasBoss : MonoBehaviour
     // Materiais
     MeshRenderer[] renderers;
     Material[] materiais;
+    // box collider
+    CapsuleCollider colisor;
     private void Awake()
     {
         controladorGame = GameObject.FindGameObjectWithTag("ControladorGame");
@@ -29,11 +31,15 @@ public class ControleVidaArmasBoss : MonoBehaviour
         {
             materiais[i] = renderers[i].material;
         }
+        // busca colisor
+        colisor = alvo.GetComponent<CapsuleCollider>();
+        colisor.enabled = false;
     }
     private void Start()
     {
         ativaArma = false;
         StartCoroutine(IntervaloDisparo(12.0f));
+        StartCoroutine(AtrasaColisorArma(colisor, 10.0f));
     }
     private void Update()
     {
@@ -71,6 +77,12 @@ public class ControleVidaArmasBoss : MonoBehaviour
     {
         yield return new WaitForSeconds(cooldown);
         ativaArma = true;
+    }
+
+    private IEnumerator AtrasaColisorArma(CapsuleCollider colisor, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        colisor.enabled = true;
     }
     private void OnCollisionEnter(Collision colisor)
     {

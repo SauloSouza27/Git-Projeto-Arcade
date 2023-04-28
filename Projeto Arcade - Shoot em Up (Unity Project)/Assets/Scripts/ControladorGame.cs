@@ -28,7 +28,7 @@ public class ControladorGame : MonoBehaviour
     // inimigos Piramide
     public GameObject piramideSuperiores, piramideLaterais;
     // boss
-    public GameObject boss, armaBoss, petsBoss;
+    public GameObject boss, petsBoss;
 
     private void Awake()
     {

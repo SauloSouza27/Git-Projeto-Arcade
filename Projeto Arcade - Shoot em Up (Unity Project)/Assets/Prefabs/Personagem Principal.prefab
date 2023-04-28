@@ -50,7 +50,7 @@ Transform:
   - {fileID: 6816385901124600142}
   - {fileID: 4962514270277505481}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8950388453384976238
 MonoBehaviour:
@@ -183,8 +183,7 @@ MonoBehaviour:
   projetilSerra: {fileID: 4037887501447905336, guid: 25b6f54121918d14aac6d39143a0fb5b, type: 3}
   pontaSaidaSerra: {fileID: 5985603732724938713}
   cooldown: 3
-  danoSerra: 1
-  danoSerraDPS: 1
+  danoSerra: 5
 --- !u!65 &5690551041489826068
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -266,7 +265,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: d2ef5b56ac1388f4399bb0be0a0ea089, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.6
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -362,7 +361,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: d2ef5b56ac1388f4399bb0be0a0ea089, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.6
+  m_Volume: 0.4
   m_Pitch: 1.07
   Loop: 0
   Mute: 0
@@ -888,10 +887,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -1532571332047908246, guid: 5c5fa0d6f689d1748b41f62e8d5a217b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 15e7422449c710242a4cab5f3d278aa1, type: 2}
     - target: {fileID: 919132149155446097, guid: 5c5fa0d6f689d1748b41f62e8d5a217b, type: 3}
       propertyPath: m_Name
       value: Spaceship
       objectReference: {fileID: 0}
+    - target: {fileID: 8149784355089508638, guid: 5c5fa0d6f689d1748b41f62e8d5a217b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0669bbfb8bad7e347a760c08766c9332, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
