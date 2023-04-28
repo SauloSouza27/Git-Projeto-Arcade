@@ -46,6 +46,8 @@ public class ControlaMenuConfig : MonoBehaviour
     private void Update()
     {
         ControlaMusica();
+
+        ControlaSFX();
     }
     public void CarregaCena(string nomeCena)
     {
