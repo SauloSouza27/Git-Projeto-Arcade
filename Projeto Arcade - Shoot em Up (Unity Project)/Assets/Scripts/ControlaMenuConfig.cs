@@ -19,15 +19,6 @@ public class ControlaMenuConfig : MonoBehaviour
 
     private void Start()
     {
-        if (instancia == null)
-        {
-            instancia = this;
-        }else
-        {
-            Destroy(this.gameObject);
-        }
-        DontDestroyOnLoad(this.gameObject);
-
         volumeOriginalMusica = musica.volume;
     }
     private void OnEnable()
