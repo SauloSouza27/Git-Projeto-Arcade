@@ -128,20 +128,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 933722626a8070c48892cb665d2c269a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnsCima:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  spawnsLaterais:
-  - {fileID: 0}
-  - {fileID: 4941080145082082195}
-  spawnsBaixo:
-  - {fileID: 0}
-  - {fileID: 0}
   cooldownSpawnInimigoPequeno: 6
   minTempo: 4
   maxTempo: 12
-  inimigoPequeno: {fileID: 7482730593119905099, guid: 1b339fdb76bf83e47a927ee1c7a8923c, type: 3}
+  inimigoPequeno: {fileID: 5211043384931813097, guid: 9545f48fd5eea1b40b4d2624ebf8fbb6, type: 3}
   ativar: 1
