@@ -10,6 +10,7 @@ public class MovimentoBoss : MonoBehaviour
     public float velocidadeRotacao = 2.0f;
     // arma cabeca
     public int controleArmasDestruidas = 0;
+    public GameObject[] armasBoss;
     // pets boss
     public GameObject petsBoss;
     // vidas do boss
@@ -31,7 +32,6 @@ public class MovimentoBoss : MonoBehaviour
             materiais[i] = renderers[i].material;
         }
 
-        controleArmasDestruidas = 0;
         GetComponent<BoxCollider>().enabled = false;
     }
 
@@ -42,7 +42,7 @@ public class MovimentoBoss : MonoBehaviour
 
         MovimentaBossPiramide();
 
-        if (controleArmasDestruidas >= 2)
+        if (armasBoss == null)
         {
             GetComponent<BoxCollider>().enabled = true;
             tomaDano = true;

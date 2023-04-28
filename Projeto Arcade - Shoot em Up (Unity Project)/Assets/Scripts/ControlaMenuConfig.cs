@@ -7,9 +7,10 @@ using UnityEngine.UI;
 public class ControlaMenuConfig : MonoBehaviour
 {
     private static ControlaMenuConfig instancia;
+    public GameObject jogador;
     public GameObject[] botoesFase;
     public AudioSource musica;
-    public List<AudioSource> SFXs;
+    public AudioSource[] SFXs;
     // som musica
     public Slider sliderMusica;
     private float volumeOriginalMusica;
@@ -20,6 +21,9 @@ public class ControlaMenuConfig : MonoBehaviour
     private void Start()
     {
         volumeOriginalMusica = musica.volume;
+
+        // busca SFX
+        SFXs = jogador.GetComponents<AudioSource>();
     }
     private void OnEnable()
     {
@@ -68,9 +72,9 @@ public class ControlaMenuConfig : MonoBehaviour
     }
     private void ControlaSFX()
     {
-        for (int i = 0; i < SFXs.Count; i++)
+        for (int i = 0; i < SFXs.Length; i++)
         {
-            SFXs[i].volume = volumesOriginaisSFX[i] * sliderSFX.value;
+            SFXs[i].volume = sliderSFX.value;
         }
     }
 }

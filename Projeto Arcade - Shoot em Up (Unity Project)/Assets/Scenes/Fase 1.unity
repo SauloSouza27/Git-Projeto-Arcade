@@ -14564,6 +14564,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7893f2e64e815b948be3a6221fe7d6bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  jogador: {fileID: 1537027532}
   botoesFase: []
   musica: {fileID: 199698642}
   SFXs: []
