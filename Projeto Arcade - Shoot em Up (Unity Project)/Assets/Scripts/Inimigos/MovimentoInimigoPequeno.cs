@@ -11,9 +11,11 @@ public class MovimentoInimigoPequeno : MonoBehaviour
     public int pontosVida = 1;
     // XP quando morre
     public int xpInimigo = 10;
-
-    MeshRenderer[] renderers;
-    Material[] materiais;
+    // materiais inimgo
+    private MeshRenderer[] renderers;
+    private Material[] materiais;
+    // sons inimigo
+    public AudioSource inimigoMorre;
     private void Awake()
     {
         controladorGame = GameObject.FindGameObjectWithTag("ControladorGame");
@@ -64,6 +66,7 @@ public class MovimentoInimigoPequeno : MonoBehaviour
             }
             if (pontosVida <= 0)
             {
+                inimigoMorre.Play();
                 Destroy(gameObject);
                 ControladorGame.instancia.SomaXP(xpInimigo);
             }
@@ -83,6 +86,7 @@ public class MovimentoInimigoPequeno : MonoBehaviour
             }
             if (pontosVida <= 0)
             {
+                inimigoMorre.Play();
                 Destroy(gameObject);
                 ControladorGame.instancia.SomaXP(xpInimigo);
             }
@@ -101,6 +105,7 @@ public class MovimentoInimigoPequeno : MonoBehaviour
             }
             if (pontosVida <= 0)
             {
+                inimigoMorre.Play();
                 Destroy(gameObject);
                 ControladorGame.instancia.SomaXP(xpInimigo);
             }
@@ -119,6 +124,7 @@ public class MovimentoInimigoPequeno : MonoBehaviour
             }
             if (pontosVida <= 0)
             {
+                inimigoMorre.Play();
                 Destroy(gameObject);
                 ControladorGame.instancia.SomaXP(xpInimigo);
             }
@@ -137,6 +143,7 @@ public class MovimentoInimigoPequeno : MonoBehaviour
             }
             if (pontosVida <= 0)
             {
+                inimigoMorre.Play();
                 Destroy(gameObject);
                 ControladorGame.instancia.SomaXP(xpInimigo);
             }

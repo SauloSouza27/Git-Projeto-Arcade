@@ -19,9 +19,11 @@ public class MovimentoInimigoPiramide : MonoBehaviour
     [Range(0, 3)] public float cooldown = 1.0f;
     private float contadorCooldown;
     public bool inverteRotacaoTiro = false;
-    // Materiais
-    MeshRenderer[] renderers;
-    Material[] materiais;
+    // materiais inimgo
+    private MeshRenderer[] renderers;
+    private Material[] materiais;
+    // sons inimigo
+    public AudioSource inimigoMorre;
     private void Awake()
     {
         controladorGame = GameObject.FindGameObjectWithTag("ControladorGame");
@@ -87,6 +89,7 @@ public class MovimentoInimigoPiramide : MonoBehaviour
             }
             if (pontosVida <= 0)
             {
+                inimigoMorre.Play();
                 Destroy(gameObject);
                 ControladorGame.instancia.SomaXP(xpInimigo);
             }
@@ -106,6 +109,7 @@ public class MovimentoInimigoPiramide : MonoBehaviour
             }
             if (pontosVida <= 0)
             {
+                inimigoMorre.Play();
                 Destroy(gameObject);
                 ControladorGame.instancia.SomaXP(xpInimigo);
             }
@@ -124,6 +128,7 @@ public class MovimentoInimigoPiramide : MonoBehaviour
             }
             if (pontosVida <= 0)
             {
+                inimigoMorre.Play();
                 Destroy(gameObject);
                 ControladorGame.instancia.SomaXP(xpInimigo);
             }
@@ -142,6 +147,7 @@ public class MovimentoInimigoPiramide : MonoBehaviour
             }
             if (pontosVida <= 0)
             {
+                inimigoMorre.Play();
                 Destroy(gameObject);
                 ControladorGame.instancia.SomaXP(xpInimigo);
             }
@@ -160,6 +166,7 @@ public class MovimentoInimigoPiramide : MonoBehaviour
             }
             if (pontosVida <= 0)
             {
+                inimigoMorre.Play();
                 Destroy(gameObject);
                 ControladorGame.instancia.SomaXP(xpInimigo);
             }
