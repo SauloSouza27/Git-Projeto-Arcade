@@ -682,7 +682,7 @@ Transform:
   - {fileID: 1578022990660667026}
   - {fileID: 5241911332145352594}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &6295776313445611209
 Animator:
@@ -721,11 +721,13 @@ MonoBehaviour:
   pontaArma: {fileID: 2567122900640731861}
   balaPiramide: {fileID: 2466213106853831192, guid: e8eeddd74b3d0394b8b15db06cd2fced, type: 3}
   velocidadeRotacao: 2
+  petBoss: 0
   pontosVida: 8
   danoTiro: 1
   xpInimigo: 110
   cooldown: 2
   inverteRotacaoTiro: 1
+  fxExplosionPrefab: {fileID: 9073733397960554151, guid: 6bc7a83b7d71219478b92b61ba56e43e, type: 3}
 --- !u!54 &5020916756526811071
 Rigidbody:
   m_ObjectHideFlags: 0

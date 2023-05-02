@@ -10531,6 +10531,10 @@ PrefabInstance:
       propertyPath: cabecaPiramide
       value: 
       objectReference: {fileID: 1287711839}
+    - target: {fileID: 994422458169673258, guid: 3d06c5954b18c7443801e0546e2a2d19, type: 3}
+      propertyPath: fxExplosionPrefab
+      value: 
+      objectReference: {fileID: 9073733397960554151, guid: 6bc7a83b7d71219478b92b61ba56e43e, type: 3}
     - target: {fileID: 1020439306236847287, guid: 3d06c5954b18c7443801e0546e2a2d19, type: 3}
       propertyPath: m_Name
       value: PiramideBossPetEsq
@@ -15366,6 +15370,10 @@ PrefabInstance:
       propertyPath: cabecaPiramide
       value: 
       objectReference: {fileID: 1516834188}
+    - target: {fileID: 6222514411736813381, guid: 7ce3050619c84464da2ed08a96f99817, type: 3}
+      propertyPath: fxExplosionPrefab
+      value: 
+      objectReference: {fileID: 9073733397960554151, guid: 6bc7a83b7d71219478b92b61ba56e43e, type: 3}
     - target: {fileID: 9075911078329381123, guid: 7ce3050619c84464da2ed08a96f99817, type: 3}
       propertyPath: m_RootOrder
       value: 0
