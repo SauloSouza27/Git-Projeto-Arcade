@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4993856337061519684}
   - component: {fileID: 7142325103428419509}
   - component: {fileID: 4485645037099912181}
+  - component: {fileID: 4268107023435981221}
   m_Layer: 0
   m_Name: Personagem Principal
   m_TagString: Player
@@ -79,9 +80,10 @@ MonoBehaviour:
   distanciaMinPetAtirar: 18
   velocidadeRotacaoOrbeGiratorio: 90
   pontosVida: 3
-  danoContato: 150
+  danoContato: 5
   danoArmaPrincipal: 1
   particulasDano: {fileID: 1346597017377448381}
+  tomaDano: {fileID: 4268107023435981221}
 --- !u!114 &7773611179429094950
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -182,8 +184,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projetilSerra: {fileID: 4037887501447905336, guid: 25b6f54121918d14aac6d39143a0fb5b, type: 3}
   pontaSaidaSerra: {fileID: 5985603732724938713}
-  cooldown: 3
-  danoSerra: 5
+  cooldown: 4
+  danoSerra: 3
 --- !u!65 &5690551041489826068
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -445,6 +447,102 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!82 &4268107023435981221
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9074662426996894289}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: abe6540687961c14f810627d88159359, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.6
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.318
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &196893228064279672
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -500,10 +598,6 @@ PrefabInstance:
     - target: {fileID: 8045413695001352628, guid: f01f1d9becf1c3640913ec989b8b58c6, type: 3}
       propertyPath: m_Name
       value: Orbe Giratorio Base
-      objectReference: {fileID: 0}
-    - target: {fileID: 8045413695001352628, guid: f01f1d9becf1c3640913ec989b8b58c6, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -575,10 +669,6 @@ PrefabInstance:
     - target: {fileID: 7246906206830993502, guid: e28e95908764891429639377ecf424e0, type: 3}
       propertyPath: m_Name
       value: Arma Serra
-      objectReference: {fileID: 0}
-    - target: {fileID: 7246906206830993502, guid: e28e95908764891429639377ecf424e0, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -655,10 +745,6 @@ PrefabInstance:
     - target: {fileID: 8345349607902975472, guid: d331379ae68b348459fa44853e1ef134, type: 3}
       propertyPath: m_Name
       value: Arma Principal Triple
-      objectReference: {fileID: 0}
-    - target: {fileID: 8345349607902975472, guid: d331379ae68b348459fa44853e1ef134, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -741,10 +827,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Escudo Forca
       objectReference: {fileID: 0}
-    - target: {fileID: 5891513424844667112, guid: 9679eae0931bb624a9799f13489a26ad, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -810,10 +892,6 @@ PrefabInstance:
     - target: {fileID: 9024836471270425395, guid: 7d5ab6c822c82474e8adecc0cc07d24b, type: 3}
       propertyPath: m_Name
       value: Arma Principal Double
-      objectReference: {fileID: 0}
-    - target: {fileID: 9024836471270425395, guid: 7d5ab6c822c82474e8adecc0cc07d24b, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -992,10 +1070,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Arma Pet
       objectReference: {fileID: 0}
-    - target: {fileID: 2376689155905792154, guid: fa1314301a9650d4383a38c924b1e925, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3773459500842476348, guid: fa1314301a9650d4383a38c924b1e925, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -1040,10 +1114,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1709769206599734760, guid: fa1314301a9650d4383a38c924b1e925, type: 3}
+    - {fileID: 584707346737737062, guid: fa1314301a9650d4383a38c924b1e925, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2376689155905792154, guid: fa1314301a9650d4383a38c924b1e925, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3686107278916331756}
   m_SourcePrefab: {fileID: 100100000, guid: fa1314301a9650d4383a38c924b1e925, type: 3}
 --- !u!1 &561892150569625339 stripped
 GameObject:
@@ -1070,6 +1149,102 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2376689155905792154, guid: fa1314301a9650d4383a38c924b1e925, type: 3}
   m_PrefabInstance: {fileID: 7694030186585170546}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &3686107278916331756
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5349464373578631912}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: fd2e2ba01915a514bbd776c5dd098df1, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!4 &6816385901124600142 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3773459500842476348, guid: fa1314301a9650d4383a38c924b1e925, type: 3}
@@ -1140,10 +1315,6 @@ PrefabInstance:
     - target: {fileID: 5068374342049365672, guid: f26a238dde27d4a438f15ecfe43fcb3f, type: 3}
       propertyPath: m_Name
       value: Arma Principal
-      objectReference: {fileID: 0}
-    - target: {fileID: 5068374342049365672, guid: f26a238dde27d4a438f15ecfe43fcb3f, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

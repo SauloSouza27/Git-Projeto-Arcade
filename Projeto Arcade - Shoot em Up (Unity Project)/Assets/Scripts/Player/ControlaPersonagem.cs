@@ -20,9 +20,11 @@ public class ControlaPersonagem : MonoBehaviour
     public int danoArmaPrincipal = 1;
     // Particulas
     public ParticleSystem particulasDano;
-
-    Material[] materiais;
-    Color[] coresOriginais;
+    // Materias player
+    private Material[] materiais;
+    private Color[] coresOriginais;
+    // sons player
+    public AudioSource tomaDano;
 
     void Start()
     {
@@ -195,6 +197,7 @@ public class ControlaPersonagem : MonoBehaviour
     private void ReceberDano()
     {
         EfeitoTomaDano();
+        tomaDano.Play();
         int dano = 1;
         pontosVida -= dano;
     }
