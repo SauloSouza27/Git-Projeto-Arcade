@@ -782,6 +782,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pontosVida: 1
   xpInimigo: 10
+  fxExplosionPrefab: {fileID: 9073733397960554151, guid: 6bc7a83b7d71219478b92b61ba56e43e, type: 3}
 --- !u!1 &2752124546896030796
 GameObject:
   m_ObjectHideFlags: 0

@@ -22,8 +22,8 @@ public class MovimentoInimigoPiramide : MonoBehaviour
     // materiais inimgo
     private MeshRenderer[] renderers;
     private Material[] materiais;
-    // sons inimigo
-    public AudioSource inimigoMorre;
+    // efeito explosão
+    public GameObject fxExplosionPrefab;
     private void Awake()
     {
         controladorGame = GameObject.FindGameObjectWithTag("ControladorGame");
@@ -89,7 +89,7 @@ public class MovimentoInimigoPiramide : MonoBehaviour
             }
             if (pontosVida <= 0)
             {
-                inimigoMorre.Play();
+                Instantiate(fxExplosionPrefab, transform.position, transform.rotation);
                 Destroy(gameObject);
                 ControladorGame.instancia.SomaXP(xpInimigo);
             }
@@ -109,7 +109,7 @@ public class MovimentoInimigoPiramide : MonoBehaviour
             }
             if (pontosVida <= 0)
             {
-                inimigoMorre.Play();
+                Instantiate(fxExplosionPrefab, transform.position, transform.rotation);
                 Destroy(gameObject);
                 ControladorGame.instancia.SomaXP(xpInimigo);
             }
@@ -128,7 +128,7 @@ public class MovimentoInimigoPiramide : MonoBehaviour
             }
             if (pontosVida <= 0)
             {
-                inimigoMorre.Play();
+                Instantiate(fxExplosionPrefab, transform.position, transform.rotation);
                 Destroy(gameObject);
                 ControladorGame.instancia.SomaXP(xpInimigo);
             }
@@ -147,7 +147,7 @@ public class MovimentoInimigoPiramide : MonoBehaviour
             }
             if (pontosVida <= 0)
             {
-                inimigoMorre.Play();
+                Instantiate(fxExplosionPrefab, transform.position, transform.rotation);
                 Destroy(gameObject);
                 ControladorGame.instancia.SomaXP(xpInimigo);
             }
@@ -166,7 +166,7 @@ public class MovimentoInimigoPiramide : MonoBehaviour
             }
             if (pontosVida <= 0)
             {
-                inimigoMorre.Play();
+                Instantiate(fxExplosionPrefab, transform.position, transform.rotation);
                 Destroy(gameObject);
                 ControladorGame.instancia.SomaXP(xpInimigo);
             }

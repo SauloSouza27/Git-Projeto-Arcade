@@ -141,6 +141,7 @@ MonoBehaviour:
   xpInimigo: 110
   cooldown: 2
   inverteRotacaoTiro: 0
+  fxExplosionPrefab: {fileID: 9073733397960554151, guid: 6bc7a83b7d71219478b92b61ba56e43e, type: 3}
 --- !u!54 &582049393883819948
 Rigidbody:
   m_ObjectHideFlags: 0
