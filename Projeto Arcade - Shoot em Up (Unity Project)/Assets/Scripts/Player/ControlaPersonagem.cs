@@ -51,6 +51,11 @@ public class ControlaPersonagem : MonoBehaviour
         armaPrincipal = GameObject.FindWithTag("ArmaPrincipal");
         ControleArmaPrincipal(armaPrincipal);
 
+        if(ControladorGame.instancia == null)
+        {
+            return;
+        }
+
         if (ControladorGame.instancia.armaPetAtivada)
         {
             ControleArmaPets();
