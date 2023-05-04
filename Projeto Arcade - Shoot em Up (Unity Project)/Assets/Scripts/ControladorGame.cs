@@ -59,6 +59,11 @@ public class ControladorGame : MonoBehaviour
         HP = jogador.GetComponent<ControlaPersonagem>().pontosVida;
         AtualizaBarraHP(HP);
 
+        if (Input.GetButtonDown("Subir de Nivel") && buttonSubirNivel.activeSelf)
+        {
+            SubirNivel();
+        }
+
         if (sliderHP.value <= 0)
         {
             jogador.GetComponent<ControlaPersonagem>().MorteJogador();
