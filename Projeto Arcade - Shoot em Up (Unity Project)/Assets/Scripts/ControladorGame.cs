@@ -9,8 +9,8 @@ public class ControladorGame : MonoBehaviour
     public static ControladorGame instancia;
 
     // HP, XP e nivel
-    public int XP, nivel = 1, HP;
-    public float multiplicadorQuantidadeXPporNivel = 50.0f, valorXPNivel = 100.0f;
+    public int XP, XPtotal = 0, nivel = 1, HP;
+    public float valorXPNivel = 100.0f, multiplicadorQuantidadeXPporNivel = 50.0f;
     public GameObject barraHP, prefabCoracaoHP, barraXP, jogador;
     public TextMeshProUGUI txtNivel, txtXP;
     private Slider sliderXP;
@@ -150,7 +150,7 @@ public class ControladorGame : MonoBehaviour
 
     private void AtualizaBarraXP()
     {
-        sliderXP.value = XP / valorXPNivel;
+        sliderXP.value = (XP / valorXPNivel);
 
         if (XP >= valorXPNivel && nivel < 10)
         {
@@ -163,6 +163,15 @@ public class ControladorGame : MonoBehaviour
     }
     public void SubirNivel()
     {
+        XPtotal += XP;
+        if (XP == valorXPNivel)
+        {
+            XP = 0;
+        }
+        if (XP > valorXPNivel)
+        {
+            XP -= (int)valorXPNivel;
+        }
         nivel += 1;
         valorXPNivel += nivel * multiplicadorQuantidadeXPporNivel;
         uiPowerUP.SetActive(true);
