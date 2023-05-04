@@ -64,7 +64,7 @@ public class ControladorGame : MonoBehaviour
             SubirNivel();
         }
 
-        if (Input.GetButtonDown("Configuração"))
+        if (Input.GetButtonDown("Configuracao"))
         {
             Configuracao.onClick.Invoke();
         }
