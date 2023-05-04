@@ -11086,8 +11086,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4293394176
-  m_fontColor: {r: 0, g: 1, b: 0.90588236, a: 1}
+    rgba: 4291806991
+  m_fontColor: {r: 0.05882353, g: 0.78039217, b: 0.8117647, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -12681,7 +12681,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8113208, g: 0.79489946, b: 0.13394445, a: 1}
+  m_Color: {r: 0.058680363, g: 0.7803167, b: 0.8113208, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -16674,6 +16674,30 @@ PrefabInstance:
     - target: {fileID: 776616345876304713, guid: 6470e112d76167b4bac48cdaad12ef5d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1774253859554706889, guid: 6470e112d76167b4bac48cdaad12ef5d, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.b
+      value: 0.8117647
+      objectReference: {fileID: 0}
+    - target: {fileID: 1774253859554706889, guid: 6470e112d76167b4bac48cdaad12ef5d, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.g
+      value: 0.78039217
+      objectReference: {fileID: 0}
+    - target: {fileID: 1774253859554706889, guid: 6470e112d76167b4bac48cdaad12ef5d, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.r
+      value: 0.05882353
+      objectReference: {fileID: 0}
+    - target: {fileID: 3277932969885360173, guid: 6470e112d76167b4bac48cdaad12ef5d, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.b
+      value: 0.8117647
+      objectReference: {fileID: 0}
+    - target: {fileID: 3277932969885360173, guid: 6470e112d76167b4bac48cdaad12ef5d, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.g
+      value: 0.78039217
+      objectReference: {fileID: 0}
+    - target: {fileID: 3277932969885360173, guid: 6470e112d76167b4bac48cdaad12ef5d, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.r
+      value: 0.05882353
       objectReference: {fileID: 0}
     - target: {fileID: 6079102974975960091, guid: 6470e112d76167b4bac48cdaad12ef5d, type: 3}
       propertyPath: m_LocalPosition.x
