@@ -29,6 +29,7 @@ public class ControladorGame : MonoBehaviour
     public GameObject piramideSuperiores, piramideLaterais;
     // boss
     public GameObject boss, petsBoss;
+    public Button Configuracao;
 
     private void Awake()
     {
@@ -54,6 +55,8 @@ public class ControladorGame : MonoBehaviour
     
     void Update()
     {
+        
+
         if (Time.timeScale == 0) return;
 
         HP = jogador.GetComponent<ControlaPersonagem>().pontosVida;
@@ -62,6 +65,11 @@ public class ControladorGame : MonoBehaviour
         if (Input.GetButtonDown("Subir de Nivel") && buttonSubirNivel.activeSelf)
         {
             SubirNivel();
+        }
+
+        if (Input.GetButtonDown("Configuração"))
+        {
+            Configuracao.onClick.Invoke();
         }
 
         if (sliderHP.value <= 0)

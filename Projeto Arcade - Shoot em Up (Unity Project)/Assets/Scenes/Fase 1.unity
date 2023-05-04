@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.11617968, g: 0.121183775, b: 0.14280277, a: 1}
+  m_IndirectSpecularColor: {r: 0.11617907, g: 0.12118354, b: 0.1428028, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -865,6 +865,7 @@ MonoBehaviour:
   piramideLaterais: {fileID: 510412430}
   boss: {fileID: 1170234379}
   petsBoss: {fileID: 625901196}
+  Configuracao: {fileID: 8947399122641741072}
 --- !u!4 &199698641
 Transform:
   m_ObjectHideFlags: 0
