@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.11617968, g: 0.121183775, b: 0.14280277, a: 1}
+  m_IndirectSpecularColor: {r: 0.11617907, g: 0.12118354, b: 0.1428028, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -811,10 +811,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   XP: 0
+  XPtotal: 0
   nivel: 1
   HP: 0
-  multiplicadorQuantidadeXPporNivel: 25
   valorXPNivel: 100
+  multiplicadorQuantidadeXPporNivel: 25
   barraHP: {fileID: 1461249839}
   prefabCoracaoHP: {fileID: 6923997995736735759, guid: 73fdd0b820b148c44a1a526eee65ca53, type: 3}
   barraXP: {fileID: 9057649337144766869}
@@ -16673,6 +16674,14 @@ PrefabInstance:
     - target: {fileID: 776616345876304713, guid: 6470e112d76167b4bac48cdaad12ef5d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6079102974975960091, guid: 6470e112d76167b4bac48cdaad12ef5d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7043536520248508927, guid: 6470e112d76167b4bac48cdaad12ef5d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -9
       objectReference: {fileID: 0}
     - target: {fileID: 9074662426996894289, guid: 6470e112d76167b4bac48cdaad12ef5d, type: 3}
       propertyPath: m_Name
