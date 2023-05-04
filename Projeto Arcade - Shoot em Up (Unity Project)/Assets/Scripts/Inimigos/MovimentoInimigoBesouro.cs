@@ -23,24 +23,6 @@ public class MovimentoInimigoBesouro : MonoBehaviour
         // direcao
         besouro.transform.Translate(0, velocidadeMovimento * Time.deltaTime, 0);
         // rotacao
-        float rotZ = besouro.transform.eulerAngles.z;
-        Debug.Log(rotZ);
-
-        if (!mudaDirecao)
-        {
-            besouro.transform.Rotate(0, 0, velocidadeRotacao * Time.deltaTime);
-            if (rotZ >= maxRotZ)
-            {
-                mudaDirecao = true;
-            }
-        }
-        if (mudaDirecao)
-        {
-            besouro.transform.Rotate(0, 0, - velocidadeRotacao * Time.deltaTime);
-            if (1 == 1)
-            {
-                mudaDirecao = false;
-            }
-        }
+        besouro.transform.Rotate(0, 0, velocidadeRotacao * Time.deltaTime);
     }
 }
