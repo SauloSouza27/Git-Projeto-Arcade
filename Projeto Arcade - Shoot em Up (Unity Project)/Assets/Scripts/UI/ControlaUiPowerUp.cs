@@ -42,7 +42,7 @@ public class ControlaUiPowerUp : MonoBehaviour
                     buttonsCena.Add(go);
                 }
             }
-            if (controladorGame.GetComponent<ControladorGame>().HP < 3)
+            if (controladorGame.GetComponent<ControladorGame>().HP < 20)
             {
                 if (go.CompareTag("PowerUPVida"))
                 {

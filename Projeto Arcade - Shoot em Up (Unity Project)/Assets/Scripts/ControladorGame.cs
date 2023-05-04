@@ -11,9 +11,9 @@ public class ControladorGame : MonoBehaviour
     // XP e nivel
     public int XP, nivel = 1, HP;
     public float multiplicadorQuantidadeXPporNivel = 50.0f, valorXPNivel = 100.0f;
-    public GameObject barraHP, barraXP, jogador;
+    public GameObject barraHP, prefabCoracaoHP, barraXP, jogador;
     public TextMeshProUGUI txtNivel, txtXP;
-    private Slider sliderXP, sliderHP;
+    private Slider sliderXP;
     // spawn inimigos
     public GameObject spawnsInimigoPequeno;
     public List<GameObject> spawnsCima, spawnsLaterais, spawnsBaixo;
@@ -33,7 +33,6 @@ public class ControladorGame : MonoBehaviour
 
     private void Awake()
     {
-        sliderHP = barraHP.GetComponent<Slider>();
         sliderXP = barraXP.GetComponent<Slider>();
         txtNivel = GameObject.Find("txtNivel").GetComponent<TextMeshProUGUI>();
         txtXP = GameObject.Find("txtXP").GetComponent<TextMeshProUGUI>();
@@ -55,12 +54,10 @@ public class ControladorGame : MonoBehaviour
     
     void Update()
     {
-        
-
         if (Time.timeScale == 0) return;
 
         HP = jogador.GetComponent<ControlaPersonagem>().pontosVida;
-        AtualizaBarraHP(HP);
+        AtualizaBarraHP();
 
         if (Input.GetButtonDown("Subir de Nivel") && buttonSubirNivel.activeSelf)
         {
@@ -72,7 +69,7 @@ public class ControladorGame : MonoBehaviour
             Configuracao.onClick.Invoke();
         }
 
-        if (sliderHP.value <= 0)
+        if (HP <= 0)
         {
             jogador.GetComponent<ControlaPersonagem>().MorteJogador();
             uiGameOver.SetActive(true);
@@ -132,9 +129,17 @@ public class ControladorGame : MonoBehaviour
         }
     }
 
-    public void AtualizaBarraHP(int hpAtual)
+    public void AtualizaBarraHP()
     {
-        sliderHP.value = hpAtual;
+        int numCoracoes = barraHP.transform.childCount;
+        if (HP < numCoracoes)
+        {
+            Destroy(barraHP.transform.GetChild(numCoracoes - 1).gameObject);
+        }
+        if (HP > numCoracoes)
+        {
+            Instantiate(prefabCoracaoHP, barraHP.transform);
+        }
     }
 
     public void SomaXP(int xpInimigo)

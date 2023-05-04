@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocidade: 60
-  duracaoBala: 500
+  duracaoBala: 250
   projetil: {fileID: 2641279193909655389}
   projetilInimigo: 0
   rotacaoTiro: 0
