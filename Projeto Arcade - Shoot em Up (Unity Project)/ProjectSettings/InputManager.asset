@@ -310,7 +310,7 @@ InputManager:
     axis: 0
     joyNum: 0
   - serializedVersion: 3
-    m_Name: "Configura\xE7\xE3o"
+    m_Name: Configuracao
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
