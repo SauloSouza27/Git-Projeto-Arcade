@@ -59,10 +59,6 @@ public class ControladorGame : MonoBehaviour
         HP = jogador.GetComponent<ControlaPersonagem>().pontosVida;
         AtualizaBarraHP(HP);
 
-        if (sliderHP.value > 0)
-        {
-            AtualizaBarraXP();
-        }
         if (sliderHP.value <= 0)
         {
             jogador.GetComponent<ControlaPersonagem>().MorteJogador();
@@ -131,18 +127,16 @@ public class ControladorGame : MonoBehaviour
     public void SomaXP(int xpInimigo)
     {
         XP += xpInimigo;
-        sliderXP.value += xpInimigo;
+        AtualizaBarraXP();
     }
 
     private void AtualizaBarraXP()
     {
-        
-        int valorMaxSlider = (int)sliderXP.maxValue;
-        int valorSlider = (int)sliderXP.value;
-        if (valorSlider >= valorMaxSlider && nivel < 10)
+        sliderXP.value = XP / valorXPNivel;
+
+        if (XP >= valorXPNivel && nivel < 10)
         {
-            sliderXP.value = valorMaxSlider;
-            XP = (int)valorXPNivel;
+            sliderXP.value = sliderXP.maxValue;
             buttonSubirNivel.SetActive(true);
             spawnsInimigoPequeno.SetActive(false);
         }
@@ -152,12 +146,12 @@ public class ControladorGame : MonoBehaviour
     public void SubirNivel()
     {
         nivel += 1;
-        sliderXP.value = 0;
-        sliderXP.maxValue += (nivel * multiplicadorQuantidadeXPporNivel);
-        valorXPNivel += sliderXP.maxValue;
+        valorXPNivel += nivel * multiplicadorQuantidadeXPporNivel;
         uiPowerUP.SetActive(true);
         Time.timeScale = 0.0f;
         buttonSubirNivel.SetActive(false);
+
+        AtualizaBarraXP();
     }
     private void AtivaSpawnInimigosPequenos()
     {
