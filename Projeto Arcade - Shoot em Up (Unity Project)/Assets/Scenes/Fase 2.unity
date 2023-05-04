@@ -2728,11 +2728,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   besouro: {fileID: 698107483}
-  velocidadeMovimento: 4
-  velocidadeRotacao: 20
-  tempoMudancaDirecao: 1
-  maxRotZ: 30
-  minRotZ: 330
+  velocidadeMovimento: 10
+  velocidadeRotacao: 5
 --- !u!136 &698107485
 CapsuleCollider:
   m_ObjectHideFlags: 0
