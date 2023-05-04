@@ -6,7 +6,8 @@ public class MovimentoInimigoBesouro : MonoBehaviour
 {
     public GameObject besouro;
     // movimento
-    public float velocidadeMovimento = 2.0f, velocidadeRotacao = 2.0f, tempoMudancaDirecao = 2.0f, maxRotZ = 30.0f, minRotZ = 330.0f;
+    public float velocidadeMovimento = 2.0f, velocidadeRotacao = 2.0f;
+    private Quaternion rot;
     private bool mudaDirecao = false;
 
     private void Start()
@@ -23,6 +24,5 @@ public class MovimentoInimigoBesouro : MonoBehaviour
         // direcao
         besouro.transform.Translate(0, velocidadeMovimento * Time.deltaTime, 0);
         // rotacao
-        besouro.transform.Rotate(0, 0, velocidadeRotacao * Time.deltaTime);
     }
 }
