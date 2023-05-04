@@ -8,7 +8,7 @@ public class ControladorGame : MonoBehaviour
 {
     public static ControladorGame instancia;
 
-    // XP e nivel
+    // HP, XP e nivel
     public int XP, nivel = 1, HP;
     public float multiplicadorQuantidadeXPporNivel = 50.0f, valorXPNivel = 100.0f;
     public GameObject barraHP, prefabCoracaoHP, barraXP, jogador;
