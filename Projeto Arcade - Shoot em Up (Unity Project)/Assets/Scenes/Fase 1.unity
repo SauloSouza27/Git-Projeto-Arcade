@@ -731,7 +731,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 2723030856095211445, guid: b47c97b4c4e0bea49954eca4c82b2929, type: 3}
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 2246850875935380833, guid: b47c97b4c4e0bea49954eca4c82b2929, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 510090596}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b47c97b4c4e0bea49954eca4c82b2929, type: 3}
 --- !u!4 &154553187 stripped
@@ -2301,7 +2304,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1582110154}
-  - {fileID: 1416642744}
   m_Father: {fileID: 510412431}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2567,11 +2569,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 510090595}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.1, z: 0}
+  m_LocalPosition: {x: 0.8, y: 0.67, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 565313215}
+  m_Father: {fileID: 154553187}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!96 &510090597
@@ -2665,8 +2667,8 @@ TrailRenderer:
       key6: {r: 0, g: 0, b: 0, a: 0}
       key7: {r: 0, g: 0, b: 0, a: 0}
       ctime0: 0
-      ctime1: 22552
-      ctime2: 41827
+      ctime1: 27371
+      ctime2: 39128
       ctime3: 65535
       ctime4: 0
       ctime5: 0
@@ -2962,7 +2964,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 154553187}
-  - {fileID: 510090596}
   m_Father: {fileID: 510412431}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7719,7 +7720,7 @@ GameObject:
   - component: {fileID: 1416642744}
   - component: {fileID: 1416642745}
   m_Layer: 0
-  m_Name: Trail Piramide Lateral Esq
+  m_Name: ide Lateral EsqLateral Esq
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7733,11 +7734,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1416642743}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.1, z: 0}
+  m_LocalPosition: {x: -0.8, y: 1.55, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 443014322}
+  m_Father: {fileID: 1582110154}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!96 &1416642745
@@ -7831,8 +7832,8 @@ TrailRenderer:
       key6: {r: 0, g: 0, b: 0, a: 0}
       key7: {r: 0, g: 0, b: 0, a: 0}
       ctime0: 0
-      ctime1: 22552
-      ctime2: 41827
+      ctime1: 28334
+      ctime2: 39128
       ctime3: 65535
       ctime4: 0
       ctime5: 0
@@ -8571,7 +8572,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 2723030856095211445, guid: b47c97b4c4e0bea49954eca4c82b2929, type: 3}
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 2246850875935380833, guid: b47c97b4c4e0bea49954eca4c82b2929, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1416642744}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b47c97b4c4e0bea49954eca4c82b2929, type: 3}
 --- !u!4 &1582110154 stripped
