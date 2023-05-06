@@ -33,7 +33,7 @@ Transform:
   - {fileID: 5967264748490658385}
   - {fileID: 3563223656889409214}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6319080502885046714
 MonoBehaviour:
@@ -52,8 +52,7 @@ MonoBehaviour:
   velocidadeMovimento: 4
   velocidadeRotacao: 25
   velocidadeRotacaoBosta: 80
-  anguloRotacaoBosta: 0.3
-  cooldownMudaDirecao: 1.26
+  cooldownMudaDirecao: 2.5
 --- !u!65 &5173043005854671545
 BoxCollider:
   m_ObjectHideFlags: 0

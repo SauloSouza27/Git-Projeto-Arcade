@@ -869,6 +869,8 @@ MonoBehaviour:
   boss: {fileID: 1170234379}
   petsBoss: {fileID: 625901196}
   Configuracao: {fileID: 8947399122641741072}
+  rolaBostaDir: {fileID: 0}
+  rolaBostaEsq: {fileID: 0}
 --- !u!4 &199698641
 Transform:
   m_ObjectHideFlags: 0
@@ -16614,7 +16616,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5512186861642180245, guid: dbb1d80f114cad14bb49b2d3a0bda164, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7514584705783465394, guid: dbb1d80f114cad14bb49b2d3a0bda164, type: 3}
       propertyPath: m_TagString

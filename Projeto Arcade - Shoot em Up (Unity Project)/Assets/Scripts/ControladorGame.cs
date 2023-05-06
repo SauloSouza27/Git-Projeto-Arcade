@@ -28,9 +28,11 @@ public class ControladorGame : MonoBehaviour
     public GameObject droneCimaBaixo, droneEsqDirHori, droneDirEsqTrans, droneEsqDirTrans, droneCruzado, droneCascadeDirEsqTrans, droneCascadeDirEsqHori;
     // inimigos Piramide
     public GameObject piramideSuperiores, piramideLaterais;
-    // boss
+    // boss fase1
     public GameObject boss, petsBoss;
     public Button Configuracao;
+    // inimigos Rola Bosta
+    public GameObject rolaBostaDir, rolaBostaEsq;
 
     private void Awake()
     {
@@ -81,6 +83,10 @@ public class ControladorGame : MonoBehaviour
             ControlaFase1();
         }
         
+        if (SceneManager.GetActiveScene().name == "Fase 2")
+        {
+            ControlaFase2();
+        }
     }
 
     private void ControlaFase1()
@@ -137,6 +143,11 @@ public class ControladorGame : MonoBehaviour
         {
             StartCoroutine(AtivaMenuVitoria(uiVitoria, 4.0f));
         }
+    }
+
+    private void ControlaFase2()
+    {
+
     }
 
     public void AtualizaBarraHP()

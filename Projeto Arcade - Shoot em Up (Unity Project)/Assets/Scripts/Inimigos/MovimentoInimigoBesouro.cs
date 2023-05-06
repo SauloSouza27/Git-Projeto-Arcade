@@ -7,15 +7,13 @@ public class MovimentoInimigoBesouro : MonoBehaviour
     public GameObject besouro, bosta;
     // movimento
     public float velocidadeMovimento = 2.0f, velocidadeRotacao = 2.5f, velocidadeRotacaoBosta = 2.0f;
-    [Range (0.0f, 0.4f)]public float anguloRotacaoBosta;
-    private float rotZ;
     private bool mudaDirecao = true;
     private float contadorCooldown;
-    [Range(0.0f, 2.0f)] public float cooldownMudaDirecao = 2.0f;
+    [Range(0.0f, 8.0f)] public float cooldownMudaDirecao = 2.0f;
 
     private void Start()
     {
-        rotZ = besouro.transform.rotation.z;
+
     }
     void Update()
     {
