@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class ControladorGame : MonoBehaviour
 {
@@ -75,17 +76,26 @@ public class ControladorGame : MonoBehaviour
             uiGameOver.SetActive(true);
         }
 
+        if(SceneManager.GetActiveScene().name == "Fase 1")
+        {
+            ControlaFase1();
+        }
+        
+    }
+
+    private void ControlaFase1()
+    {
         if (nivel == 2)
         {
             StartCoroutine(AtivaInimigo(droneCimaBaixo, 3.0f));
         }
 
-        if(nivel == 4)
+        if (nivel == 4)
         {
             StartCoroutine(AtivaInimigo(droneEsqDirHori, 4.0f));
         }
 
-        if(nivel == 5)
+        if (nivel == 5)
         {
             StartCoroutine(AtivaInimigo(droneDirEsqTrans, 5.0f));
             StartCoroutine(AtivaInimigo(droneEsqDirTrans, 12.0f));
