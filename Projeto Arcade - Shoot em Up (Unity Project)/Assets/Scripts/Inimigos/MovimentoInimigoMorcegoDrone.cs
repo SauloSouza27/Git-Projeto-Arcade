@@ -11,7 +11,7 @@ public class MovimentoInimigoMorcegoDrone : MonoBehaviour
     public int xpInimigo = 10;
     // Movimento
     public bool isAutomatic = false;
-    public float velocidadeMovimento = 5.0f, velocidadeRotacao = 1.0f, anguloZ;
+    public float velocidadeMovimento = 2.0f, velocidadeRotacao = 1.0f, anguloZ;
     // materiais inimgo
     private MeshRenderer[] renderers;
     private Material[] materiais;

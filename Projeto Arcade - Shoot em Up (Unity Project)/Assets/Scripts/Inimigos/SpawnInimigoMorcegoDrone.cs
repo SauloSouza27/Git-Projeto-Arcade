@@ -12,7 +12,7 @@ public class SpawnInimigoMorcegoDrone : MonoBehaviour
     public GameObject morcegoDrone;
     public bool ativar = true;
     // Controle Movimento
-    public float velocidade = 1.0f, rotacao = 1.0f, anguloZ = 30.0f;
+    public float velocidade = 2.0f, rotacao = 1.0f, anguloZ = 30.0f;
 
     private void Awake()
     {
