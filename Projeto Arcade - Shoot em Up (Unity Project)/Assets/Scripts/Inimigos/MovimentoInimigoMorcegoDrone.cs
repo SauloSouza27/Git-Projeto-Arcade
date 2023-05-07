@@ -9,6 +9,8 @@ public class MovimentoInimigoMorcegoDrone : MonoBehaviour
     public int pontosVida = 1;
     // XP quando morre
     public int xpInimigo = 10;
+    // Movimento
+    public float velocidadeMovimento = 5.0f;
     // materiais inimgo
     private MeshRenderer[] renderers;
     private Material[] materiais;
@@ -41,10 +43,12 @@ public class MovimentoInimigoMorcegoDrone : MonoBehaviour
     }
     private void Update()
     {
-        
+        MovimentaMorcegoDrone();
     }
     private void MovimentaMorcegoDrone()
     {
+        transform.Translate(0, velocidadeMovimento * Time.deltaTime, 0);
+
 
     }
     private void OnCollisionEnter(Collision colisor)
