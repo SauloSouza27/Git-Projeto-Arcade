@@ -87,10 +87,11 @@ public class ControlaPersonagem : MonoBehaviour
                 {
                     Destroy(colisor.gameObject);
                 }
-            }
-            if (colisor.gameObject.CompareTag("BalaBossPiramide"))
-            {
-                Destroy(colisor.gameObject);
+
+                if (colisor.gameObject.CompareTag("BalaBossPiramide"))
+                {
+                    Destroy(colisor.gameObject);
+                }
             }
         }
     }
