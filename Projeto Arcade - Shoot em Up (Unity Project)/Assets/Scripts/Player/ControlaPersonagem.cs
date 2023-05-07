@@ -46,12 +46,20 @@ public class ControlaPersonagem : MonoBehaviour
     {
         if (Time.timeScale == 0) return;
 
+        if (Input.GetMouseButtonDown(1))
+        {
+            pontosVida += 1;
+        }
+
         ControleMovimentoPersonagem();
 
         armaPrincipal = GameObject.FindWithTag("ArmaPrincipal");
         ControleArmaPrincipal(armaPrincipal);
 
-        if(ControladorGame.instancia == null)
+        //mudança da cor do material
+        RetornaCorOriginal();
+
+        if (ControladorGame.instancia == null)
         {
             return;
         }
@@ -65,9 +73,6 @@ public class ControlaPersonagem : MonoBehaviour
         {
             ControleOrbeGiratorio();
         }
-
-        //mudança da cor do material
-        RetornaCorOriginal();
     }
 
     // Dano Inimigos
@@ -82,6 +87,10 @@ public class ControlaPersonagem : MonoBehaviour
                 {
                     Destroy(colisor.gameObject);
                 }
+            }
+            if (colisor.gameObject.CompareTag("BalaBossPiramide"))
+            {
+                Destroy(colisor.gameObject);
             }
         }
     }

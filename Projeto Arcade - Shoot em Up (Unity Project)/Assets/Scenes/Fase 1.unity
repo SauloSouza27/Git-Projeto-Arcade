@@ -279,7 +279,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 92282105}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 28, y: 38, z: 0}
+  m_LocalPosition: {x: 24, y: 38, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1062,6 +1062,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 945650790}
     - target: {fileID: 4941080145082082195, guid: cc3d70f9628e64546a7507bab6e9d031, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+    - target: {fileID: 4941080145082082195, guid: cc3d70f9628e64546a7507bab6e9d031, type: 3}
       propertyPath: m_Name
       value: Spawn InimigoPequeno (1)
       objectReference: {fileID: 0}
@@ -1341,7 +1345,7 @@ GameObject:
   m_Layer: 0
   m_Name: MorcegoDrone_CascadeDirEsqTrans
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
@@ -1834,7 +1838,7 @@ GameObject:
   m_Layer: 0
   m_Name: MorcegoDrone_CascadeEsqDirHori
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
@@ -2050,6 +2054,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 945650790}
     - target: {fileID: 4941080145082082195, guid: cc3d70f9628e64546a7507bab6e9d031, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+    - target: {fileID: 4941080145082082195, guid: cc3d70f9628e64546a7507bab6e9d031, type: 3}
       propertyPath: m_Name
       value: Spawn InimigoPequeno (10)
       objectReference: {fileID: 0}
@@ -2128,6 +2136,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 160401059}
     m_Modifications:
+    - target: {fileID: 4941080145082082195, guid: cc3d70f9628e64546a7507bab6e9d031, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
     - target: {fileID: 4941080145082082195, guid: cc3d70f9628e64546a7507bab6e9d031, type: 3}
       propertyPath: m_Name
       value: Spawn InimigoPequeno (9)
@@ -2298,7 +2310,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 443014321}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -27, y: 3, z: 0}
+  m_LocalPosition: {x: -34, y: 6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2722,6 +2734,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Inimigo Piramide Dir
       objectReference: {fileID: 0}
+    - target: {fileID: 1667125724562284504, guid: cf18381c83a91ef418520bab87501cca, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2246850875935380833, guid: cf18381c83a91ef418520bab87501cca, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -2805,7 +2821,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 565313214}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 27, y: 3, z: 0}
+  m_LocalPosition: {x: 34, y: 6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4309,7 +4325,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.05882353, g: 0.78039217, b: 0.8117647, a: 1}
+  m_Color: {r: 0.058823515, g: 0.058823515, b: 0.8117647, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -4427,7 +4443,7 @@ GameObject:
   m_Layer: 0
   m_Name: MorcegoDrone_Cruzados
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
@@ -5369,6 +5385,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 160401059}
     m_Modifications:
     - target: {fileID: 4941080145082082195, guid: cc3d70f9628e64546a7507bab6e9d031, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+    - target: {fileID: 4941080145082082195, guid: cc3d70f9628e64546a7507bab6e9d031, type: 3}
       propertyPath: m_Name
       value: Spawn InimigoPequeno (5)
       objectReference: {fileID: 0}
@@ -5651,7 +5671,7 @@ GameObject:
   m_Layer: 0
   m_Name: MorcegoDrone_EsqDirHori
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
@@ -5846,7 +5866,7 @@ GameObject:
   m_Layer: 0
   m_Name: MorcegoDrone_CimeBaixoVert
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
@@ -6499,6 +6519,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 160401059}
     m_Modifications:
+    - target: {fileID: 4941080145082082195, guid: cc3d70f9628e64546a7507bab6e9d031, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
     - target: {fileID: 4941080145082082195, guid: cc3d70f9628e64546a7507bab6e9d031, type: 3}
       propertyPath: m_Name
       value: Spawn InimigoPequeno (4)
@@ -7861,7 +7885,7 @@ GameObject:
   m_Layer: 0
   m_Name: MorcegoDrone_EsqDirTrans
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
@@ -8089,6 +8113,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 160401059}
     m_Modifications:
+    - target: {fileID: 4941080145082082195, guid: cc3d70f9628e64546a7507bab6e9d031, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
     - target: {fileID: 4941080145082082195, guid: cc3d70f9628e64546a7507bab6e9d031, type: 3}
       propertyPath: m_Name
       value: Spawn InimigoPequeno (2)
@@ -8733,7 +8761,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1724853964}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -28, y: 38, z: 0}
+  m_LocalPosition: {x: -24, y: 38, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -9114,6 +9142,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 160401059}
     m_Modifications:
+    - target: {fileID: 4941080145082082195, guid: cc3d70f9628e64546a7507bab6e9d031, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
     - target: {fileID: 4941080145082082195, guid: cc3d70f9628e64546a7507bab6e9d031, type: 3}
       propertyPath: m_Name
       value: Spawn InimigoPequeno (7)
@@ -9654,6 +9686,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 160401059}
     m_Modifications:
+    - target: {fileID: 4941080145082082195, guid: cc3d70f9628e64546a7507bab6e9d031, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
     - target: {fileID: 4941080145082082195, guid: cc3d70f9628e64546a7507bab6e9d031, type: 3}
       propertyPath: m_Name
       value: Spawn InimigoPequeno (6)
@@ -10217,6 +10253,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 160401059}
     m_Modifications:
     - target: {fileID: 4941080145082082195, guid: cc3d70f9628e64546a7507bab6e9d031, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+    - target: {fileID: 4941080145082082195, guid: cc3d70f9628e64546a7507bab6e9d031, type: 3}
       propertyPath: m_Name
       value: Spawn InimigoPequeno (8)
       objectReference: {fileID: 0}
@@ -10635,6 +10675,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 160401059}
     m_Modifications:
     - target: {fileID: 4941080145082082195, guid: cc3d70f9628e64546a7507bab6e9d031, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+    - target: {fileID: 4941080145082082195, guid: cc3d70f9628e64546a7507bab6e9d031, type: 3}
       propertyPath: m_Name
       value: Spawn InimigoPequeno (3)
       objectReference: {fileID: 0}
@@ -10846,7 +10890,7 @@ GameObject:
   m_Layer: 0
   m_Name: MorcegoDrone_DirEsqTrans
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
@@ -12735,6 +12779,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 160401059}
     m_Modifications:
     - target: {fileID: 4941080145082082195, guid: cc3d70f9628e64546a7507bab6e9d031, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+    - target: {fileID: 4941080145082082195, guid: cc3d70f9628e64546a7507bab6e9d031, type: 3}
       propertyPath: m_Name
       value: Spawn InimigoPequeno
       objectReference: {fileID: 0}
@@ -12808,7 +12856,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.058680363, g: 0.7803167, b: 0.8113208, a: 1}
+  m_Color: {r: 0.066014476, g: 0.875792, b: 0.911, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -16606,21 +16654,9 @@ PrefabInstance:
       propertyPath: petsBoss
       value: 
       objectReference: {fileID: 625901196}
-    - target: {fileID: 2835777295160593200, guid: dbb1d80f114cad14bb49b2d3a0bda164, type: 3}
-      propertyPath: m_TagString
-      value: Inimigo
-      objectReference: {fileID: 0}
     - target: {fileID: 5512186861642180245, guid: dbb1d80f114cad14bb49b2d3a0bda164, type: 3}
       propertyPath: m_Name
       value: Boss
-      objectReference: {fileID: 0}
-    - target: {fileID: 5512186861642180245, guid: dbb1d80f114cad14bb49b2d3a0bda164, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7514584705783465394, guid: dbb1d80f114cad14bb49b2d3a0bda164, type: 3}
-      propertyPath: m_TagString
-      value: Inimigo
       objectReference: {fileID: 0}
     - target: {fileID: 8685267284019799110, guid: dbb1d80f114cad14bb49b2d3a0bda164, type: 3}
       propertyPath: m_RootOrder

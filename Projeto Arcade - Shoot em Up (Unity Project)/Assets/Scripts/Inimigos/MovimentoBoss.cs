@@ -8,6 +8,9 @@ public class MovimentoBoss : MonoBehaviour
     // Controle rotaçao
     public GameObject cabecaPiramide, corpoPiramide;
     public float velocidadeRotacao = 2.0f;
+    // Controle movimento cabeca quando perde o corpo
+    public float velocidadeCabeca = 1.0f, tempoParado = 1.0f;
+    private Vector3 posAlvo;
     // arma cabeca
     public GameObject[] armasBoss;
     // pets boss
@@ -17,8 +20,10 @@ public class MovimentoBoss : MonoBehaviour
     public int vidaCorpo = 40, vidaCabeca = 40;
     public bool bossIsDead = false;
     // Materiais
-    MeshRenderer[] renderers;
-    Material[] materiais;
+    private MeshRenderer[] renderers;
+    private Material[] materiais;
+    // Animator
+    private Animator animator;
     private void Awake()
     {
         controladorGame = GameObject.FindGameObjectWithTag("ControladorGame");
@@ -30,8 +35,10 @@ public class MovimentoBoss : MonoBehaviour
         {
             materiais[i] = renderers[i].material;
         }
-
-        GetComponent<BoxCollider>().enabled = false;
+        // desativa box collider da cabeca
+        cabecaPiramide.GetComponent<BoxCollider>().enabled = false;
+        // busca animator
+        animator = GetComponent<Animator>();
     }
 
 
@@ -41,10 +48,15 @@ public class MovimentoBoss : MonoBehaviour
 
         MovimentaBossPiramide();
 
-        if (armasBoss[0] == null && armasBoss[1] == null)
+        if (armasBoss[0] == null && armasBoss[1] == null && cabecaPiramide != null)
         {
-            GetComponent<BoxCollider>().enabled = true;
+            cabecaPiramide.GetComponent<BoxCollider>().enabled = true;
             tomaDano = true;
+        }
+
+        if(corpoPiramide == null)
+        {
+            animator.enabled = false;
         }
     }
     // controle vida boss
@@ -67,6 +79,7 @@ public class MovimentoBoss : MonoBehaviour
                 }
                 if (vidaCorpo <= 0)
                 {
+                    Invoke(nameof(BuscaNovaPosicaoPlayer), 4.0f);
                     Destroy(corpoPiramide);
                 }
             }
@@ -85,6 +98,7 @@ public class MovimentoBoss : MonoBehaviour
                 }
                 if (vidaCorpo <= 0)
                 {
+                    Invoke(nameof(BuscaNovaPosicaoPlayer), 4.0f);
                     Destroy(corpoPiramide);
                 }
             }
@@ -102,6 +116,7 @@ public class MovimentoBoss : MonoBehaviour
                 }
                 if (vidaCorpo <= 0)
                 {
+                    Invoke(nameof(BuscaNovaPosicaoPlayer), 4.0f);
                     Destroy(corpoPiramide);
                 }
             }
@@ -119,6 +134,7 @@ public class MovimentoBoss : MonoBehaviour
                 }
                 if (vidaCorpo <= 0)
                 {
+                    Invoke(nameof(BuscaNovaPosicaoPlayer), 4.0f);
                     Destroy(corpoPiramide);
                 }
             }
@@ -136,6 +152,7 @@ public class MovimentoBoss : MonoBehaviour
                 }
                 if (vidaCorpo <= 0)
                 {
+                    Invoke(nameof(BuscaNovaPosicaoPlayer), 4.0f);
                     Destroy(corpoPiramide);
                 }
             }
@@ -248,15 +265,14 @@ public class MovimentoBoss : MonoBehaviour
             if (vidaCorpo > 0 && contadorCooldown == 0)
             {
                 vidaCorpo -= dano;
-                contadorCooldown = cooldown;
                 foreach (Material material in materiais)
                 {
-                    StartCoroutine(controladorGame.GetComponent<ControladorGame>().AtivaInimigo(petsBoss, 4.0f));
                     StartCoroutine(Utilidades.PiscaCorRoutine(material));
                 }
             }
             if (vidaCorpo <= 0)
             {
+                bossIsDead = true;
                 Destroy(gameObject);
             }
         }
@@ -274,8 +290,26 @@ public class MovimentoBoss : MonoBehaviour
         if (cabecaPiramide != null)
         {
             // Mira cabeca
+            Vector3 direcaoCabeca = alvo.transform.position - cabecaPiramide.transform.position;
             //cabecaPiramide.transform.up = Vector3.Slerp(cabecaPiramide.transform.up, -1 * direcao, 3 * velocidadeRotacao * Time.deltaTime);
-            cabecaPiramide.transform.rotation = Quaternion.LookRotation(cabecaPiramide.transform.forward, -direcao);
+            cabecaPiramide.transform.rotation = Quaternion.LookRotation(cabecaPiramide.transform.forward, -direcaoCabeca);
+            if (corpoPiramide == null && posAlvo != null)
+            {
+                Vector3 posCabeca = cabecaPiramide.transform.position;
+                if (Vector3.Distance(posAlvo, posCabeca) > 0.8)
+                {
+                    cabecaPiramide.transform.position = Vector3.Lerp(posCabeca, posAlvo, velocidadeCabeca * Time.deltaTime);
+                }
+                if (Vector3.Distance(posAlvo, posCabeca) < 0.8)
+                {
+                    Invoke(nameof(BuscaNovaPosicaoPlayer), tempoParado);
+                }
+            }
         }
+    }
+    private void BuscaNovaPosicaoPlayer()
+    {
+        posAlvo = alvo.transform.position;
+        CancelInvoke(nameof(BuscaNovaPosicaoPlayer));
     }
 }

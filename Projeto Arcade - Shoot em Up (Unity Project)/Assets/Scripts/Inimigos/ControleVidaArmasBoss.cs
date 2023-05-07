@@ -16,10 +16,10 @@ public class ControleVidaArmasBoss : MonoBehaviour
     public int numeroDisparos = 10;
     private bool ativaArma = false;
     // Materiais
-    MeshRenderer[] renderers;
-    Material[] materiais;
+    private MeshRenderer[] renderers;
+    private Material[] materiais;
     // box collider
-    CapsuleCollider colisor;
+    private CapsuleCollider colisor;
     private void Awake()
     {
         controladorGame = GameObject.FindGameObjectWithTag("ControladorGame");

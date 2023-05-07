@@ -49,7 +49,7 @@ GameObject:
   - component: {fileID: 2610356802882828831}
   m_Layer: 7
   m_Name: Arma Esq
-  m_TagString: ArmaBoss
+  m_TagString: Inimigo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -232,7 +232,6 @@ GameObject:
   - component: {fileID: 8685267284019799110}
   - component: {fileID: 6096572593924089322}
   - component: {fileID: 1421876658681519259}
-  - component: {fileID: 3455227639847319899}
   - component: {fileID: 7096758492839678714}
   m_Layer: 6
   m_Name: Boss
@@ -256,7 +255,7 @@ Transform:
   - {fileID: 2805426160563446943}
   - {fileID: 5052819979530344892}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &6096572593924089322
 Animator:
@@ -294,35 +293,15 @@ MonoBehaviour:
   cabecaPiramide: {fileID: 8878461154388493696}
   corpoPiramide: {fileID: 8991734798726551137}
   velocidadeRotacao: 0.5
-  controleArmasDestruidas: 0
+  velocidadeCabeca: 1
+  tempoParado: 1
   armasBoss:
   - {fileID: 2835777295160593200}
   - {fileID: 7514584705783465394}
   petsBoss: {fileID: 0}
   vidaCorpo: 60
-  vidaCabeca: 40
+  vidaCabeca: 120
   bossIsDead: 0
---- !u!65 &3455227639847319899
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5512186861642180245}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Size: {x: 3.41716, y: 3.345302, z: 2.2761571}
-  m_Center: {x: 0, y: 0, z: -0.08361008}
 --- !u!54 &7096758492839678714
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -397,7 +376,7 @@ GameObject:
   - component: {fileID: 422064171220508324}
   m_Layer: 7
   m_Name: Arma Dir
-  m_TagString: ArmaBoss
+  m_TagString: Inimigo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -547,6 +526,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2805426160563446943}
+  - component: {fileID: 8451859992871880900}
   m_Layer: 0
   m_Name: Cabeca
   m_TagString: Untagged
@@ -571,6 +551,27 @@ Transform:
   m_Father: {fileID: 8685267284019799110}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &8451859992871880900
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8878461154388493696}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Size: {x: 3.41716, y: 3.345302, z: 2.2761571}
+  m_Center: {x: 0, y: 0, z: -0.08361008}
 --- !u!1 &8991734798726551137
 GameObject:
   m_ObjectHideFlags: 0
