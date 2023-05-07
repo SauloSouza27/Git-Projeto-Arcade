@@ -6095,6 +6095,7 @@ MonoBehaviour:
   jogador: {fileID: 1908290755}
   txtNivel: {fileID: 0}
   txtXP: {fileID: 0}
+  Configuracao: {fileID: 220220362}
   spawnsInimigoPequeno: {fileID: 0}
   spawnsCima:
   - {fileID: 0}
@@ -6140,7 +6141,6 @@ MonoBehaviour:
   piramideLaterais: {fileID: 0}
   boss: {fileID: 0}
   petsBoss: {fileID: 0}
-  Configuracao: {fileID: 220220362}
   rolaBostaDir: {fileID: 893869504}
   rolaBostaEsq: {fileID: 1791208189}
 --- !u!4 &1432755021
@@ -9063,6 +9063,10 @@ PrefabInstance:
     - target: {fileID: 8950388453384976238, guid: 6470e112d76167b4bac48cdaad12ef5d, type: 3}
       propertyPath: danoContato
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8950388453384976238, guid: 6470e112d76167b4bac48cdaad12ef5d, type: 3}
+      propertyPath: timerInvulneravel
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 9074662426996894289, guid: 6470e112d76167b4bac48cdaad12ef5d, type: 3}
       propertyPath: m_Name

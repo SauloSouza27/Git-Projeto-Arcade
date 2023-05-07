@@ -9,10 +9,11 @@ public class SpawnInimigoMorcegoDrone : MonoBehaviour
     private int nivelJogador;
     public float cooldownSpawnMorcegoDrone = 4.0f;
     public int quantidadeParaSpawnar = 3;
+    private int contador;
     public GameObject morcegoDrone;
     public bool ativar = true;
     // Controle Movimento
-    public float velocidade = 2.0f, rotacao = 1.0f, anguloZ = 30.0f;
+    public float velocidade = 2.0f, rotacao = 1.0f, atrasoRotacao = 1.0f, anguloZ = 30.0f;
 
     private void Awake()
     {
@@ -23,20 +24,19 @@ public class SpawnInimigoMorcegoDrone : MonoBehaviour
         if (Time.timeScale == 0) return;
 
         nivelJogador = controladorGame.GetComponent<ControladorGame>().nivel;
-        for (int i = 0; i < quantidadeParaSpawnar; i++)
+        Utilidades.CalculaCooldown(contadorCooldown);
+        contadorCooldown = Utilidades.CalculaCooldown(contadorCooldown);
+        if (contadorCooldown == 0 && ativar == true && contador < quantidadeParaSpawnar)
         {
-            Utilidades.CalculaCooldown(contadorCooldown);
-            contadorCooldown = Utilidades.CalculaCooldown(contadorCooldown);
-            if (contadorCooldown == 0 && ativar == true)
-            {
-                GameObject instancia = Instantiate(morcegoDrone, transform.position, transform.rotation);
-                MovimentoInimigoMorcegoDrone status = instancia.GetComponent<MovimentoInimigoMorcegoDrone>();
-                status.isAutomatic = true;
-                status.velocidadeMovimento = velocidade;
-                status.velocidadeRotacao = rotacao;
-                status.anguloZ = anguloZ;
-                contadorCooldown = cooldownSpawnMorcegoDrone;
-            }
+            GameObject instancia = Instantiate(morcegoDrone, transform.position, transform.rotation);
+            MovimentoInimigoMorcegoDrone status = instancia.GetComponent<MovimentoInimigoMorcegoDrone>();
+            status.isAutomatic = true;
+            status.velocidadeMovimento = velocidade;
+            status.velocidadeRotacao = rotacao;
+            status.atrasoRotacao = atrasoRotacao;
+            status.anguloZ = anguloZ;
+            contadorCooldown = cooldownSpawnMorcegoDrone;
+            contador++;
         }
     }
 }

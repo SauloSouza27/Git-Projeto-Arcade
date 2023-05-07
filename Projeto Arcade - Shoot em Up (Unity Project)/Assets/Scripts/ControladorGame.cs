@@ -12,9 +12,11 @@ public class ControladorGame : MonoBehaviour
     // HP, XP e nivel
     public int XP, XPtotal = 0, nivel = 1, HP;
     public float valorXPNivel = 100.0f, multiplicadorQuantidadeXPporNivel = 50.0f;
+    // HUD
     public GameObject barraHP, prefabCoracaoHP, barraXP, jogador;
     public TextMeshProUGUI txtNivel, txtXP;
     private Slider sliderXP;
+    public Button Configuracao;
     // spawn inimigos
     public GameObject spawnsInimigoPequeno;
     public List<GameObject> spawnsCima, spawnsLaterais, spawnsBaixo;
@@ -30,7 +32,6 @@ public class ControladorGame : MonoBehaviour
     public GameObject piramideSuperiores, piramideLaterais;
     // boss fase1
     public GameObject boss, petsBoss;
-    public Button Configuracao;
     // spawns inimigos Rola Bosta
     public GameObject rolaBostaDir, rolaBostaEsq;
 

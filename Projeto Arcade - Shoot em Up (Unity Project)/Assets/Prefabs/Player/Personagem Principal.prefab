@@ -67,6 +67,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocidadeMovimento: 15
   velocidadeCorMaterial: 2
+  timerInvulneravel: 0.9
   personagem: {fileID: 9074662426996894289}
   armaPrincipal: {fileID: 4029662136992464683}
   armaPets: {fileID: 5349464373578631912}

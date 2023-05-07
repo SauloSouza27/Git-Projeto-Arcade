@@ -11,7 +11,7 @@ public class MovimentoInimigoMorcegoDrone : MonoBehaviour
     public int xpInimigo = 10;
     // Movimento
     public bool isAutomatic = false;
-    public float velocidadeMovimento = 2.0f, velocidadeRotacao = 1.0f, anguloZ;
+    public float velocidadeMovimento = 2.0f, velocidadeRotacao = 1.0f, anguloZ, atrasoRotacao;
     // materiais inimgo
     private MeshRenderer[] renderers;
     private Material[] materiais;
@@ -53,13 +53,12 @@ public class MovimentoInimigoMorcegoDrone : MonoBehaviour
     {
         transform.Translate(0, velocidadeMovimento * Time.deltaTime, 0);
 
-        transform.eulerAngles = Vector3.Lerp(transform.eulerAngles, new Vector3(0, 0, anguloZ), velocidadeRotacao);
-
+        StartCoroutine(AtrasaRotacao(anguloZ, atrasoRotacao));
     }
-    private IEnumerator AtrasaRotacao(float delay)
+    private IEnumerator AtrasaRotacao(float angZ, float delay)
     {
         yield return new WaitForSecondsRealtime(delay);
-
+        transform.eulerAngles = Vector3.Lerp(transform.eulerAngles, new Vector3(0, 0, angZ), velocidadeRotacao * Time.deltaTime);
     }
     private void OnCollisionEnter(Collision colisor)
     {
