@@ -35,7 +35,7 @@ Transform:
   m_Children:
   - {fileID: 6912663538142740109}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &4766731505477333079
 MeshFilter:
@@ -260,7 +260,7 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0, g: 1, b: 0, a: 1}
+      key0: {r: 0, g: 1, b: 0.47682905, a: 1}
       key1: {r: 0.031372566, g: 0.34165546, b: 0.9490196, a: 0}
       key2: {r: 0.047058836, g: 0.30878392, b: 0.9254902, a: 0}
       key3: {r: 0.12719347, g: 0.8679245, b: 0.08733825, a: 0}

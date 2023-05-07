@@ -299,7 +299,7 @@ MonoBehaviour:
   - {fileID: 2835777295160593200}
   - {fileID: 7514584705783465394}
   petsBoss: {fileID: 0}
-  vidaCorpo: 60
+  vidaCorpo: 100
   vidaCabeca: 120
   bossIsDead: 0
 --- !u!54 &7096758492839678714
