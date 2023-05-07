@@ -10,8 +10,8 @@ public class MovimentoInimigoMorcegoDrone : MonoBehaviour
     // XP quando morre
     public int xpInimigo = 10;
     // Movimento
-    public float velocidadeMovimento = 5.0f;
-    public bool isAnimated = false;
+    public bool isAutomatic = false;
+    public float velocidadeMovimento = 5.0f, velocidadeRotacao = 1.0f, anguloZ;
     // materiais inimgo
     private MeshRenderer[] renderers;
     private Material[] materiais;
@@ -44,7 +44,7 @@ public class MovimentoInimigoMorcegoDrone : MonoBehaviour
     }
     private void Update()
     {
-        if (isAnimated)
+        if (isAutomatic)
         {
             MovimentaMorcegoDrone();
         }
@@ -53,6 +53,12 @@ public class MovimentoInimigoMorcegoDrone : MonoBehaviour
     {
         transform.Translate(0, velocidadeMovimento * Time.deltaTime, 0);
 
+        transform.eulerAngles = Vector3.Lerp(transform.eulerAngles, new Vector3(0, 0, anguloZ), velocidadeRotacao);
+
+    }
+    private IEnumerator AtrasaRotacao(float delay)
+    {
+        yield return new WaitForSecondsRealtime(delay);
 
     }
     private void OnCollisionEnter(Collision colisor)
