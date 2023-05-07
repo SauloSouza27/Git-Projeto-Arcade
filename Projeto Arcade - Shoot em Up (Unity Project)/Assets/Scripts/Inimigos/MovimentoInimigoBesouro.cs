@@ -7,13 +7,14 @@ public class MovimentoInimigoBesouro : MonoBehaviour
     public GameObject besouro, bosta;
     // movimento
     public float velocidadeMovimento = 2.0f, velocidadeRotacao = 2.5f, velocidadeRotacaoBosta = 2.0f;
-    private bool mudaDirecao = true;
+    private bool mudaDirecao = true, primeiroGiro = true;
     private float contadorCooldown;
     [Range(0.0f, 8.0f)] public float cooldownMudaDirecao = 2.0f;
 
     private void Start()
     {
-
+        cooldownMudaDirecao /= 2;
+        contadorCooldown = cooldownMudaDirecao;
     }
     void Update()
     {
@@ -36,6 +37,11 @@ public class MovimentoInimigoBesouro : MonoBehaviour
         if (contadorCooldown == 0 && mudaDirecao == true)
         {
             mudaDirecao = false;
+            if (primeiroGiro)
+            {
+                primeiroGiro = false;
+                cooldownMudaDirecao *= 2;
+            }
             contadorCooldown = cooldownMudaDirecao;
         }
         if (!mudaDirecao)

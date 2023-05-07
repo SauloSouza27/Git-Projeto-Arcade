@@ -31,7 +31,7 @@ public class ControladorGame : MonoBehaviour
     // boss fase1
     public GameObject boss, petsBoss;
     public Button Configuracao;
-    // inimigos Rola Bosta
+    // spawns inimigos Rola Bosta
     public GameObject rolaBostaDir, rolaBostaEsq;
 
     private void Awake()
