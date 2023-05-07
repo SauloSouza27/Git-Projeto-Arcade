@@ -43,6 +43,10 @@ public class MovimentoInimigoMorcegoDrone : MonoBehaviour
     {
         
     }
+    private void MovimentaMorcegoDrone()
+    {
+
+    }
     private void OnCollisionEnter(Collision colisor)
     {
         if (colisor.gameObject.CompareTag("BalaPersonagem"))
