@@ -9,7 +9,7 @@ public class ControlaPersonagem : MonoBehaviour
 {
     // Controle movimento personagem e armas
     private float x, y;
-    public float velocidadeMovimento = 1.0f, velocidadeCorMaterial = 2.0f;
+    public float velocidadeMovimento = 1.0f, velocidadeCorMaterial = 2.0f, timerInvulneravel = 0.0f;
     public GameObject personagem, armaPrincipal, armaPets, petEsq, petDir, pontaPetEsq, pontaPetDir, armaOrbeGiratorio, armaSerra;
     private GameObject alvoPet;
     public float velocidadeRotacaoPet = 2.0f, distanciaMinPetAtirar = 20.0f, velocidadeRotacaoOrbeGiratorio = 15.0f;
@@ -25,6 +25,7 @@ public class ControlaPersonagem : MonoBehaviour
     private Color[] coresOriginais;
     // sons player
     public AudioSource tomaDano;
+    private bool isInvulneravel = false;
 
     void Start()
     {
@@ -40,6 +41,7 @@ public class ControlaPersonagem : MonoBehaviour
             materiais[i] = renderers[i].material;
             coresOriginais[i] = materiais[i].color;
         }
+        
     }
 
     void Update()
@@ -50,6 +52,7 @@ public class ControlaPersonagem : MonoBehaviour
         {
             pontosVida += 1;
         }
+
 
         ControleMovimentoPersonagem();
 
@@ -78,11 +81,16 @@ public class ControlaPersonagem : MonoBehaviour
     // Dano Inimigos
     private void OnCollisionEnter(Collision colisor)
     {
+
         if (colisor.gameObject.CompareTag("Inimigo") || colisor.gameObject.CompareTag("BalaPiramide") || colisor.gameObject.CompareTag("BalaBossPiramide"))
         {
             if (pontosVida > 0)
             {
-                ReceberDano();
+                if (!isInvulneravel)
+                {
+                    ReceberDano();
+                }
+                
                 if (colisor.gameObject.CompareTag("BalaPiramide"))
                 {
                     Destroy(colisor.gameObject);
@@ -93,7 +101,12 @@ public class ControlaPersonagem : MonoBehaviour
                     Destroy(colisor.gameObject);
                 }
             }
+            isInvulneravel = true;
+            StartCoroutine(Invulnerabilidade());
         }
+            
+
+        
     }
 
     // Morte Personagem
@@ -223,5 +236,11 @@ public class ControlaPersonagem : MonoBehaviour
         {
             materiais[i].color = Color.Lerp(materiais[i].color, coresOriginais[i], velocidadeCorMaterial * Time.deltaTime);
         }
+    }
+    private IEnumerator Invulnerabilidade()
+    {
+        yield return new WaitForSecondsRealtime(timerInvulneravel);
+        isInvulneravel = false;
+        StopCoroutine(Invulnerabilidade());    
     }
 }
