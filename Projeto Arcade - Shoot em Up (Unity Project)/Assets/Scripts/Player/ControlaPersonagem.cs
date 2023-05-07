@@ -41,7 +41,6 @@ public class ControlaPersonagem : MonoBehaviour
             materiais[i] = renderers[i].material;
             coresOriginais[i] = materiais[i].color;
         }
-        
     }
 
     void Update()
@@ -104,9 +103,6 @@ public class ControlaPersonagem : MonoBehaviour
             isInvulneravel = true;
             StartCoroutine(Invulnerabilidade());
         }
-            
-
-        
     }
 
     // Morte Personagem

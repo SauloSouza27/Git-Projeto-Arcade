@@ -8,10 +8,11 @@ public class SpawnInimigoMorcegoDrone : MonoBehaviour
     private float contadorCooldown;
     private int nivelJogador;
     public float cooldownSpawnMorcegoDrone = 4.0f;
+    public int quantidadeParaSpawnar = 3;
     public GameObject morcegoDrone;
     public bool ativar = true;
     // Controle Movimento
-    public float velocidade;
+    public float velocidade = 1.0f, rotacao = 1.0f, anguloZ = 30.0f;
 
     private void Awake()
     {
@@ -22,15 +23,20 @@ public class SpawnInimigoMorcegoDrone : MonoBehaviour
         if (Time.timeScale == 0) return;
 
         nivelJogador = controladorGame.GetComponent<ControladorGame>().nivel;
-
-        Utilidades.CalculaCooldown(contadorCooldown);
-        contadorCooldown = Utilidades.CalculaCooldown(contadorCooldown);
-        if (contadorCooldown == 0 && ativar == true)
+        for (int i = 0; i < quantidadeParaSpawnar; i++)
         {
-            GameObject instancia = Instantiate(morcegoDrone, transform.position, transform.rotation);
-            MovimentoInimigoMorcegoDrone status = instancia.GetComponent<MovimentoInimigoMorcegoDrone>();
-            status.isAutomatic = true;
-            contadorCooldown = cooldownSpawnMorcegoDrone;
+            Utilidades.CalculaCooldown(contadorCooldown);
+            contadorCooldown = Utilidades.CalculaCooldown(contadorCooldown);
+            if (contadorCooldown == 0 && ativar == true)
+            {
+                GameObject instancia = Instantiate(morcegoDrone, transform.position, transform.rotation);
+                MovimentoInimigoMorcegoDrone status = instancia.GetComponent<MovimentoInimigoMorcegoDrone>();
+                status.isAutomatic = true;
+                status.velocidadeMovimento = velocidade;
+                status.velocidadeRotacao = rotacao;
+                status.anguloZ = anguloZ;
+                contadorCooldown = cooldownSpawnMorcegoDrone;
+            }
         }
     }
 }
