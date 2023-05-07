@@ -11,6 +11,7 @@ public class MovimentoInimigoMorcegoDrone : MonoBehaviour
     public int xpInimigo = 10;
     // Movimento
     public float velocidadeMovimento = 5.0f;
+    public bool isAnimated = false;
     // materiais inimgo
     private MeshRenderer[] renderers;
     private Material[] materiais;
@@ -43,7 +44,10 @@ public class MovimentoInimigoMorcegoDrone : MonoBehaviour
     }
     private void Update()
     {
-        MovimentaMorcegoDrone();
+        if (isAnimated)
+        {
+            MovimentaMorcegoDrone();
+        }
     }
     private void MovimentaMorcegoDrone()
     {
