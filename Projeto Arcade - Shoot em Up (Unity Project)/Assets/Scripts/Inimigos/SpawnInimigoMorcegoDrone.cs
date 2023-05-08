@@ -11,9 +11,10 @@ public class SpawnInimigoMorcegoDrone : MonoBehaviour
     public int quantidadeParaSpawnar = 3;
     private int contador;
     public GameObject morcegoDrone;
-    public bool ativar = true;
+    public bool ativar = true, mudaDirecao = false;
     // Controle Movimento
-    public float velocidade = 2.0f, rotacao = 1.0f, atrasoRotacao = 1.0f, anguloZ = 30.0f;
+    public float velocidade = 2.0f, rotacao = 1.0f, atrasoRotacao = 1.0f;
+    public float anguloZ = 0.0f;
 
     private void Awake()
     {
@@ -35,6 +36,7 @@ public class SpawnInimigoMorcegoDrone : MonoBehaviour
             status.velocidadeRotacao = rotacao;
             status.atrasoRotacao = atrasoRotacao;
             status.anguloZ = anguloZ;
+            status.turn = mudaDirecao;
             contadorCooldown = cooldownSpawnMorcegoDrone;
             contador++;
         }

@@ -10,8 +10,9 @@ public class MovimentoInimigoMorcegoDrone : MonoBehaviour
     // XP quando morre
     public int xpInimigo = 10;
     // Movimento
-    public bool isAutomatic = false;
+    public bool isAutomatic = false, turn = false;
     public float velocidadeMovimento = 2.0f, velocidadeRotacao = 1.0f, anguloZ, atrasoRotacao;
+    private float time = 0.0f;
     // materiais inimgo
     private MeshRenderer[] renderers;
     private Material[] materiais;
@@ -53,12 +54,35 @@ public class MovimentoInimigoMorcegoDrone : MonoBehaviour
     {
         transform.Translate(0, velocidadeMovimento * Time.deltaTime, 0);
 
-        StartCoroutine(AtrasaRotacao(anguloZ, atrasoRotacao));
+        if (turn)
+        {
+            while (time < atrasoRotacao + velocidadeRotacao)
+            {
+                StartCoroutine(AtrasaRotacao(anguloZ, atrasoRotacao));
+                time += Time.deltaTime;
+                return;
+            }
+            StopAllCoroutines();
+        }
     }
     private IEnumerator AtrasaRotacao(float angZ, float delay)
     {
         yield return new WaitForSecondsRealtime(delay);
-        transform.eulerAngles = Vector3.Lerp(transform.eulerAngles, new Vector3(0, 0, angZ), velocidadeRotacao * Time.deltaTime);
+        //transform.rotation = Quaternion.Euler(0, 0, Mathf.Lerp(transform.rotation.eulerAngles.z, angZ, velocidadeRotacao * Time.deltaTime));
+        StartCoroutine(RotacaoLerp(new Vector3(0, 0, angZ), velocidadeRotacao));
+    }
+    private IEnumerator RotacaoLerp(Vector3 valorFinal, float duracao)
+    {
+        float time = 0;
+        Vector3 valorInicial = transform.rotation.eulerAngles;
+        while (time < duracao)
+        {
+            transform.eulerAngles = Vector3.Lerp(valorInicial, valorFinal, time / duracao);
+            time += Time.deltaTime;
+            yield return null;
+        }
+        transform.eulerAngles = valorFinal;
+        StopAllCoroutines();
     }
     private void OnCollisionEnter(Collision colisor)
     {
