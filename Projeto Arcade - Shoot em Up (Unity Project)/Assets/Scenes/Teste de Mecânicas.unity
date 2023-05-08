@@ -991,7 +991,7 @@ MonoBehaviour:
   ativar: 1
   mudaDirecao: 1
   velocidade: 10
-  rotacao: 1.57
+  rotacao: 1
   atrasoRotacao: 1
   anguloZ: -45
 --- !u!4 &286371010
