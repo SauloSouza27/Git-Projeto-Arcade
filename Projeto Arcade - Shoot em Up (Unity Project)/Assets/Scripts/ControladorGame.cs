@@ -27,7 +27,7 @@ public class ControladorGame : MonoBehaviour
     private int contadorMaxVelocidadeAtaque = 0;
     private readonly float multVelAtak = 0.75f;
     // inimigos Morcego Drone
-    public GameObject nivel2, nivel3, nivel4, nivel7, nivel8;
+    public GameObject nivel2, nivel3, nivel4, nivel5, nivel7, nivel8;
     // inimigos Piramide
     public GameObject piramideSuperiores, piramideLaterais;
     // boss fase1
@@ -109,8 +109,7 @@ public class ControladorGame : MonoBehaviour
 
         if (nivel == 5)
         {
-            StartCoroutine(AtivaInimigo(droneDirEsqTrans, 5.0f));
-            StartCoroutine(AtivaInimigo(droneEsqDirTrans, 12.0f));
+            StartCoroutine(AtivaInimigo(nivel5, 5.0f));
         }
 
         if (nivel == 6)
