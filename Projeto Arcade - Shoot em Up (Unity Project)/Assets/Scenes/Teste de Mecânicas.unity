@@ -993,7 +993,7 @@ MonoBehaviour:
   velocidade: 10
   rotacao: 1
   atrasoRotacao: 1
-  anguloZ: -45
+  anguloZ: 0
 --- !u!4 &286371010
 Transform:
   m_ObjectHideFlags: 0
@@ -1002,7 +1002,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 286371008}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.41, y: 2.11, z: 0}
+  m_LocalPosition: {x: 14.3, y: 14.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

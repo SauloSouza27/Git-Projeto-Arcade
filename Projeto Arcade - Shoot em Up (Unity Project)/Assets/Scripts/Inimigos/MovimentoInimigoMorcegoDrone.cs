@@ -68,7 +68,6 @@ public class MovimentoInimigoMorcegoDrone : MonoBehaviour
     private IEnumerator AtrasaRotacao(float angZ, float delay)
     {
         yield return new WaitForSecondsRealtime(delay);
-        //transform.rotation = Quaternion.Euler(0, 0, Mathf.Lerp(transform.rotation.eulerAngles.z, angZ, velocidadeRotacao * Time.deltaTime));
         StartCoroutine(RotacaoLerp(new Vector3(0, 0, angZ), velocidadeRotacao));
     }
     private IEnumerator RotacaoLerp(Vector3 valorFinal, float duracao)
