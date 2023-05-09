@@ -1026,7 +1026,7 @@ MonoBehaviour:
   velocidade: 10
   rotacao: 1
   atrasoRotacao: 3.2
-  anguloZ: 40
+  anguloZ: 75
 --- !u!1001 &154553186
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1948,7 +1948,7 @@ MonoBehaviour:
   mudaDirecao: 1
   velocidade: 10
   rotacao: 0.5
-  atrasoRotacao: 4
+  atrasoRotacao: 3
   anguloZ: -180
 --- !u!1 &265484431
 GameObject:
@@ -2649,7 +2649,7 @@ MonoBehaviour:
   mudaDirecao: 1
   velocidade: 10
   rotacao: 2
-  atrasoRotacao: 4
+  atrasoRotacao: 3
   anguloZ: 90
 --- !u!1 &357138630
 GameObject:
@@ -3590,7 +3590,7 @@ MonoBehaviour:
   mudaDirecao: 1
   velocidade: 10
   rotacao: 2
-  atrasoRotacao: 4
+  atrasoRotacao: 3
   anguloZ: 90
 --- !u!1 &459432853
 GameObject:
@@ -3679,7 +3679,7 @@ MonoBehaviour:
   mudaDirecao: 1
   velocidade: 10
   rotacao: 1
-  atrasoRotacao: 4
+  atrasoRotacao: 3
   anguloZ: 180
 --- !u!1 &476844908
 GameObject:
@@ -4718,7 +4718,7 @@ GameObject:
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &620127231
 Transform:
   m_ObjectHideFlags: 0
@@ -7566,7 +7566,7 @@ MonoBehaviour:
   mudaDirecao: 1
   velocidade: 10
   rotacao: 1
-  atrasoRotacao: 4
+  atrasoRotacao: 3
   anguloZ: 180
 --- !u!1 &963194225
 GameObject:
@@ -8013,7 +8013,7 @@ MonoBehaviour:
   velocidade: 10
   rotacao: 1
   atrasoRotacao: 3.2
-  anguloZ: -40
+  anguloZ: -75
 --- !u!1001 &1014439910
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10373,7 +10373,7 @@ MonoBehaviour:
   mudaDirecao: 1
   velocidade: 10
   rotacao: 0.5
-  atrasoRotacao: 4
+  atrasoRotacao: 3
   anguloZ: -180
 --- !u!1001 &1391660590
 PrefabInstance:
@@ -21964,6 +21964,22 @@ PrefabInstance:
     - target: {fileID: 776616345876304713, guid: 6470e112d76167b4bac48cdaad12ef5d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4268107023435981221, guid: 6470e112d76167b4bac48cdaad12ef5d, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4485645037099912181, guid: 6470e112d76167b4bac48cdaad12ef5d, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7142325103428419509, guid: 6470e112d76167b4bac48cdaad12ef5d, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: d89e3e8e3d66fa04b996e8c9edf2c3a6, type: 3}
+    - target: {fileID: 7142325103428419509, guid: 6470e112d76167b4bac48cdaad12ef5d, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7773611179429094950, guid: 6470e112d76167b4bac48cdaad12ef5d, type: 3}
       propertyPath: tiroAutomatico
