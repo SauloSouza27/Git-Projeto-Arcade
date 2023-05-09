@@ -273,7 +273,7 @@ public class MovimentoBoss : MonoBehaviour
             if (vidaCorpo <= 0)
             {
                 bossIsDead = true;
-                Destroy(gameObject);
+                Destroy(cabecaPiramide);
             }
         }
     }
