@@ -1022,11 +1022,11 @@ MonoBehaviour:
   quantidadeParaSpawnar: 4
   morcegoDrone: {fileID: 2743475196320168649, guid: a9f3ccc6f4249354bb0cb7f3c4e7617c, type: 3}
   ativar: 1
-  mudaDirecao: 0
+  mudaDirecao: 1
   velocidade: 10
   rotacao: 1
-  atrasoRotacao: 1
-  anguloZ: 0
+  atrasoRotacao: 3.2
+  anguloZ: 40
 --- !u!1001 &154553186
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4718,7 +4718,7 @@ GameObject:
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &620127231
 Transform:
   m_ObjectHideFlags: 0
@@ -8009,11 +8009,11 @@ MonoBehaviour:
   quantidadeParaSpawnar: 4
   morcegoDrone: {fileID: 2743475196320168649, guid: a9f3ccc6f4249354bb0cb7f3c4e7617c, type: 3}
   ativar: 1
-  mudaDirecao: 0
+  mudaDirecao: 1
   velocidade: 10
   rotacao: 1
-  atrasoRotacao: 1
-  anguloZ: 0
+  atrasoRotacao: 3.2
+  anguloZ: -40
 --- !u!1001 &1014439910
 PrefabInstance:
   m_ObjectHideFlags: 0
