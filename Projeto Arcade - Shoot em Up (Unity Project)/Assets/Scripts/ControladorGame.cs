@@ -27,6 +27,7 @@ public class ControladorGame : MonoBehaviour
     private int contadorMaxVelocidadeAtaque = 0;
     private readonly float multVelAtak = 0.75f;
     // inimigos Morcego Drone
+    public GameObject nivel2, nivel3, nivel4, nivel7;
     public GameObject droneCimaBaixo, droneEsqDirHori, droneDirEsqTrans, droneEsqDirTrans, droneCruzado, droneCascadeDirEsqTrans, droneCascadeDirEsqHori;
     // inimigos Piramide
     public GameObject piramideSuperiores, piramideLaterais;
@@ -94,12 +95,17 @@ public class ControladorGame : MonoBehaviour
     {
         if (nivel == 2)
         {
-            StartCoroutine(AtivaInimigo(droneCimaBaixo, 3.0f));
+            StartCoroutine(AtivaInimigo(nivel2, 3.0f));
+        }
+
+        if (nivel == 3)
+        {
+            StartCoroutine(AtivaInimigo(nivel3, 3.0f));
         }
 
         if (nivel == 4)
         {
-            StartCoroutine(AtivaInimigo(droneEsqDirHori, 4.0f));
+            StartCoroutine(AtivaInimigo(nivel4, 4.0f));
         }
 
         if (nivel == 5)
@@ -115,7 +121,7 @@ public class ControladorGame : MonoBehaviour
 
         if (nivel == 7)
         {
-            StartCoroutine(AtivaInimigo(droneCruzado, 4.0f));
+            StartCoroutine(AtivaInimigo(nivel7, 4.0f));
         }
 
         if (nivel == 8)

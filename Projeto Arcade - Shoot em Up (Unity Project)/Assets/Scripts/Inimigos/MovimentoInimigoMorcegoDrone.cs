@@ -18,6 +18,9 @@ public class MovimentoInimigoMorcegoDrone : MonoBehaviour
     private Material[] materiais;
     // efeito explosão
     public GameObject fxExplosionPrefab;
+    // destroi quando sai da tela
+    private Vector3 maxDistance = new Vector3(40.0f, 40.0f, 0.0f);
+    private Vector3 minDistance = new Vector3(-40.0f, -5.0f, 0.0f);
     private void Awake()
     {
         controladorGame = GameObject.FindGameObjectWithTag("ControladorGame");
@@ -35,16 +38,19 @@ public class MovimentoInimigoMorcegoDrone : MonoBehaviour
     {
         if (controladorGame.GetComponent<ControladorGame>().nivel >= 3)
         {
-            pontosVida = 2;
             xpInimigo = 15;
         }
         if (controladorGame.GetComponent<ControladorGame>().nivel >= 7)
         {
-            pontosVida = 3;
+            pontosVida = 2;
         }
     }
     private void Update()
     {
+        if (Time.timeScale == 0) return;
+
+        DestroyOutOfScreen(transform.position);
+
         if (isAutomatic)
         {
             MovimentaMorcegoDrone();
@@ -56,7 +62,7 @@ public class MovimentoInimigoMorcegoDrone : MonoBehaviour
 
         if (turn)
         {
-            while (time < atrasoRotacao + velocidadeRotacao)
+            while (time < atrasoRotacao + velocidadeRotacao + 0.05)
             {
                 StartCoroutine(AtrasaRotacao(anguloZ, atrasoRotacao));
                 time += Time.deltaTime;
@@ -82,7 +88,13 @@ public class MovimentoInimigoMorcegoDrone : MonoBehaviour
             yield return null;
         }
         transform.eulerAngles = valorFinal;
-        StopAllCoroutines();
+    }
+    private void DestroyOutOfScreen(Vector3 pos)
+    {
+        if (pos.x > maxDistance.x || pos.x < minDistance.x || pos.y > maxDistance.y || pos.y < minDistance.y)
+        {
+            Destroy(gameObject);
+        }
     }
     private void OnCollisionEnter(Collision colisor)
     {
