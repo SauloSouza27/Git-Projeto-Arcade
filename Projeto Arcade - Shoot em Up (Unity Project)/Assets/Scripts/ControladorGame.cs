@@ -142,13 +142,13 @@ public class ControladorGame : MonoBehaviour
         if (nivel == 10)
         {
             spawnsInimigoPequeno.SetActive(false);
-            StartCoroutine(AtivaInimigo(boss, 6.0f));
+            StartCoroutine(AtivaInimigo(boss, 4.0f));
             StartCoroutine(AtivaInimigo(petsBoss, 16.0f));
         }
 
         if (boss.GetComponent<MovimentoBoss>().bossIsDead == true)
         {
-            StartCoroutine(AtivaMenuVitoria(uiVitoria, 4.0f));
+            StartCoroutine(AtivaMenuVitoria(uiVitoria, 3.0f));
         }
     }
 
