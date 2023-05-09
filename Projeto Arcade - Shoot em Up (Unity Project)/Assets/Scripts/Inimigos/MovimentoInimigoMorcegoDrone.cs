@@ -74,6 +74,7 @@ public class MovimentoInimigoMorcegoDrone : MonoBehaviour
     {
         float time = 0;
         Vector3 valorInicial = transform.rotation.eulerAngles;
+        valorFinal += valorInicial;
         while (time < duracao)
         {
             transform.eulerAngles = Vector3.Lerp(valorInicial, valorFinal, time / duracao);
