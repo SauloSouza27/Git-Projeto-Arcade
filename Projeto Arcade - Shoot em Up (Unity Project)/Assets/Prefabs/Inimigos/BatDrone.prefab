@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pontosVida: 1
-  xpInimigo: 10
+  xpInimigo: 5
   isAutomatic: 0
   turn: 0
   velocidadeMovimento: 2

@@ -8,7 +8,7 @@ public class MovimentoInimigoMorcegoDrone : MonoBehaviour
     // Pontos de vida
     public int pontosVida = 1;
     // XP quando morre
-    public int xpInimigo = 10;
+    public int xpInimigo = 5;
     // Movimento
     public bool isAutomatic = false, turn = false;
     public float velocidadeMovimento = 2.0f, velocidadeRotacao = 1.0f, anguloZ, atrasoRotacao;
@@ -36,7 +36,7 @@ public class MovimentoInimigoMorcegoDrone : MonoBehaviour
 
     private void OnEnable()
     {
-        if (controladorGame.GetComponent<ControladorGame>().nivel >= 3)
+        if (controladorGame.GetComponent<ControladorGame>().nivel >= 4)
         {
             pontosVida = 2;
         }
