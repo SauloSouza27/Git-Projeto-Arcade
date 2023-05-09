@@ -4,26 +4,32 @@ using UnityEngine;
 
 public class BalaPersonagem : MonoBehaviour
 {
-    public float velocidade = 15.0f, duracaoBala = 200.0f;
+    public float velocidade = 15.0f;
     public GameObject projetil;
     public bool projetilInimigo = false, rotacaoTiro = false;
     public GameObject projetilRotacao;
     public float velocidadeRotacao = 200.0f;
     public int danoProjetil = 1;
+    // destroi quando sai da tela
+    private Vector3 maxDistance = new Vector3(40.0f, 40.0f, 0.0f);
+    private Vector3 minDistance = new Vector3(-40.0f, -5.0f, 0.0f);
 
-    
+
     void Update()
     {
         if (Time.timeScale == 0) return;
 
         MovimentoProjetil();
 
-        DestroiBala();
+        DestroyOutOfScreen(projetil.transform.position);
     }
 
-    void DestroiBala()
+    private void DestroyOutOfScreen(Vector3 pos)
     {
-        Destroy(projetil, duracaoBala * Time.deltaTime);
+        if (pos.x > maxDistance.x || pos.x < minDistance.x || pos.y > maxDistance.y || pos.y < minDistance.y)
+        {
+            Destroy(gameObject);
+        }
     }
 
     // Movimento bala
