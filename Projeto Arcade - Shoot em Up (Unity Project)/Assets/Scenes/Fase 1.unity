@@ -1319,7 +1319,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &160401059
 Transform:
   m_ObjectHideFlags: 0
@@ -1471,7 +1471,7 @@ MonoBehaviour:
   jogador: {fileID: 1537027532}
   txtNivel: {fileID: 6368778564936041901}
   txtXP: {fileID: 4297906681101940198}
-  configuracao: {fileID: 0}
+  configuracao: {fileID: 8947399122641741072}
   spawnsInimigoPequeno: {fileID: 160401058}
   spawnsCima:
   - {fileID: 1861112196}
