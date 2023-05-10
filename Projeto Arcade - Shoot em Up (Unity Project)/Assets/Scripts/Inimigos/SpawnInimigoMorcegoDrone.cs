@@ -27,12 +27,9 @@ public class SpawnInimigoMorcegoDrone : MonoBehaviour
         if (atrasaSpawn > 0)
         {
             atrasaSpawn -= Time.deltaTime;
-            if (atrasaSpawn < 0)
-            {
-                atrasaSpawn = 0;
-            }
             return;
         }
+
         nivelJogador = controladorGame.GetComponent<ControladorGame>().nivel;
         Utilidades.CalculaCooldown(contadorCooldown);
         contadorCooldown = Utilidades.CalculaCooldown(contadorCooldown);

@@ -1286,7 +1286,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &160401059
 Transform:
   m_ObjectHideFlags: 0
@@ -2082,16 +2082,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c92ec28b8fc7774d9b7f3db1129c359, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  atrasaSpawn: 2
+  atrasaSpawn: 0
   cooldownSpawnMorcegoDrone: 0.8
-  quantidadeParaSpawnar: 4
+  quantidadeParaSpawnar: 10
   morcegoDrone: {fileID: 2743475196320168649, guid: a9f3ccc6f4249354bb0cb7f3c4e7617c, type: 3}
   ativar: 1
   mudaDirecao: 1
   velocidade: 10
   rotacao: 0.5
   atrasoRotacao: 3
-  anguloZ: -180
+  anguloZ: -5
 --- !u!1 &265484431
 GameObject:
   m_ObjectHideFlags: 0
@@ -2832,7 +2832,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c92ec28b8fc7774d9b7f3db1129c359, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  atrasaSpawn: 9
+  atrasaSpawn: 11
   cooldownSpawnMorcegoDrone: 0.8
   quantidadeParaSpawnar: 6
   morcegoDrone: {fileID: 2743475196320168649, guid: a9f3ccc6f4249354bb0cb7f3c4e7617c, type: 3}
@@ -2841,7 +2841,7 @@ MonoBehaviour:
   velocidade: 10
   rotacao: 2
   atrasoRotacao: 3
-  anguloZ: 90
+  anguloZ: 115
 --- !u!1 &357138630
 GameObject:
   m_ObjectHideFlags: 0
@@ -3888,7 +3888,7 @@ MonoBehaviour:
   velocidade: 10
   rotacao: 2
   atrasoRotacao: 3
-  anguloZ: 90
+  anguloZ: 30
 --- !u!1 &459432853
 GameObject:
   m_ObjectHideFlags: 0
@@ -3968,7 +3968,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c92ec28b8fc7774d9b7f3db1129c359, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  atrasaSpawn: 8
+  atrasaSpawn: 12
   cooldownSpawnMorcegoDrone: 0.8
   quantidadeParaSpawnar: 4
   morcegoDrone: {fileID: 2743475196320168649, guid: a9f3ccc6f4249354bb0cb7f3c4e7617c, type: 3}
@@ -3977,7 +3977,7 @@ MonoBehaviour:
   velocidade: 10
   rotacao: 1
   atrasoRotacao: 3
-  anguloZ: 180
+  anguloZ: 150
 --- !u!1 &476844908
 GameObject:
   m_ObjectHideFlags: 0
@@ -4572,16 +4572,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c92ec28b8fc7774d9b7f3db1129c359, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  atrasaSpawn: 0
+  atrasaSpawn: 2
   cooldownSpawnMorcegoDrone: 0.8
-  quantidadeParaSpawnar: 5
+  quantidadeParaSpawnar: 6
   morcegoDrone: {fileID: 2743475196320168649, guid: a9f3ccc6f4249354bb0cb7f3c4e7617c, type: 3}
   ativar: 1
   mudaDirecao: 1
   velocidade: 10
-  rotacao: 1
+  rotacao: 2
   atrasoRotacao: 5
-  anguloZ: 180
+  anguloZ: 230
 --- !u!1001 &539433694
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4681,7 +4681,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 562200949}
   m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -33, y: 14, z: 0}
+  m_LocalPosition: {x: -33, y: 10, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4703,7 +4703,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   atrasaSpawn: 0
   cooldownSpawnMorcegoDrone: 0.8
-  quantidadeParaSpawnar: 5
+  quantidadeParaSpawnar: 7
   morcegoDrone: {fileID: 2743475196320168649, guid: a9f3ccc6f4249354bb0cb7f3c4e7617c, type: 3}
   ativar: 1
   mudaDirecao: 1
@@ -8096,7 +8096,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c92ec28b8fc7774d9b7f3db1129c359, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  atrasaSpawn: 0
+  atrasaSpawn: 2
   cooldownSpawnMorcegoDrone: 0.8
   quantidadeParaSpawnar: 4
   morcegoDrone: {fileID: 2743475196320168649, guid: a9f3ccc6f4249354bb0cb7f3c4e7617c, type: 3}
@@ -8105,7 +8105,7 @@ MonoBehaviour:
   velocidade: 10
   rotacao: 1
   atrasoRotacao: 3
-  anguloZ: 180
+  anguloZ: 130
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -11017,8 +11017,8 @@ MonoBehaviour:
   mudaDirecao: 1
   velocidade: 10
   rotacao: 0.5
-  atrasoRotacao: 3
-  anguloZ: -180
+  atrasoRotacao: 3.5
+  anguloZ: 60
 --- !u!1 &1387431545 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4008169880396932920, guid: 6470e112d76167b4bac48cdaad12ef5d, type: 3}

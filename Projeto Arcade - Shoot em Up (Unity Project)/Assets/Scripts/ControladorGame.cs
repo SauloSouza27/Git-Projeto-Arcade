@@ -209,6 +209,7 @@ public class ControladorGame : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
         inimgo.SetActive(true);
+        yield break;
     }
 
     private IEnumerator AtivaMenuVitoria(GameObject uiVitoria, float delay)
@@ -216,6 +217,7 @@ public class ControladorGame : MonoBehaviour
         yield return new WaitForSeconds(delay);
         uiVitoria.SetActive(true);
         Time.timeScale = 0.0f;
+        yield break;
     }
 
     // powerUp buttons
