@@ -2539,7 +2539,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 328895221}
-  - component: {fileID: 328895223}
   - component: {fileID: 328895222}
   m_Layer: 0
   m_Name: Planeta Fase 1
@@ -2580,18 +2579,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clouds: {fileID: 575367584}
   velocidadeRotacao: -5
---- !u!114 &328895223
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 328895220}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 331268d42adbaf24eae69a2ac34ff371, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &338417260
 PrefabInstance:
   m_ObjectHideFlags: 0
