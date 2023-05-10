@@ -73,7 +73,7 @@ public class MovimentoInimigoMorcegoDrone : MonoBehaviour
     }
     private IEnumerator AtrasaRotacao(float angZ, float delay)
     {
-        yield return new WaitForSecondsRealtime(delay);
+        yield return StartCoroutine(Utilidades.WaitForRealTime(delay));
         StartCoroutine(RotacaoLerp(new Vector3(0, 0, angZ), velocidadeRotacao));
     }
     private IEnumerator RotacaoLerp(Vector3 valorFinal, float duracao)

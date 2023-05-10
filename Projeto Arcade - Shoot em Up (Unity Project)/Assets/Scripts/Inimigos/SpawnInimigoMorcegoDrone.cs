@@ -23,6 +23,7 @@ public class SpawnInimigoMorcegoDrone : MonoBehaviour
     void Update()
     {
         if (Time.timeScale == 0) return;
+
         if (atrasaSpawn > 0)
         {
             atrasaSpawn -= Time.deltaTime;

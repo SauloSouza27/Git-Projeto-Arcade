@@ -479,11 +479,11 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 199698640}
         m_TargetAssemblyTypeName: ControladorGame, Assembly-CSharp
-        m_MethodName: PowerUPUpgradeArmaOrbeGiratorio
-        m_Mode: 2
+        m_MethodName: PowerUPUpgradeVelocidadeOrbe
+        m_Mode: 1
         m_Arguments:
-          m_ObjectArgument: {fileID: 133942116}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Arma Pet
@@ -1466,6 +1466,7 @@ MonoBehaviour:
   buttonArmaPet: {fileID: 1453189896861480562}
   buttonArmaOrbeGiratorio: {fileID: 671152016}
   buttonUpgradeOrbe1: {fileID: 1632358449}
+  buttonVelocidadeOrbe: {fileID: 85474091}
   buttonArmaSerra: {fileID: 1966890836}
   buttonDiminuiCooldown: {fileID: 5570110549477149506}
   armaPrincipalAtivada: 1

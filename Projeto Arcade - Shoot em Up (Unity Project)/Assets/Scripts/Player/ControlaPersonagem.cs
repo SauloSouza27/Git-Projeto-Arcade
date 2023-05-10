@@ -239,7 +239,7 @@ public class ControlaPersonagem : MonoBehaviour
     }
     private IEnumerator Invulnerabilidade()
     {
-        yield return new WaitForSecondsRealtime(timerInvulneravel);
+        yield return new WaitForSeconds(timerInvulneravel);
         isInvulneravel = false;
         StopCoroutine(Invulnerabilidade());    
     }
