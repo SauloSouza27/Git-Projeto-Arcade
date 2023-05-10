@@ -818,6 +818,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3140687705557449505, guid: a9f3ccc6f4249354bb0cb7f3c4e7617c, type: 3}
   m_PrefabInstance: {fileID: 126622832}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &133942116 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8530135004784801678, guid: 6470e112d76167b4bac48cdaad12ef5d, type: 3}
+  m_PrefabInstance: {fileID: 8678102045127967482}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &139802884
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10742,6 +10747,11 @@ MonoBehaviour:
   rotacao: 0.5
   atrasoRotacao: 3
   anguloZ: -180
+--- !u!1 &1387431545 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4008169880396932920, guid: 6470e112d76167b4bac48cdaad12ef5d, type: 3}
+  m_PrefabInstance: {fileID: 8678102045127967482}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1391660590
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22266,29 +22276,45 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4268107023435981221, guid: 6470e112d76167b4bac48cdaad12ef5d, type: 3}
-      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
-      value: 0.5
+    - target: {fileID: 4008169880396932920, guid: 6470e112d76167b4bac48cdaad12ef5d, type: 3}
+      propertyPath: m_Name
+      value: Primeiro Orbe
       objectReference: {fileID: 0}
-    - target: {fileID: 4485645037099912181, guid: 6470e112d76167b4bac48cdaad12ef5d, type: 3}
-      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
-      value: 0.5
+    - target: {fileID: 6079102974975960091, guid: 6470e112d76167b4bac48cdaad12ef5d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 6
       objectReference: {fileID: 0}
-    - target: {fileID: 7142325103428419509, guid: 6470e112d76167b4bac48cdaad12ef5d, type: 3}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: d89e3e8e3d66fa04b996e8c9edf2c3a6, type: 3}
-    - target: {fileID: 7142325103428419509, guid: 6470e112d76167b4bac48cdaad12ef5d, type: 3}
-      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
-      value: 0.5
+    - target: {fileID: 7043536520248508927, guid: 6470e112d76167b4bac48cdaad12ef5d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -6
       objectReference: {fileID: 0}
-    - target: {fileID: 7773611179429094950, guid: 6470e112d76167b4bac48cdaad12ef5d, type: 3}
-      propertyPath: tiroAutomatico
+    - target: {fileID: 7862313496857138636, guid: 6470e112d76167b4bac48cdaad12ef5d, type: 3}
+      propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8530135004784801678, guid: 6470e112d76167b4bac48cdaad12ef5d, type: 3}
+      propertyPath: m_Name
+      value: Segundo Orbe
+      objectReference: {fileID: 0}
+    - target: {fileID: 8950388453384976238, guid: 6470e112d76167b4bac48cdaad12ef5d, type: 3}
+      propertyPath: upgradeOrbe1
+      value: 
+      objectReference: {fileID: 133942116}
+    - target: {fileID: 8950388453384976238, guid: 6470e112d76167b4bac48cdaad12ef5d, type: 3}
+      propertyPath: armaOrbeGiratorio
+      value: 
+      objectReference: {fileID: 1387431545}
+    - target: {fileID: 8978124771635007756, guid: 6470e112d76167b4bac48cdaad12ef5d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 9074662426996894289, guid: 6470e112d76167b4bac48cdaad12ef5d, type: 3}
       propertyPath: m_Name
       value: Personagem Principal
+      objectReference: {fileID: 0}
+    - target: {fileID: 9207504340019806875, guid: 6470e112d76167b4bac48cdaad12ef5d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

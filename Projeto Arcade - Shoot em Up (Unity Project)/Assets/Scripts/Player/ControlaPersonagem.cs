@@ -10,7 +10,7 @@ public class ControlaPersonagem : MonoBehaviour
     // Controle movimento personagem e armas
     private float x, y;
     public float velocidadeMovimento = 1.0f, velocidadeCorMaterial = 2.0f, timerInvulneravel = 0.0f;
-    public GameObject personagem, armaPrincipal, armaPets, petEsq, petDir, pontaPetEsq, pontaPetDir, armaOrbeGiratorio, armaSerra;
+    public GameObject personagem, armaPrincipal, armaPets, petEsq, petDir, pontaPetEsq, pontaPetDir, armaOrbeGiratorio, upgradeOrbe1, armaSerra;
     private GameObject alvoPet;
     public float velocidadeRotacaoPet = 2.0f, distanciaMinPetAtirar = 20.0f, velocidadeRotacaoOrbeGiratorio = 15.0f;
     // Pontos de vida
@@ -51,7 +51,6 @@ public class ControlaPersonagem : MonoBehaviour
         {
             pontosVida += 1;
         }
-
 
         ControleMovimentoPersonagem();
 
@@ -202,6 +201,11 @@ public class ControlaPersonagem : MonoBehaviour
     private void ControleOrbeGiratorio()
     {
         armaOrbeGiratorio.transform.RotateAround(transform.position, transform.forward, velocidadeRotacaoOrbeGiratorio * Time.deltaTime);
+
+        if (ControladorGame.instancia.upgradeOrbe1 == true)
+        {
+            upgradeOrbe1.transform.RotateAround(transform.position, transform.forward, - velocidadeRotacaoOrbeGiratorio * Time.deltaTime);
+        }
     }
 
     // Muda cor para vermelho

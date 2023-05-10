@@ -22,8 +22,8 @@ public class ControladorGame : MonoBehaviour
     public List<GameObject> spawnsCima, spawnsLaterais, spawnsBaixo;
     // Power UP
     public GameObject uiGameOver, uiVitoria, uiPowerUP, armaPrincipal, armaDouble, armaTriple, buttonSubirNivel, buttonArmaDouble,
-        buttonArmaTriple, buttonArmaPet, buttonArmaOrbeGiratorio, buttonArmaSerra, buttonDiminuiCooldown;
-    public bool armaPrincipalAtivada = true, armaDoubleAtivada = false, armaTripleAtivada = false, armaPetAtivada = false, armaOrbeGiratorioAtivada = false, armaSerraAtivada = false;
+        buttonArmaTriple, buttonArmaPet, buttonArmaOrbeGiratorio, buttonUpgradeOrbe1, buttonArmaSerra, buttonDiminuiCooldown;
+    public bool armaPrincipalAtivada = true, armaDoubleAtivada = false, armaTripleAtivada = false, armaPetAtivada = false, armaOrbeGiratorioAtivada = false, upgradeOrbe1 = false, armaSerraAtivada = false;
     private int contadorMaxVelocidadeAtaque = 0;
     private readonly float multVelAtak = 0.75f;
     // inimigos Morcego Drone
@@ -235,6 +235,15 @@ public class ControladorGame : MonoBehaviour
         armaOrbeGiratorioAtivada = true;
         jogador.GetComponent<RespostaOrbeGiratorio>().enabled = true;
         Destroy(buttonArmaOrbeGiratorio);
+        uiPowerUP.SetActive(false);
+        Time.timeScale = 1.0f;
+        AtivaSpawnInimigosPequenos();
+    }
+    public void PowerUPUpgradeArmaOrbeGiratorio(GameObject segundoOrbe)
+    {
+        segundoOrbe.SetActive(true);
+        upgradeOrbe1 = true;
+        Destroy(buttonUpgradeOrbe1);
         uiPowerUP.SetActive(false);
         Time.timeScale = 1.0f;
         AtivaSpawnInimigosPequenos();
