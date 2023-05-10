@@ -136,7 +136,7 @@ public class ControladorGame : MonoBehaviour
         {
             spawnsInimigoPequeno.SetActive(false);
             StartCoroutine(AtivaInimigo(boss, 4.0f));
-            StartCoroutine(AtivaInimigo(petsBoss, 16.0f));
+            StartCoroutine(AtivaInimigo(petsBoss, 22.0f));
         }
 
         if (boss.GetComponent<MovimentoBoss>().bossIsDead == true)
