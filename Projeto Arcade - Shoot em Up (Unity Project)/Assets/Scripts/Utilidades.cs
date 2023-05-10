@@ -50,18 +50,4 @@ public class Utilidades
         yield return new WaitForSeconds(0.1f);
         material.color -= Color.red;
     }
-
-    // pausar coroutines com Time.timeScale = 0
-    public static IEnumerator WaitForRealTime(float delay)
-    {
-        while (true)
-        {
-            float pauseEndTime = Time.realtimeSinceStartup + delay;
-            while (Time.realtimeSinceStartup < pauseEndTime)
-            {
-                yield return 0;
-            }
-            break;
-        }
-    }
 }
