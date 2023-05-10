@@ -25,7 +25,8 @@ TagManager:
   - ControladorAudio
   - Musica
   - ArmaBoss
-  - PowerUPUpgradeOrbe1
+  - PowerUPPet1
+  - PowerUPOrbe1
   layers:
   - Default
   - TransparentFX

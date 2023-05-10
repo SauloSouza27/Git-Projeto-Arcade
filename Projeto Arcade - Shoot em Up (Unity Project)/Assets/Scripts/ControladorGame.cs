@@ -16,15 +16,15 @@ public class ControladorGame : MonoBehaviour
     public GameObject barraHP, prefabCoracaoHP, barraXP, jogador;
     public TextMeshProUGUI txtNivel, txtXP;
     private Slider sliderXP;
-    public Button Configuracao;
+    public Button configuracao;
     // spawn inimigos
     public GameObject spawnsInimigoPequeno;
     public List<GameObject> spawnsCima, spawnsLaterais, spawnsBaixo;
     // Power UP
     public GameObject uiGameOver, uiVitoria, uiPowerUP, armaPrincipal, armaDouble, armaTriple, buttonSubirNivel, buttonArmaDouble,
-        buttonArmaTriple, buttonArmaPet, buttonArmaOrbeGiratorio, buttonUpgradeOrbe1, buttonVelocidadeOrbe, buttonArmaSerra, buttonDiminuiCooldown;
+        buttonArmaTriple, buttonArmaPet, buttonPetDiminuiCooldown, buttonArmaOrbeGiratorio, buttonUpgradeOrbe1, buttonVelocidadeOrbe, buttonArmaSerra, buttonDiminuiCooldown;
     public bool armaPrincipalAtivada = true, armaDoubleAtivada = false, armaTripleAtivada = false, armaPetAtivada = false, armaOrbeGiratorioAtivada = false, upgradeOrbe1 = false, armaSerraAtivada = false;
-    private int contadorMaxVelocidadeAtaque = 0, contadorMaxVelocidadeOrbe = 0;
+    private int contadorMaxVelocidadeAtaque = 0, contadorMaxVelocidadeAtaquePet = 0, contadorMaxVelocidadeOrbe = 0;
     private readonly float multVelAtak = 0.75f;
     // inimigos Morcego Drone
     public GameObject nivel2, nivel3, nivel4, nivel5, nivel7, nivel8;
@@ -70,7 +70,7 @@ public class ControladorGame : MonoBehaviour
 
         if (Input.GetButtonDown("Configuracao"))
         {
-            Configuracao.onClick.Invoke();
+            configuracao.onClick.Invoke();
         }
 
         if (HP <= 0)
@@ -309,29 +309,46 @@ public class ControladorGame : MonoBehaviour
     }
     public void PowerUPDiminuiCooldownArmaPrincipal()
     {
-        if(contadorMaxVelocidadeAtaque < 6)
+        if(contadorMaxVelocidadeAtaque < 3)
         {
             jogador.GetComponent<DisparoArma>().cooldown *= multVelAtak;
             jogador.GetComponent<DisparoArmaDouble>().cooldown *= multVelAtak;
             jogador.GetComponent<DisparoArmaTriple>().cooldown *= multVelAtak;
-            jogador.GetComponent<DisparoArmaPet>().cooldown *= multVelAtak;
             contadorMaxVelocidadeAtaque++;
             uiPowerUP.SetActive(false);
             Time.timeScale = 1.0f;
             AtivaSpawnInimigosPequenos();
         }
-        if(contadorMaxVelocidadeAtaque >= 6)
+        if(contadorMaxVelocidadeAtaque >= 3)
         {
             jogador.GetComponent<DisparoArma>().cooldown *= multVelAtak;
             jogador.GetComponent<DisparoArmaDouble>().cooldown *= multVelAtak;
             jogador.GetComponent<DisparoArmaTriple>().cooldown *= multVelAtak;
-            jogador.GetComponent<DisparoArmaPet>().cooldown *= multVelAtak;
             Destroy(buttonDiminuiCooldown);
             uiPowerUP.SetActive(false);
             Time.timeScale = 1.0f;
             AtivaSpawnInimigosPequenos();
         }
         
+    }
+    public void PowerUPDiminuiCooldownArmaPet()
+    {
+        if (contadorMaxVelocidadeAtaquePet < 3)
+        {
+            jogador.GetComponent<DisparoArmaPet>().cooldown *= multVelAtak;
+            contadorMaxVelocidadeAtaquePet++;
+            uiPowerUP.SetActive(false);
+            Time.timeScale = 1.0f;
+            AtivaSpawnInimigosPequenos();
+        }
+        if (contadorMaxVelocidadeAtaquePet >= 3)
+        {
+            jogador.GetComponent<DisparoArmaPet>().cooldown *= multVelAtak;
+            Destroy(buttonPetDiminuiCooldown);
+            uiPowerUP.SetActive(false);
+            Time.timeScale = 1.0f;
+            AtivaSpawnInimigosPequenos();
+        }
     }
     public void PowerUPAumentaHP()
     {

@@ -51,7 +51,14 @@ public class ControlaUiPowerUp : MonoBehaviour
             }
             if (controladorGame.GetComponent<ControladorGame>().armaOrbeGiratorioAtivada == true)
             {
-                if (go.CompareTag("PowerUPUpgradeOrbe1"))
+                if (go.CompareTag("PowerUPOrbe1"))
+                {
+                    buttonsCena.Add(go);
+                }
+            }
+            if (controladorGame.GetComponent<ControladorGame>().armaPetAtivada == true)
+            {
+                if (go.CompareTag("PowerUPPet1"))
                 {
                     buttonsCena.Add(go);
                 }

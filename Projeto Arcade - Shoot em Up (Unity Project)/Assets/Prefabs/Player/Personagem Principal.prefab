@@ -75,7 +75,8 @@ MonoBehaviour:
   petDir: {fileID: 1322984272435996320}
   pontaPetEsq: {fileID: 7729481432346349713}
   pontaPetDir: {fileID: 8652649306923327028}
-  armaOrbeGiratorio: {fileID: 7862313496857138636}
+  armaOrbeGiratorio: {fileID: 4008169880396932920}
+  upgradeOrbe1: {fileID: 8530135004784801678}
   armaSerra: {fileID: 6955476533840584894}
   velocidadeRotacaoPet: 2
   distanciaMinPetAtirar: 18
@@ -117,7 +118,7 @@ MonoBehaviour:
   pontaArmaEsq: {fileID: 6852259400245629066}
   pontaArmaDir: {fileID: 4052469540832003075}
   bala: {fileID: 2641279193909655389, guid: 3b951d1405d28f64596725e8686d2cf6, type: 3}
-  cooldown: 0.9
+  cooldown: 1
   tiroAutomatico: 1
   somTiro: {fileID: 7142325103428419509}
 --- !u!114 &170818664479205094
@@ -136,7 +137,7 @@ MonoBehaviour:
   pontaArmaDir: {fileID: 4471266274139410309}
   pontaArmaCentro: {fileID: 2932909376330509541}
   bala: {fileID: 2641279193909655389, guid: 3b951d1405d28f64596725e8686d2cf6, type: 3}
-  cooldown: 0.9
+  cooldown: 1
   tiroAutomatico: 1
   somTiro: {fileID: 7142325103428419509}
 --- !u!114 &1827807818842465192
@@ -576,6 +577,10 @@ PrefabInstance:
       propertyPath: m_Parameters.colorGradient.key0.r
       value: 0.05882353
       objectReference: {fileID: 0}
+    - target: {fileID: 3829291257168472896, guid: f01f1d9becf1c3640913ec989b8b58c6, type: 3}
+      propertyPath: m_Name
+      value: Primeiro Orbe
+      objectReference: {fileID: 0}
     - target: {fileID: 5099994352488957292, guid: f01f1d9becf1c3640913ec989b8b58c6, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -622,29 +627,54 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6261919567971739747, guid: f01f1d9becf1c3640913ec989b8b58c6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7134874424386571655, guid: f01f1d9becf1c3640913ec989b8b58c6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9
+      value: -6
       objectReference: {fileID: 0}
     - target: {fileID: 8045413695001352628, guid: f01f1d9becf1c3640913ec989b8b58c6, type: 3}
       propertyPath: m_Name
       value: Orbe Giratorio Base
+      objectReference: {fileID: 0}
+    - target: {fileID: 8045413695001352628, guid: f01f1d9becf1c3640913ec989b8b58c6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8420220362060545014, guid: f01f1d9becf1c3640913ec989b8b58c6, type: 3}
+      propertyPath: m_Name
+      value: Segundo Orbe
+      objectReference: {fileID: 0}
+    - target: {fileID: 8420220362060545014, guid: f01f1d9becf1c3640913ec989b8b58c6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9042138645851279075, guid: f01f1d9becf1c3640913ec989b8b58c6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9089167504722566516, guid: f01f1d9becf1c3640913ec989b8b58c6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f01f1d9becf1c3640913ec989b8b58c6, type: 3}
+--- !u!1 &4008169880396932920 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3829291257168472896, guid: f01f1d9becf1c3640913ec989b8b58c6, type: 3}
+  m_PrefabInstance: {fileID: 196893228064279672}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4935189340669724948 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5099994352488957292, guid: f01f1d9becf1c3640913ec989b8b58c6, type: 3}
   m_PrefabInstance: {fileID: 196893228064279672}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &7862313496857138636 stripped
+--- !u!1 &8530135004784801678 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 8045413695001352628, guid: f01f1d9becf1c3640913ec989b8b58c6, type: 3}
+  m_CorrespondingSourceObject: {fileID: 8420220362060545014, guid: f01f1d9becf1c3640913ec989b8b58c6, type: 3}
   m_PrefabInstance: {fileID: 196893228064279672}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &294141088294109408
