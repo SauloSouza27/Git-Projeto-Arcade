@@ -62,13 +62,14 @@ public class MovimentoInimigoMorcegoDrone : MonoBehaviour
 
         if (turn)
         {
+            Coroutine coroutine;
             if (time < velocidadeRotacao + atrasoRotacao + 0.5)
             {
                 time += Time.deltaTime;
-                StartCoroutine(AtrasaRotacao(anguloZ, atrasoRotacao));
+                coroutine = StartCoroutine(AtrasaRotacao(anguloZ, atrasoRotacao));
                 return;
             }
-            StopAllCoroutines();
+            StopCoroutine(nameof(coroutine));
         }
     }
     private IEnumerator AtrasaRotacao(float angZ, float delay)

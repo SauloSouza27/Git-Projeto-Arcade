@@ -6,7 +6,7 @@ using UnityEditor;
 
 public class ControlaUiPowerUp : MonoBehaviour
 {
-    List<Button> listaPowerUPs;
+    private List<Button> listaPowerUPs;
     public GameObject controladorGame, buttonCentro, buttonEsq, buttonDir;
     private GameObject[] buttonsParaDestruir;
 

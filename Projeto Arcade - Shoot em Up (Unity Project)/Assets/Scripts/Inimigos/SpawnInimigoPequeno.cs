@@ -18,7 +18,6 @@ public class SpawnInimigoPequeno : MonoBehaviour
         contadorCooldown = cooldownSpawnInimigoPequeno - minTempo + 1;
     }
 
-
     void Update()
     {
         if (Time.timeScale == 0) return;
