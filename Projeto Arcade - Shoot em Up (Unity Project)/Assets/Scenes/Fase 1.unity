@@ -1461,7 +1461,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   XP: 0
   XPtotal: 0
-  nivel: 8
+  nivel: 1
   HP: 0
   valorXPNivel: 100
   multiplicadorQuantidadeXPporNivel: 25
