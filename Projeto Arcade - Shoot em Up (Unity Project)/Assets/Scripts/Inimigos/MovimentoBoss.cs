@@ -255,25 +255,52 @@ public class MovimentoBoss : MonoBehaviour
     }
     private void OnCollisionStay(Collision colisor)
     {
-        float contadorCooldown, cooldown = 0.5f;
-        contadorCooldown = cooldown;
-        Utilidades.CalculaCooldown(contadorCooldown);
-        contadorCooldown = Utilidades.CalculaCooldown(contadorCooldown);
-        if (colisor.gameObject.CompareTag("ProjetilSerra"))
+        if (tomaDano && corpoPiramide != null)
         {
-            int dano = alvo.GetComponent<DisparoArmaSerra>().danoSerra;
-            if (vidaCorpo > 0 && contadorCooldown == 0)
+            float contadorCooldown, cooldown = 0.5f;
+            contadorCooldown = cooldown;
+            Utilidades.CalculaCooldown(contadorCooldown);
+            contadorCooldown = Utilidades.CalculaCooldown(contadorCooldown);
+            if (colisor.gameObject.CompareTag("ProjetilSerra"))
             {
-                vidaCorpo -= dano;
-                foreach (Material material in materiais)
+                int dano = alvo.GetComponent<DisparoArmaSerra>().danoSerra;
+                if (vidaCorpo > 0 && contadorCooldown == 0)
                 {
-                    StartCoroutine(Utilidades.PiscaCorRoutine(material));
+                    vidaCorpo -= dano;
+                    foreach (Material material in materiais)
+                    {
+                        StartCoroutine(Utilidades.PiscaCorRoutine(material));
+                    }
+                }
+                if (vidaCorpo <= 0)
+                {
+                    Invoke(nameof(BuscaNovaPosicaoPlayer), 4.0f);
+                    Destroy(corpoPiramide);
                 }
             }
-            if (vidaCorpo <= 0)
+        }
+        if (tomaDano && corpoPiramide == null)
+        {
+            float contadorCooldown, cooldown = 0.5f;
+            contadorCooldown = cooldown;
+            Utilidades.CalculaCooldown(contadorCooldown);
+            contadorCooldown = Utilidades.CalculaCooldown(contadorCooldown);
+            if (colisor.gameObject.CompareTag("ProjetilSerra"))
             {
-                bossIsDead = true;
-                Destroy(cabecaPiramide);
+                int dano = alvo.GetComponent<DisparoArmaSerra>().danoSerra;
+                if (vidaCabeca > 0 && contadorCooldown == 0)
+                {
+                    vidaCabeca -= dano;
+                    foreach (Material material in materiais)
+                    {
+                        StartCoroutine(Utilidades.PiscaCorRoutine(material));
+                    }
+                }
+                if (vidaCabeca <= 0)
+                {
+                    bossIsDead = true;
+                    Destroy(cabecaPiramide);
+                }
             }
         }
     }
