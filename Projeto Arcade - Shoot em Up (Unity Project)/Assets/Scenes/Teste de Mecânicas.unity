@@ -1068,6 +1068,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c92ec28b8fc7774d9b7f3db1129c359, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  atrasaSpawn: 0
   cooldownSpawnMorcegoDrone: 1.5
   quantidadeParaSpawnar: 99999999
   morcegoDrone: {fileID: 2743475196320168649, guid: a9f3ccc6f4249354bb0cb7f3c4e7617c, type: 3}
@@ -1091,7 +1092,7 @@ Transform:
   m_Children:
   - {fileID: 204540328}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 183.309}
 --- !u!1 &308569534
 GameObject:
@@ -1198,6 +1199,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c92ec28b8fc7774d9b7f3db1129c359, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  atrasaSpawn: 0
   cooldownSpawnMorcegoDrone: 1.5
   quantidadeParaSpawnar: 99999999
   morcegoDrone: {fileID: 2743475196320168649, guid: a9f3ccc6f4249354bb0cb7f3c4e7617c, type: 3}
@@ -1221,7 +1223,7 @@ Transform:
   m_Children:
   - {fileID: 492186086}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 240}
 --- !u!1 &309609288
 GameObject:
@@ -1338,7 +1340,7 @@ RectTransform:
   - {fileID: 2121462732}
   - {fileID: 1865351914}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1825,60 +1827,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8349187814965683143, guid: 73fdd0b820b148c44a1a526eee65ca53, type: 3}
   m_PrefabInstance: {fileID: 393286321}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &480772341
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 480772343}
-  - component: {fileID: 480772342}
-  m_Layer: 0
-  m_Name: Cenario
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!95 &480772342
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 480772341}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 544e6f4ed09e0f140850b738b542d1e5, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
---- !u!4 &480772343
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 480772341}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1897797722}
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &492186085
 GameObject:
   m_ObjectHideFlags: 0
@@ -2736,7 +2684,7 @@ RectTransform:
   - {fileID: 1486876867}
   - {fileID: 720503084}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -3759,7 +3707,7 @@ RectTransform:
   - {fileID: 196822018}
   - {fileID: 1618450110}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -4121,7 +4069,7 @@ Transform:
   - {fileID: 2120920559}
   - {fileID: 1628561384}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &913894926
 GameObject:
@@ -4199,72 +4147,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 913894926}
   m_CullTransparentMesh: 1
---- !u!1001 &966237730
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1897797722}
-    m_Modifications:
-    - target: {fileID: 3396791585721001070, guid: 4660fd60c266ac240a28bfeb21318727, type: 3}
-      propertyPath: m_RootOrder
-      value: 22
-      objectReference: {fileID: 0}
-    - target: {fileID: 3396791585721001070, guid: 4660fd60c266ac240a28bfeb21318727, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3396791585721001070, guid: 4660fd60c266ac240a28bfeb21318727, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3396791585721001070, guid: 4660fd60c266ac240a28bfeb21318727, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3396791585721001070, guid: 4660fd60c266ac240a28bfeb21318727, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3396791585721001070, guid: 4660fd60c266ac240a28bfeb21318727, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3396791585721001070, guid: 4660fd60c266ac240a28bfeb21318727, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3396791585721001070, guid: 4660fd60c266ac240a28bfeb21318727, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3396791585721001070, guid: 4660fd60c266ac240a28bfeb21318727, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3396791585721001070, guid: 4660fd60c266ac240a28bfeb21318727, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3396791585721001070, guid: 4660fd60c266ac240a28bfeb21318727, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5481830984161506210, guid: 4660fd60c266ac240a28bfeb21318727, type: 3}
-      propertyPath: m_Name
-      value: PlanetaFase1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 4660fd60c266ac240a28bfeb21318727, type: 3}
---- !u!4 &966237731 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3396791585721001070, guid: 4660fd60c266ac240a28bfeb21318727, type: 3}
-  m_PrefabInstance: {fileID: 966237730}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1017021454
 GameObject:
   m_ObjectHideFlags: 0
@@ -5479,7 +5361,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 776616345876304713, guid: 6470e112d76167b4bac48cdaad12ef5d, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 776616345876304713, guid: 6470e112d76167b4bac48cdaad12ef5d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6900,7 +6782,7 @@ MonoBehaviour:
   jogador: {fileID: 1186799295}
   txtNivel: {fileID: 1947799001}
   txtXP: {fileID: 1652828205}
-  Configuracao: {fileID: 566634846}
+  configuracao: {fileID: 0}
   spawnsInimigoPequeno: {fileID: 0}
   spawnsCima:
   - {fileID: 0}
@@ -6926,7 +6808,10 @@ MonoBehaviour:
   buttonArmaDouble: {fileID: 1670105018}
   buttonArmaTriple: {fileID: 1821717368}
   buttonArmaPet: {fileID: 550570411}
+  buttonPetDiminuiCooldown: {fileID: 0}
   buttonArmaOrbeGiratorio: {fileID: 1761563946}
+  buttonUpgradeOrbe1: {fileID: 0}
+  buttonVelocidadeOrbe: {fileID: 0}
   buttonArmaSerra: {fileID: 554957450}
   buttonDiminuiCooldown: {fileID: 376472608}
   armaPrincipalAtivada: 1
@@ -6934,14 +6819,14 @@ MonoBehaviour:
   armaTripleAtivada: 0
   armaPetAtivada: 0
   armaOrbeGiratorioAtivada: 0
+  upgradeOrbe1: 0
   armaSerraAtivada: 0
-  droneCimaBaixo: {fileID: 0}
-  droneEsqDirHori: {fileID: 0}
-  droneDirEsqTrans: {fileID: 0}
-  droneEsqDirTrans: {fileID: 0}
-  droneCruzado: {fileID: 0}
-  droneCascadeDirEsqTrans: {fileID: 0}
-  droneCascadeDirEsqHori: {fileID: 0}
+  nivel2: {fileID: 0}
+  nivel3: {fileID: 0}
+  nivel4: {fileID: 0}
+  nivel5: {fileID: 0}
+  nivel7: {fileID: 0}
+  nivel8: {fileID: 0}
   piramideSuperiores: {fileID: 0}
   piramideLaterais: {fileID: 0}
   boss: {fileID: 0}
@@ -8267,6 +8152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c92ec28b8fc7774d9b7f3db1129c359, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  atrasaSpawn: 0
   cooldownSpawnMorcegoDrone: 1.5
   quantidadeParaSpawnar: 99999999
   morcegoDrone: {fileID: 2743475196320168649, guid: a9f3ccc6f4249354bb0cb7f3c4e7617c, type: 3}
@@ -8290,7 +8176,7 @@ Transform:
   m_Children:
   - {fileID: 1097758927}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 263.73}
 --- !u!1 &1736435998
 GameObject:
@@ -9193,38 +9079,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1865351913}
   m_CullTransparentMesh: 1
---- !u!1 &1897797721
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1897797722}
-  m_Layer: 0
-  m_Name: Planeta
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1897797722
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1897797721}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -792.6658, y: 667.1953, z: 800}
-  m_LocalScale: {x: 149.38, y: 149.38, z: 149.38}
-  m_ConstrainProportionsScale: 1
-  m_Children:
-  - {fileID: 966237731}
-  m_Father: {fileID: 480772343}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1904455182 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7024383780055595582, guid: 6470e112d76167b4bac48cdaad12ef5d, type: 3}
@@ -9328,7 +9182,7 @@ RectTransform:
   - {fileID: 566634845}
   - {fileID: 1063196518}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -10168,7 +10022,7 @@ RectTransform:
   - {fileID: 330776269}
   - {fileID: 158665768}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -10468,6 +10322,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c92ec28b8fc7774d9b7f3db1129c359, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  atrasaSpawn: 0
   cooldownSpawnMorcegoDrone: 1
   quantidadeParaSpawnar: 99999999
   morcegoDrone: {fileID: 2743475196320168649, guid: a9f3ccc6f4249354bb0cb7f3c4e7617c, type: 3}
@@ -10499,7 +10354,7 @@ Transform:
   m_Children:
   - {fileID: 7924424926665156088}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 120}
 --- !u!4 &7924424926665156088
 Transform:
