@@ -38,7 +38,6 @@ public class MovimentoInimigoPequeno : MonoBehaviour
     {
         if (controladorGame.GetComponent<ControladorGame>().nivel >= 8)
         {
-            pontosVida = 2;
             xpInimigo = 15;
         }
     }
