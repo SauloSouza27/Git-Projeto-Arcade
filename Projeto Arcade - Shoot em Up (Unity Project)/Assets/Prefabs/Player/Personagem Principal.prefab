@@ -266,7 +266,7 @@ AudioSource:
   m_GameObject: {fileID: 9074662426996894289}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 8301319624657828257, guid: a90b2b3384239504eb8fc7530cd6988e, type: 2}
   m_audioClip: {fileID: 8300000, guid: d89e3e8e3d66fa04b996e8c9edf2c3a6, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.6
@@ -362,7 +362,7 @@ AudioSource:
   m_GameObject: {fileID: 9074662426996894289}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 8301319624657828257, guid: a90b2b3384239504eb8fc7530cd6988e, type: 2}
   m_audioClip: {fileID: 8300000, guid: d2ef5b56ac1388f4399bb0be0a0ea089, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.4
@@ -458,7 +458,7 @@ AudioSource:
   m_GameObject: {fileID: 9074662426996894289}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 8301319624657828257, guid: a90b2b3384239504eb8fc7530cd6988e, type: 2}
   m_audioClip: {fileID: 8300000, guid: abe6540687961c14f810627d88159359, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.6
@@ -553,6 +553,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 776616345876304713}
     m_Modifications:
+    - target: {fileID: 171511986162119985, guid: f01f1d9becf1c3640913ec989b8b58c6, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 8301319624657828257, guid: a90b2b3384239504eb8fc7530cd6988e, type: 2}
     - target: {fileID: 1883889088921881009, guid: f01f1d9becf1c3640913ec989b8b58c6, type: 3}
       propertyPath: m_Parameters.colorGradient.key0.b
       value: 0.8117647
@@ -729,6 +733,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5015535693104185356, guid: e28e95908764891429639377ecf424e0, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 8301319624657828257, guid: a90b2b3384239504eb8fc7530cd6988e, type: 2}
     - target: {fileID: 7246906206830993502, guid: e28e95908764891429639377ecf424e0, type: 3}
       propertyPath: m_Name
       value: Arma Serra
@@ -761,6 +769,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 776616345876304713}
     m_Modifications:
+    - target: {fileID: 41284892083236247, guid: d331379ae68b348459fa44853e1ef134, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 8301319624657828257, guid: a90b2b3384239504eb8fc7530cd6988e, type: 2}
     - target: {fileID: 1334761814868056455, guid: d331379ae68b348459fa44853e1ef134, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -908,6 +920,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 776616345876304713}
     m_Modifications:
+    - target: {fileID: 1839346225497196686, guid: 7d5ab6c822c82474e8adecc0cc07d24b, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 8301319624657828257, guid: a90b2b3384239504eb8fc7530cd6988e, type: 2}
     - target: {fileID: 5252861585772325610, guid: 7d5ab6c822c82474e8adecc0cc07d24b, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -1221,7 +1237,7 @@ AudioSource:
   m_GameObject: {fileID: 5349464373578631912}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 8301319624657828257, guid: a90b2b3384239504eb8fc7530cd6988e, type: 2}
   m_audioClip: {fileID: 8300000, guid: fd2e2ba01915a514bbd776c5dd098df1, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
