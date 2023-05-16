@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.Audio;
 
 public class ControlaMenuConfig : MonoBehaviour
 {
     private static ControlaMenuConfig instancia;
     public GameObject jogador;
     public GameObject[] botoesFase;
-    public AudioSource musica;
-    public AudioSource[] SFXs;
+    public AudioMixer mixer;
     // som musica
     public Slider sliderMusica;
     private float volumeOriginalMusica;
@@ -20,10 +20,7 @@ public class ControlaMenuConfig : MonoBehaviour
 
     private void Start()
     {
-        volumeOriginalMusica = musica.volume;
 
-        // busca SFX
-        SFXs = jogador.GetComponents<AudioSource>();
     }
     private void OnEnable()
     {
@@ -45,9 +42,7 @@ public class ControlaMenuConfig : MonoBehaviour
     }
     private void Update()
     {
-        ControlaMusica();
-
-        ControlaSFX();
+        
     }
     public void CarregaCena(string nomeCena)
     {
@@ -68,15 +63,12 @@ public class ControlaMenuConfig : MonoBehaviour
         else Time.timeScale = 1;
     }
     // Controla soms
-    private void ControlaMusica()
+    public void ControlaMusica()
     {
-        musica.volume = volumeOriginalMusica * sliderMusica.value;
+        mixer.SetFloat("MusicVol", sliderMusica.value);
     }
-    private void ControlaSFX()
+    public void ControlaSFX()
     {
-        for (int i = 0; i < SFXs.Length; i++)
-        {
-            SFXs[i].volume = sliderSFX.value;
-        }
+        mixer.SetFloat("SFXVol", sliderSFX.value);
     }
 }

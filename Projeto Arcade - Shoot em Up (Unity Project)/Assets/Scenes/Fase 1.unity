@@ -5861,7 +5861,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 7f894a6b88e63cb47a661b85585ced9c, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.6
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -20865,13 +20865,25 @@ MonoBehaviour:
   m_FillRect: {fileID: 3215181124308342180}
   m_HandleRect: {fileID: 5284896427127868888}
   m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 1
+  m_MinValue: -80
+  m_MaxValue: 0
   m_WholeNumbers: 0
-  m_Value: 0.6
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6753897048825824338}
+        m_TargetAssemblyTypeName: ControlaMenuConfig, Assembly-CSharp
+        m_MethodName: ControlaMusica
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &4284106359653966880
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22640,9 +22652,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jogador: {fileID: 1537027532}
-  botoesFase: []
-  musica: {fileID: 199698642}
-  SFXs: []
+  botoesFase:
+  - {fileID: 7289842952416042127}
+  - {fileID: 2153462521632482651}
+  - {fileID: 4685672410039339627}
+  mixer: {fileID: 24100000, guid: a90b2b3384239504eb8fc7530cd6988e, type: 2}
   sliderMusica: {fileID: 4281347334057467492}
   sliderSFX: {fileID: 7103655049069719872}
 --- !u!222 &6782183554342591504
@@ -22806,13 +22820,25 @@ MonoBehaviour:
   m_FillRect: {fileID: 1964047471942849758}
   m_HandleRect: {fileID: 4863257777780792031}
   m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 1
+  m_MinValue: -80
+  m_MaxValue: 0
   m_WholeNumbers: 0
-  m_Value: 0.6
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6753897048825824338}
+        m_TargetAssemblyTypeName: ControlaMenuConfig, Assembly-CSharp
+        m_MethodName: ControlaSFX
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &7138129061181296098
 PrefabInstance:
   m_ObjectHideFlags: 0
