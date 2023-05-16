@@ -1472,6 +1472,7 @@ MonoBehaviour:
   txtNivel: {fileID: 6368778564936041901}
   txtXP: {fileID: 4297906681101940198}
   configuracao: {fileID: 8947399122641741072}
+  sairConfig: {fileID: 1282140523}
   spawnsInimigoPequeno: {fileID: 160401058}
   spawnsCima:
   - {fileID: 1861112196}
@@ -10510,6 +10511,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3140687705557449505, guid: a9f3ccc6f4249354bb0cb7f3c4e7617c, type: 3}
   m_PrefabInstance: {fileID: 1277770131}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1282140523 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2503428968027347445, guid: f6435d23d7c4fc1428f7d4512393f796, type: 3}
+  m_PrefabInstance: {fileID: 4920825174855062097}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1287711839
 GameObject:
   m_ObjectHideFlags: 0
@@ -21459,30 +21471,6 @@ PrefabInstance:
     - target: {fileID: 776616345876304713, guid: 6470e112d76167b4bac48cdaad12ef5d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3484257136548589790, guid: 6470e112d76167b4bac48cdaad12ef5d, type: 3}
-      propertyPath: m_Parameters.colorGradient.key0.b
-      value: 0.8117647
-      objectReference: {fileID: 0}
-    - target: {fileID: 3484257136548589790, guid: 6470e112d76167b4bac48cdaad12ef5d, type: 3}
-      propertyPath: m_Parameters.colorGradient.key0.g
-      value: 0.78039217
-      objectReference: {fileID: 0}
-    - target: {fileID: 3484257136548589790, guid: 6470e112d76167b4bac48cdaad12ef5d, type: 3}
-      propertyPath: m_Parameters.colorGradient.key0.r
-      value: 0.05882353
-      objectReference: {fileID: 0}
-    - target: {fileID: 3676491899324474185, guid: 6470e112d76167b4bac48cdaad12ef5d, type: 3}
-      propertyPath: m_Parameters.colorGradient.key0.b
-      value: 0.8117647
-      objectReference: {fileID: 0}
-    - target: {fileID: 3676491899324474185, guid: 6470e112d76167b4bac48cdaad12ef5d, type: 3}
-      propertyPath: m_Parameters.colorGradient.key0.g
-      value: 0.78039217
-      objectReference: {fileID: 0}
-    - target: {fileID: 3676491899324474185, guid: 6470e112d76167b4bac48cdaad12ef5d, type: 3}
-      propertyPath: m_Parameters.colorGradient.key0.r
-      value: 0.05882353
       objectReference: {fileID: 0}
     - target: {fileID: 9074662426996894289, guid: 6470e112d76167b4bac48cdaad12ef5d, type: 3}
       propertyPath: m_Name

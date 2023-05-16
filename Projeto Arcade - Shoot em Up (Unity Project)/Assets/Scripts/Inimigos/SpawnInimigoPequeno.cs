@@ -8,6 +8,7 @@ public class SpawnInimigoPequeno : MonoBehaviour
     private float contadorCooldown;
     private int nivelJogador;
     public float cooldownSpawnInimigoPequeno, minTempo = 6.0f, maxTempo = 15.0f;
+    private float atrasaSpawn;
     public GameObject inimigoPequeno;
     public bool ativar = true;
 
@@ -18,16 +19,29 @@ public class SpawnInimigoPequeno : MonoBehaviour
         contadorCooldown = cooldownSpawnInimigoPequeno - minTempo + 1;
     }
 
+    private void OnEnable()
+    {
+        if (controladorGame.GetComponent<ControladorGame>().nivel == 5)
+        {
+            atrasaSpawn = 6.0f;
+        }
+    }
+
     void Update()
     {
         if (Time.timeScale == 0) return;
 
+        if (atrasaSpawn > 0)
+        {
+            atrasaSpawn -= Time.deltaTime;
+            return;
+        }
         nivelJogador = controladorGame.GetComponent<ControladorGame>().nivel;
 
         if(nivelJogador >= 3)
         {
             minTempo = 4.0f;
-            maxTempo = 8.0f;
+            maxTempo = 10.0f;
         }
 
         if (nivelJogador == 7)

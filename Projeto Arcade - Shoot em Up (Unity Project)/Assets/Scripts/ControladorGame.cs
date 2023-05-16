@@ -16,7 +16,7 @@ public class ControladorGame : MonoBehaviour
     public GameObject barraHP, prefabCoracaoHP, barraXP, jogador;
     public TextMeshProUGUI txtNivel, txtXP;
     private Slider sliderXP;
-    public Button configuracao;
+    public Button configuracao, sairConfig;
     // spawn inimigos
     public GameObject spawnsInimigoPequeno;
     private bool jaAtrasouSpawn = false;
@@ -71,7 +71,14 @@ public class ControladorGame : MonoBehaviour
 
         if (Input.GetButtonDown("Configuracao"))
         {
-            configuracao.onClick.Invoke();
+            if (!configuracao.enabled)
+            {
+                configuracao.onClick.Invoke();
+            }
+            if (configuracao.enabled)
+            {
+                sairConfig.onClick.Invoke();
+            }
         }
 
         if (HP <= 0)
@@ -79,12 +86,14 @@ public class ControladorGame : MonoBehaviour
             jogador.GetComponent<ControlaPersonagem>().MorteJogador();
             uiGameOver.SetActive(true);
         }
-
-        if(SceneManager.GetActiveScene().name == "Fase 1")
+    }
+    public void ControladorNiveisFases()
+    {
+        if (SceneManager.GetActiveScene().name == "Fase 1")
         {
             ControlaFase1();
         }
-        
+
         if (SceneManager.GetActiveScene().name == "Fase 2")
         {
             ControlaFase2();
@@ -270,18 +279,15 @@ public class ControladorGame : MonoBehaviour
         {
             jogador.GetComponent<ControlaPersonagem>().velocidadeRotacaoOrbeGiratorio *= 1.25f;
             contadorMaxVelocidadeOrbe++;
-            uiPowerUP.SetActive(false);
-            Time.timeScale = 1.0f;
-            AtivaSpawnInimigosPequenos();
         }
         if (contadorMaxVelocidadeOrbe >= 3)
         {
             jogador.GetComponent<ControlaPersonagem>().velocidadeRotacaoOrbeGiratorio *= 1.25f;
             Destroy(buttonVelocidadeOrbe);
-            uiPowerUP.SetActive(false);
-            Time.timeScale = 1.0f;
-            AtivaSpawnInimigosPequenos();
         }
+        uiPowerUP.SetActive(false);
+        Time.timeScale = 1.0f;
+        AtivaSpawnInimigosPequenos();
     }
 
     public void PowerUPAtivaArmaSerra(GameObject armaOrbeArmaSerra)
@@ -328,9 +334,6 @@ public class ControladorGame : MonoBehaviour
             jogador.GetComponent<DisparoArmaDouble>().cooldown *= multVelAtak;
             jogador.GetComponent<DisparoArmaTriple>().cooldown *= multVelAtak;
             contadorMaxVelocidadeAtaque++;
-            uiPowerUP.SetActive(false);
-            Time.timeScale = 1.0f;
-            AtivaSpawnInimigosPequenos();
         }
         if(contadorMaxVelocidadeAtaque >= 3)
         {
@@ -338,11 +341,10 @@ public class ControladorGame : MonoBehaviour
             jogador.GetComponent<DisparoArmaDouble>().cooldown *= multVelAtak;
             jogador.GetComponent<DisparoArmaTriple>().cooldown *= multVelAtak;
             Destroy(buttonDiminuiCooldown);
-            uiPowerUP.SetActive(false);
-            Time.timeScale = 1.0f;
-            AtivaSpawnInimigosPequenos();
         }
-        
+        uiPowerUP.SetActive(false);
+        Time.timeScale = 1.0f;
+        AtivaSpawnInimigosPequenos();
     }
     public void PowerUPDiminuiCooldownArmaPet()
     {
@@ -350,18 +352,15 @@ public class ControladorGame : MonoBehaviour
         {
             jogador.GetComponent<DisparoArmaPet>().cooldown *= multVelAtak;
             contadorMaxVelocidadeAtaquePet++;
-            uiPowerUP.SetActive(false);
-            Time.timeScale = 1.0f;
-            AtivaSpawnInimigosPequenos();
         }
         if (contadorMaxVelocidadeAtaquePet >= 3)
         {
             jogador.GetComponent<DisparoArmaPet>().cooldown *= multVelAtak;
             Destroy(buttonPetDiminuiCooldown);
-            uiPowerUP.SetActive(false);
-            Time.timeScale = 1.0f;
-            AtivaSpawnInimigosPequenos();
         }
+        uiPowerUP.SetActive(false);
+        Time.timeScale = 1.0f;
+        AtivaSpawnInimigosPequenos();
     }
     public void PowerUPAumentaHP()
     {

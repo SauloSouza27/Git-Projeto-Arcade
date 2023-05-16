@@ -36,13 +36,10 @@ public class MovimentoInimigoMorcegoDrone : MonoBehaviour
 
     private void OnEnable()
     {
-        if (controladorGame.GetComponent<ControladorGame>().nivel >= 4)
-        {
-            pontosVida = 1;
-        }
-        if (controladorGame.GetComponent<ControladorGame>().nivel >= 7)
+        if (controladorGame.GetComponent<ControladorGame>().nivel >= 8)
         {
             pontosVida = 2;
+            xpInimigo = 10;
         }
     }
     private void Update()

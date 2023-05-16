@@ -23,6 +23,8 @@ public class ControlaUiPowerUp : MonoBehaviour
         {
             Destroy(button);
         }
+
+        ControladorGame.instancia.ControladorNiveisFases();
     }
 
     public List<Button> AchaPowerUPButtons()
