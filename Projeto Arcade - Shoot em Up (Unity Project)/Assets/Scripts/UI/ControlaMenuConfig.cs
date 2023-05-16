@@ -7,16 +7,12 @@ using UnityEngine.Audio;
 
 public class ControlaMenuConfig : MonoBehaviour
 {
-    private static ControlaMenuConfig instancia;
-    public GameObject jogador;
     public GameObject[] botoesFase;
     public AudioMixer mixer;
     // som musica
     public Slider sliderMusica;
-    private float volumeOriginalMusica;
     // som SFX
     public Slider sliderSFX;
-    private float[] volumesOriginaisSFX;
 
     private void Start()
     {
@@ -24,6 +20,12 @@ public class ControlaMenuConfig : MonoBehaviour
     }
     private void OnEnable()
     {
+        // ajusta valor slider ao abrir
+        mixer.GetFloat("MusicVol", out float valueMusic);
+        sliderMusica.value = valueMusic;
+        mixer.GetFloat("SFXVol", out float valueSFX);
+        sliderSFX.value = valueSFX;
+
         if (SceneManager.GetActiveScene().name == "Menu Inicial")
         {
             foreach(GameObject go in botoesFase)
