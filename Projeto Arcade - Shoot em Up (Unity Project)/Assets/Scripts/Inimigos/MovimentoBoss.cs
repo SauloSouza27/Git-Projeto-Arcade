@@ -35,8 +35,6 @@ public class MovimentoBoss : MonoBehaviour
         {
             materiais[i] = renderers[i].material;
         }
-        // desativa box collider da cabeca
-        cabecaPiramide.GetComponent<BoxCollider>().enabled = false;
         // busca animator
         animator = GetComponent<Animator>();
     }
@@ -50,7 +48,6 @@ public class MovimentoBoss : MonoBehaviour
 
         if (armasBoss[0] == null && armasBoss[1] == null && cabecaPiramide != null)
         {
-            cabecaPiramide.GetComponent<BoxCollider>().enabled = true;
             tomaDano = true;
         }
 

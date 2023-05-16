@@ -27,6 +27,7 @@ TagManager:
   - ArmaBoss
   - PowerUPPet1
   - PowerUPOrbe1
+  - SFX
   layers:
   - Default
   - TransparentFX
@@ -34,7 +35,7 @@ TagManager:
   - 
   - Water
   - UI
-  - BossFase1
+  - CabecaBossFase1
   - ArmaBossFase1
   - 
   - 
