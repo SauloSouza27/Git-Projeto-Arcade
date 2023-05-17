@@ -56,7 +56,7 @@ public class MovimentoBoss : MonoBehaviour
 
         if (petsBoss[0] == null && petsBoss[1] == null && !spawnsBatDrone.activeSelf)
         {
-            spawnsBatDrone.SetActive(true);
+            Invoke(nameof(AtivaDrones), 2.0f);
         }
 
         if (armasBoss[0] == null && armasBoss[1] == null && cabecaPiramide != null)
@@ -84,7 +84,10 @@ public class MovimentoBoss : MonoBehaviour
             animator.enabled = false;
         }
     }
-
+    private void AtivaDrones()
+    {
+        spawnsBatDrone.SetActive(true);
+    }
     private void AtivaSegundoBatDrone()
     {
         spawnsBatDrone.transform.GetChild(1).gameObject.SetActive(true);
