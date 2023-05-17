@@ -83,7 +83,7 @@ MonoBehaviour:
   velocidadeRotacaoOrbeGiratorio: 90
   pontosVida: 3
   danoContato: 5
-  danoArmaPrincipal: 1
+  danoArmaPrincipal: 2
   particulasDano: {fileID: 1346597017377448381}
   tomaDano: {fileID: 4268107023435981221}
 --- !u!114 &7773611179429094950

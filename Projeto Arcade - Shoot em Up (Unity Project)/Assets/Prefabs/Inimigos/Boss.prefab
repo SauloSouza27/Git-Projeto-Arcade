@@ -57,7 +57,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1722742271552389203}
   m_LocalRotation: {x: 0, y: 0, z: 0.99904823, w: 0.0436195}
-  m_LocalPosition: {x: -0.3, y: -1.5, z: -0.25}
+  m_LocalPosition: {x: -0.5, y: -1.5, z: -0.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -171,7 +171,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2035620033082364701}
   m_LocalRotation: {x: 0, y: -0, z: 0.9990483, w: -0.043619405}
-  m_LocalPosition: {x: 0.3, y: -1.5, z: -0.25}
+  m_LocalPosition: {x: 0.5, y: -1.5, z: -0.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -550,7 +550,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8685267284019799110
 Transform:
   m_ObjectHideFlags: 0
@@ -612,9 +612,16 @@ MonoBehaviour:
   petsBoss:
   - {fileID: 0}
   - {fileID: 0}
-  vidaCorpo: 100
-  vidaCabeca: 120
+  vidaCorpo: 150
+  vidaCabeca: 150
   bossIsDead: 0
+  armaDestroyd: 0
+  cooldown: 1.5
+  bastaoBoss: {fileID: 2466213106853831192, guid: a7eae94976b1c464c935a41edc6bdf4f, type: 3}
+  centroEsq: {fileID: 1722742271552389203}
+  centroDir: {fileID: 2035620033082364701}
+  lateralEsq: {fileID: 7203580178842221690}
+  lateralDir: {fileID: 6062458882751582324}
 --- !u!54 &7096758492839678714
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -665,14 +672,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6062458882751582324}
-  m_LocalRotation: {x: 0, y: -0, z: 0.9961947, w: -0.08715578}
-  m_LocalPosition: {x: 0.8, y: -1.5, z: -0.25}
+  m_LocalRotation: {x: 0, y: -0, z: 0.9659259, w: -0.25881898}
+  m_LocalPosition: {x: 1, y: -1.5, z: -0.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2805426160563446943}
   m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 190}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 210}
 --- !u!1 &7200798433666004446
 GameObject:
   m_ObjectHideFlags: 0
@@ -727,14 +734,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7203580178842221690}
-  m_LocalRotation: {x: 0, y: 0, z: 0.9961947, w: 0.08715588}
-  m_LocalPosition: {x: -0.8, y: -1.5, z: -0.25}
+  m_LocalRotation: {x: 0, y: 0, z: 0.9659258, w: 0.2588191}
+  m_LocalPosition: {x: -1, y: -1.5, z: -0.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2805426160563446943}
   m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 170}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 150}
 --- !u!1 &7514584705783465394
 GameObject:
   m_ObjectHideFlags: 0

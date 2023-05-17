@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64d11a1cc014b1a4d853f33264c0f005, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pontosVida: 1
+  pontosVida: 2
   xpInimigo: 5
   isAutomatic: 0
   turn: 0

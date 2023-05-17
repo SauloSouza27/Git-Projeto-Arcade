@@ -21,6 +21,12 @@ public class SpawnInimigoPequeno : MonoBehaviour
 
     private void OnEnable()
     {
+        nivelJogador = controladorGame.GetComponent<ControladorGame>().nivel;
+
+        if (controladorGame.GetComponent<ControladorGame>().nivel == 2)
+        {
+            atrasaSpawn = 4.0f;
+        }
         if (controladorGame.GetComponent<ControladorGame>().nivel == 5)
         {
             atrasaSpawn = 6.0f;
@@ -29,6 +35,7 @@ public class SpawnInimigoPequeno : MonoBehaviour
 
     void Update()
     {
+
         if (Time.timeScale == 0) return;
 
         if (atrasaSpawn > 0)
@@ -36,9 +43,10 @@ public class SpawnInimigoPequeno : MonoBehaviour
             atrasaSpawn -= Time.deltaTime;
             return;
         }
+
         nivelJogador = controladorGame.GetComponent<ControladorGame>().nivel;
 
-        if(nivelJogador >= 3)
+        if (nivelJogador >= 3)
         {
             minTempo = 4.0f;
             maxTempo = 10.0f;

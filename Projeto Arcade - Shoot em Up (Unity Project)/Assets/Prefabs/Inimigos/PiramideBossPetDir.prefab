@@ -391,11 +391,12 @@ MonoBehaviour:
   balaPiramide: {fileID: 2466213106853831192, guid: e8eeddd74b3d0394b8b15db06cd2fced, type: 3}
   velocidadeRotacao: 2
   petBoss: 1
-  pontosVida: 12
+  pontosVida: 80
   danoTiro: 1
   xpInimigo: 110
   cooldown: 1.5
   inverteRotacaoTiro: 0
+  fxExplosionPrefab: {fileID: 9073733397960554151, guid: 6bc7a83b7d71219478b92b61ba56e43e, type: 3}
 --- !u!54 &193309724082789662
 Rigidbody:
   m_ObjectHideFlags: 0

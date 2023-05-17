@@ -17,7 +17,7 @@ public class ControlaPersonagem : MonoBehaviour
     public int pontosVida = 3;
     public int danoContato = 5;
     // Dano arma
-    public int danoArmaPrincipal = 1;
+    public int danoArmaPrincipal = 2;
     // Particulas
     public ParticleSystem particulasDano;
     // Materias player

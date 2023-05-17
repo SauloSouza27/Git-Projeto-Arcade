@@ -21,7 +21,7 @@ public class ControladorGame : MonoBehaviour
     public GameObject spawnsInimigoPequeno;
     public List<GameObject> spawnsCima, spawnsLaterais, spawnsBaixo;
     // Power UP
-    public GameObject uiGameOver, uiVitoria, uiPowerUP, armaPrincipal, armaDouble, armaTriple, buttonSubirNivel, buttonArmaDouble,
+    public GameObject menuConfig, uiGameOver, uiVitoria, uiPowerUP, armaPrincipal, armaDouble, armaTriple, buttonSubirNivel, buttonArmaDouble,
         buttonArmaTriple, buttonArmaPet, buttonPetDiminuiCooldown, buttonArmaOrbeGiratorio, buttonUpgradeOrbe1, buttonVelocidadeOrbe, buttonArmaSerra, buttonDiminuiCooldown;
     public bool armaPrincipalAtivada = true, armaDoubleAtivada = false, armaTripleAtivada = false, armaPetAtivada = false, armaOrbeGiratorioAtivada = false, upgradeOrbe1 = false, armaSerraAtivada = false;
     private int contadorMaxVelocidadeAtaque = 0, contadorMaxVelocidadeAtaquePet = 0, contadorMaxVelocidadeOrbe = 0;
@@ -70,11 +70,11 @@ public class ControladorGame : MonoBehaviour
 
         if (Input.GetButtonDown("Configuracao"))
         {
-            if (!configuracao.enabled)
+            if (!menuConfig.activeSelf)
             {
                 configuracao.onClick.Invoke();
             }
-            if (configuracao.enabled)
+            if (!menuConfig.activeSelf)
             {
                 sairConfig.onClick.Invoke();
             }
@@ -296,6 +296,7 @@ public class ControladorGame : MonoBehaviour
         jogador.GetComponent<DisparoArmaTriple>().enabled = true;
         armaDoubleAtivada = false;
         armaTripleAtivada = true;
+        jogador.GetComponent<ControlaPersonagem>().danoArmaPrincipal = 1;
         Destroy(buttonArmaTriple);
         Time.timeScale = 1.0f;
         AtivaSpawnInimigosPequenos();

@@ -107,7 +107,7 @@ MonoBehaviour:
   balaPiramide: {fileID: 2466213106853831192, guid: e8eeddd74b3d0394b8b15db06cd2fced, type: 3}
   velocidadeRotacao: 2
   petBoss: 0
-  pontosVida: 8
+  pontosVida: 16
   danoTiro: 1
   xpInimigo: 110
   cooldown: 2
