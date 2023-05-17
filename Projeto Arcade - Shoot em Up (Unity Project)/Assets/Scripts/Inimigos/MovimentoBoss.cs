@@ -59,7 +59,7 @@ public class MovimentoBoss : MonoBehaviour
             Invoke(nameof(AtivaDrones), 2.0f);
         }
 
-        if (armasBoss[0] == null && armasBoss[1] == null && cabecaPiramide != null)
+        if (armasBoss[0] == null && armasBoss[1] == null && corpoPiramide != null)
         {
             // Cooldown e controle tiro
             Utilidades.CalculaCooldown(contadorCooldown);
@@ -362,6 +362,14 @@ public class MovimentoBoss : MonoBehaviour
                 }
                 if (Vector3.Distance(posAlvo, posCabeca) < 0.8)
                 {
+                    // Cooldown e controle tiro
+                    Utilidades.CalculaCooldown(contadorCooldown);
+                    contadorCooldown = Utilidades.CalculaCooldown(contadorCooldown);
+                    if (contadorCooldown == 0)
+                    {
+                        DisparoBastoes();
+                        contadorCooldown = cooldown;
+                    }
                     Invoke(nameof(BuscaNovaPosicaoPlayer), tempoParado);
                 }
             }
