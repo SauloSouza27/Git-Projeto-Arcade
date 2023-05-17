@@ -41,6 +41,10 @@ public class MovimentoInimigoMorcegoDrone : MonoBehaviour
             pontosVida = 2;
             xpInimigo = 10;
         }
+        if (controladorGame.GetComponent<ControladorGame>().nivel >= 10)
+        {
+            xpInimigo = 0;
+        }
     }
     private void Update()
     {
