@@ -135,11 +135,6 @@ public class ControladorGame : MonoBehaviour
         if (nivel == 8)
         {
             StartCoroutine(AtivaInimigo(nivel8, 4.0f));
-            if (!jaAtrasouSpawn)
-            {
-                StartCoroutine(AtrasaSpawnInimigosPequenos(spawnsInimigoPequeno, 12.0f));
-                jaAtrasouSpawn = true;
-            }
         }
 
         if (nivel == 9)
