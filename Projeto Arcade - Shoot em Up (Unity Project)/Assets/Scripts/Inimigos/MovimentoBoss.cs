@@ -21,6 +21,7 @@ public class MovimentoBoss : MonoBehaviour
     public bool bossIsDead = false, armaDestroyd = false;
     // tiro Boss
     public float cooldown = 1.5f;
+    private int quantidadeTiros = 1;
     private float contadorCooldown;
     public GameObject bastaoBoss, centroEsq, centroDir, lateralEsq, lateralDir;
     private GameObject spawnsBatDrone, uiVitoria;
@@ -359,16 +360,14 @@ public class MovimentoBoss : MonoBehaviour
                 if (Vector3.Distance(posAlvo, posCabeca) > 0.8)
                 {
                     cabecaPiramide.transform.position = Vector3.Lerp(posCabeca, posAlvo, velocidadeCabeca * Time.deltaTime);
+                    quantidadeTiros = 1;
                 }
                 if (Vector3.Distance(posAlvo, posCabeca) < 0.8)
                 {
-                    // Cooldown e controle tiro
-                    Utilidades.CalculaCooldown(contadorCooldown);
-                    contadorCooldown = Utilidades.CalculaCooldown(contadorCooldown);
-                    if (contadorCooldown == 0)
+                    if (quantidadeTiros > 0)
                     {
-                        DisparoBastoes();
-                        contadorCooldown = cooldown;
+                        Invoke(nameof(DisparoBastoes), tempoParado / 4);
+                        quantidadeTiros--;
                     }
                     Invoke(nameof(BuscaNovaPosicaoPlayer), tempoParado);
                 }
