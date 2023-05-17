@@ -19,7 +19,6 @@ public class ControladorGame : MonoBehaviour
     public Button configuracao, sairConfig;
     // spawn inimigos
     public GameObject spawnsInimigoPequeno;
-    private bool jaAtrasouSpawn = false;
     public List<GameObject> spawnsCima, spawnsLaterais, spawnsBaixo;
     // Power UP
     public GameObject uiGameOver, uiVitoria, uiPowerUP, armaPrincipal, armaDouble, armaTriple, buttonSubirNivel, buttonArmaDouble,
@@ -216,12 +215,6 @@ public class ControladorGame : MonoBehaviour
         spawnsInimigoPequeno.SetActive(true);
     }
 
-    private IEnumerator AtrasaSpawnInimigosPequenos(GameObject spawnsInimigosPequenos, float delay)
-    {
-        spawnsInimigosPequenos.SetActive(false);
-        yield return new WaitForSeconds(delay);
-        spawnsInimigosPequenos.SetActive(true);
-    }
     public IEnumerator AtivaInimigo(GameObject inimgo, float delay)
     {
         yield return new WaitForSeconds(delay);
