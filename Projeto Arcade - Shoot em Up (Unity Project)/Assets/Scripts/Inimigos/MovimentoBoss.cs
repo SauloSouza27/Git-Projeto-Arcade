@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MovimentoBoss : MonoBehaviour
 {
-    private GameObject alvo, controladorGame;
+    private GameObject alvo;
     // Controle rotaçao
     public GameObject cabecaPiramide, corpoPiramide;
     public float velocidadeRotacao = 2.0f;
@@ -19,6 +19,7 @@ public class MovimentoBoss : MonoBehaviour
     private bool tomaDano = false;
     public int vidaCorpo = 40, vidaCabeca = 40;
     public bool bossIsDead = false;
+    private GameObject uiVitoria;
     // Materiais
     private MeshRenderer[] renderers;
     private Material[] materiais;
@@ -26,7 +27,6 @@ public class MovimentoBoss : MonoBehaviour
     private Animator animator;
     private void Awake()
     {
-        controladorGame = GameObject.FindGameObjectWithTag("ControladorGame");
         alvo = GameObject.FindGameObjectWithTag("Player");
         // Busca materiais do inimigo
         renderers = GetComponentsInChildren<MeshRenderer>();
@@ -37,6 +37,7 @@ public class MovimentoBoss : MonoBehaviour
         }
         // busca animator
         animator = GetComponent<Animator>();
+        uiVitoria = ControladorGame.instancia.uiVitoria;
     }
 
 
@@ -57,6 +58,18 @@ public class MovimentoBoss : MonoBehaviour
         }
     }
     // controle vida boss
+    private void MorteCabeca()
+    {
+        bossIsDead = true;
+        StartCoroutine(AtivaMenuVitoria(uiVitoria, 3.0f));
+        Destroy(cabecaPiramide);
+    }
+    private void MorteCorpo()
+    {
+        Invoke(nameof(BuscaNovaPosicaoPlayer), 4.0f);
+        Destroy(corpoPiramide);
+    }
+
     private void OnCollisionEnter(Collision colisor)
     {
         if (tomaDano && corpoPiramide != null)
@@ -76,8 +89,7 @@ public class MovimentoBoss : MonoBehaviour
                 }
                 if (vidaCorpo <= 0)
                 {
-                    Invoke(nameof(BuscaNovaPosicaoPlayer), 4.0f);
-                    Destroy(corpoPiramide);
+                    MorteCorpo();
                 }
             }
             if (colisor.gameObject.CompareTag("BalaPet"))
@@ -95,8 +107,7 @@ public class MovimentoBoss : MonoBehaviour
                 }
                 if (vidaCorpo <= 0)
                 {
-                    Invoke(nameof(BuscaNovaPosicaoPlayer), 4.0f);
-                    Destroy(corpoPiramide);
+                    MorteCorpo();
                 }
             }
             if (colisor.gameObject.CompareTag("OrbeGiratorio"))
@@ -113,8 +124,7 @@ public class MovimentoBoss : MonoBehaviour
                 }
                 if (vidaCorpo <= 0)
                 {
-                    Invoke(nameof(BuscaNovaPosicaoPlayer), 4.0f);
-                    Destroy(corpoPiramide);
+                    MorteCorpo();
                 }
             }
             if (colisor.gameObject.CompareTag("ProjetilSerra"))
@@ -131,8 +141,7 @@ public class MovimentoBoss : MonoBehaviour
                 }
                 if (vidaCorpo <= 0)
                 {
-                    Invoke(nameof(BuscaNovaPosicaoPlayer), 4.0f);
-                    Destroy(corpoPiramide);
+                    MorteCorpo();
                 }
             }
             if (colisor.gameObject.CompareTag("Player"))
@@ -149,8 +158,7 @@ public class MovimentoBoss : MonoBehaviour
                 }
                 if (vidaCorpo <= 0)
                 {
-                    Invoke(nameof(BuscaNovaPosicaoPlayer), 4.0f);
-                    Destroy(corpoPiramide);
+                    MorteCorpo();
                 }
             }
         }
@@ -171,8 +179,7 @@ public class MovimentoBoss : MonoBehaviour
                 }
                 if (vidaCabeca <= 0)
                 {
-                    bossIsDead = true;
-                    Destroy(cabecaPiramide);
+                    MorteCabeca();
                 }
             }
             if (colisor.gameObject.CompareTag("BalaPet"))
@@ -190,8 +197,7 @@ public class MovimentoBoss : MonoBehaviour
                 }
                 if (vidaCabeca <= 0)
                 {
-                    bossIsDead = true;
-                    Destroy(cabecaPiramide);
+                    MorteCabeca();
                 }
             }
             if (colisor.gameObject.CompareTag("OrbeGiratorio"))
@@ -208,8 +214,7 @@ public class MovimentoBoss : MonoBehaviour
                 }
                 if (vidaCabeca <= 0)
                 {
-                    bossIsDead = true;
-                    Destroy(cabecaPiramide);
+                    MorteCabeca();
                 }
             }
             if (colisor.gameObject.CompareTag("ProjetilSerra"))
@@ -226,8 +231,7 @@ public class MovimentoBoss : MonoBehaviour
                 }
                 if (vidaCabeca <= 0)
                 {
-                    bossIsDead = true;
-                    Destroy(cabecaPiramide);
+                    MorteCabeca();
                 }
             }
             if (colisor.gameObject.CompareTag("Player"))
@@ -244,8 +248,7 @@ public class MovimentoBoss : MonoBehaviour
                 }
                 if (vidaCabeca <= 0)
                 {
-                    bossIsDead = true;
-                    Destroy(cabecaPiramide);
+                    MorteCabeca();
                 }
             }
         }
@@ -271,8 +274,7 @@ public class MovimentoBoss : MonoBehaviour
                 }
                 if (vidaCorpo <= 0)
                 {
-                    Invoke(nameof(BuscaNovaPosicaoPlayer), 4.0f);
-                    Destroy(corpoPiramide);
+                    MorteCorpo();
                 }
             }
         }
@@ -295,8 +297,7 @@ public class MovimentoBoss : MonoBehaviour
                 }
                 if (vidaCabeca <= 0)
                 {
-                    bossIsDead = true;
-                    Destroy(cabecaPiramide);
+                    MorteCabeca();
                 }
             }
         }
@@ -336,4 +337,13 @@ public class MovimentoBoss : MonoBehaviour
         posAlvo = alvo.transform.position;
         CancelInvoke(nameof(BuscaNovaPosicaoPlayer));
     }
+
+    private IEnumerator AtivaMenuVitoria(GameObject uiVitoria, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        uiVitoria.SetActive(true);
+        Time.timeScale = 0.0f;
+        yield break;
+    }
 }
+
