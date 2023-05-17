@@ -27,7 +27,7 @@ public class ControladorGame : MonoBehaviour
     private int contadorMaxVelocidadeAtaque = 0, contadorMaxVelocidadeAtaquePet = 0, contadorMaxVelocidadeOrbe = 0;
     private readonly float multVelAtak = 0.75f;
     // inimigos Morcego Drone
-    public GameObject nivel2, nivel3, nivel4, nivel5, nivel7, nivel8;
+    public GameObject nivel2, nivel3, nivel4, nivel5, nivel7, nivel8, nivel10;
     // inimigos Piramide
     public GameObject piramideSuperiores, piramideLaterais;
     // boss fase1

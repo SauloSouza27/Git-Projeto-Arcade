@@ -14,18 +14,23 @@ public class MovimentoBoss : MonoBehaviour
     // arma cabeca
     public GameObject[] armasBoss;
     // pets boss
-    public GameObject petsBoss;
+    public GameObject[] petsBoss;
     // vidas do boss
     private bool tomaDano = false;
     public int vidaCorpo = 40, vidaCabeca = 40;
-    public bool bossIsDead = false;
-    private GameObject uiVitoria;
+    public bool bossIsDead = false, armaDestroyd = false;
+    // tiro Boss
+    public float cooldown = 1.5f;
+    private float contadorCooldown;
+    public GameObject bastaoBoss, centroEsq, centroDir, lateralEsq, lateralDir;
+    private GameObject spawnsBatDrone, uiVitoria;
     // Materiais
     private MeshRenderer[] renderers;
     private Material[] materiais;
     // Animator
     private Animator animator;
-    private void Awake()
+
+    private void Start()
     {
         alvo = GameObject.FindGameObjectWithTag("Player");
         // Busca materiais do inimigo
@@ -38,6 +43,8 @@ public class MovimentoBoss : MonoBehaviour
         // busca animator
         animator = GetComponent<Animator>();
         uiVitoria = ControladorGame.instancia.uiVitoria;
+        spawnsBatDrone = ControladorGame.instancia.nivel10;
+        contadorCooldown = 10.0f;
     }
 
 
@@ -47,15 +54,40 @@ public class MovimentoBoss : MonoBehaviour
 
         MovimentaBossPiramide();
 
-        if (armasBoss[0] == null && armasBoss[1] == null && cabecaPiramide != null)
+        if (petsBoss[0] == null && petsBoss[1] == null && !spawnsBatDrone.activeSelf)
         {
-            tomaDano = true;
+            spawnsBatDrone.SetActive(true);
         }
 
-        if(corpoPiramide == null)
+        if (armasBoss[0] == null && armasBoss[1] == null && cabecaPiramide != null)
+        {
+            // Cooldown e controle tiro
+            Utilidades.CalculaCooldown(contadorCooldown);
+            contadorCooldown = Utilidades.CalculaCooldown(contadorCooldown);
+            if (contadorCooldown == 0)
+            {
+                DisparoBastoes();
+                contadorCooldown = cooldown;
+            }
+            if (!armaDestroyd)
+            {
+                armaDestroyd = true;
+                spawnsBatDrone.SetActive(true);
+                spawnsBatDrone.transform.GetChild(0).gameObject.SetActive(false);
+                Invoke(nameof(AtivaSegundoBatDrone), 4.0f);
+                tomaDano = true;
+            }
+        }
+
+        if(corpoPiramide == null && animator.enabled)
         {
             animator.enabled = false;
         }
+    }
+
+    private void AtivaSegundoBatDrone()
+    {
+        spawnsBatDrone.transform.GetChild(1).gameObject.SetActive(true);
     }
     // controle vida boss
     private void MorteCabeca()
@@ -336,6 +368,16 @@ public class MovimentoBoss : MonoBehaviour
     {
         posAlvo = alvo.transform.position;
         CancelInvoke(nameof(BuscaNovaPosicaoPlayer));
+    }
+
+    private void DisparoBastoes()
+    {
+        Instantiate(bastaoBoss, centroEsq.transform.position, centroEsq.transform.rotation);
+        GameObject instanciaLateral = Instantiate(bastaoBoss, lateralEsq.transform.position, lateralEsq.transform.rotation);
+        instanciaLateral.GetComponent<BalaPersonagem>().velocidadeRotacao *= -1;
+        GameObject instanciaCentro = Instantiate(bastaoBoss, centroDir.transform.position, centroDir.transform.rotation);
+        instanciaCentro.GetComponent<BalaPersonagem>().velocidadeRotacao *= -1;
+        Instantiate(bastaoBoss, lateralDir.transform.position, lateralDir.transform.rotation);
     }
 
     private IEnumerator AtivaMenuVitoria(GameObject uiVitoria, float delay)
