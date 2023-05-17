@@ -612,8 +612,8 @@ MonoBehaviour:
   petsBoss:
   - {fileID: 0}
   - {fileID: 0}
-  vidaCorpo: 150
-  vidaCabeca: 150
+  vidaCorpo: 300
+  vidaCabeca: 300
   bossIsDead: 0
   armaDestroyd: 0
   cooldown: 1.5

@@ -82,7 +82,7 @@ MonoBehaviour:
   distanciaMinPetAtirar: 18
   velocidadeRotacaoOrbeGiratorio: 90
   pontosVida: 3
-  danoContato: 5
+  danoContato: 6
   danoArmaPrincipal: 2
   particulasDano: {fileID: 1346597017377448381}
   tomaDano: {fileID: 4268107023435981221}
@@ -171,7 +171,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3b0f91f5ad19ad419162a858e3ab463, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  danoOrbeGiratorio: 1
+  danoOrbeGiratorio: 2
 --- !u!114 &4974276118539672254
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -187,7 +187,7 @@ MonoBehaviour:
   projetilSerra: {fileID: 4037887501447905336, guid: 25b6f54121918d14aac6d39143a0fb5b, type: 3}
   pontaSaidaSerra: {fileID: 5985603732724938713}
   cooldown: 4
-  danoSerra: 3
+  danoSerra: 6
 --- !u!65 &5690551041489826068
 BoxCollider:
   m_ObjectHideFlags: 0

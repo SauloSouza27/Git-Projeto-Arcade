@@ -366,7 +366,7 @@ public class MovimentoBoss : MonoBehaviour
                 {
                     if (quantidadeTiros > 0)
                     {
-                        Invoke(nameof(DisparoBastoes), tempoParado / 4);
+                        Invoke(nameof(DisparoBastoes), tempoParado / 16);
                         quantidadeTiros--;
                     }
                     Invoke(nameof(BuscaNovaPosicaoPlayer), tempoParado);
