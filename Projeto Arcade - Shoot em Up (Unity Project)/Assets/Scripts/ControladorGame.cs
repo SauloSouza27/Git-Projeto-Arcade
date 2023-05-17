@@ -74,7 +74,7 @@ public class ControladorGame : MonoBehaviour
             {
                 configuracao.onClick.Invoke();
             }
-            if (!menuConfig.activeSelf)
+            if (menuConfig.activeSelf)
             {
                 sairConfig.onClick.Invoke();
             }
