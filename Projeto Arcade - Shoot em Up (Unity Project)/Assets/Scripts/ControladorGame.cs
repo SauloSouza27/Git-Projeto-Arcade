@@ -58,6 +58,18 @@ public class ControladorGame : MonoBehaviour
     
     void Update()
     {
+        if (Input.GetButtonDown("Configuracao"))
+        {
+            if (!menuConfig.activeSelf)
+            {
+                configuracao.onClick.Invoke();
+            }
+            else if (menuConfig.activeSelf)
+            {
+                sairConfig.onClick.Invoke();
+            }
+        }
+
         if (Time.timeScale == 0) return;
 
         HP = jogador.GetComponent<ControlaPersonagem>().pontosVida;
@@ -66,18 +78,6 @@ public class ControladorGame : MonoBehaviour
         if (Input.GetButtonDown("Subir de Nivel") && buttonSubirNivel.activeSelf)
         {
             SubirNivel();
-        }
-
-        if (Input.GetButtonDown("Configuracao"))
-        {
-            if (!menuConfig.activeSelf)
-            {
-                configuracao.onClick.Invoke();
-            }
-            if (menuConfig.activeSelf)
-            {
-                sairConfig.onClick.Invoke();
-            }
         }
 
         if (HP <= 0)
