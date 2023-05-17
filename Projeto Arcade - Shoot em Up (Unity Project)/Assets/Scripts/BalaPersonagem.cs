@@ -10,9 +10,6 @@ public class BalaPersonagem : MonoBehaviour
     public GameObject projetilRotacao;
     public float velocidadeRotacao = 200.0f;
     public int danoProjetil = 1;
-    // destroi quando sai da tela
-    private Vector3 maxDistance = new Vector3(40.0f, 40.0f, 0.0f);
-    private Vector3 minDistance = new Vector3(-40.0f, -5.0f, 0.0f);
 
 
     void Update()
@@ -21,15 +18,7 @@ public class BalaPersonagem : MonoBehaviour
 
         MovimentoProjetil();
 
-        DestroyOutOfScreen(projetil.transform.position);
-    }
-
-    private void DestroyOutOfScreen(Vector3 pos)
-    {
-        if (pos.x > maxDistance.x || pos.x < minDistance.x || pos.y > maxDistance.y || pos.y < minDistance.y)
-        {
-            Destroy(gameObject);
-        }
+        Utilidades.DestroyOutOfScreen(transform.position, gameObject);
     }
 
     // Movimento bala

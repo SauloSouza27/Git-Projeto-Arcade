@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class Utilidades
 {
+    // trava posicao maxima player dentro da tela
     public static Vector3 maxPersonagem = new Vector3(26.0f, 28.0f, 0.0f);
     public static Vector3 minPersonagem = new Vector3(-26.5f, 2.0f, 0.0f);
+    // destroi quando sai da tela
+    public static Vector3 maxDistance = new Vector3(40.0f, 40.0f, 0.0f);
+    public static Vector3 minDistance = new Vector3(-40.0f, -5.0f, 0.0f);
 
     public static Vector3 TravaPosicao(Vector3 pos)
     {
@@ -49,5 +53,14 @@ public class Utilidades
         material.color += Color.red;
         yield return new WaitForSeconds(0.1f);
         material.color -= Color.red;
+    }
+
+    // destroi fora da tela
+    public static void DestroyOutOfScreen(Vector3 pos, GameObject go)
+    {
+        if (pos.x > maxDistance.x || pos.x < minDistance.x || pos.y > maxDistance.y || pos.y < minDistance.y)
+        {
+            MonoBehaviour.Destroy(go);
+        }
     }
 }

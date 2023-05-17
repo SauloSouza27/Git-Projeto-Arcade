@@ -21,6 +21,7 @@ public class MovimentoInimigoMorcegoDrone : MonoBehaviour
     // destroi quando sai da tela
     private Vector3 maxDistance = new Vector3(40.0f, 40.0f, 0.0f);
     private Vector3 minDistance = new Vector3(-40.0f, -5.0f, 0.0f);
+
     private void Awake()
     {
         controladorGame = GameObject.FindGameObjectWithTag("ControladorGame");
@@ -50,7 +51,7 @@ public class MovimentoInimigoMorcegoDrone : MonoBehaviour
     {
         if (Time.timeScale == 0) return;
 
-        DestroyOutOfScreen(transform.position);
+        Utilidades.DestroyOutOfScreen(transform.position, gameObject);
 
         if (isAutomatic)
         {
@@ -94,11 +95,22 @@ public class MovimentoInimigoMorcegoDrone : MonoBehaviour
         StopAllCoroutines();
         yield break;
     }
-    private void DestroyOutOfScreen(Vector3 pos)
+    private void CaluclaDanoInimigo(int dano)
     {
-        if (pos.x > maxDistance.x || pos.x < minDistance.x || pos.y > maxDistance.y || pos.y < minDistance.y)
+        if (pontosVida > 0)
         {
+            pontosVida -= dano;
+
+            foreach (Material material in materiais)
+            {
+                StartCoroutine(Utilidades.PiscaCorRoutine(material));
+            }
+        }
+        if (pontosVida <= 0)
+        {
+            Instantiate(fxExplosionPrefab, transform.position, transform.rotation);
             Destroy(gameObject);
+            ControladorGame.instancia.SomaXP(xpInimigo);
         }
     }
     private void OnCollisionEnter(Collision colisor)
@@ -107,98 +119,33 @@ public class MovimentoInimigoMorcegoDrone : MonoBehaviour
         {
             Destroy(colisor.gameObject);
             int dano = alvo.GetComponent<ControlaPersonagem>().danoArmaPrincipal;
-            if (pontosVida > 0)
-            {
-                pontosVida -= dano;
 
-                foreach (Material material in materiais)
-                {
-                    StartCoroutine(Utilidades.PiscaCorRoutine(material));
-                }
-            }
-            if (pontosVida <= 0)
-            {
-                Instantiate(fxExplosionPrefab, transform.position, transform.rotation);
-                Destroy(gameObject);
-                ControladorGame.instancia.SomaXP(xpInimigo);
-            }
+            CaluclaDanoInimigo(dano);
         }
         if (colisor.gameObject.CompareTag("BalaPet"))
         {
             Destroy(colisor.gameObject);
             int dano = alvo.GetComponent<DisparoArmaPet>().danoArmaPet;
-            if (pontosVida > 0)
-            {
-                pontosVida -= dano;
 
-                foreach (Material material in materiais)
-                {
-                    StartCoroutine(Utilidades.PiscaCorRoutine(material));
-                }
-            }
-            if (pontosVida <= 0)
-            {
-                Instantiate(fxExplosionPrefab, transform.position, transform.rotation);
-                Destroy(gameObject);
-                ControladorGame.instancia.SomaXP(xpInimigo);
-            }
+            CaluclaDanoInimigo(dano);
         }
         if (colisor.gameObject.CompareTag("OrbeGiratorio"))
         {
             int dano = alvo.GetComponent<RespostaOrbeGiratorio>().danoOrbeGiratorio;
-            if (pontosVida > 0)
-            {
-                pontosVida -= dano;
 
-                foreach (Material material in materiais)
-                {
-                    StartCoroutine(Utilidades.PiscaCorRoutine(material));
-                }
-            }
-            if (pontosVida <= 0)
-            {
-                Instantiate(fxExplosionPrefab, transform.position, transform.rotation);
-                Destroy(gameObject);
-                ControladorGame.instancia.SomaXP(xpInimigo);
-            }
+            CaluclaDanoInimigo(dano);
         }
         if (colisor.gameObject.CompareTag("ProjetilSerra"))
         {
             int dano = alvo.GetComponent<DisparoArmaSerra>().danoSerra;
-            if (pontosVida > 0)
-            {
-                pontosVida -= dano;
 
-                foreach (Material material in materiais)
-                {
-                    StartCoroutine(Utilidades.PiscaCorRoutine(material));
-                }
-            }
-            if (pontosVida <= 0)
-            {
-                Instantiate(fxExplosionPrefab, transform.position, transform.rotation);
-                Destroy(gameObject);
-                ControladorGame.instancia.SomaXP(xpInimigo);
-            }
+            CaluclaDanoInimigo(dano);
         }
         if (colisor.gameObject.CompareTag("Player"))
         {
             int dano = alvo.GetComponent<ControlaPersonagem>().danoContato;
-            if (pontosVida > 0)
-            {
-                pontosVida -= dano;
 
-                foreach (Material material in materiais)
-                {
-                    StartCoroutine(Utilidades.PiscaCorRoutine(material));
-                }
-            }
-            if (pontosVida <= 0)
-            {
-                Instantiate(fxExplosionPrefab, transform.position, transform.rotation);
-                Destroy(gameObject);
-                ControladorGame.instancia.SomaXP(xpInimigo);
-            }
+            CaluclaDanoInimigo(dano);
         }
     }
 }
