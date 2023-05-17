@@ -1820,7 +1820,7 @@ MonoBehaviour:
   spawnsBaixo:
   - {fileID: 1777545597}
   - {fileID: 2024107711}
-  menuConfig: {fileID: 0}
+  menuConfig: {fileID: 858223790778947082}
   uiGameOver: {fileID: 8189803636662094654}
   uiVitoria: {fileID: 1142848955}
   uiPowerUP: {fileID: 115082223984218475}
