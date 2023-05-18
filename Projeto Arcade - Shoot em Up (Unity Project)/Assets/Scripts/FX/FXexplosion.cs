@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class FXexplosion : MonoBehaviour
 {
+    public float tempoParaDestruir = 1.6f;
     void Update()
     {
-        Destroy(gameObject, 1.6f);
+        Destroy(gameObject, tempoParaDestruir);
     }
 }
