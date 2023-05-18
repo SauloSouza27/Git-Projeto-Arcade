@@ -47,7 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocidadeMovimento: 5
   velocidadeSeguir: 0.4
-  velocidadeRotacao: 5
+  velocidadeRotacao: 2
   distanciaMinSeguir: 17
   pontosVida: 2
   xpInimigo: 10
