@@ -11,10 +11,10 @@ public class MovimentoInimigoBesouro : MonoBehaviour
     // XP quando morre
     public int xpInimigo = 5;
     // movimento
-    public float velocidadeMovimento = 2.0f, velocidadeRotacao = 2.5f, velocidadeRotacaoBosta = 2.0f;
+    public float velocidadeMovimento = 4.0f, anguloRotacao = 25.0f, velocidadeRotacaoBosta = 80.0f;
     private bool mudaDirecao = true, primeiroGiro = true;
     private float contadorCooldown;
-    [Range(0.0f, 8.0f)] public float cooldownMudaDirecao = 2.0f;
+    public float cooldownMudaDirecao = 2.0f;
     // materiais inimgo
     private MeshRenderer[] renderers;
     private Material[] materiais;
@@ -69,7 +69,7 @@ public class MovimentoInimigoBesouro : MonoBehaviour
         
         if (mudaDirecao)
         {
-            besouro.transform.Rotate(0, 0, velocidadeRotacao * Time.deltaTime, Space.Self);
+            besouro.transform.Rotate(0, 0, anguloRotacao * Time.deltaTime, Space.Self);
         }
         if (contadorCooldown == 0 && mudaDirecao == true)
         {
@@ -83,7 +83,7 @@ public class MovimentoInimigoBesouro : MonoBehaviour
         }
         if (!mudaDirecao)
         {
-            besouro.transform.Rotate(0, 0, - velocidadeRotacao * Time.deltaTime, Space.Self);
+            besouro.transform.Rotate(0, 0, - anguloRotacao * Time.deltaTime, Space.Self);
         }
         if (contadorCooldown == 0 && mudaDirecao == false)
         {
@@ -130,8 +130,6 @@ public class MovimentoInimigoBesouro : MonoBehaviour
     }
     private void OnCollisionEnter(Collision colisor)
     {
-        Debug.Log(colisor.GetContact(0).thisCollider);
-        
         if (bosta != null)
         {
             if (colisor.GetContact(0).thisCollider == colliderBosta)

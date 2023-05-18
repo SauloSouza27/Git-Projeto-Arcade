@@ -58,6 +58,7 @@ MonoBehaviour:
   velocidadeRotacao: 25
   velocidadeRotacaoBosta: 80
   cooldownMudaDirecao: 2.5
+  colliderBosta: {fileID: 6723485726341448658}
   fxExplosionPrefab: {fileID: 9073733397960554151, guid: 6bc7a83b7d71219478b92b61ba56e43e, type: 3}
 --- !u!136 &6723485726341448658
 CapsuleCollider:
@@ -101,8 +102,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 7.583377, y: 5.549334, z: 25.10374}
-  m_Center: {x: 0, y: -0.31751204, z: 0}
+  m_Size: {x: 7.583377, y: 5.861561, z: 25.10374}
+  m_Center: {x: 1.8446578e-11, y: -0.47362578, z: 0}
 --- !u!54 &4746439867597398630
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -208,7 +209,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 6d5f8006f2b52394e8de3f7f2d600d06, type: 3}
       propertyPath: m_TagString
-      value: BolaCrossBosta
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

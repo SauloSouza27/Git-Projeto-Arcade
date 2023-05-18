@@ -352,7 +352,7 @@ public class MovimentoBoss : MonoBehaviour
         {
             // Mira cabeca
             Vector3 direcaoCabeca = alvo.transform.position - cabecaPiramide.transform.position;
-            //cabecaPiramide.transform.up = Vector3.Slerp(cabecaPiramide.transform.up, -1 * direcao, 3 * velocidadeRotacao * Time.deltaTime);
+            //cabecaPiramide.transform.up = Vector3.Slerp(cabecaPiramide.transform.up, -1 * direcao, 3 * anguloRotacao * Time.deltaTime);
             cabecaPiramide.transform.rotation = Quaternion.LookRotation(cabecaPiramide.transform.forward, -direcaoCabeca);
             if (corpoPiramide == null && posAlvo != null)
             {

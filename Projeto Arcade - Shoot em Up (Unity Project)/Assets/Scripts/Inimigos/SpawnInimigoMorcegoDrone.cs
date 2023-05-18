@@ -4,22 +4,16 @@ using UnityEngine;
 
 public class SpawnInimigoMorcegoDrone : MonoBehaviour
 {
-    private GameObject controladorGame;
     private float contadorCooldown;
-    private int nivelJogador;
     public float atrasaSpawn = 0.0f, cooldownSpawnMorcegoDrone = 4.0f;
     public int quantidadeParaSpawnar = 3;
     private int contador;
-    public GameObject morcegoDrone;
+    public GameObject morcegoDronePrefab;
     public bool ativar = true, mudaDirecao = false;
     // Controle Movimento
     public float velocidade = 2.0f, rotacao = 1.0f, atrasoRotacao = 1.0f;
     public float anguloZ = 0.0f;
 
-    private void Awake()
-    {
-        controladorGame = GameObject.Find("Controlador Game");
-    }
     void Update()
     {
         if (Time.timeScale == 0) return;
@@ -30,12 +24,11 @@ public class SpawnInimigoMorcegoDrone : MonoBehaviour
             return;
         }
 
-        nivelJogador = controladorGame.GetComponent<ControladorGame>().nivel;
         Utilidades.CalculaCooldown(contadorCooldown);
         contadorCooldown = Utilidades.CalculaCooldown(contadorCooldown);
         if (contadorCooldown == 0 && ativar == true && contador < quantidadeParaSpawnar)
         {
-            GameObject instancia = Instantiate(morcegoDrone, transform.position, transform.rotation);
+            GameObject instancia = Instantiate(morcegoDronePrefab, transform.position, transform.rotation);
             MovimentoInimigoMorcegoDrone status = instancia.GetComponent<MovimentoInimigoMorcegoDrone>();
             status.isAutomatic = true;
             status.velocidadeMovimento = velocidade;
