@@ -28,6 +28,7 @@ TagManager:
   - PowerUPPet1
   - PowerUPOrbe1
   - SFX
+  - BolaCrossBosta
   layers:
   - Default
   - TransparentFX

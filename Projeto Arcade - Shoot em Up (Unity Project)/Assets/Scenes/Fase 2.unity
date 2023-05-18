@@ -3742,17 +3742,41 @@ PrefabInstance:
       propertyPath: m_Name
       value: RolaBosta
       objectReference: {fileID: 0}
+    - target: {fileID: 4195329161962259460, guid: 1ad6b30bfe262fe4983d2ef545201339, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 5173043005854671545, guid: 1ad6b30bfe262fe4983d2ef545201339, type: 3}
+      propertyPath: m_Size.y
+      value: 5.861561
+      objectReference: {fileID: 0}
+    - target: {fileID: 5173043005854671545, guid: 1ad6b30bfe262fe4983d2ef545201339, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5173043005854671545, guid: 1ad6b30bfe262fe4983d2ef545201339, type: 3}
+      propertyPath: m_Center.x
+      value: 1.8446578e-11
+      objectReference: {fileID: 0}
+    - target: {fileID: 5173043005854671545, guid: 1ad6b30bfe262fe4983d2ef545201339, type: 3}
+      propertyPath: m_Center.y
+      value: -0.47362578
+      objectReference: {fileID: 0}
+    - target: {fileID: 6319080502885046714, guid: 1ad6b30bfe262fe4983d2ef545201339, type: 3}
+      propertyPath: colliderBosta
+      value: 
+      objectReference: {fileID: 1744995029}
     - target: {fileID: 7341585425071040867, guid: 1ad6b30bfe262fe4983d2ef545201339, type: 3}
       propertyPath: m_RootOrder
       value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 7341585425071040867, guid: 1ad6b30bfe262fe4983d2ef545201339, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 20.47
       objectReference: {fileID: 0}
     - target: {fileID: 7341585425071040867, guid: 1ad6b30bfe262fe4983d2ef545201339, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 10.16
       objectReference: {fileID: 0}
     - target: {fileID: 7341585425071040867, guid: 1ad6b30bfe262fe4983d2ef545201339, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3760,19 +3784,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7341585425071040867, guid: 1ad6b30bfe262fe4983d2ef545201339, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.73156446
       objectReference: {fileID: 0}
     - target: {fileID: 7341585425071040867, guid: 1ad6b30bfe262fe4983d2ef545201339, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7341585425071040867, guid: 1ad6b30bfe262fe4983d2ef545201339, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7341585425071040867, guid: 1ad6b30bfe262fe4983d2ef545201339, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: 0.6817723
       objectReference: {fileID: 0}
     - target: {fileID: 7341585425071040867, guid: 1ad6b30bfe262fe4983d2ef545201339, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3784,7 +3808,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7341585425071040867, guid: 1ad6b30bfe262fe4983d2ef545201339, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: 85.965
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4471,6 +4495,7 @@ MonoBehaviour:
   txtNivel: {fileID: 0}
   txtXP: {fileID: 0}
   configuracao: {fileID: 0}
+  sairConfig: {fileID: 0}
   spawnsInimigoPequeno: {fileID: 0}
   spawnsCima:
   - {fileID: 0}
@@ -4486,6 +4511,7 @@ MonoBehaviour:
   spawnsBaixo:
   - {fileID: 0}
   - {fileID: 0}
+  menuConfig: {fileID: 0}
   uiGameOver: {fileID: 293567925}
   uiVitoria: {fileID: 169362838}
   uiPowerUP: {fileID: 893708301}
@@ -4515,6 +4541,7 @@ MonoBehaviour:
   nivel5: {fileID: 0}
   nivel7: {fileID: 0}
   nivel8: {fileID: 0}
+  nivel10: {fileID: 0}
   piramideSuperiores: {fileID: 0}
   piramideLaterais: {fileID: 0}
   boss: {fileID: 0}
@@ -5941,6 +5968,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1731591333}
   m_CullTransparentMesh: 1
+--- !u!136 &1744995029 stripped
+CapsuleCollider:
+  m_CorrespondingSourceObject: {fileID: 6723485726341448658, guid: 1ad6b30bfe262fe4983d2ef545201339, type: 3}
+  m_PrefabInstance: {fileID: 1152751914}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1751923877
 GameObject:
   m_ObjectHideFlags: 0

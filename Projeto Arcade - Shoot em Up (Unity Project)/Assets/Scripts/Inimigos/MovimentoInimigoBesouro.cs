@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class MovimentoInimigoBesouro : MonoBehaviour
 {
-    public GameObject controladorGame, alvo, besouro, bosta;
+    public GameObject  besouro, bosta;
+    private GameObject alvo;
     // Pontos de vida
-    public int pontosVida = 2;
+    public int pontosVida = 6, bostaVida = 6;
     // XP quando morre
     public int xpInimigo = 5;
     // movimento
@@ -17,18 +18,28 @@ public class MovimentoInimigoBesouro : MonoBehaviour
     // materiais inimgo
     private MeshRenderer[] renderers;
     private Material[] materiais;
+    // materiais bosta
+    private MeshRenderer[] renderersBosta;
+    private Material[] materiaisBosta;
+    public CapsuleCollider colliderBosta;
     // efeito explosão
     public GameObject fxExplosionPrefab;
     private void Awake()
     {
-        controladorGame = GameObject.FindGameObjectWithTag("ControladorGame");
         alvo = GameObject.FindGameObjectWithTag("Player");
         // Busca materiais do inimigo
-        renderers = GetComponentsInChildren<MeshRenderer>();
+        renderers = bosta.GetComponentsInChildren<MeshRenderer>();
         materiais = new Material[renderers.Length];
         for (int i = 0; i < renderers.Length; i++)
         {
             materiais[i] = renderers[i].material;
+        }
+        // Busca materiais da bosta
+        renderersBosta = bosta.GetComponents<MeshRenderer>();
+        materiaisBosta = new Material[renderersBosta.Length];
+        for (int i = 0; i < renderersBosta.Length; i++)
+        {
+            materiaisBosta[i] = renderersBosta[i].material;
         }
     }
 
@@ -46,7 +57,10 @@ public class MovimentoInimigoBesouro : MonoBehaviour
      private void Movimento()
     {
         //  rotacao bosta
-        bosta.transform.Rotate(velocidadeRotacaoBosta * Time.deltaTime, 0, 0, Space.Self);
+        if (bosta != null)
+        {
+            bosta.transform.Rotate(velocidadeRotacaoBosta * Time.deltaTime, 0, 0, Space.Self);
+        }
         // direcao
         besouro.transform.Translate(0, velocidadeMovimento * Time.deltaTime, 0, Space.Self);
         // rotacao
@@ -78,7 +92,25 @@ public class MovimentoInimigoBesouro : MonoBehaviour
         }
     }
 
-    private void CaluclaDanoInimigo(int dano)
+    private void CaluclaDanoBosta(int dano)
+    {
+        if (pontosVida > 0)
+        {
+            bostaVida -= dano;
+
+            foreach (Material material in materiaisBosta)
+            {
+                StartCoroutine(Utilidades.PiscaCorRoutine(material));
+            }
+        }
+        if (bostaVida <= 0)
+        {
+            Instantiate(fxExplosionPrefab, bosta.transform.position, bosta.transform.rotation);
+            Destroy(bosta.gameObject);
+        }
+    }
+
+    private void CaluclaDanoBesouro(int dano)
     {
         if (pontosVida > 0)
         {
@@ -98,37 +130,92 @@ public class MovimentoInimigoBesouro : MonoBehaviour
     }
     private void OnCollisionEnter(Collision colisor)
     {
-        if (colisor.gameObject.CompareTag("BalaPersonagem"))
+        Debug.Log(colisor.GetContact(0).thisCollider);
+        
+        if (bosta != null)
         {
-            Destroy(colisor.gameObject);
-            int dano = alvo.GetComponent<ControlaPersonagem>().danoArmaPrincipal;
+            if (colisor.GetContact(0).thisCollider == colliderBosta)
+            {
+                if (colisor.gameObject.CompareTag("BalaPersonagem"))
+                {
+                    Destroy(colisor.gameObject);
+                    int dano = alvo.GetComponent<ControlaPersonagem>().danoArmaPrincipal;
 
-            CaluclaDanoInimigo(dano);
+                    CaluclaDanoBosta(dano);
+                }
+                if (colisor.gameObject.CompareTag("BalaPet"))
+                {
+                    Destroy(colisor.gameObject);
+                    int dano = alvo.GetComponent<DisparoArmaPet>().danoArmaPet;
+
+                    CaluclaDanoBosta(dano);
+                }
+                if (colisor.gameObject.CompareTag("OrbeGiratorio"))
+                {
+                    int dano = alvo.GetComponent<RespostaOrbeGiratorio>().danoOrbeGiratorio;
+
+                    CaluclaDanoBosta(dano);
+                }
+                if (colisor.gameObject.CompareTag("ProjetilSerra"))
+                {
+                    int dano = alvo.GetComponent<DisparoArmaSerra>().danoSerra;
+
+                    CaluclaDanoBosta(dano);
+                }
+                if (colisor.gameObject.CompareTag("Player"))
+                {
+                    int dano = alvo.GetComponent<ControlaPersonagem>().danoContato;
+
+                    CaluclaDanoBosta(dano);
+                }
+            }
+            else
+            {
+                if (colisor.gameObject.CompareTag("BalaPersonagem"))
+                {
+                    Destroy(colisor.gameObject);
+                }
+                if (colisor.gameObject.CompareTag("BalaPet"))
+                {
+                    Destroy(colisor.gameObject);
+                }
+            }
         }
-        if (colisor.gameObject.CompareTag("BalaPet"))
+        
+        if (bosta == null)
         {
-            Destroy(colisor.gameObject);
-            int dano = alvo.GetComponent<DisparoArmaPet>().danoArmaPet;
+            if (colisor.gameObject.CompareTag("BalaPersonagem"))
+            {
+                Destroy(colisor.gameObject);
+                int dano = alvo.GetComponent<ControlaPersonagem>().danoArmaPrincipal;
 
-            CaluclaDanoInimigo(dano);
-        }
-        if (colisor.gameObject.CompareTag("OrbeGiratorio"))
-        {
-            int dano = alvo.GetComponent<RespostaOrbeGiratorio>().danoOrbeGiratorio;
+                CaluclaDanoBesouro(dano);
+            }
+            if (colisor.gameObject.CompareTag("BalaPet"))
+            {
+                Destroy(colisor.gameObject);
+                int dano = alvo.GetComponent<DisparoArmaPet>().danoArmaPet;
 
-            CaluclaDanoInimigo(dano);
-        }
-        if (colisor.gameObject.CompareTag("ProjetilSerra"))
-        {
-            int dano = alvo.GetComponent<DisparoArmaSerra>().danoSerra;
+                CaluclaDanoBesouro(dano);
+            }
+            if (colisor.gameObject.CompareTag("OrbeGiratorio"))
+            {
+                int dano = alvo.GetComponent<RespostaOrbeGiratorio>().danoOrbeGiratorio;
 
-            CaluclaDanoInimigo(dano);
-        }
-        if (colisor.gameObject.CompareTag("Player"))
-        {
-            int dano = alvo.GetComponent<ControlaPersonagem>().danoContato;
+                CaluclaDanoBesouro(dano);
+            }
+            if (colisor.gameObject.CompareTag("ProjetilSerra"))
+            {
+                int dano = alvo.GetComponent<DisparoArmaSerra>().danoSerra;
 
-            CaluclaDanoInimigo(dano);
+                CaluclaDanoBesouro(dano);
+            }
+            if (colisor.gameObject.CompareTag("Player"))
+            {
+                int dano = alvo.GetComponent<ControlaPersonagem>().danoContato;
+
+                CaluclaDanoBesouro(dano);
+            }
         }
     }
 }

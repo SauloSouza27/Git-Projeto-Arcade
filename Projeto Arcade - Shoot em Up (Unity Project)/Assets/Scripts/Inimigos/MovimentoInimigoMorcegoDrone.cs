@@ -18,9 +18,6 @@ public class MovimentoInimigoMorcegoDrone : MonoBehaviour
     private Material[] materiais;
     // efeito explosão
     public GameObject fxExplosionPrefab;
-    // destroi quando sai da tela
-    private Vector3 maxDistance = new Vector3(40.0f, 40.0f, 0.0f);
-    private Vector3 minDistance = new Vector3(-40.0f, -5.0f, 0.0f);
 
     private void Awake()
     {
