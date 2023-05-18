@@ -6,7 +6,7 @@ public class MovimentoInimigoEspinhoso : MonoBehaviour
 {
     private GameObject alvo, controladorGame;
     // movimento
-    public float velocidadeMovimento = 5.0f, velocidadeSeguir = 5.0f, velocidadeRotacao = 5.0f, distanciaMinSeguir = 15;
+    public float velocidadeMovimento = 5.0f, velocidadeSeguir = 5.0f, velocidadeRotacao = 5.0f, distanciaMinSeguir = 15, intensidadeCor = 1.0f, tempoPisca = 1.0f;
     private Vector3 posAlvo;
     private bool achouAlvo = false;
     // Pontos de vida
@@ -39,6 +39,11 @@ public class MovimentoInimigoEspinhoso : MonoBehaviour
         material = new Material(render.material);
     }
 
+    private void Start()
+    {
+
+    }
+
     private void OnEnable()
     {
         if (controladorGame.GetComponent<ControladorGame>().nivel >= 8)
@@ -50,6 +55,8 @@ public class MovimentoInimigoEspinhoso : MonoBehaviour
     void Update()
     {
         if (Time.timeScale == 0) return;
+
+        AumentaIntensidadeEmissao();
 
         MovimentaInimigoEspinhoso();
     }
@@ -132,6 +139,12 @@ public class MovimentoInimigoEspinhoso : MonoBehaviour
             Vector3 dirSeguir = posAlvo - transform.position;
             transform.up = Vector3.Slerp(transform.up, -1 * dirSeguir, velocidadeRotacao * Time.deltaTime);
         }
+    }
+
+    private void AumentaIntensidadeEmissao()
+    {
+        Color brilhoForte = render.material.color + Color.green * intensidadeCor;
+        render.material.SetColor("_EmissionColor", render.material.color + brilhoForte);
     }
     private void BuscaNovaPosicaoPlayer()
     {
