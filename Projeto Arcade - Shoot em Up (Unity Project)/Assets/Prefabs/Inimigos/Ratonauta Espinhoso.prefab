@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4373684693954342068}
-  - component: {fileID: 9057078949152748710}
+  - component: {fileID: 2707854489087502544}
   m_Layer: 0
   m_Name: Ratonauta Espinhoso
   m_TagString: Untagged
@@ -33,7 +33,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &9057078949152748710
+--- !u!114 &2707854489087502544
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -45,6 +45,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1b0897fd0eb50547b5be520ad7dcbd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  velocidadeMovimento: 5
+  velocidadeSeguir: 0.4
+  velocidadeRotacao: 5
+  distanciaMinSeguir: 17
+  pontosVida: 2
+  xpInimigo: 10
+  fxExplosionPrefab: {fileID: 3092910104552185529, guid: 9c04d41372844fb4d8a34b559025f21c, type: 3}
 --- !u!1 &4710942584240433327
 GameObject:
   m_ObjectHideFlags: 0
