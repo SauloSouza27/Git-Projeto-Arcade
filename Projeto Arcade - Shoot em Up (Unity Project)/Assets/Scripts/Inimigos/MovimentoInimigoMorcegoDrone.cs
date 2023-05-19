@@ -13,6 +13,7 @@ public class MovimentoInimigoMorcegoDrone : MonoBehaviour
     public bool isAutomatic = false, turn = false;
     public float velocidadeMovimento = 2.0f, velocidadeRotacao = 1.0f, anguloZ, atrasoRotacao;
     private float time = 0;
+    private bool jaAtrasou = false, jaRotacionou = false;
     // materiais inimgo
     private MeshRenderer[] renderers;
     private Material[] materiais;
@@ -61,20 +62,22 @@ public class MovimentoInimigoMorcegoDrone : MonoBehaviour
 
         if (turn)
         {
-            Coroutine coroutine;
-            if (time < velocidadeRotacao + atrasoRotacao + 0.5)
+            if (!jaAtrasou)
             {
                 time += Time.deltaTime;
-                coroutine = StartCoroutine(AtrasaRotacao(anguloZ, atrasoRotacao));
-                return;
+                StartCoroutine(AtrasaRotacao(anguloZ, atrasoRotacao));
+                jaAtrasou = true;
             }
-            StopCoroutine(nameof(coroutine));
         }
     }
     private IEnumerator AtrasaRotacao(float angZ, float delay)
     {
         yield return new WaitForSeconds(delay);
-        StartCoroutine(RotacaoLerp(new Vector3(0, 0, angZ), velocidadeRotacao));
+        if (!jaRotacionou)
+        {
+            StartCoroutine(RotacaoLerp(new Vector3(0, 0, angZ), velocidadeRotacao));
+            jaRotacionou = true;
+        }
         yield break;
     }
     private IEnumerator RotacaoLerp(Vector3 valorFinal, float duracao)

@@ -207,7 +207,10 @@ public class ControladorGame : MonoBehaviour
     }
     private void AtivaSpawnInimigosPequenos()
     {
-        spawnsInimigoPequeno.SetActive(true);
+        if (nivel < 10)
+        {
+            spawnsInimigoPequeno.SetActive(true);
+        }
     }
 
     public IEnumerator AtivaInimigo(GameObject inimgo, float delay)
