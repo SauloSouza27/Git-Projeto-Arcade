@@ -104,7 +104,7 @@ MonoBehaviour:
   velocidadeRotacao: 1
   anguloZ: 0
   atrasoRotacao: 0
-  fxExplosionPrefab: {fileID: 9073733397960554151, guid: 6bc7a83b7d71219478b92b61ba56e43e, type: 3}
+  fxExplosionPrefab: {fileID: 2767642299458613786, guid: 6e7f7caa587686c499a4db7ba6b96be4, type: 3}
 --- !u!1 &4156026756890587713
 GameObject:
   m_ObjectHideFlags: 0
