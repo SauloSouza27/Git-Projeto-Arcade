@@ -89,7 +89,6 @@ public class MovimentoInimigoMorcegoDrone : MonoBehaviour
             yield return null;
         }
         transform.eulerAngles = valorFinal;
-        StopAllCoroutines();
         yield break;
     }
     private void CaluclaDanoInimigo(int dano)

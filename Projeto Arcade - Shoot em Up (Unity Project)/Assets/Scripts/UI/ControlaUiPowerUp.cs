@@ -14,6 +14,8 @@ public class ControlaUiPowerUp : MonoBehaviour
     {
         listaPowerUPs = AchaPowerUPButtons();
         buttonsParaDestruir = CarregaPowerUPsAleatoriamente();
+
+        ControladorGame.instancia.ControladorNiveisFases();
     }
 
     private void OnDisable()
@@ -23,8 +25,6 @@ public class ControlaUiPowerUp : MonoBehaviour
         {
             Destroy(button);
         }
-
-        ControladorGame.instancia.ControladorNiveisFases();
     }
 
     public List<Button> AchaPowerUPButtons()
