@@ -257,7 +257,7 @@ MonoBehaviour:
   velocidadeRotacao: 5
   pontosVida: 1
   xpInimigo: 10
-  fxExplosionPrefab: {fileID: 9073733397960554151, guid: 6bc7a83b7d71219478b92b61ba56e43e, type: 3}
+  fxExplosionPrefab: {fileID: 142537275241612342, guid: 33d5295eb4440aa4188fcbe0edb624e4, type: 3}
 --- !u!54 &5175568063284241176
 Rigidbody:
   m_ObjectHideFlags: 0
