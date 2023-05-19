@@ -13,6 +13,7 @@ public class MovimentoInimigoMorcegoDrone : MonoBehaviour
     public bool isAutomatic = false, turn = false;
     public float velocidadeMovimento = 2.0f, velocidadeRotacao = 1.0f, anguloZ, atrasoRotacao;
     private float time = 0;
+    private bool jaAtrasou = false, jaRotacionou = false;
     // materiais inimgo
     private MeshRenderer[] renderers;
     private Material[] materiais;
@@ -89,6 +90,7 @@ public class MovimentoInimigoMorcegoDrone : MonoBehaviour
             yield return null;
         }
         transform.eulerAngles = valorFinal;
+        StopAllCoroutines();
         yield break;
     }
     private void CaluclaDanoInimigo(int dano)
