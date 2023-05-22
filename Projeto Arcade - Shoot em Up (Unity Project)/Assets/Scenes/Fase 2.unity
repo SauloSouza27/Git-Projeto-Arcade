@@ -267,15 +267,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2707854489087502544, guid: df53294d309f6434b885bf58b55b62f5, type: 3}
       propertyPath: tempoPisca
-      value: 0.28
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 2707854489087502544, guid: df53294d309f6434b885bf58b55b62f5, type: 3}
       propertyPath: intensidadeCor
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2707854489087502544, guid: df53294d309f6434b885bf58b55b62f5, type: 3}
+      propertyPath: velocidadeMudaCor
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2707854489087502544, guid: df53294d309f6434b885bf58b55b62f5, type: 3}
       propertyPath: velocidadeMovimento
-      value: 0
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4373684693954342068, guid: df53294d309f6434b885bf58b55b62f5, type: 3}
       propertyPath: m_RootOrder
@@ -860,79 +864,6 @@ RectTransform:
   m_AnchoredPosition: {x: -164, y: 210}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1001 &272676336
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2707854489087502544, guid: df53294d309f6434b885bf58b55b62f5, type: 3}
-      propertyPath: tempoPisca
-      value: 0.28
-      objectReference: {fileID: 0}
-    - target: {fileID: 2707854489087502544, guid: df53294d309f6434b885bf58b55b62f5, type: 3}
-      propertyPath: intensidadeCor
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2707854489087502544, guid: df53294d309f6434b885bf58b55b62f5, type: 3}
-      propertyPath: velocidadeMovimento
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4373684693954342068, guid: df53294d309f6434b885bf58b55b62f5, type: 3}
-      propertyPath: m_RootOrder
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 4373684693954342068, guid: df53294d309f6434b885bf58b55b62f5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -4.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 4373684693954342068, guid: df53294d309f6434b885bf58b55b62f5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 24.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4373684693954342068, guid: df53294d309f6434b885bf58b55b62f5, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4373684693954342068, guid: df53294d309f6434b885bf58b55b62f5, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.94831616
-      objectReference: {fileID: 0}
-    - target: {fileID: 4373684693954342068, guid: df53294d309f6434b885bf58b55b62f5, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4373684693954342068, guid: df53294d309f6434b885bf58b55b62f5, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4373684693954342068, guid: df53294d309f6434b885bf58b55b62f5, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.31732717
-      objectReference: {fileID: 0}
-    - target: {fileID: 4373684693954342068, guid: df53294d309f6434b885bf58b55b62f5, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4373684693954342068, guid: df53294d309f6434b885bf58b55b62f5, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4373684693954342068, guid: df53294d309f6434b885bf58b55b62f5, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 37.003
-      objectReference: {fileID: 0}
-    - target: {fileID: 4496966073805343763, guid: df53294d309f6434b885bf58b55b62f5, type: 3}
-      propertyPath: m_Name
-      value: Ratonauta Espinhoso (2)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: df53294d309f6434b885bf58b55b62f5, type: 3}
 --- !u!1 &275639092
 GameObject:
   m_ObjectHideFlags: 0
@@ -2999,79 +2930,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919556925}
   m_CullTransparentMesh: 1
---- !u!1001 &963356443
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2707854489087502544, guid: df53294d309f6434b885bf58b55b62f5, type: 3}
-      propertyPath: tempoPisca
-      value: 0.28
-      objectReference: {fileID: 0}
-    - target: {fileID: 2707854489087502544, guid: df53294d309f6434b885bf58b55b62f5, type: 3}
-      propertyPath: intensidadeCor
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2707854489087502544, guid: df53294d309f6434b885bf58b55b62f5, type: 3}
-      propertyPath: velocidadeMovimento
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4373684693954342068, guid: df53294d309f6434b885bf58b55b62f5, type: 3}
-      propertyPath: m_RootOrder
-      value: 14
-      objectReference: {fileID: 0}
-    - target: {fileID: 4373684693954342068, guid: df53294d309f6434b885bf58b55b62f5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 17.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 4373684693954342068, guid: df53294d309f6434b885bf58b55b62f5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 26.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4373684693954342068, guid: df53294d309f6434b885bf58b55b62f5, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4373684693954342068, guid: df53294d309f6434b885bf58b55b62f5, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.99943465
-      objectReference: {fileID: 0}
-    - target: {fileID: 4373684693954342068, guid: df53294d309f6434b885bf58b55b62f5, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4373684693954342068, guid: df53294d309f6434b885bf58b55b62f5, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4373684693954342068, guid: df53294d309f6434b885bf58b55b62f5, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.033623796
-      objectReference: {fileID: 0}
-    - target: {fileID: 4373684693954342068, guid: df53294d309f6434b885bf58b55b62f5, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4373684693954342068, guid: df53294d309f6434b885bf58b55b62f5, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4373684693954342068, guid: df53294d309f6434b885bf58b55b62f5, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: -3.854
-      objectReference: {fileID: 0}
-    - target: {fileID: 4496966073805343763, guid: df53294d309f6434b885bf58b55b62f5, type: 3}
-      propertyPath: m_Name
-      value: Ratonauta Espinhoso (1)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: df53294d309f6434b885bf58b55b62f5, type: 3}
 --- !u!1 &976526402
 GameObject:
   m_ObjectHideFlags: 0

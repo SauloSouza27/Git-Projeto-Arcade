@@ -5,7 +5,7 @@ using UnityEngine.Animations;
 
 public class MovimentoInimigoPequeno : MonoBehaviour
 {
-    private GameObject alvo, controladorGame;
+    private GameObject alvo;
     public float velocidadeDeslocamento = 5.0f, velocidadeRotacao = 5.0f;
     // Pontos de vida
     public int pontosVida = 1;
@@ -18,7 +18,6 @@ public class MovimentoInimigoPequeno : MonoBehaviour
     public GameObject fxExplosionPrefab;
     private void Awake()
     {
-        controladorGame = GameObject.FindGameObjectWithTag("ControladorGame");
         alvo = GameObject.FindGameObjectWithTag("Player");
         // Busca materiais do inimigo
         renderers = GetComponentsInChildren<MeshRenderer>();
@@ -31,12 +30,12 @@ public class MovimentoInimigoPequeno : MonoBehaviour
 
     private void Start()
     {
-        velocidadeDeslocamento *= Mathf.Pow(1.03f, controladorGame.GetComponent<ControladorGame>().nivel);
+        velocidadeDeslocamento *= Mathf.Pow(1.03f, ControladorGame.instancia.nivel);
     }
 
     private void OnEnable()
     {
-        if (controladorGame.GetComponent<ControladorGame>().nivel >= 8)
+        if (ControladorGame.instancia.nivel >= 8)
         {
             xpInimigo = 15;
         }

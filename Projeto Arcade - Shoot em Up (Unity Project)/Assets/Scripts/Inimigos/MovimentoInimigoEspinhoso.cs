@@ -6,7 +6,9 @@ public class MovimentoInimigoEspinhoso : MonoBehaviour
 {
     private GameObject alvo, controladorGame;
     // movimento
-    public float velocidadeMovimento = 5.0f, velocidadeSeguir = 5.0f, velocidadeRotacao = 5.0f, distanciaMinSeguir = 15, intensidadeCor = 1.0f, tempoPisca = 1.0f;
+    public float velocidadeMovimento = 5.0f, velocidadeSeguir = 5.0f, velocidadeRotacao = 5.0f, distanciaMinSeguir = 15, velocidadeMudaCor = 1.0f, tempoPisca = 1.0f;
+    private bool aumentaBrilho = true;
+    private float count, intensidadeCor = 1.0f;
     private Vector3 posAlvo;
     private bool achouAlvo = false;
     // Pontos de vida
@@ -15,7 +17,6 @@ public class MovimentoInimigoEspinhoso : MonoBehaviour
     public int xpInimigo = 10;
     // pisca Explosion
     private MeshRenderer render;
-    private Material material, materialOriginal;
     // materiais inimgo
     private MeshRenderer[] renderers;
     private Material[] materiais;
@@ -35,13 +36,12 @@ public class MovimentoInimigoEspinhoso : MonoBehaviour
 
         // Busca material do Aviso Explosão
         render = GetComponentInChildren<MeshRenderer>();
-        materialOriginal = render.material;
-        material = new Material(render.material);
     }
 
     private void Start()
     {
-
+        // contador pisca brilho
+        count = tempoPisca;
     }
 
     private void OnEnable()
@@ -55,8 +55,6 @@ public class MovimentoInimigoEspinhoso : MonoBehaviour
     void Update()
     {
         if (Time.timeScale == 0) return;
-
-        AumentaIntensidadeEmissao();
 
         MovimentaInimigoEspinhoso();
     }
@@ -134,17 +132,62 @@ public class MovimentoInimigoEspinhoso : MonoBehaviour
 
         if (achouAlvo)
         {
+            AlternaCorEmission();
+            //deslocamento
             transform.position = Vector3.Lerp(transform.position, posAlvo, velocidadeSeguir * Time.deltaTime);
             //rotaçao
             Vector3 dirSeguir = posAlvo - transform.position;
             transform.up = Vector3.Slerp(transform.up, -1 * dirSeguir, velocidadeRotacao * Time.deltaTime);
+            if (dirSeguir.magnitude < 3.5)
+            {
+                Instantiate(fxExplosionPrefab, transform.position, transform.rotation);
+                Destroy(gameObject);
+            }
+        }
+    }
+
+    private void AlternaCorEmission()
+    {
+        
+        if (aumentaBrilho)
+        {
+            if (count > 0)
+            {
+                AumentaIntensidadeEmissao();
+                count -= Time.deltaTime;
+            }
+            if (count <= 0)
+            {
+                count = tempoPisca;
+                aumentaBrilho = false;
+            }
+        }
+        if (!aumentaBrilho)
+        {
+            if (count > 0)
+            {
+                DiminuiIntensidadeEmissao();
+                count -= Time.deltaTime;
+            }
+            if (count <= 0)
+            {
+                count = tempoPisca;
+                aumentaBrilho = true;
+            }
         }
     }
 
     private void AumentaIntensidadeEmissao()
     {
         Color brilhoForte = render.material.color + Color.green * intensidadeCor;
-        render.material.SetColor("_EmissionColor", render.material.color + brilhoForte);
+        render.material.SetColor("_EmissionColor", brilhoForte);
+        intensidadeCor += velocidadeMudaCor * Time.deltaTime;
+    }
+    private void DiminuiIntensidadeEmissao()
+    {
+        Color brilhoFraco = render.material.color + Color.green * intensidadeCor;
+        render.material.SetColor("_EmissionColor", brilhoFraco);
+        intensidadeCor -= velocidadeMudaCor * Time.deltaTime;
     }
     private void BuscaNovaPosicaoPlayer()
     {
