@@ -4923,7 +4923,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 3.67
+  m_Radius: 4.97
   m_Height: 30.56
   m_Direction: 2
   m_Center: {x: 0, y: 0, z: 0}
