@@ -30,6 +30,8 @@ public class MovimentoBoss : MonoBehaviour
     private Material[] materiais;
     // Animator
     private Animator animator;
+    // explosao
+    public GameObject fxExplosionPrefab;
 
     private void Start()
     {
@@ -98,10 +100,12 @@ public class MovimentoBoss : MonoBehaviour
     {
         bossIsDead = true;
         StartCoroutine(AtivaMenuVitoria(uiVitoria, 3.0f));
+        Instantiate(fxExplosionPrefab, cabecaPiramide.transform.position, cabecaPiramide.transform.rotation);
         Destroy(cabecaPiramide);
     }
     private void MorteCorpo()
     {
+        Instantiate(fxExplosionPrefab, corpoPiramide.transform.position, corpoPiramide.transform.rotation);
         Invoke(nameof(BuscaNovaPosicaoPlayer), 4.0f);
         Destroy(corpoPiramide);
     }
@@ -352,7 +356,6 @@ public class MovimentoBoss : MonoBehaviour
         {
             // Mira cabeca
             Vector3 direcaoCabeca = alvo.transform.position - cabecaPiramide.transform.position;
-            //cabecaPiramide.transform.up = Vector3.Slerp(cabecaPiramide.transform.up, -1 * direcao, 3 * anguloRotacao * Time.deltaTime);
             cabecaPiramide.transform.rotation = Quaternion.LookRotation(cabecaPiramide.transform.forward, -direcaoCabeca);
             if (corpoPiramide == null && posAlvo != null)
             {
