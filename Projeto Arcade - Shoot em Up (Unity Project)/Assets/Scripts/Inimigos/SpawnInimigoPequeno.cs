@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SpawnInimigoPequeno : MonoBehaviour
 {
+    private GameObject controladorGame;
     private float contadorCooldown;
     private int nivelJogador;
     public float cooldownSpawnInimigoPequeno, minTempo = 6.0f, maxTempo = 15.0f;
@@ -13,19 +14,20 @@ public class SpawnInimigoPequeno : MonoBehaviour
 
     private void Awake()
     {
+        controladorGame = GameObject.Find("Controlador Game");
         cooldownSpawnInimigoPequeno = Random.Range(minTempo, maxTempo);
         contadorCooldown = cooldownSpawnInimigoPequeno - minTempo + 1;
     }
 
     private void OnEnable()
     {
-        nivelJogador = ControladorGame.instancia.nivel;
+        nivelJogador = controladorGame.GetComponent<ControladorGame>().nivel;
 
-        if (ControladorGame.instancia.nivel == 2)
+        if (controladorGame.GetComponent<ControladorGame>().nivel == 2)
         {
             atrasaSpawn = 4.0f;
         }
-        if (ControladorGame.instancia.nivel == 5)
+        if (controladorGame.GetComponent<ControladorGame>().nivel == 5)
         {
             atrasaSpawn = 6.0f;
         }
@@ -42,7 +44,7 @@ public class SpawnInimigoPequeno : MonoBehaviour
             return;
         }
 
-        nivelJogador = ControladorGame.instancia.nivel;
+        nivelJogador = controladorGame.GetComponent<ControladorGame>().nivel;
 
         if (nivelJogador >= 3)
         {

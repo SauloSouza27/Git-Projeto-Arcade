@@ -46,10 +46,7 @@ public class MovimentoInimigoEspinhoso : MonoBehaviour
 
     private void OnEnable()
     {
-        if (controladorGame.GetComponent<ControladorGame>().nivel >= 8)
-        {
-            xpInimigo = 15;
-        }
+        
     }
 
     void Update()

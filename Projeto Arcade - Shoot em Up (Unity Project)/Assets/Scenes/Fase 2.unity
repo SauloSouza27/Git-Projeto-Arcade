@@ -342,6 +342,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: df53294d309f6434b885bf58b55b62f5, type: 3}
+--- !u!1 &90426211 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4496966073805343763, guid: df53294d309f6434b885bf58b55b62f5, type: 3}
+  m_PrefabInstance: {fileID: 90426210}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &147402661
 GameObject:
   m_ObjectHideFlags: 0
@@ -6745,7 +6750,7 @@ MonoBehaviour:
   atrasaSpawn: 0
   cooldownSpawnEspinhoso: 2
   quantidadeParaSpawnar: 3
-  espinhosoPrefab: {fileID: 0}
+  espinhosoPrefab: {fileID: 90426211}
   ativar: 1
 --- !u!4 &1814563964
 Transform:
