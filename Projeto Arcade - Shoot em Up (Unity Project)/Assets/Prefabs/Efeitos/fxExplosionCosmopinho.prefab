@@ -36,7 +36,7 @@ Transform:
   - {fileID: 1986696371722836129}
   - {fileID: 4478573233518032583}
   m_Father: {fileID: 0}
-  m_RootOrder: 28
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!114 &-258212350585969441
 MonoBehaviour:
@@ -4853,7 +4853,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 474c748924ebec646b1f590441e2becd, type: 2}
+  - {fileID: 2100000, guid: c4f41336592eef348954d13ee80bcc55, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9858,7 +9858,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 474c748924ebec646b1f590441e2becd, type: 2}
+  - {fileID: 2100000, guid: c4f41336592eef348954d13ee80bcc55, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -14744,8 +14744,8 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 474c748924ebec646b1f590441e2becd, type: 2}
-  - {fileID: 2100000, guid: 474c748924ebec646b1f590441e2becd, type: 2}
+  - {fileID: 2100000, guid: c4f41336592eef348954d13ee80bcc55, type: 2}
+  - {fileID: 2100000, guid: c4f41336592eef348954d13ee80bcc55, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
