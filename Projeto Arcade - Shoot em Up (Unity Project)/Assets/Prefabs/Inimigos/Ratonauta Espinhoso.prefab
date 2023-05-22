@@ -48,10 +48,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocidadeMovimento: 5
-  velocidadeSeguir: 0.4
+  velocidadeSeguir: 0.5
   velocidadeRotacao: 2
   distanciaMinSeguir: 17
-  pontosVida: 2
+  velocidadeMudaCor: 6
+  tempoPisca: 0.5
+  pontosVida: 8
   xpInimigo: 10
   fxExplosionPrefab: {fileID: 3092910104552185529, guid: 9c04d41372844fb4d8a34b559025f21c, type: 3}
 --- !u!65 &6240418809298935949
