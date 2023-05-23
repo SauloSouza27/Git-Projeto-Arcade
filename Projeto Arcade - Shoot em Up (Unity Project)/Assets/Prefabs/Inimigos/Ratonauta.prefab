@@ -116,7 +116,7 @@ TrailRenderer:
       serializedVersion: 2
       key0: {r: 0, g: 0, b: 0, a: 1}
       key1: {r: 0.014705882, g: 0, b: 0, a: 1}
-      key2: {r: 1, g: 0, b: 0, a: 0}
+      key2: {r: 1, g: 0.41619313, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
       key5: {r: 0, g: 0, b: 0, a: 0}
@@ -189,7 +189,7 @@ Transform:
   m_Children:
   - {fileID: 8057923224341383511}
   m_Father: {fileID: 0}
-  m_RootOrder: 22
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &2071696105443195363
 MeshFilter:
