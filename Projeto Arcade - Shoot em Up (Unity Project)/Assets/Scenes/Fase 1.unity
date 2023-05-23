@@ -9671,7 +9671,7 @@ PrefabInstance:
     - target: {fileID: 6923063637107796579, guid: 73fdd0b820b148c44a1a526eee65ca53, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: f10338c0356c74d42a6a46685d49e9ae, type: 3}
+      objectReference: {fileID: 21300000, guid: 30692f5ca6df6fe45ad4c5b5c6ac8262, type: 3}
     - target: {fileID: 6923997995736735759, guid: 73fdd0b820b148c44a1a526eee65ca53, type: 3}
       propertyPath: m_Name
       value: Nave HP (2)
@@ -14935,7 +14935,7 @@ PrefabInstance:
     - target: {fileID: 6923063637107796579, guid: 73fdd0b820b148c44a1a526eee65ca53, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: f10338c0356c74d42a6a46685d49e9ae, type: 3}
+      objectReference: {fileID: 21300000, guid: 30692f5ca6df6fe45ad4c5b5c6ac8262, type: 3}
     - target: {fileID: 6923997995736735759, guid: 73fdd0b820b148c44a1a526eee65ca53, type: 3}
       propertyPath: m_Name
       value: Nave HP (1)
@@ -15612,7 +15612,7 @@ PrefabInstance:
     - target: {fileID: 6923063637107796579, guid: 73fdd0b820b148c44a1a526eee65ca53, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: f10338c0356c74d42a6a46685d49e9ae, type: 3}
+      objectReference: {fileID: 21300000, guid: 30692f5ca6df6fe45ad4c5b5c6ac8262, type: 3}
     - target: {fileID: 6923997995736735759, guid: 73fdd0b820b148c44a1a526eee65ca53, type: 3}
       propertyPath: m_Name
       value: Nave HP
