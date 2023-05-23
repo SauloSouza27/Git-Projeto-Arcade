@@ -22434,6 +22434,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1774253859554706889, guid: 6470e112d76167b4bac48cdaad12ef5d, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.b
+      value: 0.8901961
+      objectReference: {fileID: 0}
+    - target: {fileID: 1774253859554706889, guid: 6470e112d76167b4bac48cdaad12ef5d, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.g
+      value: 0.4392157
+      objectReference: {fileID: 0}
+    - target: {fileID: 1774253859554706889, guid: 6470e112d76167b4bac48cdaad12ef5d, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.r
+      value: 0.05882353
+      objectReference: {fileID: 0}
+    - target: {fileID: 3277932969885360173, guid: 6470e112d76167b4bac48cdaad12ef5d, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.g
+      value: 0.44115996
+      objectReference: {fileID: 0}
+    - target: {fileID: 3277932969885360173, guid: 6470e112d76167b4bac48cdaad12ef5d, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.r
+      value: 0.058823515
+      objectReference: {fileID: 0}
+    - target: {fileID: 3484257136548589790, guid: 6470e112d76167b4bac48cdaad12ef5d, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.b
+      value: 0.8509804
+      objectReference: {fileID: 0}
+    - target: {fileID: 3484257136548589790, guid: 6470e112d76167b4bac48cdaad12ef5d, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.g
+      value: 0.4392157
+      objectReference: {fileID: 0}
     - target: {fileID: 4787872725937119636, guid: 6470e112d76167b4bac48cdaad12ef5d, type: 3}
       propertyPath: m_TagString
       value: ArmaPrincipal
