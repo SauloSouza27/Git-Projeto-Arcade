@@ -52,7 +52,7 @@ Transform:
   - {fileID: 6816385901124600142}
   - {fileID: 4962514270277505481}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8950388453384976238
 MonoBehaviour:
@@ -863,10 +863,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ship_gun_triple
       objectReference: {fileID: 0}
-    - target: {fileID: 5344732272125251808, guid: 083c6b5eabecd484b96ea857fcd570e5, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1014,10 +1010,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ship_gun_double
       objectReference: {fileID: 0}
-    - target: {fileID: 8092237642207035517, guid: f5e680a83b8ee354ba7e944f292faf7c, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1120,10 +1112,6 @@ PrefabInstance:
     - target: {fileID: 979841350348480980, guid: 10f042779c2dba546808650f92740c8c, type: 3}
       propertyPath: m_Name
       value: Ship_gun
-      objectReference: {fileID: 0}
-    - target: {fileID: 979841350348480980, guid: 10f042779c2dba546808650f92740c8c, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4284879509976045010, guid: 10f042779c2dba546808650f92740c8c, type: 3}
       propertyPath: m_RootOrder

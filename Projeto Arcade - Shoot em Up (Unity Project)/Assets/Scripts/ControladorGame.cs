@@ -32,8 +32,6 @@ public class ControladorGame : MonoBehaviour
     public GameObject piramideSuperiores, piramideLaterais;
     // boss fase1
     public GameObject boss, petsBoss;
-    // spawns inimigos Rola Bosta
-    public GameObject rolaBostaDir, rolaBostaEsq;
 
     private void Awake()
     {

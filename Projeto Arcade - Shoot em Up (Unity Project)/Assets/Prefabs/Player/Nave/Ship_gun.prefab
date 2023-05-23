@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 4284879509976045010}
   m_Layer: 0
   m_Name: Ship_gun
-  m_TagString: Untagged
+  m_TagString: ArmaPrincipal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
