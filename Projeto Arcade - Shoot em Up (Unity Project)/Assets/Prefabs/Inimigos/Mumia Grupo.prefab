@@ -104,6 +104,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4268524155462740283, guid: 375d46a013c54344fb5c2a8a3fadd47f, type: 3}
+      propertyPath: fxExplosionPrefab
+      value: 
+      objectReference: {fileID: 804697987816361510, guid: c03d3429ef1af9a4b9e349d7fe265b1f, type: 3}
     - target: {fileID: 4617454645232429537, guid: 375d46a013c54344fb5c2a8a3fadd47f, type: 3}
       propertyPath: m_Name
       value: Mumia (2)
@@ -175,6 +179,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4268524155462740283, guid: 375d46a013c54344fb5c2a8a3fadd47f, type: 3}
+      propertyPath: fxExplosionPrefab
+      value: 
+      objectReference: {fileID: 804697987816361510, guid: c03d3429ef1af9a4b9e349d7fe265b1f, type: 3}
     - target: {fileID: 4617454645232429537, guid: 375d46a013c54344fb5c2a8a3fadd47f, type: 3}
       propertyPath: m_Name
       value: Mumia (1)
@@ -246,6 +254,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4268524155462740283, guid: 375d46a013c54344fb5c2a8a3fadd47f, type: 3}
+      propertyPath: fxExplosionPrefab
+      value: 
+      objectReference: {fileID: 804697987816361510, guid: c03d3429ef1af9a4b9e349d7fe265b1f, type: 3}
     - target: {fileID: 4617454645232429537, guid: 375d46a013c54344fb5c2a8a3fadd47f, type: 3}
       propertyPath: m_Name
       value: Mumia
