@@ -162,6 +162,11 @@ public class ControladorGame : MonoBehaviour
             nivel3.SetActive(false);
             StartCoroutine(AtivaInimigo(nivel4, 2.0f));
         }
+        if (nivel == 5)
+        {
+            nivel4.SetActive(false);
+            StartCoroutine(AtivaInimigo(nivel5, 3.0f));
+        }
     }
 
     public void AtualizaBarraHP()
