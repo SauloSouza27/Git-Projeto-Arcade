@@ -1,23 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Animations;
 
-public class MovimentoInimigoPiramide : MonoBehaviour
+public class MovimentoAnubis : MonoBehaviour
 {
     private GameObject alvo, controladorGame;
-    public GameObject cabecaPiramide, pontaArma, balaPiramide;
+    public GameObject anubis, pontaArmaEsq, pontaArmaDir, balaAnubisPrefab;
     // Controle rotaçao
     public float velocidadeRotacao = 2.0f;
-    public bool petBoss = false;
     // Pontos de vida
     public int pontosVida = 3;
     // XP quando morre
     public int xpInimigo = 100;
     // Tiro
-    [Range(0, 3)] public float cooldown = 1.0f;
-    private float contadorCooldown;
-    public bool inverteRotacaoTiro = false;
+    [Range(0, 5)] public float cooldown = 0.8f, tempoDisparo = 2.0f;
+    private float contadorCooldown, contadorDisparos;
+    private bool ativaArma = false;
+    public int numeroDisparos = 3;
+    public float atrasaDisparos = 0.0f, velocidadeProjetil = 40.0f;
     // materiais inimgo
     private MeshRenderer[] renderers;
     private Material[] materiais;
@@ -35,40 +35,46 @@ public class MovimentoInimigoPiramide : MonoBehaviour
             materiais[i] = renderers[i].material;
         }
     }
-    void Start()
+    private void Start()
     {
-        contadorCooldown = 4.0f;
+        ativaArma = false;
+        StartCoroutine(IntervaloDisparo(tempoDisparo));
     }
-    private void OnEnable()
+    private void Update()
     {
-        if(controladorGame.GetComponent<ControladorGame>().nivel >= 8)
+        MovimentaInimigoAnubis();
+
+        // disparo armas anubis
+        if (ativaArma)
         {
-            pontosVida = 12;
-            xpInimigo = 150;
+            // Cooldown e controle tiro
+            Utilidades.CalculaCooldown(contadorCooldown);
+            contadorCooldown = Utilidades.CalculaCooldown(contadorCooldown);
+            if (contadorCooldown == 0)
+            {
+                Tiro();
+                contadorCooldown = cooldown;
+                contadorDisparos++;
+                if (contadorDisparos < numeroDisparos) return;
+                else
+                {
+                    contadorDisparos = 0;
+                    ativaArma = false;
+                    StartCoroutine(IntervaloDisparo(tempoDisparo));
+                }
+            }
         }
     }
-
-    void Update()
+    private IEnumerator IntervaloDisparo(float cooldown)
     {
-        if (Time.timeScale == 0) return;
-
-        if (!petBoss)
-        {
-            MovimentaInimigoPiramide();
-        }
-         if (petBoss)
-        {
-            MovimentaInimigoPiramideBossPet();
-        }
-
-        // Cooldown e controle tiro
-        Utilidades.CalculaCooldown(contadorCooldown);
-        contadorCooldown = Utilidades.CalculaCooldown(contadorCooldown);
-        if (contadorCooldown == 0)
-        {
-            Tiro();
-            contadorCooldown = cooldown;
-        }
+        yield return new WaitForSeconds(cooldown);
+        ativaArma = true;
+    }
+    private void MovimentaInimigoAnubis()
+    {
+        Vector3 direcao = alvo.transform.position - anubis.transform.position;
+        direcao = direcao.normalized;
+        anubis.transform.up = Vector3.Slerp(anubis.transform.up, -1 * direcao, velocidadeRotacao * Time.deltaTime);
     }
 
     private void CaluclaDanoInimigo(int dano)
@@ -125,36 +131,14 @@ public class MovimentoInimigoPiramide : MonoBehaviour
         }
     }
 
-    private void MovimentaInimigoPiramide()
-    {
-        // Rotacao corpo
-        Vector3 direcao = alvo.transform.position - transform.position;
-        direcao = direcao.normalized;
-        transform.up = Vector3.Slerp(transform.up, -1 * direcao, velocidadeRotacao * Time.deltaTime);
-        // Mira cabeca
-        //cabecaPiramide.transform.up = Vector3.Slerp(cabecaPiramide.transform.up, -1 * direcao, 3 * anguloRotacao * Time.deltaTime);
-        cabecaPiramide.transform.rotation = Quaternion.LookRotation(cabecaPiramide.transform.forward, - direcao);
-        pontaArma.transform.rotation = Quaternion.LookRotation(pontaArma.transform.forward, direcao);
-    }
-
-    private void MovimentaInimigoPiramideBossPet()
-    {
-        Vector3 direcao = alvo.transform.position - cabecaPiramide.transform.position;
-        direcao = direcao.normalized;
-        cabecaPiramide.transform.rotation = Quaternion.LookRotation(cabecaPiramide.transform.forward, - direcao);
-    }
-
     // Tiro
     private void Tiro()
     {
-        if (inverteRotacaoTiro)
-        {
-            Instantiate(balaPiramide, pontaArma.transform.position, pontaArma.transform.rotation);
-        }
-        else
-        {
-            GameObject instaciaBala = Instantiate(balaPiramide, pontaArma.transform.position, pontaArma.transform.rotation);
-            instaciaBala.GetComponent<BalaPersonagem>().velocidadeRotacao *= -1;
-        }
+        GameObject instaciaEsq = Instantiate(balaAnubisPrefab, pontaArmaEsq.transform.position, pontaArmaEsq.transform.rotation);
+        GameObject instaciaDir = Instantiate(balaAnubisPrefab, pontaArmaDir.transform.position, pontaArmaDir.transform.rotation);
+        BalaPersonagem statusEsq = instaciaEsq.GetComponent<BalaPersonagem>();
+        BalaPersonagem statusDir = instaciaDir.GetComponent<BalaPersonagem>();
+        statusEsq.velocidade = velocidadeProjetil;
+        statusDir.velocidade = velocidadeProjetil;
     }
 }

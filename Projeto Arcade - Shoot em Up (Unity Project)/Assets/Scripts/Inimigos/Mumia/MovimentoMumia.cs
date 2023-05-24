@@ -31,6 +31,7 @@ public class MovimentoMumia : MonoBehaviour
         Vector3 dir, dirEsq, dirDir, dirCentro;
         dir = alvo.transform.position - transform.position;
 
+        // movimetno
         if (dir.magnitude > 6)
         {
             transform.position += Time.deltaTime * velocidadeDeslocamento * dir.normalized;
@@ -53,11 +54,7 @@ public class MovimentoMumia : MonoBehaviour
                 mumiaCentro.transform.position += Time.deltaTime * velocidadeDeslocamento * dirCentro.normalized;
             }
         }
-
-        // movimetno
-
         // rotacao
-
         if (mumiaEsq != null)
         {
             dirEsq = alvo.transform.position - mumiaEsq.transform.position;

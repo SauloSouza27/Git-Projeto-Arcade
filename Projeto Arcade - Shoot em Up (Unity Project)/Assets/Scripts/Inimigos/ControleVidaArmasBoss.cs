@@ -11,10 +11,9 @@ public class ControleVidaArmasBoss : MonoBehaviour
     // Tiro
     public GameObject arma, pontArma, bala;
     [Range(0, 5)] public float cooldown = 0.3f, tempoDisparo = 3.0f;
-    private float contadorCooldown;
-    private float contadorDisparos;
-    public int numeroDisparos = 10;
+    private float contadorCooldown, contadorDisparos;
     private bool ativaArma = false;
+    public int numeroDisparos = 10;
     // Materiais
     private MeshRenderer[] renderers;
     private Material[] materiais;

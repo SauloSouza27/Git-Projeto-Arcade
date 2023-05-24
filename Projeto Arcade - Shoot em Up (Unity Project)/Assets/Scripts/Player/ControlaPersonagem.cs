@@ -80,7 +80,7 @@ public class ControlaPersonagem : MonoBehaviour
     private void OnCollisionEnter(Collision colisor)
     {
 
-        if (colisor.gameObject.CompareTag("Inimigo") || colisor.gameObject.CompareTag("BalaPiramide") || colisor.gameObject.CompareTag("BalaBossPiramide"))
+        if (colisor.gameObject.CompareTag("Inimigo") || colisor.gameObject.CompareTag("BalaPiramide") || colisor.gameObject.CompareTag("BalaBossPiramide") || colisor.gameObject.CompareTag("BalaAnubis"))
         {
             if (pontosVida > 0)
             {
@@ -89,12 +89,7 @@ public class ControlaPersonagem : MonoBehaviour
                     ReceberDano();
                 }
                 
-                if (colisor.gameObject.CompareTag("BalaPiramide"))
-                {
-                    Destroy(colisor.gameObject);
-                }
-
-                if (colisor.gameObject.CompareTag("BalaBossPiramide"))
+                if (colisor.gameObject.CompareTag("BalaPiramide") || colisor.gameObject.CompareTag("BalaBossPiramide") || colisor.gameObject.CompareTag("BalaAnubis"))
                 {
                     Destroy(colisor.gameObject);
                 }
