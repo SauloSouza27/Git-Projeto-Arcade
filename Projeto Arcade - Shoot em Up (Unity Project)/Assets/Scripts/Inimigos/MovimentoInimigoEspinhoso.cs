@@ -138,6 +138,7 @@ public class MovimentoInimigoEspinhoso : MonoBehaviour
             if (dirSeguir.magnitude < 3.5)
             {
                 Instantiate(fxExplosionPrefab, transform.position, transform.rotation);
+                ControladorGame.instancia.SomaXP(xpInimigo);
                 Destroy(gameObject);
             }
         }
