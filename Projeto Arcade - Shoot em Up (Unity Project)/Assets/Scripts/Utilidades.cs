@@ -8,8 +8,8 @@ public class Utilidades
     public static Vector3 maxPersonagem = new Vector3(26.0f, 28.0f, 0.0f);
     public static Vector3 minPersonagem = new Vector3(-26.5f, 2.0f, 0.0f);
     // destroi quando sai da tela
-    public static Vector3 maxDistance = new Vector3(40.0f, 40.0f, 0.0f);
-    public static Vector3 minDistance = new Vector3(-40.0f, -5.0f, 0.0f);
+    public static Vector3 maxDistance = new Vector3(45.0f, 45.0f, 0.0f);
+    public static Vector3 minDistance = new Vector3(-45.0f, -10.0f, 0.0f);
 
     public static Vector3 TravaPosicao(Vector3 pos)
     {

@@ -28,11 +28,35 @@ public class MovimentoMumia : MonoBehaviour
 
     private void MovimentaInimigoMumia()
     {
-        //Movimento de seguir jogador
-        Vector3 dir = alvo.transform.position - transform.position;
-        transform.position += Time.deltaTime * velocidadeDeslocamento * dir.normalized;
-        //rotaçao
-        Vector3 dirEsq, dirDir, dirCentro;
+        Vector3 dir, dirEsq, dirDir, dirCentro;
+        dir = alvo.transform.position - transform.position;
+
+        if (dir.magnitude > 6)
+        {
+            transform.position += Time.deltaTime * velocidadeDeslocamento * dir.normalized;
+        }
+        if (dir.magnitude <= 6)
+        {
+            if (mumiaEsq != null)
+            {
+                dirEsq = alvo.transform.position - mumiaEsq.transform.position;
+                mumiaEsq.transform.position += Time.deltaTime * velocidadeDeslocamento * dirEsq.normalized;
+            }
+            if (mumiaDir != null)
+            {
+                dirDir = alvo.transform.position - mumiaDir.transform.position;
+                mumiaDir.transform.position += Time.deltaTime * velocidadeDeslocamento * dirDir.normalized;
+            }
+            if (mumiaCentro != null)
+            {
+                dirCentro = alvo.transform.position - mumiaCentro.transform.position;
+                mumiaCentro.transform.position += Time.deltaTime * velocidadeDeslocamento * dirCentro.normalized;
+            }
+        }
+
+        // movimetno
+
+        // rotacao
 
         if (mumiaEsq != null)
         {

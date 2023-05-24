@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2707854489087502544}
   - component: {fileID: 6240418809298935949}
   - component: {fileID: 5063253185978081830}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Ratonauta Espinhoso
   m_TagString: Inimigo
   m_Icon: {fileID: 0}
@@ -47,8 +47,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1b0897fd0eb50547b5be520ad7dcbd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidadeMovimento: 4
-  velocidadeSeguir: 0.5
+  velocidadeMovimento: 6
+  velocidadeSeguir: 0.3
   velocidadeRotacao: 4
   distanciaMinSeguir: 17
   velocidadeMudaCor: 8
@@ -115,7 +115,7 @@ GameObject:
   - component: {fileID: 6885683240850529151}
   - component: {fileID: 3670397158534837286}
   - component: {fileID: 5392701652085426642}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Ratonauta Espinhoso
   m_TagString: Untagged
   m_Icon: {fileID: 0}

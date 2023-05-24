@@ -16871,17 +16871,20 @@ MonoBehaviour:
   armaOrbeGiratorioAtivada: 0
   upgradeOrbe1: 0
   armaSerraAtivada: 0
+  nivel1: {fileID: 0}
   nivel2: {fileID: 569654680}
   nivel3: {fileID: 620127230}
   nivel4: {fileID: 201313567}
   nivel5: {fileID: 742968187}
+  nivel6: {fileID: 0}
   nivel7: {fileID: 790177877}
   nivel8: {fileID: 690874085}
+  nivel9: {fileID: 0}
   nivel10: {fileID: 919415872}
   piramideSuperiores: {fileID: 391791700}
   piramideLaterais: {fileID: 510412430}
-  boss: {fileID: 1170234379}
-  petsBoss: {fileID: 625901196}
+  bossFase1: {fileID: 1170234379}
+  petsBossFase1: {fileID: 625901196}
 --- !u!114 &3551692698904963125
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20140,7 +20143,7 @@ PrefabInstance:
       objectReference: {fileID: 1971218907}
     - target: {fileID: 5512186861642180245, guid: dbb1d80f114cad14bb49b2d3a0bda164, type: 3}
       propertyPath: m_Name
-      value: Boss
+      value: Boss Fase1
       objectReference: {fileID: 0}
     - target: {fileID: 8685267284019799110, guid: dbb1d80f114cad14bb49b2d3a0bda164, type: 3}
       propertyPath: m_RootOrder

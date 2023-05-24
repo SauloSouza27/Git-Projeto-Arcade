@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5861520252533507058}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Anubis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 4284268787638319788}
   - component: {fileID: 4758918022182294423}
   - component: {fileID: 1171359234761990119}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: AnubisCabeca
   m_TagString: Untagged
   m_Icon: {fileID: 0}

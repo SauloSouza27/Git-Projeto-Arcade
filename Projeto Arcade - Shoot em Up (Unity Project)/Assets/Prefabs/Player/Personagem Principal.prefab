@@ -52,7 +52,7 @@ Transform:
   - {fileID: 6816385901124600142}
   - {fileID: 4962514270277505481}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8950388453384976238
 MonoBehaviour:
@@ -208,8 +208,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.9305781, y: 0.7889632, z: 1.0723715}
-  m_Center: {x: 0, y: -0.6929268, z: -0.17291579}
+  m_Size: {x: 0.9305781, y: 1.0977705, z: 1.0723715}
+  m_Center: {x: 0, y: -0.84733045, z: -0.17291579}
 --- !u!65 &1859866850645625244
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -229,7 +229,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.95501137, y: 1.7132118, z: 1.0723715}
+  m_Size: {x: 1.1948885, y: 1.7132118, z: 1.0723715}
   m_Center: {x: 0, y: 1.6682024, z: -0.17291579}
 --- !u!65 &7972953504568763118
 BoxCollider:
@@ -250,7 +250,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.2988815, y: 1.1042968, z: 1.0723715}
+  m_Size: {x: 2.5642228, y: 1.1042969, z: 1.0723715}
   m_Center: {x: 0, y: 0.25662482, z: -0.17291579}
 --- !u!54 &4993856337061519684
 Rigidbody:

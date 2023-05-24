@@ -545,7 +545,7 @@ GameObject:
   - component: {fileID: 1421876658681519259}
   - component: {fileID: 7096758492839678714}
   m_Layer: 6
-  m_Name: Boss
+  m_Name: Boss Fase1
   m_TagString: Inimigo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

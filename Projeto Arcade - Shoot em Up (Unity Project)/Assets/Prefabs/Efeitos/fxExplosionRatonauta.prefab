@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1120846321704905100}
   - component: {fileID: 9185804462110613472}
   - component: {fileID: 7136656310234960058}
+  - component: {fileID: -1585944732249429993}
   m_Layer: 0
   m_Name: fxExplosionRatonauta
   m_TagString: Untagged
@@ -4983,3 +4984,16 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-1585944732249429993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 142537275241612342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 876f6ec7d4d1f1a47891ded5e2a64cc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tempoParaDestruir: 1

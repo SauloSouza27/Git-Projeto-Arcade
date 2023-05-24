@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1020444352365005127}
   - component: {fileID: 6132077956029965687}
   - component: {fileID: 1605974935250139567}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: MumiaCorpo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,9 +92,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3705457747938212374}
-  - component: {fileID: 6117875703033165511}
   - component: {fileID: 4268524155462740283}
-  m_Layer: 0
+  - component: {fileID: 6117875703033165511}
+  - component: {fileID: 5570939203039198336}
+  m_Layer: 8
   m_Name: Mumia
   m_TagString: Inimigo
   m_Icon: {fileID: 0}
@@ -115,8 +116,23 @@ Transform:
   m_Children:
   - {fileID: 1020444352365005127}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4268524155462740283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4617454645232429537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e318e7d404efdf4aba14dbb2846b94c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pontosVida: 1
+  xpInimigo: 10
+  fxExplosionPrefab: {fileID: 804697987816361510, guid: c03d3429ef1af9a4b9e349d7fe265b1f, type: 3}
 --- !u!65 &6117875703033165511
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -138,18 +154,30 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 3.3212333, y: 4.2025914, z: 30.383907}
   m_Center: {x: 0, y: -0.48282903, z: 0}
---- !u!114 &4268524155462740283
-MonoBehaviour:
+--- !u!54 &5570939203039198336
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4617454645232429537}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e318e7d404efdf4aba14dbb2846b94c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pontosVida: 1
-  xpInimigo: 10
-  fxExplosionPrefab: {fileID: 142537275241612342, guid: 33d5295eb4440aa4188fcbe0edb624e4, type: 3}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 8
+  m_CollisionDetection: 0
