@@ -52,7 +52,7 @@ Transform:
   - {fileID: 6816385901124600142}
   - {fileID: 4962514270277505481}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8950388453384976238
 MonoBehaviour:
@@ -581,11 +581,11 @@ PrefabInstance:
       objectReference: {fileID: 8301319624657828257, guid: a90b2b3384239504eb8fc7530cd6988e, type: 2}
     - target: {fileID: 1883889088921881009, guid: f01f1d9becf1c3640913ec989b8b58c6, type: 3}
       propertyPath: m_Parameters.colorGradient.key0.b
-      value: 0.8117647
+      value: 0.8901961
       objectReference: {fileID: 0}
     - target: {fileID: 1883889088921881009, guid: f01f1d9becf1c3640913ec989b8b58c6, type: 3}
       propertyPath: m_Parameters.colorGradient.key0.g
-      value: 0.78039217
+      value: 0.4392157
       objectReference: {fileID: 0}
     - target: {fileID: 1883889088921881009, guid: f01f1d9becf1c3640913ec989b8b58c6, type: 3}
       propertyPath: m_Parameters.colorGradient.key0.r
@@ -597,11 +597,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3442456498284620885, guid: f01f1d9becf1c3640913ec989b8b58c6, type: 3}
       propertyPath: m_Parameters.colorGradient.key0.g
-      value: 0.78039217
+      value: 0.44115996
       objectReference: {fileID: 0}
     - target: {fileID: 3442456498284620885, guid: f01f1d9becf1c3640913ec989b8b58c6, type: 3}
       propertyPath: m_Parameters.colorGradient.key0.r
-      value: 0.05882353
+      value: 0.058823515
       objectReference: {fileID: 0}
     - target: {fileID: 3584307568792940337, guid: f01f1d9becf1c3640913ec989b8b58c6, type: 3}
       propertyPath: m_Parameters.colorGradient.key0.b
@@ -617,11 +617,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3666229433475972262, guid: f01f1d9becf1c3640913ec989b8b58c6, type: 3}
       propertyPath: m_Parameters.colorGradient.key0.b
-      value: 0.8117647
+      value: 0.8509804
       objectReference: {fileID: 0}
     - target: {fileID: 3666229433475972262, guid: f01f1d9becf1c3640913ec989b8b58c6, type: 3}
       propertyPath: m_Parameters.colorGradient.key0.g
-      value: 0.78039217
+      value: 0.4392157
       objectReference: {fileID: 0}
     - target: {fileID: 3666229433475972262, guid: f01f1d9becf1c3640913ec989b8b58c6, type: 3}
       propertyPath: m_Parameters.colorGradient.key0.r
@@ -708,7 +708,8 @@ PrefabInstance:
       value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 5146217196394232041, guid: f01f1d9becf1c3640913ec989b8b58c6, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f01f1d9becf1c3640913ec989b8b58c6, type: 3}
