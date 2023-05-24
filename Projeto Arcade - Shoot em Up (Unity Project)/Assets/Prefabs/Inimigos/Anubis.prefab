@@ -50,6 +50,7 @@ MonoBehaviour:
   pontaArmaEsq: {fileID: 8329836758071115778}
   pontaArmaDir: {fileID: 3001908549682150604}
   balaAnubisPrefab: {fileID: 8264596742114757972, guid: c656009203969c54fb201c78e719ab1a, type: 3}
+  velocidadeMovimento: 2
   velocidadeRotacao: 2.5
   pontosVida: 3
   xpInimigo: 100
