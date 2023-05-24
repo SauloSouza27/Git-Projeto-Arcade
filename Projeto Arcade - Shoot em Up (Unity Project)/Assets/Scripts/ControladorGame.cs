@@ -177,7 +177,10 @@ public class ControladorGame : MonoBehaviour
         {
             sliderXP.value = sliderXP.maxValue;
             buttonSubirNivel.SetActive(true);
-            spawnsInimigoPequeno.SetActive(false);
+            if (SceneManager.GetActiveScene().name == "Fase 1")
+            {
+                spawnsInimigoPequeno.SetActive(false);
+            }
         }
         txtNivel.text = "Nivel: " + nivel;
         txtXP.text = XP + "/" + valorXPNivel;
@@ -203,7 +206,7 @@ public class ControladorGame : MonoBehaviour
     }
     private void AtivaSpawnInimigosPequenos()
     {
-        if (nivel < 10)
+        if (nivel < 10 && SceneManager.GetActiveScene().name == "Fase 1")
         {
             spawnsInimigoPequeno.SetActive(true);
         }

@@ -41,12 +41,12 @@ public class MovimentoMumia : MonoBehaviour
         }
         if (mumiaDir != null)
         {
-            dirDir = alvo.transform.position - mumiaEsq.transform.position;
+            dirDir = alvo.transform.position - mumiaDir.transform.position;
             mumiaDir.transform.up = Vector3.Slerp(mumiaDir.transform.up, -1 * dirDir, velocidadeRotacao * Time.deltaTime);
         }        
         if (mumiaCentro != null)
         {
-            dirCentro = alvo.transform.position - mumiaEsq.transform.position;
+            dirCentro = alvo.transform.position - mumiaCentro.transform.position;
             mumiaCentro.transform.up = Vector3.Slerp(mumiaCentro.transform.up, -1 * dirCentro, velocidadeRotacao * Time.deltaTime);
         }   
     }

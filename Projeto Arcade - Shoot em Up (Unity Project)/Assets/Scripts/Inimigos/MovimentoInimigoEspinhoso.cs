@@ -54,6 +54,8 @@ public class MovimentoInimigoEspinhoso : MonoBehaviour
         if (Time.timeScale == 0) return;
 
         MovimentaInimigoEspinhoso();
+
+        Utilidades.DestroyOutOfScreen(transform.position, gameObject);
     }
 
     private void CaluclaDanoInimigo(int dano)

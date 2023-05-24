@@ -52,7 +52,7 @@ Transform:
   - {fileID: 6816385901124600142}
   - {fileID: 4962514270277505481}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8950388453384976238
 MonoBehaviour:
@@ -1189,6 +1189,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Arma Pet
       objectReference: {fileID: 0}
+    - target: {fileID: 2376689155905792154, guid: fa1314301a9650d4383a38c924b1e925, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3773459500842476348, guid: fa1314301a9650d4383a38c924b1e925, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -1232,6 +1236,14 @@ PrefabInstance:
     - target: {fileID: 3773459500842476348, guid: fa1314301a9650d4383a38c924b1e925, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7368244077553425971, guid: fa1314301a9650d4383a38c924b1e925, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8345539766779059816, guid: fa1314301a9650d4383a38c924b1e925, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.9
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1709769206599734760, guid: fa1314301a9650d4383a38c924b1e925, type: 3}

@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 4268524155462740283}
   m_Layer: 0
   m_Name: Mumia
-  m_TagString: Untagged
+  m_TagString: Inimigo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -115,7 +115,7 @@ Transform:
   m_Children:
   - {fileID: 1020444352365005127}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &6117875703033165511
 BoxCollider:
