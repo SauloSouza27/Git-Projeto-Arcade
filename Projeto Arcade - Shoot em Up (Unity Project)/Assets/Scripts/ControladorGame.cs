@@ -150,12 +150,17 @@ public class ControladorGame : MonoBehaviour
         if (nivel == 2)
         {
             nivel1.SetActive(false);
-            StartCoroutine(AtivaInimigo(nivel2, 4.0f));
+            StartCoroutine(AtivaInimigo(nivel2, 3.0f));
         }
         if (nivel == 3)
         {
             nivel2.SetActive(false);
-            StartCoroutine(AtivaInimigo(nivel3, 4.0f));
+            StartCoroutine(AtivaInimigo(nivel3, 3.0f));
+        }
+        if (nivel == 4)
+        {
+            nivel3.SetActive(false);
+            StartCoroutine(AtivaInimigo(nivel4, 2.0f));
         }
     }
 
