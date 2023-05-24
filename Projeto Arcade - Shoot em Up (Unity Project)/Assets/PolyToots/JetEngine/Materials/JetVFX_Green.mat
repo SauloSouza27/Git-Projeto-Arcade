@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: JetVFX_Green
+  m_Shader: {fileID: 4800000, guid: f02f8a6da8c537c4585a919ed01a3b88, type: 3}
+  m_ShaderKeywords: _ENGINEON_ON
+  m_LightmapFlags: 2
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _JetColour:
+        m_Texture: {fileID: 2800000, guid: 74bd3760d8552844b8623dda045853f1, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 4906295d398558a489618dd52730844d, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _TextureSample0:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _texcoord:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _AlphaCutoff: 0.5
+    - _Cutoff: 0.5
+    - _DisableJiggle: 0
+    - _EngineOffOn: 1
+    - _EngineOn: 1
+    - _EngineOnOff: 0
+    - _EnginePower: 1
+    - _Float0: 1.5
+    - _Jiggle: 0
+    - _JiggleStrength: 4
+    - _MaxJiggle: 0.08
+    - _NoiseScale: 4.69
+    - _NoiseSpeed: 4
+    - _Power: 1
+    - _PulseSpeed: 7
+    - _PulseStrength: 1.06
+    - _SeparateJiggle: 0
+    - _Speed: 0
+    - _Spread: 0.214
+    - _TextureColour: 0
+    - _Thrust: 0.138
+    - _Wibble: 0.1
+    - __dirty: 0
+    m_Colors:
+    - _Color0: {r: 1.6981133, g: 0.27440444, b: 0, a: 1}
+    - _Color1: {r: 0.9622642, g: 0.14617065, b: 0, a: 0}
+    - _Colour: {r: 0.45865682, g: 2.5823033, b: 0.32887828, a: 1}
+    - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
+    - _HDRRange: {r: 1.4980392, g: 1.4980392, b: 1.4980392, a: 0}
+  m_BuildTextureStacks: []
