@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5861520252533507058}
   - component: {fileID: 813339757159542082}
+  - component: {fileID: 8800175536578593980}
   m_Layer: 9
   m_Name: Anubis
   m_TagString: Inimigo
@@ -26,12 +27,12 @@ Transform:
   m_GameObject: {fileID: 2571767692328582265}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4284268787638319788}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &813339757159542082
 MonoBehaviour:
@@ -55,8 +56,30 @@ MonoBehaviour:
   cooldown: 0.3
   tempoDisparo: 2
   numeroDisparos: 3
+  atrasaDisparos: 0
   velocidadeProjetil: 40
   fxExplosionPrefab: {fileID: 804697987816361510, guid: 7fc6f8ff2add30c4e8a3b81c514a60c4, type: 3}
+--- !u!65 &8800175536578593980
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2571767692328582265}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 6.437911, y: 9.997095, z: 35.06677}
+  m_Center: {x: 0, y: -2.1152105, z: 0}
 --- !u!1 &3001908549682150604
 GameObject:
   m_ObjectHideFlags: 0
