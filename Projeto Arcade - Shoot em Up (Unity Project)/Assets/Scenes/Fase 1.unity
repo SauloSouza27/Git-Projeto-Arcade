@@ -21931,6 +21931,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1421876658681519259, guid: dbb1d80f114cad14bb49b2d3a0bda164, type: 3}
+      propertyPath: tempoParado
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1421876658681519259, guid: dbb1d80f114cad14bb49b2d3a0bda164, type: 3}
       propertyPath: fxExplosionPrefab
       value: 
       objectReference: {fileID: 1881244900910883316, guid: e8253d9ef30b7344ba629dbaea35de2e, type: 3}
