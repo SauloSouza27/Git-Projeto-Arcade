@@ -837,11 +837,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 158665767}
   m_CullTransparentMesh: 1
---- !u!1 &179235320 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3060901810611120313, guid: 6470e112d76167b4bac48cdaad12ef5d, type: 3}
-  m_PrefabInstance: {fileID: 1186799291}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &179941864
 GameObject:
   m_ObjectHideFlags: 0
@@ -1034,11 +1029,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &235756111 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4029662136992464683, guid: 6470e112d76167b4bac48cdaad12ef5d, type: 3}
-  m_PrefabInstance: {fileID: 1186799291}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &250986246
 GameObject:
   m_ObjectHideFlags: 0
@@ -1071,7 +1061,7 @@ MonoBehaviour:
   atrasaSpawn: 0
   cooldownSpawnMorcegoDrone: 1.5
   quantidadeParaSpawnar: 99999999
-  morcegoDrone: {fileID: 2743475196320168649, guid: a9f3ccc6f4249354bb0cb7f3c4e7617c, type: 3}
+  morcegoDronePrefab: {fileID: 0}
   ativar: 1
   mudaDirecao: 1
   velocidade: 20
@@ -1202,7 +1192,7 @@ MonoBehaviour:
   atrasaSpawn: 0
   cooldownSpawnMorcegoDrone: 1.5
   quantidadeParaSpawnar: 99999999
-  morcegoDrone: {fileID: 2743475196320168649, guid: a9f3ccc6f4249354bb0cb7f3c4e7617c, type: 3}
+  morcegoDronePrefab: {fileID: 0}
   ativar: 1
   mudaDirecao: 1
   velocidade: 20
@@ -1257,10 +1247,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7893f2e64e815b948be3a6221fe7d6bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jogador: {fileID: 1186799295}
   botoesFase: []
-  musica: {fileID: 0}
-  SFXs: []
+  mixer: {fileID: 0}
   sliderMusica: {fileID: 1432748210}
   sliderSFX: {fileID: 589032254}
 --- !u!114 &309609290
@@ -6783,6 +6771,7 @@ MonoBehaviour:
   txtNivel: {fileID: 1947799001}
   txtXP: {fileID: 1652828205}
   configuracao: {fileID: 0}
+  sairConfig: {fileID: 0}
   spawnsInimigoPequeno: {fileID: 0}
   spawnsCima:
   - {fileID: 0}
@@ -6798,12 +6787,13 @@ MonoBehaviour:
   spawnsBaixo:
   - {fileID: 0}
   - {fileID: 0}
+  menuConfig: {fileID: 0}
   uiGameOver: {fileID: 572169108}
   uiVitoria: {fileID: 2064210575}
   uiPowerUP: {fileID: 738572451}
-  armaPrincipal: {fileID: 235756111}
-  armaDouble: {fileID: 179235320}
-  armaTriple: {fileID: 1904455182}
+  armaPrincipal: {fileID: 0}
+  armaDouble: {fileID: 0}
+  armaTriple: {fileID: 0}
   buttonSubirNivel: {fileID: 566634844}
   buttonArmaDouble: {fileID: 1670105018}
   buttonArmaTriple: {fileID: 1821717368}
@@ -6821,18 +6811,20 @@ MonoBehaviour:
   armaOrbeGiratorioAtivada: 0
   upgradeOrbe1: 0
   armaSerraAtivada: 0
+  nivel1: {fileID: 0}
   nivel2: {fileID: 0}
   nivel3: {fileID: 0}
   nivel4: {fileID: 0}
   nivel5: {fileID: 0}
+  nivel6: {fileID: 0}
   nivel7: {fileID: 0}
   nivel8: {fileID: 0}
+  nivel9: {fileID: 0}
+  nivel10: {fileID: 0}
   piramideSuperiores: {fileID: 0}
   piramideLaterais: {fileID: 0}
-  boss: {fileID: 0}
-  petsBoss: {fileID: 0}
-  rolaBostaDir: {fileID: 0}
-  rolaBostaEsq: {fileID: 0}
+  bossFase1: {fileID: 0}
+  petsBossFase1: {fileID: 0}
 --- !u!4 &1537292307
 Transform:
   m_ObjectHideFlags: 0
@@ -8155,7 +8147,7 @@ MonoBehaviour:
   atrasaSpawn: 0
   cooldownSpawnMorcegoDrone: 1.5
   quantidadeParaSpawnar: 99999999
-  morcegoDrone: {fileID: 2743475196320168649, guid: a9f3ccc6f4249354bb0cb7f3c4e7617c, type: 3}
+  morcegoDronePrefab: {fileID: 0}
   ativar: 1
   mudaDirecao: 1
   velocidade: 20
@@ -9079,11 +9071,108 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1865351913}
   m_CullTransparentMesh: 1
---- !u!1 &1904455182 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7024383780055595582, guid: 6470e112d76167b4bac48cdaad12ef5d, type: 3}
-  m_PrefabInstance: {fileID: 1186799291}
+--- !u!1001 &1910320817
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1918169853}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: a84013f71a782be4fb2426c8ede32969, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a84013f71a782be4fb2426c8ede32969, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a84013f71a782be4fb2426c8ede32969, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a84013f71a782be4fb2426c8ede32969, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a84013f71a782be4fb2426c8ede32969, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071067
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a84013f71a782be4fb2426c8ede32969, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a84013f71a782be4fb2426c8ede32969, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a84013f71a782be4fb2426c8ede32969, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a84013f71a782be4fb2426c8ede32969, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a84013f71a782be4fb2426c8ede32969, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a84013f71a782be4fb2426c8ede32969, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: a84013f71a782be4fb2426c8ede32969, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: df743a5077369374185706403e2d6f30, type: 2}
+    - target: {fileID: 919132149155446097, guid: a84013f71a782be4fb2426c8ede32969, type: 3}
+      propertyPath: m_Name
+      value: JetVFXMesh
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a84013f71a782be4fb2426c8ede32969, type: 3}
+--- !u!4 &1910320818 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a84013f71a782be4fb2426c8ede32969, type: 3}
+  m_PrefabInstance: {fileID: 1910320817}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1918169852
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1918169853}
+  m_Layer: 0
+  m_Name: teste da turbina
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1918169853
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1918169852}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.069451, y: 5.574921, z: 0.2400055}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1910320818}
+  m_Father: {fileID: 0}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1922669647
 GameObject:
   m_ObjectHideFlags: 0
@@ -10325,7 +10414,7 @@ MonoBehaviour:
   atrasaSpawn: 0
   cooldownSpawnMorcegoDrone: 1
   quantidadeParaSpawnar: 99999999
-  morcegoDrone: {fileID: 2743475196320168649, guid: a9f3ccc6f4249354bb0cb7f3c4e7617c, type: 3}
+  morcegoDronePrefab: {fileID: 0}
   ativar: 1
   mudaDirecao: 1
   velocidade: 18

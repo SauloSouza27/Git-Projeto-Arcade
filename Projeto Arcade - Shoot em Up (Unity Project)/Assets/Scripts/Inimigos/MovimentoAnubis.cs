@@ -7,9 +7,9 @@ public class MovimentoAnubis : MonoBehaviour
     private GameObject alvo, controladorGame;
     public GameObject anubis, pontaArmaEsq, pontaArmaDir, balaAnubisPrefab;
     // Controle rotaçao
-    public float velocidadeRotacao = 2.0f;
+    public float velocidadeMovimento = 4.0f, velocidadeRotacao = 2.0f;
     // Pontos de vida
-    public int pontosVida = 3;
+    public int pontosVida = 20;
     // XP quando morre
     public int xpInimigo = 100;
     // Tiro
@@ -72,8 +72,11 @@ public class MovimentoAnubis : MonoBehaviour
     }
     private void MovimentaInimigoAnubis()
     {
-        // deslocamento Entrada
-        
+        if (anubis.transform.position.y > 25)
+        {
+            // deslocamento Entrada
+            anubis.transform.Translate(0, -velocidadeMovimento * Time.deltaTime, 0, Space.World);
+        }
         // rotacao cabeca
         Vector3 direcao = alvo.transform.position - anubis.transform.position;
         direcao = direcao.normalized;
