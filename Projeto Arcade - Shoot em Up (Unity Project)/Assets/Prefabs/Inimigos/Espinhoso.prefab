@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6240418809298935949}
   - component: {fileID: 5063253185978081830}
   m_Layer: 9
-  m_Name: Ratonauta Espinhoso
+  m_Name: Espinhoso
   m_TagString: Inimigo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

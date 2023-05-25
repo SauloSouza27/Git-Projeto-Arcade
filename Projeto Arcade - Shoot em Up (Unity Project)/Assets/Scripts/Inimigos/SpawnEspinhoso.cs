@@ -6,7 +6,7 @@ public class SpawnEspinhoso : MonoBehaviour
 {
     private float contadorCooldown;
     public float atrasaSpawn = 0.0f, cooldownSpawnEspinhoso = 2.0f, velocidadeMovimento = 6.0f;
-    public int quantidadeParaSpawnar = 3;
+    public int quantidadeParaSpawnar = 3, xpInimigo = 10;
     private int contador;
     public GameObject espinhosoPrefab;
     public bool ativar = true;
@@ -28,6 +28,7 @@ public class SpawnEspinhoso : MonoBehaviour
             GameObject instancia = Instantiate(espinhosoPrefab, transform.position, transform.rotation);
             MovimentoInimigoEspinhoso status = instancia.GetComponent<MovimentoInimigoEspinhoso>();
             status.velocidadeMovimento = velocidadeMovimento;
+            status.xpInimigo = xpInimigo;
             contadorCooldown = cooldownSpawnEspinhoso;
             contador++;
         }
