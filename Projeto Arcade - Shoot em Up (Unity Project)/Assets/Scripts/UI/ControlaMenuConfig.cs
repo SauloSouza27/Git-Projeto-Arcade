@@ -48,8 +48,8 @@ public class ControlaMenuConfig : MonoBehaviour
     }
     public void CarregaCena(string nomeCena)
     {
-        SceneManager.LoadScene(nomeCena);
         Time.timeScale = 1;
+        SceneManager.LoadScene(nomeCena);
     }
 
     public void FecharJogo()
