@@ -1088,7 +1088,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Fase 1
+          m_StringArgument: Fase 2
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &3794103310768584491
@@ -1638,10 +1638,10 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: -1598119515, guid: ba7733303d83b274cb3bef005a741120, type: 3}
-  m_Type: 0
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
-  m_FillMethod: 4
+  m_FillMethod: 0
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
@@ -1854,7 +1854,7 @@ RectTransform:
   - {fileID: 9066181109959399827}
   - {fileID: 7827052976257582293}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1935,7 +1935,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7893f2e64e815b948be3a6221fe7d6bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jogador: {fileID: 0}
   botoesFase:
   - {fileID: 1543019681048451961}
   - {fileID: 3626431250815159608}
@@ -2156,10 +2155,10 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: -1598119515, guid: ba7733303d83b274cb3bef005a741120, type: 3}
-  m_Type: 0
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
-  m_FillMethod: 4
+  m_FillMethod: 0
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0

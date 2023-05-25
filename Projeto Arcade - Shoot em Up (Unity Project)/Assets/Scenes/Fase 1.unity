@@ -14696,10 +14696,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1287711840}
     m_Modifications:
-    - target: {fileID: 994422458169673258, guid: 3d06c5954b18c7443801e0546e2a2d19, type: 3}
-      propertyPath: cabecaPiramide
-      value: 
-      objectReference: {fileID: 1287711839}
     - target: {fileID: 1020439306236847287, guid: 3d06c5954b18c7443801e0546e2a2d19, type: 3}
       propertyPath: m_Name
       value: PiramideBossPetEsq
@@ -14710,15 +14706,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5309641573209783406, guid: 3d06c5954b18c7443801e0546e2a2d19, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.2802
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5309641573209783406, guid: 3d06c5954b18c7443801e0546e2a2d19, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.56
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5309641573209783406, guid: 3d06c5954b18c7443801e0546e2a2d19, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.32
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5309641573209783406, guid: 3d06c5954b18c7443801e0546e2a2d19, type: 3}
       propertyPath: m_LocalRotation.w
@@ -15984,7 +15980,7 @@ MonoBehaviour:
   m_ChildAlignment: 0
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 61, y: 55.857143}
+  m_CellSize: {x: 80, y: 80}
   m_Spacing: {x: 12, y: 0}
   m_Constraint: 0
   m_ConstraintCount: 2
@@ -19483,25 +19479,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: PiramideBossPetDir
       objectReference: {fileID: 0}
-    - target: {fileID: 6222514411736813381, guid: 7ce3050619c84464da2ed08a96f99817, type: 3}
-      propertyPath: cabecaPiramide
-      value: 
-      objectReference: {fileID: 1516834188}
     - target: {fileID: 9075911078329381123, guid: 7ce3050619c84464da2ed08a96f99817, type: 3}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9075911078329381123, guid: 7ce3050619c84464da2ed08a96f99817, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.2802
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9075911078329381123, guid: 7ce3050619c84464da2ed08a96f99817, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.56
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9075911078329381123, guid: 7ce3050619c84464da2ed08a96f99817, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.32
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9075911078329381123, guid: 7ce3050619c84464da2ed08a96f99817, type: 3}
       propertyPath: m_LocalRotation.w
