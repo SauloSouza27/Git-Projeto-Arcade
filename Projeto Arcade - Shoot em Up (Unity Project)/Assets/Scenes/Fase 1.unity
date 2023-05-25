@@ -20463,6 +20463,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2643016779943296091, guid: 6470e112d76167b4bac48cdaad12ef5d, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 973db0588c1dc7d42897fd4ede69e0a5, type: 2}
     - target: {fileID: 9074662426996894289, guid: 6470e112d76167b4bac48cdaad12ef5d, type: 3}
       propertyPath: m_Name
       value: Personagem Principal
