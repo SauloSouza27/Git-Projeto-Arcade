@@ -42,6 +42,8 @@ public class MovimentoAnubis : MonoBehaviour
     }
     private void Update()
     {
+        if (Time.timeScale == 0) return;
+
         MovimentaInimigoAnubis();
 
         // disparo armas anubis

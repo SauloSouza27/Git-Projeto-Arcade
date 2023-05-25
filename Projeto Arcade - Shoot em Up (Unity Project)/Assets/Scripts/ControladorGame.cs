@@ -42,6 +42,8 @@ public class ControladorGame : MonoBehaviour
 
     void Start()
     {
+        Time.timeScale = 1;
+
         if (instancia == null)
         {
             instancia = this;

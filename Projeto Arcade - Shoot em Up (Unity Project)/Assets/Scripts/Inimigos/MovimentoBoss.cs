@@ -398,6 +398,7 @@ public class MovimentoBoss : MonoBehaviour
         yield return new WaitForSeconds(delay);
         uiVitoria.SetActive(true);
         Time.timeScale = 0.0f;
+        StopAllCoroutines();
         yield break;
     }
 }
