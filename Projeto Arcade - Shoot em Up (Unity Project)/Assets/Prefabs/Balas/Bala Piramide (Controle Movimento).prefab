@@ -34,7 +34,7 @@ Transform:
   m_Children:
   - {fileID: 7533343740153664998}
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7726156183616663825
 MonoBehaviour:
@@ -49,7 +49,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocidade: 15
-  duracaoBala: 1500
   projetil: {fileID: 2466213106853831192}
   projetilInimigo: 1
   rotacaoTiro: 1
@@ -165,7 +164,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5793304705905910330}
-  m_Mesh: {fileID: -7017871298906176571, guid: 375846f5135f259468732da61ebe2ca3, type: 3}
+  m_Mesh: {fileID: -7017871298906176571, guid: e09ee212e75bf9f4cb9232e09cd9de5b, type: 3}
 --- !u!23 &6020090610142113201
 MeshRenderer:
   m_ObjectHideFlags: 0

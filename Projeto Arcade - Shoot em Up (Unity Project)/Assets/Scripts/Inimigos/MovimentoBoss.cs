@@ -36,6 +36,7 @@ public class MovimentoBoss : MonoBehaviour
     private void Start()
     {
         alvo = GameObject.FindGameObjectWithTag("Player");
+        posAlvo = new Vector3(0, 0, 0);
         // Busca materiais do inimigo
         renderers = GetComponentsInChildren<MeshRenderer>();
         materiais = new Material[renderers.Length];
@@ -106,7 +107,7 @@ public class MovimentoBoss : MonoBehaviour
     private void MorteCorpo()
     {
         Instantiate(fxExplosionPrefab, corpoPiramide.transform.position, corpoPiramide.transform.rotation);
-        Invoke(nameof(BuscaNovaPosicaoPlayer), 4.0f);
+        Invoke(nameof(BuscaNovaPosicaoPlayer), tempoParado);
         Destroy(corpoPiramide);
     }
 
@@ -357,7 +358,7 @@ public class MovimentoBoss : MonoBehaviour
             // Mira cabeca
             Vector3 direcaoCabeca = alvo.transform.position - cabecaPiramide.transform.position;
             cabecaPiramide.transform.rotation = Quaternion.LookRotation(cabecaPiramide.transform.forward, -direcaoCabeca);
-            if (corpoPiramide == null && posAlvo != null)
+            if (corpoPiramide == null && posAlvo != new Vector3(0, 0, 0))
             {
                 Vector3 posCabeca = cabecaPiramide.transform.position;
                 if (Vector3.Distance(posAlvo, posCabeca) > 0.8)

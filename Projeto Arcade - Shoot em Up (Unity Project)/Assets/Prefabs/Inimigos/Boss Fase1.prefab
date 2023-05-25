@@ -566,7 +566,7 @@ Transform:
   - {fileID: 2805426160563446943}
   - {fileID: 5052819979530344892}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &6096572593924089322
 Animator:
@@ -605,7 +605,7 @@ MonoBehaviour:
   corpoPiramide: {fileID: 8991734798726551137}
   velocidadeRotacao: 0.5
   velocidadeCabeca: 1
-  tempoParado: 1
+  tempoParado: 2
   armasBoss:
   - {fileID: 2835777295160593200}
   - {fileID: 7514584705783465394}
@@ -622,6 +622,7 @@ MonoBehaviour:
   centroDir: {fileID: 2035620033082364701}
   lateralEsq: {fileID: 7203580178842221690}
   lateralDir: {fileID: 6062458882751582324}
+  fxExplosionPrefab: {fileID: 1881244900910883316, guid: e8253d9ef30b7344ba629dbaea35de2e, type: 3}
 --- !u!54 &7096758492839678714
 Rigidbody:
   m_ObjectHideFlags: 0

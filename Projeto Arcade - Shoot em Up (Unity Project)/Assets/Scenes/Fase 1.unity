@@ -1439,7 +1439,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &160401059
 Transform:
   m_ObjectHideFlags: 0
@@ -21931,14 +21931,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1421876658681519259, guid: dbb1d80f114cad14bb49b2d3a0bda164, type: 3}
-      propertyPath: tempoParado
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1421876658681519259, guid: dbb1d80f114cad14bb49b2d3a0bda164, type: 3}
-      propertyPath: fxExplosionPrefab
-      value: 
-      objectReference: {fileID: 1881244900910883316, guid: e8253d9ef30b7344ba629dbaea35de2e, type: 3}
-    - target: {fileID: 1421876658681519259, guid: dbb1d80f114cad14bb49b2d3a0bda164, type: 3}
       propertyPath: petsBoss.Array.data[0]
       value: 
       objectReference: {fileID: 1586286822}
@@ -21949,10 +21941,6 @@ PrefabInstance:
     - target: {fileID: 5512186861642180245, guid: dbb1d80f114cad14bb49b2d3a0bda164, type: 3}
       propertyPath: m_Name
       value: Boss Fase1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5512186861642180245, guid: dbb1d80f114cad14bb49b2d3a0bda164, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8685267284019799110, guid: dbb1d80f114cad14bb49b2d3a0bda164, type: 3}
       propertyPath: m_RootOrder
@@ -22364,10 +22352,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2643016779943296091, guid: 6470e112d76167b4bac48cdaad12ef5d, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 973db0588c1dc7d42897fd4ede69e0a5, type: 2}
     - target: {fileID: 9074662426996894289, guid: 6470e112d76167b4bac48cdaad12ef5d, type: 3}
       propertyPath: m_Name
       value: Personagem Principal
