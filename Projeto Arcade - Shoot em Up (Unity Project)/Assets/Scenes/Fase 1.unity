@@ -18597,9 +18597,41 @@ PrefabInstance:
       propertyPath: jogador
       value: 
       objectReference: {fileID: 1537027532}
+    - target: {fileID: 538157050424480662, guid: f6435d23d7c4fc1428f7d4512393f796, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 538157050424480662, guid: f6435d23d7c4fc1428f7d4512393f796, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 538157050424480662, guid: f6435d23d7c4fc1428f7d4512393f796, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1484171690009839673, guid: f6435d23d7c4fc1428f7d4512393f796, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1484171690009839673, guid: f6435d23d7c4fc1428f7d4512393f796, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1557993001443230978, guid: f6435d23d7c4fc1428f7d4512393f796, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
       value: Fase 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1925149538032010150, guid: f6435d23d7c4fc1428f7d4512393f796, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1925149538032010150, guid: f6435d23d7c4fc1428f7d4512393f796, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1925149538032010150, guid: f6435d23d7c4fc1428f7d4512393f796, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3651670717660087130, guid: f6435d23d7c4fc1428f7d4512393f796, type: 3}
       propertyPath: m_Pivot.x
@@ -18685,9 +18717,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6064815787586123183, guid: f6435d23d7c4fc1428f7d4512393f796, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6064815787586123183, guid: f6435d23d7c4fc1428f7d4512393f796, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6244215891767357987, guid: f6435d23d7c4fc1428f7d4512393f796, type: 3}
       propertyPath: m_Name
       value: MenuConfig
+      objectReference: {fileID: 0}
+    - target: {fileID: 6244215891767357987, guid: f6435d23d7c4fc1428f7d4512393f796, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
