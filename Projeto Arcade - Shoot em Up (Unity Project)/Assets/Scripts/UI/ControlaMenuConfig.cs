@@ -22,9 +22,10 @@ public class ControlaMenuConfig : MonoBehaviour
     {
         // ajusta valor slider ao abrir
         mixer.GetFloat("MusicVol", out float valueMusic);
-        sliderMusica.value = valueMusic;
+        sliderMusica.value = Mathf.Pow(10.0f, valueMusic / 20);
         mixer.GetFloat("SFXVol", out float valueSFX);
         sliderSFX.value = valueSFX;
+        sliderSFX.value = Mathf.Pow(10.0f, valueSFX / 20);
 
         if (SceneManager.GetActiveScene().name == "Menu Inicial")
         {
