@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocidadeMovimento: 6
-  velocidadeSeguir: 0.7
+  velocidadeSeguir: 0.6
   velocidadeRotacao: 4
   distanciaMinSeguir: 17
   velocidadeMudaCor: 8
