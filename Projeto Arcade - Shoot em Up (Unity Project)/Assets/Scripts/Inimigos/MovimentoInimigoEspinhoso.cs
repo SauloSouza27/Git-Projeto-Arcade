@@ -141,7 +141,7 @@ public class MovimentoInimigoEspinhoso : MonoBehaviour
         {
             AlternaCorEmission();
             //deslocamento
-            transform.position = Vector3.Lerp(transform.position, posAlvo, velocidadeSeguir/(100 + Time.deltaTime));
+            transform.position = Vector3.Lerp(transform.position, posAlvo, velocidadeSeguir/(100.0f + Time.deltaTime));
             //rotaçao
             Vector3 dirSeguir = posAlvo - transform.position;
             transform.up = Vector3.Slerp(transform.up, -1 * dirSeguir, velocidadeRotacao * Time.deltaTime);
