@@ -17176,17 +17176,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6918783153261915179}
     m_Modifications:
-    - target: {fileID: 6923063637107796579, guid: 73fdd0b820b148c44a1a526eee65ca53, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 30692f5ca6df6fe45ad4c5b5c6ac8262, type: 3}
     - target: {fileID: 6923997995736735759, guid: 73fdd0b820b148c44a1a526eee65ca53, type: 3}
       propertyPath: m_Name
       value: Nave HP (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 6923997995736735759, guid: 73fdd0b820b148c44a1a526eee65ca53, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8349187814965683143, guid: 73fdd0b820b148c44a1a526eee65ca53, type: 3}
       propertyPath: m_Pivot.x
@@ -19558,10 +19550,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6918783153261915179}
     m_Modifications:
-    - target: {fileID: 6923063637107796579, guid: 73fdd0b820b148c44a1a526eee65ca53, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 30692f5ca6df6fe45ad4c5b5c6ac8262, type: 3}
     - target: {fileID: 6923997995736735759, guid: 73fdd0b820b148c44a1a526eee65ca53, type: 3}
       propertyPath: m_Name
       value: Nave HP
@@ -20707,10 +20695,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6918783153261915179}
     m_Modifications:
-    - target: {fileID: 6923063637107796579, guid: 73fdd0b820b148c44a1a526eee65ca53, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 30692f5ca6df6fe45ad4c5b5c6ac8262, type: 3}
     - target: {fileID: 6923997995736735759, guid: 73fdd0b820b148c44a1a526eee65ca53, type: 3}
       propertyPath: m_Name
       value: Nave HP (1)
