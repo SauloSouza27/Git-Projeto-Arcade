@@ -68,10 +68,10 @@ public class ControlaMenuConfig : MonoBehaviour
     // Controla soms
     public void ControlaMusica()
     {
-        mixer.SetFloat("MusicVol", sliderMusica.value);
+        mixer.SetFloat("MusicVol", Mathf.Log10(sliderMusica.value) * 20.0f);
     }
     public void ControlaSFX()
     {
-        mixer.SetFloat("SFXVol", sliderSFX.value);
+        mixer.SetFloat("SFXVol", Mathf.Log10(sliderSFX.value) * 20.0f);
     }
 }
