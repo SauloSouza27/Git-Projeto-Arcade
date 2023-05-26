@@ -187,13 +187,13 @@ public class MovimentoInimigoEspinhoso : MonoBehaviour
 
     private void AumentaIntensidadeEmissao()
     {
-        Color brilhoForte = Color.magenta * intensidadeCor;
+        Color brilhoForte = new Color(0.6745f, 0.2078f, 0.8784f) * intensidadeCor;
         render.material.SetColor("_EmissionColor", brilhoForte);
         intensidadeCor += velocidadeMudaCor * Time.deltaTime;
     }
     private void DiminuiIntensidadeEmissao()
     {
-        Color brilhoFraco = render.material.color + Color.magenta * intensidadeCor;
+        Color brilhoFraco = new Color(0.6745f, 0.2078f, 0.8784f) * intensidadeCor;
         render.material.SetColor("_EmissionColor", brilhoFraco);
         intensidadeCor -= velocidadeMudaCor * Time.deltaTime;
     }
