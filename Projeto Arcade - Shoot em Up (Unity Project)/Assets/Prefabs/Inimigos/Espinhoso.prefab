@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocidadeMovimento: 6
-  velocidadeSeguir: 0.3
+  velocidadeSeguir: 0.7
   velocidadeRotacao: 4
   distanciaMinSeguir: 17
   velocidadeMudaCor: 8
@@ -56,6 +56,7 @@ MonoBehaviour:
   pontosVida: 6
   xpInimigo: 10
   fxExplosionPrefab: {fileID: 3092910104552185529, guid: 9c04d41372844fb4d8a34b559025f21c, type: 3}
+  fxTimerExplosionPrefab: {fileID: 3092910104552185529, guid: dcce5b5a335fc904da9d3644736ef56e, type: 3}
 --- !u!65 &6240418809298935949
 BoxCollider:
   m_ObjectHideFlags: 0

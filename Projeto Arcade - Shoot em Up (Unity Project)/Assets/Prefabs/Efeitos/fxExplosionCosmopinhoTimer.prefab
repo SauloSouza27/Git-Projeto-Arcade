@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3921241845082590564}
   - component: {fileID: 6949119338789602202}
   m_Layer: 0
-  m_Name: fxExplosionCosmopinho
+  m_Name: fxExplosionCosmopinhoTimer
   m_TagString: Inimigo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -36,7 +36,7 @@ Transform:
   - {fileID: 1986696371722836129}
   - {fileID: 4478573233518032583}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &-258212350585969441
 MonoBehaviour:
@@ -4853,7 +4853,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: fd00594caee70c745a34748b64c898d0, type: 2}
+  - {fileID: 2100000, guid: c4f41336592eef348954d13ee80bcc55, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9858,7 +9858,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: fd00594caee70c745a34748b64c898d0, type: 2}
+  - {fileID: 2100000, guid: c4f41336592eef348954d13ee80bcc55, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -14744,8 +14744,8 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: fd00594caee70c745a34748b64c898d0, type: 2}
-  - {fileID: 2100000, guid: fd00594caee70c745a34748b64c898d0, type: 2}
+  - {fileID: 2100000, guid: c4f41336592eef348954d13ee80bcc55, type: 2}
+  - {fileID: 2100000, guid: c4f41336592eef348954d13ee80bcc55, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

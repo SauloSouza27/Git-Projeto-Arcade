@@ -21,7 +21,7 @@ public class MovimentoInimigoEspinhoso : MonoBehaviour
     private MeshRenderer[] renderers;
     private Material[] materiais;
     // efeito explosão
-    public GameObject fxExplosionPrefab;
+    public GameObject fxExplosionPrefab, fxTimerExplosionPrefab;
     private void Awake()
     {
         controladorGame = GameObject.FindGameObjectWithTag("ControladorGame");
@@ -71,7 +71,15 @@ public class MovimentoInimigoEspinhoso : MonoBehaviour
         }
         if (pontosVida <= 0)
         {
-            Instantiate(fxExplosionPrefab, transform.position, transform.rotation);
+            if (!achouAlvo)
+            {
+                Instantiate(fxExplosionPrefab, transform.position, transform.rotation);
+            }
+            if (achouAlvo)
+            {
+                Instantiate(fxTimerExplosionPrefab, transform.position, transform.rotation);
+            }
+
             Destroy(gameObject);
             ControladorGame.instancia.SomaXP(xpInimigo);
         }
@@ -133,13 +141,13 @@ public class MovimentoInimigoEspinhoso : MonoBehaviour
         {
             AlternaCorEmission();
             //deslocamento
-            transform.position = Vector3.Lerp(transform.position, posAlvo, velocidadeSeguir * Time.deltaTime);
+            transform.position = Vector3.Lerp(transform.position, posAlvo, velocidadeSeguir/(100 + Time.deltaTime));
             //rotaçao
             Vector3 dirSeguir = posAlvo - transform.position;
             transform.up = Vector3.Slerp(transform.up, -1 * dirSeguir, velocidadeRotacao * Time.deltaTime);
-            if (dirSeguir.magnitude < 3.5)
+            if (dirSeguir.magnitude < 4.5)
             {
-                Instantiate(fxExplosionPrefab, transform.position, transform.rotation);
+                Instantiate(fxTimerExplosionPrefab, transform.position, transform.rotation);
                 ControladorGame.instancia.SomaXP(xpInimigo);
                 Destroy(gameObject);
             }
@@ -179,13 +187,13 @@ public class MovimentoInimigoEspinhoso : MonoBehaviour
 
     private void AumentaIntensidadeEmissao()
     {
-        Color brilhoForte = render.material.color + Color.green * intensidadeCor;
+        Color brilhoForte = Color.magenta * intensidadeCor;
         render.material.SetColor("_EmissionColor", brilhoForte);
         intensidadeCor += velocidadeMudaCor * Time.deltaTime;
     }
     private void DiminuiIntensidadeEmissao()
     {
-        Color brilhoFraco = render.material.color + Color.green * intensidadeCor;
+        Color brilhoFraco = render.material.color + Color.magenta * intensidadeCor;
         render.material.SetColor("_EmissionColor", brilhoFraco);
         intensidadeCor -= velocidadeMudaCor * Time.deltaTime;
     }
