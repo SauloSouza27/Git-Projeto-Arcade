@@ -8,7 +8,7 @@ public class MovimentoInimigoEspinhoso : MonoBehaviour
     // movimento
     public float velocidadeMovimento = 5.0f, velocidadeSeguir = 5.0f, velocidadeRotacao = 5.0f, distanciaMinSeguir = 15, velocidadeMudaCor = 1.0f, tempoPisca = 1.0f;
     private bool aumentaBrilho = true;
-    private float count, intensidadeCor = 1.0f;
+    private float count, intensidadeCor = 1.0f, tempoExplodir = 3.0f;
     private Vector3 posAlvo;
     private bool achouAlvo = false;
     // Pontos de vida
@@ -145,7 +145,8 @@ public class MovimentoInimigoEspinhoso : MonoBehaviour
             //rotaçao
             Vector3 dirSeguir = posAlvo - transform.position;
             transform.up = Vector3.Slerp(transform.up, -1 * dirSeguir, velocidadeRotacao * Time.deltaTime);
-            if (dirSeguir.magnitude < 4.5)
+            tempoExplodir -= Time.deltaTime;
+            if (tempoExplodir <= 0)
             {
                 Instantiate(fxTimerExplosionPrefab, transform.position, transform.rotation);
                 ControladorGame.instancia.SomaXP(xpInimigo);
