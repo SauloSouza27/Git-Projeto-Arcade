@@ -32,7 +32,7 @@ Transform:
   m_Children:
   - {fileID: 4284268787638319788}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &813339757159542082
 MonoBehaviour:
@@ -59,6 +59,7 @@ MonoBehaviour:
   numeroDisparos: 3
   atrasaDisparos: 0
   velocidadeProjetil: 40
+  render: {fileID: 1171359234761990119}
   fxExplosionPrefab: {fileID: 804697987816361510, guid: 7fc6f8ff2add30c4e8a3b81c514a60c4, type: 3}
 --- !u!65 &8800175536578593980
 BoxCollider:
