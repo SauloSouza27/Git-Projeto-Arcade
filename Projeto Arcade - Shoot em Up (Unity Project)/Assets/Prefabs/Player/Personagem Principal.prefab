@@ -135,7 +135,7 @@ Transform:
   - {fileID: 6816385901124600142}
   - {fileID: 4962514270277505481}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8950388453384976238
 MonoBehaviour:
@@ -658,62 +658,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 776616345876304713}
     m_Modifications:
-    - target: {fileID: 171511986162119985, guid: f01f1d9becf1c3640913ec989b8b58c6, type: 3}
-      propertyPath: OutputAudioMixerGroup
-      value: 
-      objectReference: {fileID: 8301319624657828257, guid: a90b2b3384239504eb8fc7530cd6988e, type: 2}
-    - target: {fileID: 1883889088921881009, guid: f01f1d9becf1c3640913ec989b8b58c6, type: 3}
-      propertyPath: m_Parameters.colorGradient.key0.b
-      value: 0.8901961
-      objectReference: {fileID: 0}
-    - target: {fileID: 1883889088921881009, guid: f01f1d9becf1c3640913ec989b8b58c6, type: 3}
-      propertyPath: m_Parameters.colorGradient.key0.g
-      value: 0.4392157
-      objectReference: {fileID: 0}
-    - target: {fileID: 1883889088921881009, guid: f01f1d9becf1c3640913ec989b8b58c6, type: 3}
-      propertyPath: m_Parameters.colorGradient.key0.r
-      value: 0.05882353
-      objectReference: {fileID: 0}
-    - target: {fileID: 3442456498284620885, guid: f01f1d9becf1c3640913ec989b8b58c6, type: 3}
-      propertyPath: m_Parameters.colorGradient.key0.b
-      value: 0.8117647
-      objectReference: {fileID: 0}
-    - target: {fileID: 3442456498284620885, guid: f01f1d9becf1c3640913ec989b8b58c6, type: 3}
-      propertyPath: m_Parameters.colorGradient.key0.g
-      value: 0.44115996
-      objectReference: {fileID: 0}
-    - target: {fileID: 3442456498284620885, guid: f01f1d9becf1c3640913ec989b8b58c6, type: 3}
-      propertyPath: m_Parameters.colorGradient.key0.r
-      value: 0.058823515
-      objectReference: {fileID: 0}
-    - target: {fileID: 3584307568792940337, guid: f01f1d9becf1c3640913ec989b8b58c6, type: 3}
-      propertyPath: m_Parameters.colorGradient.key0.b
-      value: 0.8117647
-      objectReference: {fileID: 0}
-    - target: {fileID: 3584307568792940337, guid: f01f1d9becf1c3640913ec989b8b58c6, type: 3}
-      propertyPath: m_Parameters.colorGradient.key0.g
-      value: 0.78039217
-      objectReference: {fileID: 0}
-    - target: {fileID: 3584307568792940337, guid: f01f1d9becf1c3640913ec989b8b58c6, type: 3}
-      propertyPath: m_Parameters.colorGradient.key0.r
-      value: 0.05882353
-      objectReference: {fileID: 0}
-    - target: {fileID: 3666229433475972262, guid: f01f1d9becf1c3640913ec989b8b58c6, type: 3}
-      propertyPath: m_Parameters.colorGradient.key0.b
-      value: 0.8509804
-      objectReference: {fileID: 0}
-    - target: {fileID: 3666229433475972262, guid: f01f1d9becf1c3640913ec989b8b58c6, type: 3}
-      propertyPath: m_Parameters.colorGradient.key0.g
-      value: 0.4392157
-      objectReference: {fileID: 0}
-    - target: {fileID: 3666229433475972262, guid: f01f1d9becf1c3640913ec989b8b58c6, type: 3}
-      propertyPath: m_Parameters.colorGradient.key0.r
-      value: 0.05882353
-      objectReference: {fileID: 0}
-    - target: {fileID: 3829291257168472896, guid: f01f1d9becf1c3640913ec989b8b58c6, type: 3}
-      propertyPath: m_Name
-      value: Primeiro Orbe
-      objectReference: {fileID: 0}
     - target: {fileID: 5099994352488957292, guid: f01f1d9becf1c3640913ec989b8b58c6, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -758,14 +702,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6261919567971739747, guid: f01f1d9becf1c3640913ec989b8b58c6, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 7134874424386571655, guid: f01f1d9becf1c3640913ec989b8b58c6, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -6
-      objectReference: {fileID: 0}
     - target: {fileID: 8045413695001352628, guid: f01f1d9becf1c3640913ec989b8b58c6, type: 3}
       propertyPath: m_Name
       value: Orbe Giratorio Base
@@ -775,24 +711,11 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8420220362060545014, guid: f01f1d9becf1c3640913ec989b8b58c6, type: 3}
-      propertyPath: m_Name
-      value: Segundo Orbe
-      objectReference: {fileID: 0}
-    - target: {fileID: 8420220362060545014, guid: f01f1d9becf1c3640913ec989b8b58c6, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9042138645851279075, guid: f01f1d9becf1c3640913ec989b8b58c6, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -8
-      objectReference: {fileID: 0}
-    - target: {fileID: 9089167504722566516, guid: f01f1d9becf1c3640913ec989b8b58c6, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 8
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 5146217196394232041, guid: f01f1d9becf1c3640913ec989b8b58c6, type: 3}
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f01f1d9becf1c3640913ec989b8b58c6, type: 3}

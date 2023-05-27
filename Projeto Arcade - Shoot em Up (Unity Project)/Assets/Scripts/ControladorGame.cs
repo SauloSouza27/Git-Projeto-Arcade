@@ -261,9 +261,10 @@ public class ControladorGame : MonoBehaviour
         AtivaSpawnInimigosPequenos();
         uiPowerUP.SetActive(false);
     }
-    public void PowerUPUpgradeArmaOrbeGiratorio(GameObject segundoOrbe)
+    public void PowerUPUpgradeArmaOrbeGiratorio(GameObject orbeTriplo)
     {
-        segundoOrbe.SetActive(true);
+        orbeTriplo.SetActive(true);
+        jogador.GetComponent<ControlaPersonagem>().armaOrbeGiratorio.SetActive(false);
         upgradeOrbe1 = true;
         Destroy(buttonUpgradeOrbe1);
         Time.timeScale = 1.0f;

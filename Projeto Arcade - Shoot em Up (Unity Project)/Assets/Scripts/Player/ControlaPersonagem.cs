@@ -195,11 +195,13 @@ public class ControlaPersonagem : MonoBehaviour
     // Arma orbe giratorio
     private void ControleOrbeGiratorio()
     {
-        armaOrbeGiratorio.transform.RotateAround(transform.position, transform.forward, velocidadeRotacaoOrbeGiratorio * Time.deltaTime);
-
-        if (ControladorGame.instancia.upgradeOrbe1 == true)
+        if (!ControladorGame.instancia.upgradeOrbe1)
         {
-            upgradeOrbe1.transform.RotateAround(transform.position, transform.forward, - velocidadeRotacaoOrbeGiratorio * Time.deltaTime);
+            armaOrbeGiratorio.transform.RotateAround(transform.position, transform.forward, velocidadeRotacaoOrbeGiratorio * Time.deltaTime);
+        }
+        if (ControladorGame.instancia.upgradeOrbe1)
+        {
+            upgradeOrbe1.transform.RotateAround(transform.position, transform.forward, velocidadeRotacaoOrbeGiratorio * Time.deltaTime);
         }
     }
 
