@@ -124,8 +124,8 @@ Material:
     - _WireThickness: 100
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.922, g: 0.5547766, b: 0, a: 1}
-    - _EmissionColor: {r: 7.3715434, g: 2.3634124, b: 0, a: 1}
+    - _Color: {r: 0.92156863, g: 0.28648877, b: 0, a: 1}
+    - _EmissionColor: {r: 10.732984, g: 2.7243397, b: 0, a: 1}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
