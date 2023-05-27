@@ -18,6 +18,10 @@ public class MovimentoAnubis : MonoBehaviour
     private bool ativaArma = false;
     public int numeroDisparos = 3;
     public float atrasaDisparos = 0.0f, velocidadeProjetil = 40.0f;
+    // brilho olho tiro
+    public MeshRenderer render;
+    private Material material;
+    private Color corEmissionOriginal;
     // materiais inimgo
     private MeshRenderer[] renderers;
     private Material[] materiais;
@@ -34,6 +38,8 @@ public class MovimentoAnubis : MonoBehaviour
         {
             materiais[i] = renderers[i].material;
         }
+        material = render.material;
+        corEmissionOriginal = material.GetColor("_EmissionColor");
     }
     private void Start()
     {
@@ -142,11 +148,19 @@ public class MovimentoAnubis : MonoBehaviour
     // Tiro
     private void Tiro()
     {
+        StartCoroutine(BrilhaOlhoTiro());
         GameObject instaciaEsq = Instantiate(balaAnubisPrefab, pontaArmaEsq.transform.position, pontaArmaEsq.transform.rotation);
         GameObject instaciaDir = Instantiate(balaAnubisPrefab, pontaArmaDir.transform.position, pontaArmaDir.transform.rotation);
         BalaPersonagem statusEsq = instaciaEsq.GetComponent<BalaPersonagem>();
         BalaPersonagem statusDir = instaciaDir.GetComponent<BalaPersonagem>();
         statusEsq.velocidade = velocidadeProjetil;
         statusDir.velocidade = velocidadeProjetil;
+    }
+
+    private IEnumerator BrilhaOlhoTiro()
+    {
+        material.SetColor("_EmissionColor", new Color(0.0f, 7.5f, 0.6f));
+        yield return new WaitForSeconds(cooldown/2);
+        material.SetColor("_EmissionColor", corEmissionOriginal);
     }
 }
