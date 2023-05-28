@@ -46,6 +46,12 @@ public class MovimentoInimigoPiramide : MonoBehaviour
             pontosVida = 12;
             xpInimigo = 150;
         }
+
+        if (controladorGame.GetComponent<ControladorGame>().nivel >= 10)
+        {
+            pontosVida = 20;
+            xpInimigo = 150;
+        }
     }
 
     void Update()

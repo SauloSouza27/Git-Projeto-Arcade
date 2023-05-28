@@ -290,7 +290,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2835777295160593200}
   m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
-  m_LocalPosition: {x: -1.74, y: -0.34999996, z: 0}
+  m_LocalPosition: {x: -2, y: -0.6, z: 0}
   m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -367,7 +367,7 @@ MonoBehaviour:
   bala: {fileID: 509821602030246837, guid: 6c2b632ec64b5bd49a472784e2dbd773, type: 3}
   cooldown: 0.2
   tempoDisparo: 3
-  numeroDisparos: 10
+  numeroDisparos: 8
 --- !u!65 &7732870395018775545
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -548,7 +548,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8685267284019799110
 Transform:
   m_ObjectHideFlags: 0
@@ -770,7 +770,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7514584705783465394}
   m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
-  m_LocalPosition: {x: 1.74, y: -0.35, z: 0}
+  m_LocalPosition: {x: 2, y: -0.6, z: 0}
   m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -847,7 +847,7 @@ MonoBehaviour:
   bala: {fileID: 509821602030246837, guid: 6c2b632ec64b5bd49a472784e2dbd773, type: 3}
   cooldown: 0.2
   tempoDisparo: 3
-  numeroDisparos: 10
+  numeroDisparos: 8
 --- !u!65 &2560112905032393428
 BoxCollider:
   m_ObjectHideFlags: 0

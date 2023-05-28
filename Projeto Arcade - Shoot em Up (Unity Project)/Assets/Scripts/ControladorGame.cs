@@ -142,7 +142,7 @@ public class ControladorGame : MonoBehaviour
         if (nivel == 10)
         {
             spawnsInimigoPequeno.SetActive(false);
-            StartCoroutine(AtivaInimigo(bossFase1, 2.0f));
+            StartCoroutine(AtivaInimigo(bossFase1, 1.0f));
             StartCoroutine(AtivaInimigo(petsBossFase1, 22.0f));
         }
     }

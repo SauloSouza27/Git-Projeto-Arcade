@@ -100,7 +100,7 @@ public class MovimentoBoss : MonoBehaviour
     private void MorteCabeca()
     {
         bossIsDead = true;
-        StartCoroutine(AtivaMenuVitoria(uiVitoria, 3.0f));
+        StartCoroutine(AtivaMenuVitoria(uiVitoria, 2.0f));
         Instantiate(fxExplosionPrefab, cabecaPiramide.transform.position, cabecaPiramide.transform.rotation);
         Destroy(cabecaPiramide);
     }

@@ -32,7 +32,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 27
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!198 &6706255996384337335
 ParticleSystem:
@@ -117,8 +117,8 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.5
-      minScalar: 0.2
+      scalar: 1
+      minScalar: 0.5
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -4899,4 +4899,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 876f6ec7d4d1f1a47891ded5e2a64cc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tempoParaDestruir: 1
+  tempoParaDestruir: 3
