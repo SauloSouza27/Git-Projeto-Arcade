@@ -7,7 +7,6 @@ public class ProgressoPlayer : MonoBehaviour
     public static ProgressoPlayer instancia;
     public bool concluiuFase1 = false;
 
-
     void Start()
     {
         if (instancia == null)
@@ -19,5 +18,13 @@ public class ProgressoPlayer : MonoBehaviour
             Destroy(this.gameObject);
         }
         DontDestroyOnLoad(this);
+    }
+
+    private void Update()
+    {
+        if (Input.GetButtonDown("Destrava Fase 2"))
+        {
+            concluiuFase1 = true;
+        }
     }
 }

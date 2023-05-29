@@ -7,7 +7,7 @@ public class MenuCarregaFases : MonoBehaviour
 {
     public Button fase2;
 
-    private void Start()
+    private void OnEnable()
     {
         if (!ProgressoPlayer.instancia.concluiuFase1)
         {
