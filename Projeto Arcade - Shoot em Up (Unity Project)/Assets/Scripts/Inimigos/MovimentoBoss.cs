@@ -23,7 +23,7 @@ public class MovimentoBoss : MonoBehaviour
     public float cooldown = 1.5f;
     private int quantidadeTiros = 1;
     private float contadorCooldown;
-    public GameObject bastaoBoss, centroEsq, centroDir, lateralEsq, lateralDir;
+    public GameObject bastaoBoss, centro, centroEsq, centroDir, lateralEsq, lateralDir;
     private GameObject spawnsBatDrone, uiVitoria;
     // Materiais
     private MeshRenderer[] renderers;
@@ -48,7 +48,7 @@ public class MovimentoBoss : MonoBehaviour
         animator = GetComponent<Animator>();
         uiVitoria = ControladorGame.instancia.uiVitoria;
         spawnsBatDrone = ControladorGame.instancia.nivel10;
-        contadorCooldown = 10.0f;
+        contadorCooldown = 5.0f;
     }
 
 
@@ -95,6 +95,69 @@ public class MovimentoBoss : MonoBehaviour
     private void AtivaSegundoBatDrone()
     {
         spawnsBatDrone.transform.GetChild(1).gameObject.SetActive(true);
+    }
+    
+    private void MovimentaBossPiramide()
+    {
+        Vector3 direcao = alvo.transform.position - transform.position;
+        direcao = direcao.normalized;
+
+        if (corpoPiramide != null)
+        {
+            // Rotacao corpo
+            corpoPiramide.transform.up = Vector3.Slerp(corpoPiramide.transform.up, - direcao, velocidadeRotacao * Time.deltaTime);
+            cabecaPiramide.transform.up = Vector3.Slerp(cabecaPiramide.transform.up, - direcao, velocidadeRotacao * Time.deltaTime * 2);
+        }
+        if (cabecaPiramide != null)
+        {
+            // Mira cabeca
+            Vector3 direcaoCabeca = alvo.transform.position - cabecaPiramide.transform.position;
+            
+            if (corpoPiramide == null && posAlvo != new Vector3(0, 0, 0))
+            {
+                cabecaPiramide.transform.rotation = Quaternion.LookRotation(cabecaPiramide.transform.forward, - direcaoCabeca);
+                Vector3 posCabeca = cabecaPiramide.transform.position;
+                if (Vector3.Distance(posAlvo, posCabeca) > 0.8)
+                {
+                    cabecaPiramide.transform.position = Vector3.Lerp(posCabeca, posAlvo, velocidadeCabeca * Time.deltaTime);
+                    quantidadeTiros = 1;
+                }
+                if (Vector3.Distance(posAlvo, posCabeca) < 0.8)
+                {
+                    if (quantidadeTiros > 0)
+                    {
+                        Invoke(nameof(DisparoBastoes), tempoParado / 32);
+                        quantidadeTiros--;
+                    }
+                    Invoke(nameof(BuscaNovaPosicaoPlayer), tempoParado);
+                }
+            }
+        }
+    }
+    private void BuscaNovaPosicaoPlayer()
+    {
+        posAlvo = alvo.transform.position;
+        CancelInvoke(nameof(BuscaNovaPosicaoPlayer));
+    }
+
+    private void DisparoBastoes()
+    {
+        Instantiate(bastaoBoss, centroEsq.transform.position, centroEsq.transform.rotation);
+        GameObject instanciaLateral = Instantiate(bastaoBoss, lateralEsq.transform.position, lateralEsq.transform.rotation);
+        instanciaLateral.GetComponent<BalaPersonagem>().velocidadeRotacao *= -1;
+        GameObject instanciaCentro = Instantiate(bastaoBoss, centroDir.transform.position, centroDir.transform.rotation);
+        instanciaCentro.GetComponent<BalaPersonagem>().velocidadeRotacao *= -1;
+        Instantiate(bastaoBoss, lateralDir.transform.position, lateralDir.transform.rotation);
+        Instantiate(bastaoBoss, centro.transform.position, centro.transform.rotation);
+    }
+
+    private IEnumerator AtivaMenuVitoria(GameObject uiVitoria, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        uiVitoria.SetActive(true);
+        Time.timeScale = 0.0f;
+        StopAllCoroutines();
+        yield break;
     }
     // controle vida boss
     private void MorteCabeca()
@@ -342,65 +405,6 @@ public class MovimentoBoss : MonoBehaviour
                 }
             }
         }
-    }
-    private void MovimentaBossPiramide()
-    {
-        Vector3 direcao = alvo.transform.position - transform.position;
-        direcao = direcao.normalized;
-
-        if (corpoPiramide != null)
-        {
-            // Rotacao corpo
-            corpoPiramide.transform.up = Vector3.Slerp(corpoPiramide.transform.up, - direcao, velocidadeRotacao * Time.deltaTime);
-        }
-        if (cabecaPiramide != null)
-        {
-            // Mira cabeca
-            Vector3 direcaoCabeca = alvo.transform.position - cabecaPiramide.transform.position;
-            cabecaPiramide.transform.rotation = Quaternion.LookRotation(cabecaPiramide.transform.forward, -direcaoCabeca);
-            if (corpoPiramide == null && posAlvo != new Vector3(0, 0, 0))
-            {
-                Vector3 posCabeca = cabecaPiramide.transform.position;
-                if (Vector3.Distance(posAlvo, posCabeca) > 0.8)
-                {
-                    cabecaPiramide.transform.position = Vector3.Lerp(posCabeca, posAlvo, velocidadeCabeca * Time.deltaTime);
-                    quantidadeTiros = 1;
-                }
-                if (Vector3.Distance(posAlvo, posCabeca) < 0.8)
-                {
-                    if (quantidadeTiros > 0)
-                    {
-                        Invoke(nameof(DisparoBastoes), tempoParado / 32);
-                        quantidadeTiros--;
-                    }
-                    Invoke(nameof(BuscaNovaPosicaoPlayer), tempoParado);
-                }
-            }
-        }
-    }
-    private void BuscaNovaPosicaoPlayer()
-    {
-        posAlvo = alvo.transform.position;
-        CancelInvoke(nameof(BuscaNovaPosicaoPlayer));
-    }
-
-    private void DisparoBastoes()
-    {
-        Instantiate(bastaoBoss, centroEsq.transform.position, centroEsq.transform.rotation);
-        GameObject instanciaLateral = Instantiate(bastaoBoss, lateralEsq.transform.position, lateralEsq.transform.rotation);
-        instanciaLateral.GetComponent<BalaPersonagem>().velocidadeRotacao *= -1;
-        GameObject instanciaCentro = Instantiate(bastaoBoss, centroDir.transform.position, centroDir.transform.rotation);
-        instanciaCentro.GetComponent<BalaPersonagem>().velocidadeRotacao *= -1;
-        Instantiate(bastaoBoss, lateralDir.transform.position, lateralDir.transform.rotation);
-    }
-
-    private IEnumerator AtivaMenuVitoria(GameObject uiVitoria, float delay)
-    {
-        yield return new WaitForSeconds(delay);
-        uiVitoria.SetActive(true);
-        Time.timeScale = 0.0f;
-        StopAllCoroutines();
-        yield break;
     }
 }
 

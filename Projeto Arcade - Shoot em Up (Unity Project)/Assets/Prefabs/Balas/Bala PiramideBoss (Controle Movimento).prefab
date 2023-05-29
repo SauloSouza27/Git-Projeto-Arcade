@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 2466213106853831192}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.6, y: 1.6, z: 1.6}
+  m_LocalScale: {x: 1.4, y: 1.4, z: 1.4}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 7533343740153664998}
@@ -51,7 +51,7 @@ MonoBehaviour:
   velocidade: 15
   projetil: {fileID: 2466213106853831192}
   projetilInimigo: 1
-  rotacaoTiro: 1
+  rotacaoTiro: 0
   projetilRotacao: {fileID: 5793304705905910330}
   velocidadeRotacao: 200
   danoProjetil: 40

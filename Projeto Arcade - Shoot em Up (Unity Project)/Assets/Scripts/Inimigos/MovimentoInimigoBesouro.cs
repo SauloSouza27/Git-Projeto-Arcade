@@ -106,6 +106,7 @@ public class MovimentoInimigoBesouro : MonoBehaviour
         if (bostaVida <= 0)
         {
             Instantiate(fxExplosionPrefab, bosta.transform.position, bosta.transform.rotation);
+            colliderBosta.enabled = false;
             Destroy(bosta.gameObject);
         }
     }
