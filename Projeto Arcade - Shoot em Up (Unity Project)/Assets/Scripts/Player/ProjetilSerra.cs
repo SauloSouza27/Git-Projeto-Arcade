@@ -6,6 +6,7 @@ public class ProjetilSerra : MonoBehaviour
 {
 
     // Arma Serra
+    public float velocidadeRotacao = 250.0f;
     private bool estaMexendo = false;
     private bool go;
     private Vector3 posicaoAnterior;
@@ -42,7 +43,7 @@ public class ProjetilSerra : MonoBehaviour
 
     private void ControleArmaSerra()
     {
-        transform.Rotate(0, 0, Time.deltaTime * 250);
+        transform.Rotate(0, 0, Time.deltaTime * velocidadeRotacao);
 
         if (go)
         {
