@@ -32,11 +32,14 @@ public class MovimentoBoss : MonoBehaviour
     private Animator animator;
     // explosao
     public GameObject fxExplosionPrefab;
+    // salvar progresso
+    private GameObject progressoPlayer;
 
     private void Start()
     {
         alvo = GameObject.FindGameObjectWithTag("Player");
         posAlvo = new Vector3(0, 0, 0);
+        progressoPlayer = GameObject.FindWithTag("ProgressoPlayer");
         // Busca materiais do inimigo
         renderers = GetComponentsInChildren<MeshRenderer>();
         materiais = new Material[renderers.Length];
@@ -160,18 +163,19 @@ public class MovimentoBoss : MonoBehaviour
         yield break;
     }
     // controle vida boss
-    private void MorteCabeca()
-    {
-        bossIsDead = true;
-        StartCoroutine(AtivaMenuVitoria(uiVitoria, 2.0f));
-        Instantiate(fxExplosionPrefab, cabecaPiramide.transform.position, cabecaPiramide.transform.rotation);
-        Destroy(cabecaPiramide);
-    }
     private void MorteCorpo()
     {
         Instantiate(fxExplosionPrefab, corpoPiramide.transform.position, corpoPiramide.transform.rotation);
         Invoke(nameof(BuscaNovaPosicaoPlayer), tempoParado);
         Destroy(corpoPiramide);
+    }
+    private void MorteCabeca()
+    {
+        bossIsDead = true;
+        StartCoroutine(AtivaMenuVitoria(uiVitoria, 2.0f));
+        Instantiate(fxExplosionPrefab, cabecaPiramide.transform.position, cabecaPiramide.transform.rotation);
+        progressoPlayer.GetComponent<ProgressoPlayer>().concluiuFase1 = true;
+        Destroy(cabecaPiramide);
     }
 
     private void OnCollisionEnter(Collision colisor)

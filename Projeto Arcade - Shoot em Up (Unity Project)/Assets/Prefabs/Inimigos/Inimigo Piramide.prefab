@@ -110,7 +110,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1667125724562284504}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.15, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.8000001, y: 1.8000001, z: 1.8000001}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -137,7 +137,6 @@ MonoBehaviour:
   velocidadeRotacao: 2
   petBoss: 0
   pontosVida: 16
-  danoTiro: 1
   xpInimigo: 110
   cooldown: 2
   inverteRotacaoTiro: 0

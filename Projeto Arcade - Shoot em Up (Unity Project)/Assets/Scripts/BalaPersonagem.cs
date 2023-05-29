@@ -6,7 +6,7 @@ public class BalaPersonagem : MonoBehaviour
 {
     public float velocidade = 15.0f;
     public GameObject projetil;
-    public bool projetilInimigo = false, rotacaoTiro = false;
+    public bool destruidoPeloOrbe = false, rotacaoTiro = false;
     public GameObject projetilRotacao;
     public float velocidadeRotacao = 200.0f;
     public int danoProjetil = 1;
@@ -34,7 +34,7 @@ public class BalaPersonagem : MonoBehaviour
 
     private void OnCollisionEnter(Collision colidido)
     {
-        if(colidido.gameObject.CompareTag("OrbeGiratorio") && projetilInimigo)
+        if(colidido.gameObject.CompareTag("OrbeGiratorio") && destruidoPeloOrbe)
         {
             Destroy(gameObject);
         }

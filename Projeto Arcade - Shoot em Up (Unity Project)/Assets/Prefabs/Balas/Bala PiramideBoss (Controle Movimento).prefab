@@ -50,7 +50,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocidade: 15
   projetil: {fileID: 2466213106853831192}
-  projetilInimigo: 1
+  destruidoPeloOrbe: 0
   rotacaoTiro: 0
   projetilRotacao: {fileID: 5793304705905910330}
   velocidadeRotacao: 200

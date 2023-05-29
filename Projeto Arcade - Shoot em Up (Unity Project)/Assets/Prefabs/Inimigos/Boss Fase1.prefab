@@ -368,6 +368,7 @@ MonoBehaviour:
   cooldown: 0.2
   tempoDisparo: 3
   numeroDisparos: 8
+  fxExplosionPrefab: {fileID: 2962602063150205384, guid: cefd4eb3d7d7a3148900942db33ff210, type: 3}
 --- !u!65 &7732870395018775545
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -880,6 +881,7 @@ MonoBehaviour:
   cooldown: 0.2
   tempoDisparo: 3
   numeroDisparos: 8
+  fxExplosionPrefab: {fileID: 2962602063150205384, guid: cefd4eb3d7d7a3148900942db33ff210, type: 3}
 --- !u!65 &2560112905032393428
 BoxCollider:
   m_ObjectHideFlags: 0

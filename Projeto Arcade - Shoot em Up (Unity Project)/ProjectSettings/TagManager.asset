@@ -30,6 +30,7 @@ TagManager:
   - SFX
   - BolaCrossBosta
   - BalaAnubis
+  - ProgressoPlayer
   layers:
   - Default
   - TransparentFX
