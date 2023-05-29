@@ -241,7 +241,7 @@ MonoBehaviour:
   balaPet: {fileID: 8264596742114757972, guid: 2371fa64feae60548a77e7d70afd7ad0, type: 3}
   cooldown: 1
   tiroAutomatico: 1
-  danoArmaPet: 1
+  danoArmaPet: 2
   somTiro: {fileID: 4485645037099912181}
 --- !u!114 &5995971232770565429
 MonoBehaviour:
