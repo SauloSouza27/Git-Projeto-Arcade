@@ -44750,44 +44750,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1909587783}
     - target: {fileID: 3073010539009015981, guid: d210b8fe1e65b8747bd6195a50536fdb, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3073010539009015981, guid: d210b8fe1e65b8747bd6195a50536fdb, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 3073010539009015981, guid: d210b8fe1e65b8747bd6195a50536fdb, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 4047504909176474921}
-    - target: {fileID: 3073010539009015981, guid: d210b8fe1e65b8747bd6195a50536fdb, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetActive
-      objectReference: {fileID: 0}
-    - target: {fileID: 3073010539009015981, guid: d210b8fe1e65b8747bd6195a50536fdb, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: UnityEngine.GameObject, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 3073010539009015981, guid: d210b8fe1e65b8747bd6195a50536fdb, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3073010539009015981, guid: d210b8fe1e65b8747bd6195a50536fdb, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3073010539009015981, guid: d210b8fe1e65b8747bd6195a50536fdb, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 3391079106484725335, guid: d210b8fe1e65b8747bd6195a50536fdb, type: 3}
       propertyPath: m_Name
       value: Menu Inicial
-      objectReference: {fileID: 0}
-    - target: {fileID: 3391079106484725335, guid: d210b8fe1e65b8747bd6195a50536fdb, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6589521164186420223, guid: d210b8fe1e65b8747bd6195a50536fdb, type: 3}
       propertyPath: m_Pivot.x
