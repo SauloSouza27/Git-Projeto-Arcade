@@ -22,6 +22,8 @@ public class MovimentoInimigoEspinhoso : MonoBehaviour
     private Material[] materiais;
     // efeito explosão
     public GameObject fxExplosionPrefab, fxTimerExplosionPrefab;
+    // trail
+    public TrailRenderer trail;
     private void Awake()
     {
         controladorGame = GameObject.FindGameObjectWithTag("ControladorGame");
@@ -202,5 +204,6 @@ public class MovimentoInimigoEspinhoso : MonoBehaviour
     {
         posAlvo = alvo.transform.position;
         achouAlvo = true;
+        trail.endColor = new Color(1, 0, 1);
     }
 }

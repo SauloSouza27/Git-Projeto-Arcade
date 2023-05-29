@@ -19,6 +19,8 @@ public class ControleVidaArmasBoss : MonoBehaviour
     private Material[] materiais;
     // box collider
     private BoxCollider colisor;
+    // explosao
+    public GameObject fxExplosionPrefab;
     private void Awake()
     {
         controladorGame = GameObject.FindGameObjectWithTag("ControladorGame");
@@ -83,94 +85,56 @@ public class ControleVidaArmasBoss : MonoBehaviour
         yield return new WaitForSeconds(delay);
         colisor.enabled = true;
     }
+    private void CausaDanosNasArmas(int dano)
+    {
+        if (vidaArma > 0)
+        {
+            vidaArma -= dano;
+
+            foreach (Material material in materiais)
+            {
+                StartCoroutine(Utilidades.PiscaCorRoutine(material));
+            }
+        }
+        if (vidaArma <= 0)
+        {
+            Instantiate(fxExplosionPrefab, transform.position, transform.rotation);
+            Destroy(gameObject);
+        }
+    }
     private void OnCollisionEnter(Collision colisor)
     {
         if (colisor.gameObject.CompareTag("BalaPersonagem"))
         {
             Destroy(colisor.gameObject);
             int dano = alvo.GetComponent<ControlaPersonagem>().danoArmaPrincipal;
-            if (vidaArma > 0)
-            {
-                vidaArma -= dano;
 
-                foreach (Material material in materiais)
-                {
-                    StartCoroutine(Utilidades.PiscaCorRoutine(material));
-                }
-            }
-            if (vidaArma <= 0)
-            {
-                Destroy(gameObject);
-            }
+            CausaDanosNasArmas(dano);
         }
         if (colisor.gameObject.CompareTag("BalaPet"))
         {
             Destroy(colisor.gameObject);
             int dano = alvo.GetComponent<DisparoArmaPet>().danoArmaPet;
-            if (vidaArma > 0)
-            {
-                vidaArma -= dano;
 
-                foreach (Material material in materiais)
-                {
-                    StartCoroutine(Utilidades.PiscaCorRoutine(material));
-                }
-            }
-            if (vidaArma <= 0)
-            {
-                Destroy(gameObject);
-            }
+            CausaDanosNasArmas(dano);
         }
         if (colisor.gameObject.CompareTag("OrbeGiratorio"))
         {
             int dano = alvo.GetComponent<RespostaOrbeGiratorio>().danoOrbeGiratorio;
-            if (vidaArma > 0)
-            {
-                vidaArma -= dano;
 
-                foreach (Material material in materiais)
-                {
-                    StartCoroutine(Utilidades.PiscaCorRoutine(material));
-                }
-            }
-            if (vidaArma <= 0)
-            {
-                Destroy(gameObject);
-            }
+            CausaDanosNasArmas(dano);
         }
         if (colisor.gameObject.CompareTag("ProjetilSerra"))
         {
             int dano = alvo.GetComponent<DisparoArmaSerra>().danoSerra;
-            if (vidaArma > 0)
-            {
-                vidaArma -= dano;
 
-                foreach (Material material in materiais)
-                {
-                    StartCoroutine(Utilidades.PiscaCorRoutine(material));
-                }
-            }
-            if (vidaArma <= 0)
-            {
-                Destroy(gameObject);
-            }
+            CausaDanosNasArmas(dano);
         }
         if (colisor.gameObject.CompareTag("Player"))
         {
             int dano = alvo.GetComponent<ControlaPersonagem>().danoContato;
-            if (vidaArma > 0)
-            {
-                vidaArma -= dano;
 
-                foreach (Material material in materiais)
-                {
-                    StartCoroutine(Utilidades.PiscaCorRoutine(material));
-                }
-            }
-            if (vidaArma <= 0)
-            {
-                Destroy(gameObject);
-            }
+            CausaDanosNasArmas(dano);
         }
     }
 }
