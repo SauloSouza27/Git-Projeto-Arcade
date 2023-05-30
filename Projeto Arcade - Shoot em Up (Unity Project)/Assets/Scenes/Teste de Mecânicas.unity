@@ -4998,7 +4998,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 776616345876304713, guid: 6470e112d76167b4bac48cdaad12ef5d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2
+      value: 9.21
       objectReference: {fileID: 0}
     - target: {fileID: 776616345876304713, guid: 6470e112d76167b4bac48cdaad12ef5d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5540,7 +5540,7 @@ ParticleSystemRenderer:
   m_FreeformStretching: 0
   m_RotateWithStretchDirection: 1
   m_VertexStreams: 00010304
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 6831478849002713514, guid: 0de492b3674ad4a4eb66157574b85269, type: 3}
   m_Mesh1: {fileID: 0}
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
@@ -5632,7 +5632,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.5
+      scalar: 0.3
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -5685,7 +5685,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 5
+      scalar: 3
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -6180,8 +6180,8 @@ ParticleSystem:
   ShapeModule:
     serializedVersion: 6
     enabled: 1
-    type: 18
-    angle: 25
+    type: 5
+    angle: 0
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
@@ -13568,7 +13568,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a84013f71a782be4fb2426c8ede32969, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.0033972454
+      value: 0.002505246
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a84013f71a782be4fb2426c8ede32969, type: 3}
       propertyPath: m_LocalScale.y
@@ -13576,19 +13576,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a84013f71a782be4fb2426c8ede32969, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.00648973
+      value: 0.007409986
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a84013f71a782be4fb2426c8ede32969, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.0054
+      value: -0.0021
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a84013f71a782be4fb2426c8ede32969, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.4015
+      value: -1.32
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a84013f71a782be4fb2426c8ede32969, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.14521
+      value: 0.14863
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a84013f71a782be4fb2426c8ede32969, type: 3}
       propertyPath: m_LocalRotation.w
