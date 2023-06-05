@@ -14,10 +14,6 @@ public class MovimentoMumia : MonoBehaviour
     {
         alvo = GameObject.FindGameObjectWithTag("Player");
     }
-    private void OnEnable()
-    {
-        
-    }
 
     void Update()
     {

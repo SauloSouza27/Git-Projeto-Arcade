@@ -5,6 +5,7 @@ using UnityEngine;
 public class DanoMumia : MonoBehaviour
 {
     private GameObject alvo, controladorGame;
+    public GameObject grupoMumia;
     // Pontos de vida
     public int pontosVida = 1;
     // XP quando morre
@@ -27,6 +28,10 @@ public class DanoMumia : MonoBehaviour
             materiais[i] = renderers[i].material;
         }
     }
+    private void Start()
+    {
+        grupoMumia = transform.parent.gameObject;
+    }
 
     private void CaluclaDanoInimigo(int dano)
     {
@@ -42,6 +47,10 @@ public class DanoMumia : MonoBehaviour
         if (pontosVida <= 0)
         {
             Instantiate(fxExplosionPrefab, transform.position, transform.rotation);
+            if (grupoMumia.transform.childCount == 1)
+            {
+                Destroy(grupoMumia);
+            }
             Destroy(gameObject);
             ControladorGame.instancia.SomaXP(xpInimigo);
         }
