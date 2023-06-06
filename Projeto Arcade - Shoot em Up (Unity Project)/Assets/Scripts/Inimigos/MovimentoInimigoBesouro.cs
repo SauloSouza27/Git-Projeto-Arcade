@@ -5,7 +5,8 @@ using UnityEngine;
 public class MovimentoInimigoBesouro : MonoBehaviour
 {
     public GameObject  besouro, bosta;
-    private GameObject alvo;
+    private GameObject alvo, controladorGame;
+    private int nivelJogador;
     // Pontos de vida
     public int pontosVida = 6, bostaVida = 6;
     // XP quando morre
@@ -26,6 +27,7 @@ public class MovimentoInimigoBesouro : MonoBehaviour
     public GameObject fxExplosionPrefab;
     private void Awake()
     {
+        controladorGame = GameObject.FindGameObjectWithTag("ControladorGame");
         alvo = GameObject.FindGameObjectWithTag("Player");
         // Busca materiais do inimigo
         renderers = bosta.GetComponentsInChildren<MeshRenderer>();
@@ -47,6 +49,15 @@ public class MovimentoInimigoBesouro : MonoBehaviour
     {
         cooldownMudaDirecao /= 2;
         contadorCooldown = cooldownMudaDirecao;
+    }
+    private void OnEnable()
+    {
+        nivelJogador = controladorGame.GetComponent<ControladorGame>().nivel;
+        if (nivelJogador == 6)
+        {
+            pontosVida = 8;
+            bostaVida = 10;
+        }
     }
     void Update()
     {

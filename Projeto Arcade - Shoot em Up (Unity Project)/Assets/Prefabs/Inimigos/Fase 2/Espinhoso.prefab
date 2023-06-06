@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3982506531925604285}
   - component: {fileID: 6325022489584682553}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: TrailEspinhoso
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -166,7 +166,7 @@ GameObject:
   - component: {fileID: 2707854489087502544}
   - component: {fileID: 6240418809298935949}
   - component: {fileID: 5063253185978081830}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: Espinhoso
   m_TagString: Inimigo
   m_Icon: {fileID: 0}
@@ -259,7 +259,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 126
+  m_Constraints: 120
   m_CollisionDetection: 0
 --- !u!1 &4710942584240433327
 GameObject:
@@ -272,7 +272,7 @@ GameObject:
   - component: {fileID: 6885683240850529151}
   - component: {fileID: 3670397158534837286}
   - component: {fileID: 5392701652085426642}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: Ratonauta Espinhoso
   m_TagString: Untagged
   m_Icon: {fileID: 0}
