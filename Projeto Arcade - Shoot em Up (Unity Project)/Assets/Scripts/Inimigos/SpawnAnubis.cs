@@ -37,6 +37,7 @@ public class SpawnAnubis : MonoBehaviour
             status.velocidadeProjetil = velocidadeProjetil;
             status.velocidadeMovimento = velocidadeMovimento;
             status.pontosVida = pontosVida;
+            status.xpInimigo = xpInimigo;
             contadorCooldown = cooldownSpawnAnubis;
             contador++;
         }
