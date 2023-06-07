@@ -6,8 +6,8 @@ public class SpawnAnubis : MonoBehaviour
 {
     private float contadorCooldown;
     public float atrasaSpawn = 0.0f, cooldownSpawnAnubis = 2.0f, velocidadeMovimento = 4.0f;
-    public int quantidadeParaSpawnar = 2, pontosVida = 20, xpInimigo = 100;
-    public float atrasaDisparos = 0.0f, velocidadeProjetil = 40.0f;
+    public int quantidadeParaSpawnar = 2, pontosVida = 20, xpInimigo = 100, numeroDisparos = 3;
+    public float cooldownTiro = 0.3f, tempoDisparo = 2.0f, atrasaDisparos = 0.0f, velocidadeProjetil = 40.0f;
     private int contador;
     public GameObject anubisPrefab;
     public bool ativar = true;
@@ -38,6 +38,9 @@ public class SpawnAnubis : MonoBehaviour
             status.velocidadeMovimento = velocidadeMovimento;
             status.pontosVida = pontosVida;
             status.xpInimigo = xpInimigo;
+            status.cooldown = cooldownTiro;
+            status.tempoDisparo = tempoDisparo;
+            status.numeroDisparos = numeroDisparos;
             contadorCooldown = cooldownSpawnAnubis;
             contador++;
         }

@@ -13,7 +13,7 @@ public class MovimentoAnubis : MonoBehaviour
     // XP quando morre
     public int xpInimigo = 100;
     // Tiro
-    [Range(0, 5)] public float cooldown = 0.8f, tempoDisparo = 2.0f;
+    [Range(0, 5)] public float cooldown = 0.3f, tempoDisparo = 2.0f;
     private float contadorCooldown, contadorDisparos;
     private bool ativaArma = false;
     public int numeroDisparos = 3;
@@ -50,7 +50,14 @@ public class MovimentoAnubis : MonoBehaviour
     {
         if (Time.timeScale == 0) return;
 
+
         MovimentaInimigoAnubis();
+
+        if (atrasaDisparos > 0)
+        {
+            atrasaDisparos -= Time.deltaTime;
+            return;
+        }
 
         // disparo armas anubis
         if (ativaArma)
