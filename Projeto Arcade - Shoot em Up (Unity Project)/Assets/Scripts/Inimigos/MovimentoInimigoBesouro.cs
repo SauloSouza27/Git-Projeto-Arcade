@@ -55,8 +55,8 @@ public class MovimentoInimigoBesouro : MonoBehaviour
         nivelJogador = controladorGame.GetComponent<ControladorGame>().nivel;
         if (nivelJogador == 6)
         {
-            pontosVida = 8;
-            bostaVida = 10;
+            pontosVida = 6;
+            bostaVida = 8;
         }
     }
     void Update()

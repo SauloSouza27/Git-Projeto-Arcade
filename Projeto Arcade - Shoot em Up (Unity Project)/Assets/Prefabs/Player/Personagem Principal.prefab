@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 776460657695152601}
   m_LocalRotation: {x: -0.0019894575, y: -0.7071041, z: 0.70710397, w: 0.0019894352}
-  m_LocalPosition: {x: -0.0072333175, y: -1.3153336, z: -0.021374447}
+  m_LocalPosition: {x: -0.007, y: -1.3153336, z: 0.054}
   m_LocalScale: {x: 0.6666692, y: 0.66666925, z: 0.66666925}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -664,7 +664,7 @@ ParticleSystem:
   ShapeModule:
     serializedVersion: 6
     enabled: 1
-    type: 5
+    type: 4
     angle: 0
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
@@ -751,7 +751,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 1
+      value: 0.275052
       mode: 0
       spread: 0
       speed:
@@ -5053,7 +5053,7 @@ MonoBehaviour:
   velocidadeRotacaoPet: 2
   distanciaMinPetAtirar: 18
   velocidadeRotacaoOrbeGiratorio: 90
-  pontosVida: 3
+  pontosVida: 5
   danoContato: 6
   danoArmaPrincipal: 2
   particulasDano: {fileID: 1346597017377448381}
@@ -5955,43 +5955,43 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a84013f71a782be4fb2426c8ede32969, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.004
+      value: -0.004
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a84013f71a782be4fb2426c8ede32969, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.322
+      value: -1.319
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a84013f71a782be4fb2426c8ede32969, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.14863
+      value: 0.063
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a84013f71a782be4fb2426c8ede32969, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.5554856
+      value: 0.5074863
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a84013f71a782be4fb2426c8ede32969, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.43469802
+      value: 0.49248576
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a84013f71a782be4fb2426c8ede32969, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.44931555
+      value: 0.5036831
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a84013f71a782be4fb2426c8ede32969, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.54826
+      value: 0.49620444
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a84013f71a782be4fb2426c8ede32969, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: -0.558
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a84013f71a782be4fb2426c8ede32969, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 77.39
+      value: 89.569
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a84013f71a782be4fb2426c8ede32969, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 88.803
+      value: 88.712
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: a84013f71a782be4fb2426c8ede32969, type: 3}
       propertyPath: m_Materials.Array.data[0]
