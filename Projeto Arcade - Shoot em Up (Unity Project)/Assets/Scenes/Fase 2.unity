@@ -1610,7 +1610,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6806732189430551957, guid: c54598a0cb033b24ebfb877ed654178d, type: 3}
       propertyPath: cooldownSpawnAnubis
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7877344919261525171, guid: c54598a0cb033b24ebfb877ed654178d, type: 3}
       propertyPath: m_RootOrder
@@ -2886,7 +2886,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6806732189430551957, guid: c54598a0cb033b24ebfb877ed654178d, type: 3}
       propertyPath: cooldownSpawnAnubis
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7877344919261525171, guid: c54598a0cb033b24ebfb877ed654178d, type: 3}
       propertyPath: m_RootOrder
@@ -3682,7 +3682,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6806732189430551957, guid: c54598a0cb033b24ebfb877ed654178d, type: 3}
       propertyPath: cooldownSpawnAnubis
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7877344919261525171, guid: c54598a0cb033b24ebfb877ed654178d, type: 3}
       propertyPath: m_RootOrder
@@ -3861,7 +3861,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6806732189430551957, guid: c54598a0cb033b24ebfb877ed654178d, type: 3}
       propertyPath: cooldownSpawnAnubis
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7877344919261525171, guid: c54598a0cb033b24ebfb877ed654178d, type: 3}
       propertyPath: m_RootOrder
@@ -4115,7 +4115,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1188070627387413177, guid: 3f1b37a8d8bd43944b5ddde1e5bc2c54, type: 3}
       propertyPath: quantidadeParaSpawnar
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1482623647835260993, guid: 3f1b37a8d8bd43944b5ddde1e5bc2c54, type: 3}
       propertyPath: m_RootOrder
@@ -5714,7 +5714,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6806732189430551957, guid: c54598a0cb033b24ebfb877ed654178d, type: 3}
       propertyPath: cooldownSpawnAnubis
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6806732189430551957, guid: c54598a0cb033b24ebfb877ed654178d, type: 3}
       propertyPath: quantidadeParaSpawnar
