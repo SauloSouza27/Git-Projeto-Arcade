@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SpawnBesouro : MonoBehaviour
 {
+    private GameObject controladorGame, buttonNivel;
     private float contadorCooldown;
     public int quantidadeSpawn = 0;
     public float atrasaSpawn, cooldownSpawnBesouro;
@@ -14,11 +15,20 @@ public class SpawnBesouro : MonoBehaviour
     public float velocidadeMov = 4.0f, anguloRot = 25.0f;
     public float tempoMudaDirecao = 2.5f;
 
-
+    private void Awake()
+    {
+        controladorGame = GameObject.FindGameObjectWithTag("ControladorGame");
+        buttonNivel = controladorGame.GetComponent<ControladorGame>().buttonSubirNivel;
+    }
 
     void Update()
     {
         if (Time.timeScale == 0) return;
+
+        if (buttonNivel.activeSelf)
+        {
+            return;
+        }
 
         if (atrasaSpawn > 0)
         {
