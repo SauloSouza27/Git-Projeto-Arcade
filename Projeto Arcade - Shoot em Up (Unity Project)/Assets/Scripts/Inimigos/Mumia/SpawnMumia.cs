@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class SpawnMumia : MonoBehaviour
 {
-    private GameObject controladorGame;
     private float contadorCooldown, cooldownSpawnMumia;
     public float atrasaSpawn = 0.0f, minTempo = 6.0f, maxTempo = 15.0f;
     public int quantidadeParaSpawnar = 3;
@@ -12,10 +11,6 @@ public class SpawnMumia : MonoBehaviour
     public GameObject mumiaPrefab;
     public bool ativar = true;
 
-    private void Awake()
-    {
-        controladorGame = GameObject.FindGameObjectWithTag("ControladorGame");
-    }
     private void Start()
     {
         cooldownSpawnMumia = Random.Range(minTempo, maxTempo);

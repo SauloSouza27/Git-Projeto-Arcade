@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DanoMumia : MonoBehaviour
 {
-    private GameObject alvo, controladorGame;
+    private GameObject alvo;
     public GameObject grupoMumia;
     // Pontos de vida
     public int pontosVida = 1;
@@ -18,7 +18,6 @@ public class DanoMumia : MonoBehaviour
 
     private void Awake()
     {
-        controladorGame = GameObject.FindGameObjectWithTag("ControladorGame");
         alvo = GameObject.FindGameObjectWithTag("Player");
         // Busca materiais do inimigo
         renderers = GetComponentsInChildren<MeshRenderer>();
