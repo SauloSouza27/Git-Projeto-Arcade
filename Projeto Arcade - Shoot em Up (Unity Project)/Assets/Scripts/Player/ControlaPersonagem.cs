@@ -10,7 +10,7 @@ public class ControlaPersonagem : MonoBehaviour
     // Controle movimento personagem e armas
     private float x, y;
     public float velocidadeMovimento = 1.0f, velocidadeCorMaterial = 2.0f, timerInvulneravel = 0.0f;
-    public GameObject personagem, armaPrincipal, armaPets, petEsq, petDir, pontaPetEsq, pontaPetDir, armaOrbeGiratorio, upgradeOrbe1, armaSerra;
+    public GameObject personagem, armaPrincipal, armaPets, petEsq, petDir, pontaPetEsq, pontaPetDir, armaOrbeGiratorioBase, armaOrbeGiratorio, upgradeOrbe1, armaSerra;
     private GameObject alvoPet;
     public float velocidadeRotacaoPet = 2.0f, distanciaMinPetAtirar = 20.0f, velocidadeRotacaoOrbeGiratorio = 15.0f;
     // Pontos de vida
@@ -60,17 +60,12 @@ public class ControlaPersonagem : MonoBehaviour
         //mudança da cor do material
         RetornaCorOriginal();
 
-        if (ControladorGame.instancia == null)
-        {
-            return;
-        }
-
-        if (ControladorGame.instancia.armaPetAtivada)
+        if (armaPets.activeSelf)
         {
             ControleArmaPets();
         }
 
-        if (ControladorGame.instancia.armaOrbeGiratorioAtivada)
+        if (armaOrbeGiratorioBase.activeSelf)
         {
             ControleOrbeGiratorio();
         }
@@ -195,11 +190,11 @@ public class ControlaPersonagem : MonoBehaviour
     // Arma orbe giratorio
     private void ControleOrbeGiratorio()
     {
-        if (!ControladorGame.instancia.upgradeOrbe1)
+        if (!upgradeOrbe1.activeSelf)
         {
             armaOrbeGiratorio.transform.RotateAround(transform.position, transform.forward, velocidadeRotacaoOrbeGiratorio * Time.deltaTime);
         }
-        if (ControladorGame.instancia.upgradeOrbe1)
+        if (upgradeOrbe1.activeSelf)
         {
             upgradeOrbe1.transform.RotateAround(transform.position, transform.forward, velocidadeRotacaoOrbeGiratorio * Time.deltaTime);
         }

@@ -5023,7 +5023,7 @@ Transform:
   - {fileID: 6733479318792066633}
   - {fileID: 8322837996644681835}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8950388453384976238
 MonoBehaviour:
@@ -5047,6 +5047,7 @@ MonoBehaviour:
   petDir: {fileID: 1322984272435996320}
   pontaPetEsq: {fileID: 7729481432346349713}
   pontaPetDir: {fileID: 8652649306923327028}
+  armaOrbeGiratorioBase: {fileID: 7862313496857138636}
   armaOrbeGiratorio: {fileID: 4008169880396932920}
   upgradeOrbe1: {fileID: 8530135004784801678}
   armaSerra: {fileID: 6955476533840584894}
@@ -5615,6 +5616,11 @@ GameObject:
 --- !u!4 &4935189340669724948 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5099994352488957292, guid: f01f1d9becf1c3640913ec989b8b58c6, type: 3}
+  m_PrefabInstance: {fileID: 196893228064279672}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7862313496857138636 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8045413695001352628, guid: f01f1d9becf1c3640913ec989b8b58c6, type: 3}
   m_PrefabInstance: {fileID: 196893228064279672}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &8530135004784801678 stripped
