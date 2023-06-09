@@ -17868,7 +17868,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2739016492630951133
 RectTransform:
   m_ObjectHideFlags: 0
@@ -17882,16 +17882,16 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1036060307552129760}
+  - {fileID: 5302943565153987883}
   - {fileID: 1047742171874829125}
   - {fileID: 8986645387371767074}
-  - {fileID: 5302943565153987883}
+  - {fileID: 2001659413}
   - {fileID: 4230366831514747596}
   - {fileID: 3814472315292639243}
   - {fileID: 8301821134401934665}
   - {fileID: 8483955408899874747}
   - {fileID: 5197144637675417626}
   - {fileID: 6765911946962740930}
-  - {fileID: 2001659413}
   m_Father: {fileID: 6185914031518680390}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -18636,8 +18636,8 @@ MonoBehaviour:
   buttonSubirNivel: {fileID: 2886815341862553559}
   buttonArmaDouble: {fileID: 4765749974483968207}
   buttonArmaTriple: {fileID: 1637574869952154008}
-  buttonArmaPet: {fileID: 2071515782731520724}
   buttonEscudo: {fileID: 2001659412}
+  buttonArmaPet: {fileID: 2071515782731520724}
   buttonPetDiminuiCooldown: {fileID: 1609442636354016584}
   buttonArmaOrbeGiratorio: {fileID: 2029102520562304168}
   buttonUpgradeOrbe1: {fileID: 6308349238550706308}
@@ -20110,7 +20110,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!222 &5484829846754510451
 CanvasRenderer:
   m_ObjectHideFlags: 0

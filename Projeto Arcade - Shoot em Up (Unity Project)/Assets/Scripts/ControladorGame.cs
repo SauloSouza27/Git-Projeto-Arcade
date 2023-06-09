@@ -22,7 +22,7 @@ public class ControladorGame : MonoBehaviour
     public List<GameObject> spawnsCima, spawnsLaterais, spawnsBaixo;
     // Power UP
     public GameObject menuConfig, uiGameOver, uiVitoria, uiPowerUP, armaPrincipal, armaDouble, armaTriple, buttonSubirNivel, buttonArmaDouble,
-        buttonArmaTriple, buttonArmaPet, buttonEscudo, buttonPetDiminuiCooldown, buttonArmaOrbeGiratorio, buttonUpgradeOrbe1, buttonVelocidadeOrbe, buttonArmaSerra, buttonDiminuiCooldown;
+        buttonArmaTriple, buttonDiminuiCooldown, buttonEscudo, buttonArmaPet, buttonPetDiminuiCooldown, buttonArmaOrbeGiratorio, buttonUpgradeOrbe1, buttonVelocidadeOrbe, buttonArmaSerra;
     public bool armaPrincipalAtivada = true, armaDoubleAtivada = false, armaTripleAtivada = false, armaPetAtivada = false, defesaEscudoAtivada = false, armaOrbeGiratorioAtivada = false, upgradeOrbe1 = false, armaSerraAtivada = false;
     private int contadorMaxVelocidadeAtaque = 0, contadorMaxVelocidadeAtaquePet = 0, contadorMaxVelocidadeOrbe = 0;
     private readonly float multVelAtak = 0.75f;
