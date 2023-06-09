@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class MenuCarregaFases : MonoBehaviour
 {
     public Button fase2;
+    public GameObject planetaFase2;
 
     private void OnEnable()
     {
@@ -17,6 +18,7 @@ public class MenuCarregaFases : MonoBehaviour
         if (ProgressoPlayer.instancia.concluiuFase1)
         {
             fase2.interactable = true;
+            planetaFase2.SetActive(true);
         }
     }
 }
