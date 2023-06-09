@@ -34,7 +34,7 @@ Transform:
   m_Children:
   - {fileID: 7533343740153664998}
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7726156183616663825
 MonoBehaviour:
@@ -51,6 +51,7 @@ MonoBehaviour:
   velocidade: 15
   projetil: {fileID: 2466213106853831192}
   destruidoPeloOrbe: 0
+  destruidoPeloEscudo: 1
   rotacaoTiro: 0
   projetilRotacao: {fileID: 5793304705905910330}
   velocidadeRotacao: 200

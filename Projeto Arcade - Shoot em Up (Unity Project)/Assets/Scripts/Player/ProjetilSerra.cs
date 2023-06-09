@@ -78,7 +78,7 @@ public class ProjetilSerra : MonoBehaviour
         go = false;
     }
 
-    // Função para saber se a serra está mexendo
+    // Função para saber se a serra estEmexendo
     private void EstaAMexer()
     {
         if (transform.position != posicaoAnterior)

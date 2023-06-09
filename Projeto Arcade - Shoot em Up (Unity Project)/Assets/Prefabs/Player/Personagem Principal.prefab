@@ -5801,9 +5801,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 776616345876304713}
     m_Modifications:
+    - target: {fileID: 3305722047808588535, guid: 9679eae0931bb624a9799f13489a26ad, type: 3}
+      propertyPath: m_Constraints
+      value: 126
+      objectReference: {fileID: 0}
     - target: {fileID: 3656946041513090752, guid: 9679eae0931bb624a9799f13489a26ad, type: 3}
       propertyPath: m_RootOrder
       value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3656946041513090752, guid: 9679eae0931bb624a9799f13489a26ad, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3656946041513090752, guid: 9679eae0931bb624a9799f13489a26ad, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3656946041513090752, guid: 9679eae0931bb624a9799f13489a26ad, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.7
       objectReference: {fileID: 0}
     - target: {fileID: 3656946041513090752, guid: 9679eae0931bb624a9799f13489a26ad, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5845,20 +5861,50 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3656946041513090752, guid: 9679eae0931bb624a9799f13489a26ad, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5891513424844667112, guid: 9679eae0931bb624a9799f13489a26ad, type: 3}
       propertyPath: m_Name
       value: Escudo Forca
       objectReference: {fileID: 0}
+    - target: {fileID: 5891513424844667112, guid: 9679eae0931bb624a9799f13489a26ad, type: 3}
+      propertyPath: m_TagString
+      value: Escudo
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5891513424844667112, guid: 9679eae0931bb624a9799f13489a26ad, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5495702725229291689}
   m_SourcePrefab: {fileID: 100100000, guid: 9679eae0931bb624a9799f13489a26ad, type: 3}
 --- !u!4 &2161081479380777188 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3656946041513090752, guid: 9679eae0931bb624a9799f13489a26ad, type: 3}
   m_PrefabInstance: {fileID: 3404054101330372132}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &9151170500197457612 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5891513424844667112, guid: 9679eae0931bb624a9799f13489a26ad, type: 3}
+  m_PrefabInstance: {fileID: 3404054101330372132}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5495702725229291689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9151170500197457612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2014ec3e88854444585b7354463d2567, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  escudo: {fileID: 9151170500197457612}
+  velocidadeRotacao: 10
 --- !u!1001 &3619934923991343593
 PrefabInstance:
   m_ObjectHideFlags: 0

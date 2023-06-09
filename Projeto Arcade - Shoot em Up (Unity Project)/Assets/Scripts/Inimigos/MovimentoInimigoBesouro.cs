@@ -178,6 +178,12 @@ public class MovimentoInimigoBesouro : MonoBehaviour
 
                     CaluclaDanoBosta(dano);
                 }
+                if (colisor.gameObject.CompareTag("Escudo"))
+                {
+                    int dano = alvo.GetComponent<ControlaPersonagem>().danoContato;
+
+                    CaluclaDanoBosta(dano);
+                }
             }
             else
             {
@@ -221,6 +227,12 @@ public class MovimentoInimigoBesouro : MonoBehaviour
                 CaluclaDanoBesouro(dano);
             }
             if (colisor.gameObject.CompareTag("Player"))
+            {
+                int dano = alvo.GetComponent<ControlaPersonagem>().danoContato;
+
+                CaluclaDanoBesouro(dano);
+            }
+            if (colisor.gameObject.CompareTag("Escudo"))
             {
                 int dano = alvo.GetComponent<ControlaPersonagem>().danoContato;
 

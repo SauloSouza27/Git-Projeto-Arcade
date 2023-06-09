@@ -33,7 +33,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 22
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &2207683669548081821
 MeshFilter:
@@ -121,6 +121,7 @@ MonoBehaviour:
   velocidade: 4
   projetil: {fileID: 509821602030246837}
   destruidoPeloOrbe: 1
+  destruidoPeloEscudo: 1
   rotacaoTiro: 0
   projetilRotacao: {fileID: 0}
   velocidadeRotacao: 200

@@ -120,6 +120,12 @@ public class MovimentoInimigoEspinhoso : MonoBehaviour
 
             CaluclaDanoInimigo(dano);
         }
+        if (colisor.gameObject.CompareTag("Escudo"))
+        {
+            int dano = alvo.GetComponent<ControlaPersonagem>().danoContato;
+
+            CaluclaDanoInimigo(dano);
+        }
     }
 
     private void MovimentaInimigoEspinhoso()

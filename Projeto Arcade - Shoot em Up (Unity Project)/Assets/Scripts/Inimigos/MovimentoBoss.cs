@@ -269,6 +269,23 @@ public class MovimentoBoss : MonoBehaviour
                     MorteCorpo();
                 }
             }
+            if (colisor.gameObject.CompareTag("Escudo"))
+            {
+                int dano = alvo.GetComponent<ControlaPersonagem>().danoContato;
+                if (vidaCorpo > 0)
+                {
+                    vidaCorpo -= dano;
+
+                    foreach (Material material in materiais)
+                    {
+                        StartCoroutine(Utilidades.PiscaCorRoutine(material));
+                    }
+                }
+                if (vidaCorpo <= 0)
+                {
+                    MorteCorpo();
+                }
+            }
         }
         if (tomaDano && corpoPiramide == null)
         {
@@ -343,6 +360,23 @@ public class MovimentoBoss : MonoBehaviour
                 }
             }
             if (colisor.gameObject.CompareTag("Player"))
+            {
+                int dano = alvo.GetComponent<ControlaPersonagem>().danoContato;
+                if (vidaCabeca > 0)
+                {
+                    vidaCabeca -= dano;
+
+                    foreach (Material material in materiais)
+                    {
+                        StartCoroutine(Utilidades.PiscaCorRoutine(material));
+                    }
+                }
+                if (vidaCabeca <= 0)
+                {
+                    MorteCabeca();
+                }
+            }
+            if (colisor.gameObject.CompareTag("Escudo"))
             {
                 int dano = alvo.GetComponent<ControlaPersonagem>().danoContato;
                 if (vidaCabeca > 0)
