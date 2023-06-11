@@ -5,7 +5,6 @@ using UnityEngine;
 public class ProgressoPlayer : MonoBehaviour
 {
     public static ProgressoPlayer instancia;
-    public GameObject planetaFase2;
     public bool concluiuFase1 = false;
 
     void Start()
@@ -26,10 +25,6 @@ public class ProgressoPlayer : MonoBehaviour
         if (Input.GetButtonDown("Destrava Fase 2"))
         {
             concluiuFase1 = true;
-        }
-        if (concluiuFase1)
-        {
-            planetaFase2.SetActive(true);
         }
     }
 }

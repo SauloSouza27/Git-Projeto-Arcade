@@ -32,6 +32,8 @@ TagManager:
   - BalaAnubis
   - ProgressoPlayer
   - Escudo
+  - PlanetaFase2
+  - Cenario
   layers:
   - Default
   - TransparentFX

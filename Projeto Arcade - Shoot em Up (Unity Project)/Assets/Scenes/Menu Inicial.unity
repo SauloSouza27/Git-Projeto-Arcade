@@ -396,7 +396,7 @@ GameObject:
   - component: {fileID: 191953887}
   m_Layer: 0
   m_Name: Cenario
-  m_TagString: Untagged
+  m_TagString: Cenario
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10390,7 +10390,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0729d8a8d78f16042ada62aa2a400a6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  planetaFase2: {fileID: 3306848889175792046}
   concluiuFase1: 0
 --- !u!1 &1022395607
 GameObject:
@@ -44865,6 +44864,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Menu Inicial
       objectReference: {fileID: 0}
+    - target: {fileID: 5566909453064502221, guid: d210b8fe1e65b8747bd6195a50536fdb, type: 3}
+      propertyPath: planetaFase2
+      value: 
+      objectReference: {fileID: 3306848889175792046}
     - target: {fileID: 6589521164186420223, guid: d210b8fe1e65b8747bd6195a50536fdb, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -45010,7 +45013,7 @@ GameObject:
   - component: {fileID: 4611761450271539031}
   m_Layer: 0
   m_Name: Planeta Fase 2
-  m_TagString: Untagged
+  m_TagString: PlanetaFase2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45731,7 +45734,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fase2: {fileID: 65626922}
-  planetaFase2: {fileID: 3306848889175792046}
 --- !u!1 &8302505383305938959
 GameObject:
   m_ObjectHideFlags: 0

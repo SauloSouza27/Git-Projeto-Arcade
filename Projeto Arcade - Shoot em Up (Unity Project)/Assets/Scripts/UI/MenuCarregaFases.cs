@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class MenuCarregaFases : MonoBehaviour
 {
     public Button fase2;
-    public GameObject planetaFase2;
 
     private void OnEnable()
     {
