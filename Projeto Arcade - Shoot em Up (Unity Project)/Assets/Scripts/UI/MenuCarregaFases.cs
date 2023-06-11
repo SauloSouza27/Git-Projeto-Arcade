@@ -18,7 +18,6 @@ public class MenuCarregaFases : MonoBehaviour
         if (ProgressoPlayer.instancia.concluiuFase1)
         {
             fase2.interactable = true;
-            planetaFase2.SetActive(true);
         }
     }
 }

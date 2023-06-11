@@ -10390,6 +10390,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0729d8a8d78f16042ada62aa2a400a6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  planetaFase2: {fileID: 3306848889175792046}
   concluiuFase1: 0
 --- !u!1 &1022395607
 GameObject:
