@@ -4,12 +4,19 @@ using UnityEngine;
 
 public class SpawnEspinhoso : MonoBehaviour
 {
+    private GameObject controladorGame, buttonNivel;
     private float contadorCooldown;
     public float atrasaSpawn = 0.0f, cooldownSpawnEspinhoso = 2.0f, velocidadeMovimento = 6.0f;
     public int quantidadeParaSpawnar = 3, xpInimigo = 10;
     private int contador;
     public GameObject espinhosoPrefab;
     public bool ativar = true;
+
+    private void Awake()
+    {
+        controladorGame = GameObject.FindGameObjectWithTag("ControladorGame");
+        buttonNivel = controladorGame.GetComponent<ControladorGame>().buttonSubirNivel;
+    }
 
     void Update()
     {
@@ -18,6 +25,11 @@ public class SpawnEspinhoso : MonoBehaviour
         if (atrasaSpawn > 0)
         {
             atrasaSpawn -= Time.deltaTime;
+            return;
+        }
+
+        if (buttonNivel.activeSelf)
+        {
             return;
         }
 
