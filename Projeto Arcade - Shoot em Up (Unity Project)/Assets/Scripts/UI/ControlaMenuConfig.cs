@@ -64,7 +64,12 @@ public class ControlaMenuConfig : MonoBehaviour
         {
             Time.timeScale = 0;
         }
-        else Time.timeScale = 1;
+        else 
+        if (!ControladorGame.instancia.uiPowerUP)
+        {
+            Time.timeScale = 1;
+        }
+        
     }
     // Controla soms
     public void ControlaMusica()
