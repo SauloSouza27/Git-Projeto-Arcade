@@ -20,7 +20,7 @@ public class BossFase2 : MonoBehaviour
 
     private void Awake()
     {
-        laserLineEsq = gemaEsq.GetComponent<LineRenderer>();]
+        laserLineEsq = gemaEsq.GetComponent<LineRenderer>();
         laserLineDir = gemaEsq.GetComponent<LineRenderer>();
     }
     private void Update()
