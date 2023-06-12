@@ -26,7 +26,7 @@ public class BossFase2 : MonoBehaviour
     private void Update()
     {
         avisoTimer += Time.deltaTime;
-        if(Input.GetButtonDown("Fire3") && avisoTimer > fireRate)
+        if(avisoTimer > fireRate)
         {
             StartCoroutine(AtiraDepoisAvisoEsq());
 
@@ -72,7 +72,6 @@ public class BossFase2 : MonoBehaviour
         if (Physics.Raycast(rayOrigin, dir, out hit, gunRange))
         {
             laserLineEsq.SetPosition(1, hit.point);
-            alvoEsq.GetComponent<ControlaPersonagem>().ReceberDano();
         }
         else
         {

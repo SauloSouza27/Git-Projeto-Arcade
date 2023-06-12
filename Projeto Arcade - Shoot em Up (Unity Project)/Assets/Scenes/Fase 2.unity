@@ -13420,6 +13420,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7078037303556019449, guid: 21ba06eb2d4749243a828c31e3e33f77, type: 3}
+      propertyPath: fireRate
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7078037303556019449, guid: 21ba06eb2d4749243a828c31e3e33f77, type: 3}
       propertyPath: gunRange
       value: 55
       objectReference: {fileID: 0}

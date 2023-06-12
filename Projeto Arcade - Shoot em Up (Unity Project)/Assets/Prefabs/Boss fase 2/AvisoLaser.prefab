@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5022463235962529468}
   - component: {fileID: 8316957586212961260}
   - component: {fileID: 6132931173014393008}
+  - component: {fileID: 1323956535131461254}
   m_Layer: 0
   m_Name: AvisoLaser
   m_TagString: Untagged
@@ -27,8 +28,8 @@ Transform:
   m_GameObject: {fileID: 2837789754189191986}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -6.6, y: 9.1, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 24
@@ -83,3 +84,18 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1323956535131461254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2837789754189191986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27492087ee84b7945bae33e8ad82c72a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tempoPisca: 1
+  intensidadeCor: 1.1
+  velocidadeMudaCor: 1
