@@ -97,5 +97,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tempoPisca: 1
-  intensidadeCor: 1.1
+  intensidadeCor: 1.5
   velocidadeMudaCor: 1

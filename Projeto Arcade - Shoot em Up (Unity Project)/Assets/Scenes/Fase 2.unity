@@ -5314,7 +5314,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &981386786
 Transform:
   m_ObjectHideFlags: 0
@@ -9295,7 +9295,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1724466337
 Transform:
   m_ObjectHideFlags: 0
@@ -10171,11 +10171,6 @@ Transform:
   m_Father: {fileID: 204989262}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!20 &1918777401 stripped
-Camera:
-  m_CorrespondingSourceObject: {fileID: 8241597039034732461, guid: a8e773fdcafe90643a2f6b40ce870b99, type: 3}
-  m_PrefabInstance: {fileID: 863981499}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1932056116
 GameObject:
   m_ObjectHideFlags: 0
@@ -13359,21 +13354,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 981386786}
     m_Modifications:
-    - target: {fileID: 175766122180672750, guid: 21ba06eb2d4749243a828c31e3e33f77, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -3.74
-      objectReference: {fileID: 0}
-    - target: {fileID: 175766122180672750, guid: 21ba06eb2d4749243a828c31e3e33f77, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -2.14
-      objectReference: {fileID: 0}
-    - target: {fileID: 175766122180672750, guid: 21ba06eb2d4749243a828c31e3e33f77, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.13
-      objectReference: {fileID: 0}
     - target: {fileID: 3854168282922302638, guid: 21ba06eb2d4749243a828c31e3e33f77, type: 3}
       propertyPath: m_Name
       value: Boss fase 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3854168282922302638, guid: 21ba06eb2d4749243a828c31e3e33f77, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3856218712620785793, guid: 21ba06eb2d4749243a828c31e3e33f77, type: 3}
       propertyPath: m_RootOrder
@@ -13418,26 +13405,6 @@ PrefabInstance:
     - target: {fileID: 3856218712620785793, guid: 21ba06eb2d4749243a828c31e3e33f77, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7078037303556019449, guid: 21ba06eb2d4749243a828c31e3e33f77, type: 3}
-      propertyPath: fireRate
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 7078037303556019449, guid: 21ba06eb2d4749243a828c31e3e33f77, type: 3}
-      propertyPath: gunRange
-      value: 55
-      objectReference: {fileID: 0}
-    - target: {fileID: 7078037303556019449, guid: 21ba06eb2d4749243a828c31e3e33f77, type: 3}
-      propertyPath: fxAvisoHit
-      value: 
-      objectReference: {fileID: 2837789754189191986, guid: 677600227eb21ce4b80f75b8631db6b6, type: 3}
-    - target: {fileID: 7078037303556019449, guid: 21ba06eb2d4749243a828c31e3e33f77, type: 3}
-      propertyPath: mainCamera
-      value: 
-      objectReference: {fileID: 1918777401}
-    - target: {fileID: 7078037303556019449, guid: 21ba06eb2d4749243a828c31e3e33f77, type: 3}
-      propertyPath: laserDuration
-      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
