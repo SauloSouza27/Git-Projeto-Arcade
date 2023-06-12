@@ -7,49 +7,36 @@ public class BossFase2 : MonoBehaviour
     public Camera mainCamera;
     public Transform laserOrigin;
     public GameObject gemaEsq;
-    public float gunRange = 50.0f;
-    public float fireRate = 0.2f;
-    public float laserDuration = 1.0f;
+    public float gunRange = 55.0f;
+    public float fireRate = 5.0f;
+    public float laserDuration = 3.0f;
     // alvo laser
     public GameObject alvoEsq, alvoDir, fxAvisoHit;
     private static float maxXEsq = 0, minXEsq = -28.0f, maxYEsq = 17.0f, minYEsq = 1.0f;
 
-    private LineRenderer laserLine;
-    private float fireTimer;
+    private LineRenderer laserLineEsq, laserLineDir;
+    private float avisoTimer, fireTimer;
+    private bool avisoAtivo = false;
 
     private void Awake()
     {
-        laserLine = gemaEsq.GetComponent<LineRenderer>();
+        laserLineEsq = gemaEsq.GetComponent<LineRenderer>();]
+        laserLineDir = gemaEsq.GetComponent<LineRenderer>();
     }
     private void Update()
     {
         fireTimer += Time.deltaTime;
-        if(Input.GetButtonDown("Fire3") && fireTimer > fireRate)
+        if(Input.GetButtonDown("Fire3") && avisoTimer > fireRate)
         {
-            fireTimer = 0;
-            laserLine.SetPosition(0, laserOrigin.position);
-            Vector3 rayOrigin = laserOrigin.position;
-            RaycastHit hit;
-            Vector3 dir = alvoEsq.transform.position - laserOrigin.position;
-            dir = dir.normalized;
-            if (Physics.Raycast(rayOrigin, dir, out hit, gunRange))
-            {
-                laserLine.SetPosition(1, hit.point);
-                alvoEsq.GetComponent<ControlaPersonagem>().ReceberDano();
-            }
-            else
-            {
-                laserLine.SetPosition(1, rayOrigin + (dir * gunRange));
-            }
-            StartCoroutine(ShootLaser());
+            DisparaLaserEsq();
         }
     }
 
-    IEnumerator ShootLaser()
+    IEnumerator ShootLaserEsq()
     {
-        laserLine.enabled = true;
+        laserLineEsq.enabled = true;
         yield return new WaitForSeconds(laserDuration);
-        laserLine.enabled = false;
+        laserLineEsq.enabled = false;
     }
 
     private Vector3 MudaPosicaoAlvoEsq()
@@ -67,5 +54,30 @@ public class BossFase2 : MonoBehaviour
     {
         Vector3 pos = MudaPosicaoAlvoEsq();
         Instantiate(fxAvisoHit, pos, alvoEsq.transform.rotation);
+        avisoAtivo = true;
+    }
+
+    private void DisparaLaserEsq()
+    {
+        if (!avisoAtivo)
+        {
+            AvisoPreHitEsq();
+        }
+
+        laserLineEsq.SetPosition(0, laserOrigin.position);
+        Vector3 rayOrigin = laserOrigin.position;
+        RaycastHit hit;
+        Vector3 dir = alvoEsq.transform.position - laserOrigin.position;
+        dir = dir.normalized;
+        if (Physics.Raycast(rayOrigin, dir, out hit, gunRange))
+        {
+            laserLineEsq.SetPosition(1, hit.point);
+            alvoEsq.GetComponent<ControlaPersonagem>().ReceberDano();
+        }
+        else
+        {
+            laserLineEsq.SetPosition(1, alvoEsq.transform.position);
+        }
+        StartCoroutine(ShootLaserEsq());
     }
 }
