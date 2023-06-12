@@ -47,15 +47,15 @@ public class BossFase2 : MonoBehaviour
         float posX = Random.Range(minXEsq, maxXEsq);
         float posY = Random.Range(minYEsq, maxYEsq);
 
-        pos = new Vector3(posX, posY);
+        alvoEsq.transform.position = new Vector3(posX, posY, 0.0f);
 
-        return pos;
+        return alvoEsq.transform.position;
     }
 
     private void AvisoPreHitEsq()
     {
         Vector3 pos = MudaPosicaoAlvoEsq();
-        instaciaAvisoHit = Instantiate(fxAvisoHit, pos, alvoEsq.transform.rotation);
+        instaciaAvisoHit = Instantiate(fxAvisoHit, pos, fxAvisoHit.transform.rotation);
     }
 
     IEnumerator AtiraDepoisAvisoEsq()
