@@ -5,8 +5,8 @@ using UnityEngine;
 public class BalaPersonagem : MonoBehaviour
 {
     public float velocidade = 15.0f;
-    public GameObject projetil, fxExpHit;
-    public bool destruidoPeloOrbe = false, destruidoPeloEscudo = false, rotacaoTiro = false, geraExpHit = false;
+    public GameObject projetil;
+    public bool destruidoPeloOrbe = false, destruidoPeloEscudo = false, rotacaoTiro = false;
     public GameObject projetilRotacao;
     public float velocidadeRotacao = 200.0f;
     public int danoProjetil = 1;
@@ -41,11 +41,6 @@ public class BalaPersonagem : MonoBehaviour
         if (colidido.gameObject.CompareTag("Escudo") && destruidoPeloEscudo)
         {
             Destroy(gameObject);
-        }
-        if (colidido.gameObject.CompareTag("Inimigo") && geraExpHit)
-        {
-            ContactPoint point = colidido.GetContact(0);
-            Instantiate(fxExpHit, point.point, colidido.transform.rotation);
         }
     }
 }
