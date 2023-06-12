@@ -10,13 +10,13 @@ public class BossFase2 : MonoBehaviour
     public float gunRange = 55.0f;
     public float fireRate = 5.0f;
     public float laserDuration = 3.0f;
-    // alvo laser
+    // alvo laser esquerdo
     public GameObject alvoEsq, alvoDir, fxAvisoHit;
-    private static float maxXEsq = 0, minXEsq = -28.0f, maxYEsq = 17.0f, minYEsq = 1.0f;
+    public static float maxXEsq = 0, minXEsq = -28.0f, maxYEsq = 17.0f, minYEsq = 1.0f;
 
     private LineRenderer laserLineEsq, laserLineDir;
-    private float avisoTimer, fireTimer;
-    private bool avisoAtivo = false;
+    private GameObject instaciaAvisoHit;
+    private float avisoTimer;
 
     private void Awake()
     {
@@ -25,10 +25,12 @@ public class BossFase2 : MonoBehaviour
     }
     private void Update()
     {
-        fireTimer += Time.deltaTime;
+        avisoTimer += Time.deltaTime;
         if(Input.GetButtonDown("Fire3") && avisoTimer > fireRate)
         {
-            DisparaLaserEsq();
+            StartCoroutine(AtiraDepoisAvisoEsq());
+
+            avisoTimer = 0;
         }
     }
 
@@ -53,16 +55,14 @@ public class BossFase2 : MonoBehaviour
     private void AvisoPreHitEsq()
     {
         Vector3 pos = MudaPosicaoAlvoEsq();
-        Instantiate(fxAvisoHit, pos, alvoEsq.transform.rotation);
-        avisoAtivo = true;
+        instaciaAvisoHit = Instantiate(fxAvisoHit, pos, alvoEsq.transform.rotation);
     }
 
-    private void DisparaLaserEsq()
+    IEnumerator AtiraDepoisAvisoEsq()
     {
-        if (!avisoAtivo)
-        {
-            AvisoPreHitEsq();
-        }
+        AvisoPreHitEsq();
+        
+        yield return new WaitForSeconds(3.0f);
 
         laserLineEsq.SetPosition(0, laserOrigin.position);
         Vector3 rayOrigin = laserOrigin.position;
@@ -79,5 +79,6 @@ public class BossFase2 : MonoBehaviour
             laserLineEsq.SetPosition(1, alvoEsq.transform.position);
         }
         StartCoroutine(ShootLaserEsq());
+        Destroy(instaciaAvisoHit);
     }
 }
