@@ -65,7 +65,6 @@ public class ControlaMenuConfig : MonoBehaviour
             Time.timeScale = 0;
         }
         else 
-        if (!ControladorGame.instancia.uiPowerUP)
         {
             Time.timeScale = 1;
         }
