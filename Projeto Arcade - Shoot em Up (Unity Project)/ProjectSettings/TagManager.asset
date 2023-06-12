@@ -34,6 +34,7 @@ TagManager:
   - Escudo
   - PlanetaFase2
   - Cenario
+  - CabecaBossFase1
   layers:
   - Default
   - TransparentFX

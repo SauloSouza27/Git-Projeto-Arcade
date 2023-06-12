@@ -120,9 +120,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocidade: 4
   projetil: {fileID: 509821602030246837}
+  fxExpHit: {fileID: 938208836173243491, guid: 31cbfa08abd5728488ef01a5a9748da0, type: 3}
   destruidoPeloOrbe: 1
   destruidoPeloEscudo: 1
   rotacaoTiro: 0
+  geraExpHit: 0
   projetilRotacao: {fileID: 0}
   velocidadeRotacao: 200
   danoProjetil: 1

@@ -24,7 +24,7 @@ public class MovimentoInimigoBesouro : MonoBehaviour
     private Material[] materiaisBosta;
     public CapsuleCollider colliderBosta;
     // efeito explosão
-    public GameObject fxExplosionPrefab;
+    public GameObject fxExplosionPrefab, fxExpHit, fxExpHitPet;
     private void Awake()
     {
         controladorGame = GameObject.FindGameObjectWithTag("ControladorGame");
@@ -121,7 +121,12 @@ public class MovimentoInimigoBesouro : MonoBehaviour
             Destroy(bosta.gameObject);
         }
     }
-
+    private void FXExplosionHit(GameObject fxExpHit, Collision colisor)
+    {
+        ContactPoint point = colisor.GetContact(0);
+        Vector3 pos = point.point;
+        Instantiate(fxExpHit, pos, colisor.transform.rotation);
+    }
     private void CaluclaDanoBesouro(int dano)
     {
         if (pontosVida > 0)
@@ -151,6 +156,7 @@ public class MovimentoInimigoBesouro : MonoBehaviour
                     Destroy(colisor.gameObject);
                     int dano = alvo.GetComponent<ControlaPersonagem>().danoArmaPrincipal;
 
+                    FXExplosionHit(fxExpHit, colisor);
                     CaluclaDanoBosta(dano);
                 }
                 if (colisor.gameObject.CompareTag("BalaPet"))
@@ -158,6 +164,7 @@ public class MovimentoInimigoBesouro : MonoBehaviour
                     Destroy(colisor.gameObject);
                     int dano = alvo.GetComponent<DisparoArmaPet>().danoArmaPet;
 
+                    FXExplosionHit(fxExpHitPet, colisor);
                     CaluclaDanoBosta(dano);
                 }
                 if (colisor.gameObject.CompareTag("OrbeGiratorio"))
@@ -205,6 +212,7 @@ public class MovimentoInimigoBesouro : MonoBehaviour
                 Destroy(colisor.gameObject);
                 int dano = alvo.GetComponent<ControlaPersonagem>().danoArmaPrincipal;
 
+                FXExplosionHit(fxExpHit, colisor);
                 CaluclaDanoBesouro(dano);
             }
             if (colisor.gameObject.CompareTag("BalaPet"))
@@ -212,6 +220,7 @@ public class MovimentoInimigoBesouro : MonoBehaviour
                 Destroy(colisor.gameObject);
                 int dano = alvo.GetComponent<DisparoArmaPet>().danoArmaPet;
 
+                FXExplosionHit(fxExpHitPet, colisor);
                 CaluclaDanoBesouro(dano);
             }
             if (colisor.gameObject.CompareTag("OrbeGiratorio"))

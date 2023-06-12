@@ -76,11 +76,12 @@ MonoBehaviour:
   velocidadeRotacao: 2
   petBoss: 0
   pontosVida: 16
-  danoTiro: 1
   xpInimigo: 110
   cooldown: 2
   inverteRotacaoTiro: 1
   fxExplosionPrefab: {fileID: 4687154041574633817, guid: 60b0f3c3a8e238546b1818b56ebb9d31, type: 3}
+  fxExpHit: {fileID: 938208836173243491, guid: 31cbfa08abd5728488ef01a5a9748da0, type: 3}
+  fxExpHitPet: {fileID: 938208836173243491, guid: d02aadc186cdd13448f83e1f6b03b16a, type: 3}
 --- !u!54 &5020916756526811071
 Rigidbody:
   m_ObjectHideFlags: 0

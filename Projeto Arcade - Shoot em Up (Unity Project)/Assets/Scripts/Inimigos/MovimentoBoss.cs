@@ -31,7 +31,7 @@ public class MovimentoBoss : MonoBehaviour
     // Animator
     private Animator animator;
     // explosao
-    public GameObject fxExplosionPrefab;
+    public GameObject fxExplosionPrefab, fxExpHit, fxExpHitPet;
     // salvar progresso
     private GameObject progressoPlayer;
 
@@ -177,13 +177,20 @@ public class MovimentoBoss : MonoBehaviour
         progressoPlayer.GetComponent<ProgressoPlayer>().concluiuFase1 = true;
         Destroy(cabecaPiramide);
     }
-
+    private void FXExplosionHit(GameObject fxExpHit, Collision colisor)
+    {
+        ContactPoint point = colisor.GetContact(0);
+        Vector3 pos = point.point;
+        Instantiate(fxExpHit, pos, colisor.transform.rotation);
+    }
     private void OnCollisionEnter(Collision colisor)
     {
         if (tomaDano && corpoPiramide != null)
         {
             if (colisor.gameObject.CompareTag("BalaPersonagem"))
             {
+                FXExplosionHit(fxExpHit, colisor);
+
                 Destroy(colisor.gameObject);
                 int dano = alvo.GetComponent<ControlaPersonagem>().danoArmaPrincipal;
                 if (vidaCorpo > 0)
@@ -202,6 +209,8 @@ public class MovimentoBoss : MonoBehaviour
             }
             if (colisor.gameObject.CompareTag("BalaPet"))
             {
+                FXExplosionHit(fxExpHitPet, colisor);
+
                 Destroy(colisor.gameObject);
                 int dano = alvo.GetComponent<DisparoArmaPet>().danoArmaPet;
                 if (vidaCorpo > 0)
@@ -291,6 +300,8 @@ public class MovimentoBoss : MonoBehaviour
         {
             if (colisor.gameObject.CompareTag("BalaPersonagem"))
             {
+                FXExplosionHit(fxExpHit, colisor);
+
                 Destroy(colisor.gameObject);
                 int dano = alvo.GetComponent<ControlaPersonagem>().danoArmaPrincipal;
                 if (vidaCabeca > 0)
@@ -309,6 +320,8 @@ public class MovimentoBoss : MonoBehaviour
             }
             if (colisor.gameObject.CompareTag("BalaPet"))
             {
+                FXExplosionHit(fxExpHitPet, colisor);
+
                 Destroy(colisor.gameObject);
                 int dano = alvo.GetComponent<DisparoArmaPet>().danoArmaPet;
                 if (vidaCabeca > 0)

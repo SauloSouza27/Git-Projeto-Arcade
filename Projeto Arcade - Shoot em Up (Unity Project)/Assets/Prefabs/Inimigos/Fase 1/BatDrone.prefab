@@ -105,6 +105,8 @@ MonoBehaviour:
   anguloZ: 0
   atrasoRotacao: 0
   fxExplosionPrefab: {fileID: 2767642299458613786, guid: 6e7f7caa587686c499a4db7ba6b96be4, type: 3}
+  fxExpHit: {fileID: 938208836173243491, guid: 31cbfa08abd5728488ef01a5a9748da0, type: 3}
+  fxExpHitPet: {fileID: 938208836173243491, guid: d02aadc186cdd13448f83e1f6b03b16a, type: 3}
 --- !u!1 &4156026756890587713
 GameObject:
   m_ObjectHideFlags: 0

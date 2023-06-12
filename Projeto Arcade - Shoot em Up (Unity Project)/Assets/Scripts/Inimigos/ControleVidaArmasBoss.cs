@@ -20,7 +20,7 @@ public class ControleVidaArmasBoss : MonoBehaviour
     // box collider
     private BoxCollider colisor;
     // explosao
-    public GameObject fxExplosionPrefab;
+    public GameObject fxExplosionPrefab, fxExpHit, fxExpHitPet;
     private void Awake()
     {
         controladorGame = GameObject.FindGameObjectWithTag("ControladorGame");
@@ -102,6 +102,12 @@ public class ControleVidaArmasBoss : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    private void FXExplosionHit(GameObject fxExpHit, Collision colisor)
+    {
+        ContactPoint point = colisor.GetContact(0);
+        Vector3 pos = point.point;
+        Instantiate(fxExpHit, pos, colisor.transform.rotation);
+    }
     private void OnCollisionEnter(Collision colisor)
     {
         if (colisor.gameObject.CompareTag("BalaPersonagem"))
@@ -109,6 +115,7 @@ public class ControleVidaArmasBoss : MonoBehaviour
             Destroy(colisor.gameObject);
             int dano = alvo.GetComponent<ControlaPersonagem>().danoArmaPrincipal;
 
+            FXExplosionHit(fxExpHit, colisor);
             CausaDanosNasArmas(dano);
         }
         if (colisor.gameObject.CompareTag("BalaPet"))
@@ -116,6 +123,7 @@ public class ControleVidaArmasBoss : MonoBehaviour
             Destroy(colisor.gameObject);
             int dano = alvo.GetComponent<DisparoArmaPet>().danoArmaPet;
 
+            FXExplosionHit(fxExpHitPet, colisor);
             CausaDanosNasArmas(dano);
         }
         if (colisor.gameObject.CompareTag("OrbeGiratorio"))

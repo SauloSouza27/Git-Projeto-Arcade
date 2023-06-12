@@ -18,7 +18,7 @@ public class MovimentoInimigoMorcegoDrone : MonoBehaviour
     private MeshRenderer[] renderers;
     private Material[] materiais;
     // efeito explosão
-    public GameObject fxExplosionPrefab;
+    public GameObject fxExplosionPrefab, fxExpHit, fxExpHitPet;
 
     private void Awake()
     {
@@ -113,6 +113,12 @@ public class MovimentoInimigoMorcegoDrone : MonoBehaviour
             ControladorGame.instancia.SomaXP(xpInimigo);
         }
     }
+    private void FXExplosionHit(GameObject fxExpHit, Collision colisor)
+    {
+        ContactPoint point = colisor.GetContact(0);
+        Vector3 pos = point.point;
+        Instantiate(fxExpHit, pos, colisor.transform.rotation);
+    }
     private void OnCollisionEnter(Collision colisor)
     {
         if (colisor.gameObject.CompareTag("BalaPersonagem"))
@@ -120,10 +126,12 @@ public class MovimentoInimigoMorcegoDrone : MonoBehaviour
             Destroy(colisor.gameObject);
             int dano = alvo.GetComponent<ControlaPersonagem>().danoArmaPrincipal;
 
+            FXExplosionHit(fxExpHit, colisor);
             CaluclaDanoInimigo(dano);
         }
         if (colisor.gameObject.CompareTag("BalaPet"))
         {
+            FXExplosionHit(fxExpHitPet, colisor);
             Destroy(colisor.gameObject);
             int dano = alvo.GetComponent<DisparoArmaPet>().danoArmaPet;
 

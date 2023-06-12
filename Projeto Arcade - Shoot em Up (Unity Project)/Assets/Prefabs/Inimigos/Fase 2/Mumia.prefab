@@ -130,9 +130,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e318e7d404efdf4aba14dbb2846b94c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  grupoMumia: {fileID: 0}
   pontosVida: 1
   xpInimigo: 10
   fxExplosionPrefab: {fileID: 804697987816361510, guid: c03d3429ef1af9a4b9e349d7fe265b1f, type: 3}
+  fxExpHit: {fileID: 938208836173243491, guid: 31cbfa08abd5728488ef01a5a9748da0, type: 3}
+  fxExpHitPet: {fileID: 938208836173243491, guid: d02aadc186cdd13448f83e1f6b03b16a, type: 3}
 --- !u!65 &6117875703033165511
 BoxCollider:
   m_ObjectHideFlags: 0

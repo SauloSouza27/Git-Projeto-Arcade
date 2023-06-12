@@ -369,6 +369,8 @@ MonoBehaviour:
   tempoDisparo: 3
   numeroDisparos: 8
   fxExplosionPrefab: {fileID: 2962602063150205384, guid: cefd4eb3d7d7a3148900942db33ff210, type: 3}
+  fxExpHit: {fileID: 938208836173243491, guid: 31cbfa08abd5728488ef01a5a9748da0, type: 3}
+  fxExpHitPet: {fileID: 938208836173243491, guid: d02aadc186cdd13448f83e1f6b03b16a, type: 3}
 --- !u!65 &7732870395018775545
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -596,7 +598,7 @@ Transform:
   - {fileID: 2805426160563446943}
   - {fileID: 5052819979530344892}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &6096572593924089322
 Animator:
@@ -654,6 +656,8 @@ MonoBehaviour:
   lateralEsq: {fileID: 7203580178842221690}
   lateralDir: {fileID: 6062458882751582324}
   fxExplosionPrefab: {fileID: 1881244900910883316, guid: e8253d9ef30b7344ba629dbaea35de2e, type: 3}
+  fxExpHit: {fileID: 938208836173243491, guid: 31cbfa08abd5728488ef01a5a9748da0, type: 3}
+  fxExpHitPet: {fileID: 938208836173243491, guid: d02aadc186cdd13448f83e1f6b03b16a, type: 3}
 --- !u!54 &7096758492839678714
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -882,6 +886,8 @@ MonoBehaviour:
   tempoDisparo: 3
   numeroDisparos: 8
   fxExplosionPrefab: {fileID: 2962602063150205384, guid: cefd4eb3d7d7a3148900942db33ff210, type: 3}
+  fxExpHit: {fileID: 938208836173243491, guid: 31cbfa08abd5728488ef01a5a9748da0, type: 3}
+  fxExpHitPet: {fileID: 938208836173243491, guid: d02aadc186cdd13448f83e1f6b03b16a, type: 3}
 --- !u!65 &2560112905032393428
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -942,7 +948,7 @@ GameObject:
   - component: {fileID: 8451859992871880900}
   m_Layer: 6
   m_Name: Cabeca
-  m_TagString: Untagged
+  m_TagString: CabecaBossFase1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

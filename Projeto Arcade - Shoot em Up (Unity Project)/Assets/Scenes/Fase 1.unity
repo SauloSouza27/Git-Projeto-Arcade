@@ -1458,7 +1458,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5634495346817257190, guid: b47c97b4c4e0bea49954eca4c82b2929, type: 3}
       propertyPath: pontosVida
-      value: 30
+      value: 36
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -12087,7 +12087,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5634495346817257190, guid: b47c97b4c4e0bea49954eca4c82b2929, type: 3}
       propertyPath: pontosVida
-      value: 30
+      value: 36
       objectReference: {fileID: 0}
     - target: {fileID: 5634495346817257190, guid: b47c97b4c4e0bea49954eca4c82b2929, type: 3}
       propertyPath: inverteRotacaoTiro
