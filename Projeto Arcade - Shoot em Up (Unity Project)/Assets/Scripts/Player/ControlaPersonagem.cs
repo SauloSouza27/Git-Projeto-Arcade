@@ -214,7 +214,7 @@ public class ControlaPersonagem : MonoBehaviour
     
 
     // Calcula dano, mudar cor e particula de dano
-    private void ReceberDano()
+    public void ReceberDano()
     {
         EfeitoTomaDano();
         tomaDano.Play();
