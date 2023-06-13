@@ -54,7 +54,7 @@ public class ControleVidaArmasBoss : MonoBehaviour
             contadorCooldown = Utilidades.CalculaCooldown(contadorCooldown);
             if (contadorCooldown == 0)
             {
-                Instantiate(bala, pontArma.transform.position, pontArma.transform.rotation);
+                Tiro();
                 contadorCooldown = cooldown;
                 contadorDisparos++;
                 if (contadorDisparos < numeroDisparos) return;
@@ -66,6 +66,10 @@ public class ControleVidaArmasBoss : MonoBehaviour
                 }
             }
         }
+    }
+    private void Tiro()
+    {
+        Instantiate(bala, pontArma.transform.position, pontArma.transform.rotation);
     }
     private void MiraArmaBoss()
     {

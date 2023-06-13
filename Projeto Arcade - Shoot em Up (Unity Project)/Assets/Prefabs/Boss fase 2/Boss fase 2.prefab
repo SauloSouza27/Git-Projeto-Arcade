@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8370617540492782389}
   - component: {fileID: 5700269981600180270}
   - component: {fileID: 939489036117663543}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Origem Laser Dir
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 92047194206773342}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.55, y: 1.6360002, z: -1.303}
+  m_LocalPosition: {x: 2.55, y: 1.7200001, z: -1.2300001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -80,7 +80,7 @@ LineRenderer:
   - {x: 0, y: 0, z: 1}
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 1
+    widthMultiplier: 1.3811088
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -92,7 +92,16 @@ LineRenderer:
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
-        outWeight: 0.33333334
+        outWeight: 0.98275906
+      - serializedVersion: 3
+        time: 1
+        value: 0.47618854
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.35060617
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -158,6 +167,7 @@ MonoBehaviour:
   laserDuration: 2
   alvo: {fileID: 208542522983211651}
   fxAvisoHit: {fileID: 2837789754189191986, guid: 677600227eb21ce4b80f75b8631db6b6, type: 3}
+  fxLaserSparks: {fileID: 6046552798496011376, guid: 1eaa1fd0c78c5e645b2c13d096a0ccc5, type: 3}
   maxXEsq: 28
   minXEsq: 0
   maxYEsq: 17
@@ -186,7 +196,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 208542522983211651}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.74, y: -2.14, z: -0.13000005}
+  m_LocalPosition: {x: 3.74, y: -2.14, z: 0.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -204,7 +214,7 @@ GameObject:
   - component: {fileID: 6001039315385979641}
   - component: {fileID: 4397546270905621583}
   - component: {fileID: 3192068507376510415}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Origem Laser Esq (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -219,7 +229,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 255400212409138243}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.55, y: 1.6360002, z: -1.303}
+  m_LocalPosition: {x: -2.55, y: 1.7200001, z: -1.2300001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -273,7 +283,7 @@ LineRenderer:
   - {x: 0, y: 0, z: 1}
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 1
+    widthMultiplier: 1.3811088
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -285,7 +295,16 @@ LineRenderer:
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
-        outWeight: 0.33333334
+        outWeight: 0.98275906
+      - serializedVersion: 3
+        time: 1
+        value: 0.47618854
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.35060617
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -351,10 +370,42 @@ MonoBehaviour:
   laserDuration: 2
   alvo: {fileID: 3218057925268646236}
   fxAvisoHit: {fileID: 2837789754189191986, guid: 677600227eb21ce4b80f75b8631db6b6, type: 3}
+  fxLaserSparks: {fileID: 6046552798496011376, guid: 1eaa1fd0c78c5e645b2c13d096a0ccc5, type: 3}
   maxXEsq: 0
   minXEsq: -28
   maxYEsq: 17
   minYEsq: 1
+--- !u!1 &745751038983601963
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4930713627711621691}
+  m_Layer: 0
+  m_Name: TiroOlhoEsq
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4930713627711621691
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 745751038983601963}
+  m_LocalRotation: {x: -0.15496899, y: 0, z: 0, w: 0.98791933}
+  m_LocalPosition: {x: 0.204, y: -0.102, z: -0.024}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3790925430959536679}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: -17.83, y: 0, z: 0}
 --- !u!1 &859979630566684341
 GameObject:
   m_ObjectHideFlags: 0
@@ -379,7 +430,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 859979630566684341}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.74, y: -2.14, z: -0.13000005}
+  m_LocalPosition: {x: 3.74, y: -2.14, z: 0.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -410,7 +461,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1754083050187374341}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.74, y: -2.14, z: -0.13000005}
+  m_LocalPosition: {x: -3.74, y: -2.14, z: 0.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -428,7 +479,7 @@ GameObject:
   - component: {fileID: 2919025521203098219}
   - component: {fileID: 8939488077154295064}
   - component: {fileID: 5410994358751648464}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Origem Laser Dir (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -443,7 +494,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2288474647687532412}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.55, y: 1.6360002, z: -1.303}
+  m_LocalPosition: {x: 2.55, y: 1.7200001, z: -1.2300001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -497,7 +548,7 @@ LineRenderer:
   - {x: 0, y: 0, z: 1}
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 1
+    widthMultiplier: 1.3811088
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -509,7 +560,16 @@ LineRenderer:
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
-        outWeight: 0.33333334
+        outWeight: 0.98275906
+      - serializedVersion: 3
+        time: 1
+        value: 0.47618854
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.35060617
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -575,6 +635,7 @@ MonoBehaviour:
   laserDuration: 2
   alvo: {fileID: 6631681958176343774}
   fxAvisoHit: {fileID: 2837789754189191986, guid: 677600227eb21ce4b80f75b8631db6b6, type: 3}
+  fxLaserSparks: {fileID: 6046552798496011376, guid: 1eaa1fd0c78c5e645b2c13d096a0ccc5, type: 3}
   maxXEsq: 28
   minXEsq: 0
   maxYEsq: 17
@@ -603,7 +664,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3218057925268646236}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.74, y: -2.14, z: -0.13000005}
+  m_LocalPosition: {x: -3.74, y: -2.14, z: 0.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -802,7 +863,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3562120272524761717}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.74, y: -2.14, z: -0.13000005}
+  m_LocalPosition: {x: 3.74, y: -2.14, z: 0.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -857,6 +918,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3856218712620785793}
+  - component: {fileID: 762503939207037870}
   m_Layer: 0
   m_Name: Boss fase 2
   m_TagString: Untagged
@@ -884,6 +946,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 17.83, y: 0, z: 0}
+--- !u!114 &762503939207037870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3854168282922302638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdebac89bcbf20b4e95e60457292392d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bala: {fileID: 2133145952157808992, guid: 5e294fbf5015e524fb86adae5a2c3607, type: 3}
+  olhoEsq: {fileID: 745751038983601963}
+  olhoDir: {fileID: 6769337644010221450}
+  cooldown: 0.51
+  tempoDisparo: 3
+  numeroDisparos: 3
 --- !u!1 &3857739035060819968
 GameObject:
   m_ObjectHideFlags: 0
@@ -895,7 +975,7 @@ GameObject:
   - component: {fileID: 1375121173741734981}
   - component: {fileID: 396407810776837925}
   - component: {fileID: 282978071592468370}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Origem Laser Dir (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -910,7 +990,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3857739035060819968}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.55, y: 1.6360002, z: -1.303}
+  m_LocalPosition: {x: 2.55, y: 1.7200001, z: -1.2300001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -964,7 +1044,7 @@ LineRenderer:
   - {x: 0, y: 0, z: 1}
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 1
+    widthMultiplier: 1.3811088
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -976,7 +1056,16 @@ LineRenderer:
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
-        outWeight: 0.33333334
+        outWeight: 0.98275906
+      - serializedVersion: 3
+        time: 1
+        value: 0.47618854
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.35060617
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -1042,6 +1131,7 @@ MonoBehaviour:
   laserDuration: 2
   alvo: {fileID: 859979630566684341}
   fxAvisoHit: {fileID: 2837789754189191986, guid: 677600227eb21ce4b80f75b8631db6b6, type: 3}
+  fxLaserSparks: {fileID: 6046552798496011376, guid: 1eaa1fd0c78c5e645b2c13d096a0ccc5, type: 3}
   maxXEsq: 28
   minXEsq: 0
   maxYEsq: 17
@@ -1057,7 +1147,7 @@ GameObject:
   - component: {fileID: 2610407783259755496}
   - component: {fileID: 528757828042769973}
   - component: {fileID: 341246934955674283}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Origem Laser Dir (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1072,7 +1162,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3965987842408889341}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.55, y: 1.6360002, z: -1.303}
+  m_LocalPosition: {x: 2.55, y: 1.7200001, z: -1.2300001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1126,7 +1216,7 @@ LineRenderer:
   - {x: 0, y: 0, z: 1}
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 1
+    widthMultiplier: 1.3811088
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -1138,7 +1228,16 @@ LineRenderer:
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
-        outWeight: 0.33333334
+        outWeight: 0.98275906
+      - serializedVersion: 3
+        time: 1
+        value: 0.47618854
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.35060617
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -1204,6 +1303,7 @@ MonoBehaviour:
   laserDuration: 2
   alvo: {fileID: 3562120272524761717}
   fxAvisoHit: {fileID: 2837789754189191986, guid: 677600227eb21ce4b80f75b8631db6b6, type: 3}
+  fxLaserSparks: {fileID: 6046552798496011376, guid: 1eaa1fd0c78c5e645b2c13d096a0ccc5, type: 3}
   maxXEsq: 28
   minXEsq: 0
   maxYEsq: 17
@@ -1232,7 +1332,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5646819962776423879}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.74, y: -2.14, z: -0.13000005}
+  m_LocalPosition: {x: -3.74, y: -2.14, z: 0.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1333,7 +1433,7 @@ GameObject:
   - component: {fileID: 8606184814800357943}
   - component: {fileID: 4258480715465687403}
   - component: {fileID: 8482157940746324423}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Origem Laser Esq (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1348,7 +1448,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6289038444260123255}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.55, y: 1.6360002, z: -1.303}
+  m_LocalPosition: {x: -2.55, y: 1.7200001, z: -1.2300001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1402,7 +1502,7 @@ LineRenderer:
   - {x: 0, y: 0, z: 1}
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 1
+    widthMultiplier: 1.3811088
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -1414,7 +1514,16 @@ LineRenderer:
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
-        outWeight: 0.33333334
+        outWeight: 0.98275906
+      - serializedVersion: 3
+        time: 1
+        value: 0.47618854
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.35060617
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -1480,6 +1589,7 @@ MonoBehaviour:
   laserDuration: 2
   alvo: {fileID: 1754083050187374341}
   fxAvisoHit: {fileID: 2837789754189191986, guid: 677600227eb21ce4b80f75b8631db6b6, type: 3}
+  fxLaserSparks: {fileID: 6046552798496011376, guid: 1eaa1fd0c78c5e645b2c13d096a0ccc5, type: 3}
   maxXEsq: 0
   minXEsq: -28
   maxYEsq: 17
@@ -1508,13 +1618,44 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6631681958176343774}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.74, y: -2.14, z: -0.13000005}
+  m_LocalPosition: {x: 3.74, y: -2.14, z: 0.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3362112380326950438}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6769337644010221450
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7846858439457970072}
+  m_Layer: 0
+  m_Name: TiroOlhoDir
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7846858439457970072
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6769337644010221450}
+  m_LocalRotation: {x: -0.15496899, y: 0, z: 0, w: 0.98791933}
+  m_LocalPosition: {x: -0.204, y: -0.10199999, z: -0.024000004}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3790925430959536679}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: -17.83, y: 0, z: 0}
 --- !u!1 &7109606023118907735
 GameObject:
   m_ObjectHideFlags: 0
@@ -1666,7 +1807,9 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 4930713627711621691}
+  - {fileID: 7846858439457970072}
   m_Father: {fileID: 3856218712620785793}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1731,7 +1874,7 @@ GameObject:
   - component: {fileID: 4910418518588513538}
   - component: {fileID: 5878298192458180933}
   - component: {fileID: 740410359663509763}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Origem Laser Esq
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1746,7 +1889,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7460714525284127745}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.55, y: 1.6360002, z: -1.303}
+  m_LocalPosition: {x: -2.55, y: 1.72, z: -1.23}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1800,7 +1943,7 @@ LineRenderer:
   - {x: 0, y: 0, z: 1}
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 1
+    widthMultiplier: 1.3811088
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -1812,7 +1955,16 @@ LineRenderer:
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
-        outWeight: 0.33333334
+        outWeight: 0.98275906
+      - serializedVersion: 3
+        time: 1
+        value: 0.47618854
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.35060617
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -1878,6 +2030,7 @@ MonoBehaviour:
   laserDuration: 2
   alvo: {fileID: 5646819962776423879}
   fxAvisoHit: {fileID: 2837789754189191986, guid: 677600227eb21ce4b80f75b8631db6b6, type: 3}
+  fxLaserSparks: {fileID: 6046552798496011376, guid: 1eaa1fd0c78c5e645b2c13d096a0ccc5, type: 3}
   maxXEsq: 0
   minXEsq: -28
   maxYEsq: 17
@@ -1893,7 +2046,7 @@ GameObject:
   - component: {fileID: 6273878666419066988}
   - component: {fileID: 4023451630146414362}
   - component: {fileID: 2071865027818527119}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Origem Laser Esq (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1908,7 +2061,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7933167297183503661}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.55, y: 1.6360002, z: -1.303}
+  m_LocalPosition: {x: -2.55, y: 1.7200001, z: -1.2300001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1962,7 +2115,7 @@ LineRenderer:
   - {x: 0, y: 0, z: 1}
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 1
+    widthMultiplier: 1.3811088
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -1974,7 +2127,16 @@ LineRenderer:
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
-        outWeight: 0.33333334
+        outWeight: 0.98275906
+      - serializedVersion: 3
+        time: 1
+        value: 0.47618854
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.35060617
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -2040,6 +2202,7 @@ MonoBehaviour:
   laserDuration: 2
   alvo: {fileID: 8908863749498303288}
   fxAvisoHit: {fileID: 2837789754189191986, guid: 677600227eb21ce4b80f75b8631db6b6, type: 3}
+  fxLaserSparks: {fileID: 6046552798496011376, guid: 1eaa1fd0c78c5e645b2c13d096a0ccc5, type: 3}
   maxXEsq: 0
   minXEsq: -28
   maxYEsq: 17
@@ -2068,7 +2231,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8908863749498303288}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.74, y: -2.14, z: -0.13000005}
+  m_LocalPosition: {x: -3.74, y: -2.14, z: 0.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

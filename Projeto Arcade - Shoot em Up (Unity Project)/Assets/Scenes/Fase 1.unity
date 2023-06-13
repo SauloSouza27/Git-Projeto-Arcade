@@ -24327,6 +24327,10 @@ PrefabInstance:
       propertyPath: serraCDIM
       value: 
       objectReference: {fileID: 190496450}
+    - target: {fileID: 4982083216758370162, guid: 6470e112d76167b4bac48cdaad12ef5d, type: 3}
+      propertyPath: escudoCDIM
+      value: 
+      objectReference: {fileID: 341393779}
     - target: {fileID: 5495702725229291689, guid: 6470e112d76167b4bac48cdaad12ef5d, type: 3}
       propertyPath: escudoCDIM
       value: 

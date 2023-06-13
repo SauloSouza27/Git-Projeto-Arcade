@@ -11,13 +11,13 @@ public class Escudo : MonoBehaviour
     public GameObject escudo;
     public Image escudoCDIM;
     public float velocidadeRotacao = 10f;
-    // Start is called before the first frame update
+
     void Start()
     {
         escudoCDIM.fillAmount = 0;
     }
 
-    // Update is called once per frame
+
     void Update()
     {
         Rotacao();
@@ -53,7 +53,7 @@ public class Escudo : MonoBehaviour
     }
     private void Rotacao()
     {
-        transform.Rotate(Vector3.up, velocidadeRotacao * Time.deltaTime);
-        transform.Rotate(Vector3.right, velocidadeRotacao * Time.deltaTime);
+        escudo.transform.Rotate(Vector3.up, velocidadeRotacao * Time.deltaTime);
+        escudo.transform.Rotate(Vector3.right, velocidadeRotacao * Time.deltaTime);
     }
 }
