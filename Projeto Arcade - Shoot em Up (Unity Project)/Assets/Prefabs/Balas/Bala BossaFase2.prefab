@@ -99,7 +99,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocidade: 5
   velocidadeRotacao: 5
-  distanciaSeguir: 8
+  distanciaSeguir: 11
   fatorAumentoVelocidade: 1
   projetil: {fileID: 2133145952157808992}
 --- !u!136 &7804706804279653058

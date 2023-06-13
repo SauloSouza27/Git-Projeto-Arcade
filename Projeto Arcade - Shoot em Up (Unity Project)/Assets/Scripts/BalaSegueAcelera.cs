@@ -18,7 +18,7 @@ public class BalaSegueAcelera : MonoBehaviour
     {
         MovimentoProjetil();
 
-        Debug.Log(Time.fixedDeltaTime);
+        Utilidades.DestroyOutOfScreen(projetil.transform.position, gameObject);
     }
 
     // Movimento bala
