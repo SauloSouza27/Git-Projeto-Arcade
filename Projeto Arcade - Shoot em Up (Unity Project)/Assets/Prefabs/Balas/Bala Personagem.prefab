@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 168933173958685423}
   - component: {fileID: 3933754776774701297}
   - component: {fileID: 199651809054491352}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Bala Personagem
   m_TagString: BalaPersonagem
   m_Icon: {fileID: 0}
@@ -101,11 +101,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocidade: 60
   projetil: {fileID: 2641279193909655389}
-  fxExpHit: {fileID: 938208836173243491, guid: 31cbfa08abd5728488ef01a5a9748da0, type: 3}
   destruidoPeloOrbe: 0
   destruidoPeloEscudo: 0
   rotacaoTiro: 0
-  geraExpHit: 1
   projetilRotacao: {fileID: 0}
   velocidadeRotacao: 0
   danoProjetil: 0
@@ -167,7 +165,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6912663538142740109}
   - component: {fileID: 8974029250636371377}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6968167818938079473}
   - component: {fileID: -7353087688419901374}
   - component: {fileID: 5681321903289198679}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Bala Pet
   m_TagString: BalaPet
   m_Icon: {fileID: 0}
@@ -101,11 +101,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocidade: 60
   projetil: {fileID: 8264596742114757972}
-  fxExpHit: {fileID: 938208836173243491, guid: 31cbfa08abd5728488ef01a5a9748da0, type: 3}
   destruidoPeloOrbe: 0
   destruidoPeloEscudo: 0
   rotacaoTiro: 0
-  geraExpHit: 1
   projetilRotacao: {fileID: 0}
   velocidadeRotacao: 0
   danoProjetil: 0
@@ -167,7 +165,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8623748930085187908}
   - component: {fileID: 2595877609424792201}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}

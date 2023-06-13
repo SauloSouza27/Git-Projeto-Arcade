@@ -35,6 +35,7 @@ TagManager:
   - PlanetaFase2
   - Cenario
   - CabecaBossFase1
+  - LaserSparks
   layers:
   - Default
   - TransparentFX
@@ -48,8 +49,8 @@ TagManager:
   - Inimigos
   - RolaBosta
   - Espinhoso
-  - 
-  - 
+  - LaserBossFase2
+  - ProjetilPlayer
   - 
   - 
   - 
@@ -71,4 +72,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: New Layer 1
+    uniqueID: 3621560317
+    locked: 0
+  - name: New Layer 2
+    uniqueID: 2896432479
     locked: 0

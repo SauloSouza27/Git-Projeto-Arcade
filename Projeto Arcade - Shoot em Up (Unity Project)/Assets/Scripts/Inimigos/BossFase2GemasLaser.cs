@@ -7,24 +7,31 @@ public class BossFase2GemasLaser : MonoBehaviour
     public Transform laserOrigin;
     public GameObject gema;
     public float gunRange = 55.0f;
-    public float fireRate = 1.0f, duracaoAviso = 1.0f;
+    public float atrasoAtirar = 0.0f, fireRate = 1.0f, duracaoAviso = 1.0f;
     public float laserDuration = 3.0f;
     // alvo laser
-    public GameObject alvo, fxAvisoHit;
+    public GameObject alvo, fxAvisoHit, fxLaserSparks;
     public float maxXEsq = 0, minXEsq = -28.0f, maxYEsq = 17.0f, minYEsq = 1.0f;
 
     private LineRenderer laserLine;
-    public GameObject instaciaAvisoHitEsq;
-    public float avisoTimer, fireTimer;
-    public Vector3 posAlvo;
-    public bool achouAlvo = false;
+    private GameObject player, instaciaAvisoHitEsq, instanciaLaserSparks;
+    private float atrasoTimer, avisoTimer, fireTimer;
+    private Vector3 posAlvo;
+    private bool achouAlvo = false, instanciouSparks = false;
 
     private void Awake()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
         laserLine = gema.GetComponent<LineRenderer>();
     }
     private void Update()
     {
+        if (atrasoTimer < atrasoAtirar)
+        {
+            atrasoTimer += Time.deltaTime;
+            return;
+        }
+
         avisoTimer += Time.deltaTime;
         if(avisoTimer > fireRate)
         {
@@ -38,6 +45,7 @@ public class BossFase2GemasLaser : MonoBehaviour
         laserLine.enabled = false;
         fireTimer = 0;
         achouAlvo = false;
+        instanciouSparks = false;
         avisoTimer = 0;
         StopAllCoroutines();
     }
@@ -48,7 +56,7 @@ public class BossFase2GemasLaser : MonoBehaviour
         float posX = Random.Range(minXEsq, maxXEsq);
         float posY = Random.Range(minYEsq, maxYEsq);
 
-        alvo.transform.position = new Vector3(posX, posY, 0.0f);
+        alvo.transform.position = new Vector3(posX, posY, 0.25f);
 
         return alvo.transform.position;
     }
@@ -79,11 +87,32 @@ public class BossFase2GemasLaser : MonoBehaviour
                 dir = dir.normalized;
                 if (Physics.Raycast(rayOrigin, dir, out hit, gunRange))
                 {
-                    laserLine.SetPosition(1, hit.point);
+                    if (hit.collider.gameObject.CompareTag("Player"))
+                    {
+                        laserLine.SetPosition(1, hit.point);
+                        if (!instanciouSparks)
+                        {
+                            instanciaLaserSparks = Instantiate(fxLaserSparks, posAlvo, fxLaserSparks.transform.rotation);
+                            instanciouSparks = true;
+                        }
+                        if (instanciouSparks && instanciaLaserSparks != null)
+                        {
+                            instanciaLaserSparks.transform.position = hit.point;
+                        }
+                    }
                 }
                 else
                 {
                     laserLine.SetPosition(1, posAlvo);
+                    if (!instanciouSparks)
+                    {
+                        instanciaLaserSparks = Instantiate(fxLaserSparks, posAlvo, fxLaserSparks.transform.rotation);
+                        instanciouSparks = true;
+                    }
+                    if (instanciouSparks && instanciaLaserSparks != null)
+                    {
+                        instanciaLaserSparks.transform.position = posAlvo;
+                    }
                 }
                 StartCoroutine(ShootLaser());
                 Destroy(instaciaAvisoHitEsq);
