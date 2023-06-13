@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Escudo : MonoBehaviour
 {
@@ -8,11 +9,12 @@ public class Escudo : MonoBehaviour
     private float respawnTime = 10f;
     private float respawnTimer = 0f;
     public GameObject escudo;
+    public Image escudoCDIM;
     public float velocidadeRotacao = 10f;
     // Start is called before the first frame update
     void Start()
     {
-        
+        escudoCDIM.fillAmount = 0;
     }
 
     // Update is called once per frame
@@ -28,7 +30,12 @@ public class Escudo : MonoBehaviour
                 escudo.GetComponent<MeshRenderer>().enabled = true;
                 escudo.GetComponent<Collider>().enabled = true;
                 isCollided = false;
-                respawnTimer = 0f;
+                respawnTimer = 0f;                
+            }
+            escudoCDIM.fillAmount -= 1 / respawnTime * Time.deltaTime;
+            if (escudoCDIM.fillAmount <= 0)
+            {
+                escudoCDIM.fillAmount = 0;
             }
         }
 
@@ -41,6 +48,7 @@ public class Escudo : MonoBehaviour
             escudo.GetComponent<MeshRenderer>().enabled = false;
             escudo.GetComponent<Collider>().enabled = false;
             isCollided = true;
+            escudoCDIM.fillAmount = 1;
         }
     }
     private void Rotacao()

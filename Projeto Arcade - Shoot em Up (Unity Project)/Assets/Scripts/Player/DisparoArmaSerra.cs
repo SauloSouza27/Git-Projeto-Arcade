@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DisparoArmaSerra : MonoBehaviour
 {
@@ -10,6 +11,12 @@ public class DisparoArmaSerra : MonoBehaviour
     private float contadorCooldown;
     // Dano
     public int danoSerra = 3;
+    public Image serraCDIM;
+
+    private void Start()
+    {
+        serraCDIM.fillAmount = 0;
+    }
 
     void Update()
     {
@@ -22,6 +29,15 @@ public class DisparoArmaSerra : MonoBehaviour
         {
             DiparaSerra();
             contadorCooldown = cooldown;
+            serraCDIM.fillAmount = 1;
+        }
+        if(contadorCooldown != 0)
+        {
+            serraCDIM.fillAmount -= 1 / cooldown * Time.deltaTime;
+            if (serraCDIM.fillAmount <= 0)
+            {
+                serraCDIM.fillAmount = 0;
+            }
         }
     }
 
