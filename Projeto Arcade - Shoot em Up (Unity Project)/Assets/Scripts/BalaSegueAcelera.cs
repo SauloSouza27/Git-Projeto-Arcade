@@ -27,13 +27,22 @@ public class BalaSegueAcelera : MonoBehaviour
         Vector3 dir = alvo.transform.position - projetil.transform.position;
         float distancia = dir.magnitude;
 
-        if(distancia >= distanciaSeguir && !paraSeguir)
+        if(distancia >= distanciaSeguir)
         {
-            //Movimento de seguir jogador
-            projetil.transform.position += Time.deltaTime * velocidade * dir.normalized;
-            velocidade += fatorAumentoVelocidade * Time.deltaTime;
-            //rotaçao olhar jogador
-            projetil.transform.up = Vector3.Slerp(projetil.transform.up, dir, velocidadeRotacao * Time.deltaTime);
+            if (!paraSeguir)
+            {
+                //Movimento de seguir jogador
+                projetil.transform.position += Time.deltaTime * velocidade * dir.normalized;
+                velocidade += fatorAumentoVelocidade * Time.deltaTime;
+                //rotaçao olhar jogador
+                projetil.transform.up = Vector3.Slerp(projetil.transform.up, dir, velocidadeRotacao * Time.deltaTime);
+            }
+            if (paraSeguir)
+            {
+                //Ir reto até sumir
+                projetil.transform.Translate(0, velocidade * Time.deltaTime, 0);
+                velocidade += fatorAumentoVelocidade * Time.deltaTime;
+            }
         }
 
         if (distancia < distanciaSeguir)
