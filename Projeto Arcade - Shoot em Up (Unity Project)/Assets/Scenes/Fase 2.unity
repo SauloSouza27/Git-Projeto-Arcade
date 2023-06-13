@@ -2930,6 +2930,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1557993001443230978, guid: f6435d23d7c4fc1428f7d4512393f796, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Fase 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3651670717660087130, guid: f6435d23d7c4fc1428f7d4512393f796, type: 3}
       propertyPath: m_Pivot.x
       value: 0
