@@ -9,9 +9,8 @@ public class MovimentoBossFase2 : MonoBehaviour
     public GameObject cabeca;
     public float velocidadeRotacaoCabeca = 1.0f, velocidadeRotacaoCorpo = 0.5f;
     //vida
-    public int primeiraVida = 300, segundaVida = 300, terceiraVida = 300;
+    public int primeiraVida = 300, segundaVida = 300, terceiraVida = 300, quartaVida = 300;
     private bool stage1 = true, stage2 = false, stage3 = false, stage4 = false;
-
     //tiros
     public GameObject balaRa, balaOlhos, olhoRa, olhoEsq, olhoDir;
         // Ra
@@ -24,15 +23,23 @@ public class MovimentoBossFase2 : MonoBehaviour
         public int numeroDisparosOlhos = 10;
         private float contadorCooldownOlhos, contadorDisparosOlhos;
         private bool ativaArmaOlhos = false;
-
     //lasers
     public GameObject laserEsq, laserDir;
-
+    // tornado
+    public GameObject tornadoPrefab, spawnTornEsq, SpawnTornDir;
+    [Range(0, 5)] public float cooldownTornado = 0.3f, tempoDisparoTornado = 3.0f;
+    public int numeroDisparosTornado = 4;
+    private float contadorCooldownTornado, contadorDisparosTornado;
+    private bool ativaArmaTornado = false;
     // Materiais
     private MeshRenderer[] renderers;
     private Material[] materiais;
     // fx
     public GameObject fxExplosionPrefab, fxExpHit, fxExpHitPet;
+    // ui VItoria
+    public GameObject uiVitoria;
+    // partes corpo boss fase 2
+    private Transform[] partesCorpo;
 
     private void Start()
     {
@@ -44,12 +51,16 @@ public class MovimentoBossFase2 : MonoBehaviour
         {
             materiais[i] = renderers[i].material;
         }
+        // busca partes Corpo
+        partesCorpo = GetComponentsInChildren<Transform>();
 
         ativaArmaRa = false;
         StartCoroutine(IntervaloDisparoRa(2.0f));
     }
     private void Update()
     {
+        if (Time.timeScale == 0) return;
+
         MovimentoCabeca();
         MovimentoCorpo();
 
@@ -66,8 +77,13 @@ public class MovimentoBossFase2 : MonoBehaviour
         if (stage3)
         {
             ArmaRa();
+            ArmaTornado();
+        }
+
+        if (stage4)
+        {
             ArmaOlhos();
-            Invoke(nameof(AtivaLasers), 10.0f);
+            ArmaTornado();
         }
     }
     //Movimento
@@ -89,6 +105,7 @@ public class MovimentoBossFase2 : MonoBehaviour
     }
     private void MovimentoCabeca()
     {
+        if (cabeca == null) return;
         // rotacao cabeca
         Vector3 direcao = alvo.transform.position - cabeca.transform.position;
         direcao = direcao.normalized;
@@ -143,10 +160,10 @@ public class MovimentoBossFase2 : MonoBehaviour
     // arma olhos
     private void ArmaOlhos()
     {
-        // disparo arma Ra
+        // disparo arma Olhos
         if (ativaArmaOlhos)
         {
-            // Cooldown e controle tiro Ra
+            // Cooldown e controle tiro Olhos
             Utilidades.CalculaCooldown(contadorCooldownOlhos);
             contadorCooldownOlhos = Utilidades.CalculaCooldown(contadorCooldownOlhos);
             if (contadorCooldownOlhos == 0)
@@ -175,7 +192,43 @@ public class MovimentoBossFase2 : MonoBehaviour
         yield return new WaitForSeconds(cooldown);
         ativaArmaOlhos = true;
     }
-    // dano e Stágios
+
+    // Disparo Tornados
+    private void ArmaTornado()
+    {
+        // disparo arma Tornado
+        if (ativaArmaTornado)
+        {
+            // Cooldown e controle tiro Tornado
+            Utilidades.CalculaCooldown(contadorCooldownTornado);
+            contadorCooldownTornado = Utilidades.CalculaCooldown(contadorCooldownTornado);
+            if (contadorCooldownTornado == 0)
+            {
+                TiroTornados();
+                contadorCooldownTornado = cooldownTornado;
+                contadorDisparosTornado++;
+                if (contadorDisparosTornado < numeroDisparosTornado) return;
+                else
+                {
+                    contadorDisparosTornado = 0;
+                    ativaArmaTornado = false;
+                    StartCoroutine(IntervaloDisparoTornados(tempoDisparoTornado));
+                }
+            }
+        }
+    }
+    private void TiroTornados()
+    {
+        Instantiate(tornadoPrefab, spawnTornEsq.transform.position, tornadoPrefab.transform.rotation);
+        Instantiate(tornadoPrefab, SpawnTornDir.transform.position, tornadoPrefab.transform.rotation);
+    }
+    private IEnumerator IntervaloDisparoTornados(float cooldown)
+    {
+        yield return new WaitForSeconds(cooldown);
+        ativaArmaTornado = true;
+    }
+
+    // Dano e Stágios
     private void CaluclaDanoInimigo(int dano)
     {
         if (stage1)
@@ -213,7 +266,9 @@ public class MovimentoBossFase2 : MonoBehaviour
             {
                 stage2 = false;
                 stage3 = true;
+                cooldownRa = 0.5f;
                 DesativaLasers();
+                StartCoroutine(IntervaloDisparoTornados(tempoDisparoTornado));
             }
         }
 
@@ -232,8 +287,42 @@ public class MovimentoBossFase2 : MonoBehaviour
             {
                 stage3 = false;
                 stage4 = true;
+                AtivaLasers();
             }
         }
+
+        if (stage4)
+        {
+            if (quartaVida > 0)
+            {
+                quartaVida -= dano;
+
+                foreach (Material material in materiais)
+                {
+                    StartCoroutine(Utilidades.PiscaCorRoutine(material));
+                }
+            }
+            if (quartaVida <= 0)
+            {
+                stage4 = false;
+                DesativaLasers();
+                Instantiate(fxExplosionPrefab, transform.position, transform.rotation);
+                foreach(Transform ts in partesCorpo)
+                {
+                    ts.gameObject.SetActive(false);
+                }
+                partesCorpo[0].gameObject.SetActive(true);
+                StartCoroutine(CarregaUIVItoria(uiVitoria, 2.0f));
+            }
+        }
+    }
+    private IEnumerator CarregaUIVItoria(GameObject uiVitoria, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        uiVitoria.SetActive(true);
+        Time.timeScale = 0;
+        StopAllCoroutines();
+        yield break;
     }
     private void FXExplosionHit(GameObject fxExpHit, Collision colisor)
     {

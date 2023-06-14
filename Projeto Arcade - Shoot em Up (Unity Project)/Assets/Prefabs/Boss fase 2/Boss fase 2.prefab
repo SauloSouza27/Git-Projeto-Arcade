@@ -986,7 +986,7 @@ GameObject:
   - component: {fileID: 8159750211023736808}
   - component: {fileID: 6458624791515446205}
   - component: {fileID: 6052300175480835914}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Boss Fase 2
   m_TagString: Inimigo
   m_Icon: {fileID: 0}
@@ -1030,7 +1030,8 @@ MonoBehaviour:
   velocidadeRotacaoCorpo: 0.2
   primeiraVida: 10
   segundaVida: 10
-  terceiraVida: 300
+  terceiraVida: 10
+  quartaVida: 10
   balaRa: {fileID: 2133145952157808992, guid: 5e294fbf5015e524fb86adae5a2c3607, type: 3}
   balaOlhos: {fileID: 2133145952157808992, guid: 6b93d77adec2d78418fe463c99fee988, type: 3}
   olhoRa: {fileID: 3701600397790243733}
@@ -1044,9 +1045,16 @@ MonoBehaviour:
   numeroDisparosOlhos: 3
   laserEsq: {fileID: 7171798680732912925}
   laserDir: {fileID: 3589482650230591473}
+  tornadoPrefab: {fileID: 4774794035143701869, guid: 5098b123c00bfe740b40e45c0ff67fec, type: 3}
+  spawnTornEsq: {fileID: 8641436431661439196}
+  SpawnTornDir: {fileID: 5709818896499454283}
+  cooldownTornado: 1
+  tempoDisparoTornado: 3
+  numeroDisparosTornado: 4
   fxExplosionPrefab: {fileID: 1881244900910883316, guid: 005c7c2efd9a1404bbef9b64990f086d, type: 3}
   fxExpHit: {fileID: 938208836173243491, guid: 31cbfa08abd5728488ef01a5a9748da0, type: 3}
   fxExpHitPet: {fileID: 938208836173243491, guid: d02aadc186cdd13448f83e1f6b03b16a, type: 3}
+  uiVitoria: {fileID: 0}
 --- !u!65 &8159750211023736808
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1491,6 +1499,37 @@ Transform:
   m_Father: {fileID: 2759526726492574436}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5709818896499454283
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5477594616219864458}
+  m_Layer: 0
+  m_Name: SpawnTornadoDir
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5477594616219864458
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5709818896499454283}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.6, y: 0.6, z: 0.09}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2729328101983894878}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5725927146751365202
 GameObject:
   m_ObjectHideFlags: 0
@@ -1837,7 +1876,9 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 2663660369731871894}
+  - {fileID: 5477594616219864458}
   m_Father: {fileID: 3856218712620785793}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 14.5, y: 0, z: 0}
@@ -2359,6 +2400,37 @@ MonoBehaviour:
   minXEsq: -28
   maxYEsq: 17
   minYEsq: 1
+--- !u!1 &8641436431661439196
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2663660369731871894}
+  m_Layer: 0
+  m_Name: SpawnTornadoEsq
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2663660369731871894
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8641436431661439196}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.6, y: 0.6, z: 0.09}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2729328101983894878}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8908863749498303288
 GameObject:
   m_ObjectHideFlags: 0
