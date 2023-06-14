@@ -87,11 +87,11 @@ public class ControlaUiPowerUp : MonoBehaviour
         esq.SetActive(true);
         listaPowerUPs.Remove(itemLista);
 
-        //index = Random.Range(0, listaPowerUPs.Count);
-        //itemLista = listaPowerUPs[index];
-        //GameObject centro = Instantiate(itemLista.gameObject, buttonCentro.transform.position, buttonCentro.transform.rotation, this.transform);
-        //centro.SetActive(true);
-        //listaPowerUPs.Remove(itemLista);
+        index = Random.Range(0, listaPowerUPs.Count);
+        itemLista = listaPowerUPs[index];
+        GameObject centro = Instantiate(itemLista.gameObject, buttonCentro.transform.position, buttonCentro.transform.rotation, this.transform);
+        centro.SetActive(true);
+        listaPowerUPs.Remove(itemLista);
 
         index = Random.Range(0, listaPowerUPs.Count);
         itemLista = listaPowerUPs[index];

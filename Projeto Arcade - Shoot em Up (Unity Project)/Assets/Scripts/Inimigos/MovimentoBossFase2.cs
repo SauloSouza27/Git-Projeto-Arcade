@@ -378,4 +378,13 @@ public class MovimentoBossFase2 : MonoBehaviour
             CaluclaDanoInimigo(dano);
         }
     }
+    private void OnCollisionExit(Collision colisor)
+    {
+        if (colisor.gameObject.CompareTag("ProjetilSerra"))
+        {
+            int dano = alvo.GetComponent<DisparoArmaSerra>().danoSerra;
+
+            CaluclaDanoInimigo(dano);
+        }
+    }
 }

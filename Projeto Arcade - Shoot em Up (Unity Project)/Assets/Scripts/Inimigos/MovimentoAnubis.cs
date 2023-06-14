@@ -165,6 +165,15 @@ public class MovimentoAnubis : MonoBehaviour
             CaluclaDanoInimigo(dano);
         }
     }
+    private void OnCollisionExit(Collision colisor)
+    {
+        if (colisor.gameObject.CompareTag("ProjetilSerra"))
+        {
+            int dano = alvo.GetComponent<DisparoArmaSerra>().danoSerra;
+
+            CaluclaDanoInimigo(dano);
+        }
+    }
 
     // Tiro
     private void Tiro()
