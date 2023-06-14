@@ -37,6 +37,7 @@ TagManager:
   - CabecaBossFase1
   - LaserSparks
   - BalaBossFase2
+  - PowerUPEscudo
   layers:
   - Default
   - TransparentFX

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Escudo : MonoBehaviour
 {
     private bool isCollided = false;
-    private float respawnTime = 10f;
+    public float respawnTime = 10f;
     private float respawnTimer = 0f;
     public GameObject escudo, player;
     public Image escudoCDIM;

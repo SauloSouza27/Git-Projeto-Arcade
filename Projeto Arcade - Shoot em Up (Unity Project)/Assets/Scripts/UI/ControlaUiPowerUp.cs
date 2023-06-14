@@ -65,6 +65,13 @@ public class ControlaUiPowerUp : MonoBehaviour
                     buttonsCena.Add(go);
                 }
             }
+            if (controladorGame.GetComponent<ControladorGame>().defesaEscudoAtivada == true)
+            {
+                if (go.CompareTag("PowerUPEscudo"))
+                {
+                    buttonsCena.Add(go);
+                }
+            }
         }
         return buttonsCena;
     }

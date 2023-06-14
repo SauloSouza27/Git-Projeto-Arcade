@@ -21,10 +21,10 @@ public class ControladorGame : MonoBehaviour
     public GameObject spawnsInimigoPequeno;
     public List<GameObject> spawnsCima, spawnsLaterais, spawnsBaixo;
     // Power UP
-    public GameObject menuConfig, uiGameOver, uiVitoria, uiPowerUP, escudoCD, serraCD, armaPrincipal, armaDouble, armaTriple, buttonSubirNivel, buttonArmaDouble,
-        buttonArmaTriple, buttonDiminuiCooldown, buttonEscudo, buttonArmaPet, buttonPetDiminuiCooldown, buttonArmaOrbeGiratorio, buttonUpgradeOrbe1, buttonVelocidadeOrbe, buttonArmaSerra;
+    public GameObject menuConfig, uiGameOver, uiVitoria, uiPowerUP, escudoCD, serraCD, armaPrincipal, armaDouble, armaTriple, escudo, buttonSubirNivel, buttonArmaDouble,
+        buttonArmaTriple, buttonDiminuiCooldown, buttonEscudo, buttonUPEscudo, buttonArmaPet, buttonPetDiminuiCooldown, buttonArmaOrbeGiratorio, buttonUpgradeOrbe1, buttonVelocidadeOrbe, buttonArmaSerra;
     public bool armaPrincipalAtivada = true, armaDoubleAtivada = false, armaTripleAtivada = false, armaPetAtivada = false, defesaEscudoAtivada = false, armaOrbeGiratorioAtivada = false, upgradeOrbe1 = false, armaSerraAtivada = false;
-    private int contadorMaxVelocidadeAtaque = 0, contadorMaxVelocidadeAtaquePet = 0, contadorMaxVelocidadeOrbe = 0;
+    private int contadorMaxUpEscudo = 0, contadorMaxVelocidadeAtaque = 0, contadorMaxVelocidadeAtaquePet = 0, contadorMaxVelocidadeOrbe = 0;
     private readonly float multVelAtak = 0.75f;
     // inimigos Morcego Drone
     public GameObject nivel1, nivel2, nivel3, nivel4, nivel5, nivel6, nivel7, nivel8, nivel9, nivel10;
@@ -189,6 +189,11 @@ public class ControladorGame : MonoBehaviour
             nivel8.SetActive(false);
             StartCoroutine(AtivaInimigo(nivel9, 4.0f));
         }
+        if (nivel == 10)
+        {
+            nivel9.SetActive(false);
+            StartCoroutine(AtivaInimigo(nivel10, 2.0f));
+        }
     }
 
     public void AtualizaBarraHP()
@@ -277,6 +282,22 @@ public class ControladorGame : MonoBehaviour
         escudoCD.SetActive(true);
         defesaEscudoAtivada = true;
         Destroy(buttonEscudo);
+        Time.timeScale = 1.0f;
+        AtivaSpawnInimigosPequenos();
+        uiPowerUP.SetActive(false);
+    }
+    public void PowerUPRecargaDefesaEscudo()
+    {
+        if (contadorMaxUpEscudo < 3)
+        {
+            escudo.GetComponent<Escudo>().respawnTime -= 1.5f;
+            contadorMaxUpEscudo++;
+        }
+        if (contadorMaxUpEscudo >= 3)
+        {
+            escudo.GetComponent<Escudo>().respawnTime -= 1.5f;
+            Destroy(buttonUPEscudo);
+        }
         Time.timeScale = 1.0f;
         AtivaSpawnInimigosPequenos();
         uiPowerUP.SetActive(false);
