@@ -158,6 +158,7 @@ public class MovimentoBossFase2 : MonoBehaviour
                 stage1 = false;
                 stage2 = true;
                 AtivaLasers(true);
+                StartCoroutine(IntervaloDisparoOlhos(tempoDisparoOlhos));
             }
         }
         
