@@ -99,7 +99,7 @@ public class BossFase2GemasLaser : MonoBehaviour
                 dir = dir.normalized;
                 if (Physics.Raycast(rayOrigin, dir, out hit, gunRange))
                 {
-                    if (hit.collider.gameObject.CompareTag("Player"))
+                    if (hit.collider.gameObject.CompareTag("Player") || hit.collider.gameObject.CompareTag("Escudo"))
                     {
                         laserLine.SetPosition(1, hit.point);
                         if (!instanciouSparks)
