@@ -225,7 +225,7 @@ public class MovimentoBossFase2 : MonoBehaviour
     {
         Instantiate(tornadoPrefab, spawnTornEsq.transform.position, tornadoPrefab.transform.rotation);
         Instantiate(tornadoPrefab, SpawnTornDir.transform.position, tornadoPrefab.transform.rotation);
-        //somTiros[2].Play();
+        somTiros[2].Play();
     }
     private IEnumerator IntervaloDisparoTornados(float cooldown)
     {
