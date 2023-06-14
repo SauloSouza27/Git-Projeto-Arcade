@@ -149,4 +149,14 @@ public class ControleVidaArmasBoss : MonoBehaviour
             CausaDanosNasArmas(dano);
         }
     }
+
+    private void OnCollisionExit(Collision colisor)
+    {
+        if (colisor.gameObject.CompareTag("ProjetilSerra"))
+        {
+            int dano = alvo.GetComponent<DisparoArmaSerra>().danoSerra;
+
+            CausaDanosNasArmas(dano);
+        }
+    }
 }

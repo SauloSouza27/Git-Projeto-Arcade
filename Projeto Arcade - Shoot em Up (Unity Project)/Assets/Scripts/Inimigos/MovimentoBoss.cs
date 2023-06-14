@@ -457,5 +457,49 @@ public class MovimentoBoss : MonoBehaviour
             }
         }
     }
+
+    private void OnCollisionExit(Collision colisor)
+    {
+        if (tomaDano && corpoPiramide != null)
+        {
+            contadorCooldown = Utilidades.CalculaCooldown(contadorCooldown);
+            if (colisor.gameObject.CompareTag("ProjetilSerra"))
+            {
+                int dano = alvo.GetComponent<DisparoArmaSerra>().danoSerra;
+                if (vidaCorpo > 0 && contadorCooldown == 0)
+                {
+                    vidaCorpo -= dano;
+                    foreach (Material material in materiais)
+                    {
+                        StartCoroutine(Utilidades.PiscaCorRoutine(material));
+                    }
+                }
+                if (vidaCorpo <= 0)
+                {
+                    MorteCorpo();
+                }
+            }
+        }
+        if (tomaDano && corpoPiramide == null)
+        {
+            contadorCooldown = Utilidades.CalculaCooldown(contadorCooldown);
+            if (colisor.gameObject.CompareTag("ProjetilSerra"))
+            {
+                int dano = alvo.GetComponent<DisparoArmaSerra>().danoSerra;
+                if (vidaCabeca > 0 && contadorCooldown == 0)
+                {
+                    vidaCabeca -= dano;
+                    foreach (Material material in materiais)
+                    {
+                        StartCoroutine(Utilidades.PiscaCorRoutine(material));
+                    }
+                }
+                if (vidaCabeca <= 0)
+                {
+                    MorteCabeca();
+                }
+            }
+        }
+    }
 }
 

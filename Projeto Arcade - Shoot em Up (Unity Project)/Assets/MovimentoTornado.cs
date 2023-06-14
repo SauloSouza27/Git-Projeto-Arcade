@@ -9,14 +9,13 @@ public class MovimentoTornado : MonoBehaviour
     private float contadorCooldown;
     public float cooldownMudaDirecao = 2.0f;
     public GameObject tornado;
-    // Start is called before the first frame update
+
     void Start()
     {
         cooldownMudaDirecao /= 2;
         contadorCooldown = cooldownMudaDirecao;
     }
 
-    // Update is called once per frame
     void Update()
     {
         Movimento();
