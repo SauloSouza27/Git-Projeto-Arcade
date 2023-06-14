@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2349646941780303555}
   - component: {fileID: 3034175627897435178}
   - component: {fileID: 553748256202515894}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: TornadoDentro
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4840,7 +4840,7 @@ GameObject:
   - component: {fileID: 7463886475755076302}
   - component: {fileID: 6403724254407613819}
   - component: {fileID: 4436288513734462931}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: TornadoPrefab
   m_TagString: Tornado
   m_Icon: {fileID: 0}
@@ -4940,7 +4940,7 @@ GameObject:
   - component: {fileID: 6327702453942606708}
   - component: {fileID: 6029711983106923375}
   - component: {fileID: 4241286651176510905}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: TornadoPF
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9766,9 +9766,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8392766081322732562}
     m_Modifications:
+    - target: {fileID: 165412375230851336, guid: e4a4481a120395943bf43b84b41b134a, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 189840469343468333, guid: e4a4481a120395943bf43b84b41b134a, type: 3}
       propertyPath: m_Name
       value: TornadoPF
+      objectReference: {fileID: 0}
+    - target: {fileID: 1475387400679419562, guid: e4a4481a120395943bf43b84b41b134a, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2019174115612157628, guid: e4a4481a120395943bf43b84b41b134a, type: 3}
       propertyPath: m_RootOrder
