@@ -10456,10 +10456,22 @@ PrefabInstance:
       propertyPath: escudoCDIM
       value: 
       objectReference: {fileID: 1611775070}
+    - target: {fileID: 1859866850645625244, guid: 6470e112d76167b4bac48cdaad12ef5d, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4974276118539672254, guid: 6470e112d76167b4bac48cdaad12ef5d, type: 3}
       propertyPath: serraCDIM
       value: 
       objectReference: {fileID: 992078762}
+    - target: {fileID: 5690551041489826068, guid: 6470e112d76167b4bac48cdaad12ef5d, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7972953504568763118, guid: 6470e112d76167b4bac48cdaad12ef5d, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9074662426996894289, guid: 6470e112d76167b4bac48cdaad12ef5d, type: 3}
       propertyPath: m_Name
       value: Personagem Principal
@@ -13738,18 +13750,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 981386786}
     m_Modifications:
-    - target: {fileID: 762503939207037870, guid: 21ba06eb2d4749243a828c31e3e33f77, type: 3}
-      propertyPath: balaOlhos
-      value: 
-      objectReference: {fileID: 2133145952157808992, guid: 6b93d77adec2d78418fe463c99fee988, type: 3}
-    - target: {fileID: 762503939207037870, guid: 21ba06eb2d4749243a828c31e3e33f77, type: 3}
-      propertyPath: segundaVida
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 762503939207037870, guid: 21ba06eb2d4749243a828c31e3e33f77, type: 3}
-      propertyPath: primeiraVida
-      value: 20
-      objectReference: {fileID: 0}
     - target: {fileID: 3854168282922302638, guid: 21ba06eb2d4749243a828c31e3e33f77, type: 3}
       propertyPath: m_Name
       value: Boss fase 2
