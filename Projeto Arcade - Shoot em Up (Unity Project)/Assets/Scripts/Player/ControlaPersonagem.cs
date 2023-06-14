@@ -76,7 +76,7 @@ public class ControlaPersonagem : MonoBehaviour
     {
 
         if (colisor.gameObject.CompareTag("Inimigo") || colisor.gameObject.CompareTag("BalaPiramide") || colisor.gameObject.CompareTag("BalaBossPiramide") ||
-            colisor.gameObject.CompareTag("BalaAnubis") || colisor.gameObject.CompareTag("LaserSparks") || colisor.gameObject.CompareTag("BalaBossFase2"))
+            colisor.gameObject.CompareTag("BalaAnubis") || colisor.gameObject.CompareTag("LaserSparks") || colisor.gameObject.CompareTag("BalaBossFase2") || colisor.gameObject.CompareTag("Tornado"))
         {
             if (pontosVida > 0)
             {
@@ -86,7 +86,7 @@ public class ControlaPersonagem : MonoBehaviour
                 }
                 
                 if (colisor.gameObject.CompareTag("BalaPiramide") || colisor.gameObject.CompareTag("BalaBossPiramide") || colisor.gameObject.CompareTag("BalaAnubis") || 
-                    colisor.gameObject.CompareTag("BalaBossFase2"))
+                    colisor.gameObject.CompareTag("BalaBossFase2") || colisor.gameObject.CompareTag("Tornado"))
                 {
                     Destroy(colisor.gameObject);
                 }

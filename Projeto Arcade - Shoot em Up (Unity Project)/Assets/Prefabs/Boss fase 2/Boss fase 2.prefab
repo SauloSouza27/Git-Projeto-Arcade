@@ -1028,10 +1028,10 @@ MonoBehaviour:
   cabeca: {fileID: 303345661946175772}
   velocidadeRotacaoCabeca: 1.2
   velocidadeRotacaoCorpo: 0.2
-  primeiraVida: 10
-  segundaVida: 10
-  terceiraVida: 10
-  quartaVida: 10
+  primeiraVida: 250
+  segundaVida: 250
+  terceiraVida: 250
+  quartaVida: 250
   balaRa: {fileID: 2133145952157808992, guid: 5e294fbf5015e524fb86adae5a2c3607, type: 3}
   balaOlhos: {fileID: 2133145952157808992, guid: 6b93d77adec2d78418fe463c99fee988, type: 3}
   olhoRa: {fileID: 3701600397790243733}
