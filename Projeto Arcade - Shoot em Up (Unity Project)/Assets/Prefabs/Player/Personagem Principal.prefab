@@ -5151,7 +5151,6 @@ GameObject:
   - component: {fileID: 1827807818842465192}
   - component: {fileID: 5995971232770565429}
   - component: {fileID: 4974276118539672254}
-  - component: {fileID: 4982083216758370162}
   - component: {fileID: 5690551041489826068}
   - component: {fileID: 1859866850645625244}
   - component: {fileID: 7972953504568763118}
@@ -5226,6 +5225,7 @@ MonoBehaviour:
   danoArmaPrincipal: 2
   particulasDano: {fileID: 1346597017377448381}
   tomaDano: {fileID: 4268107023435981221}
+  isInvulneravel: 0
 --- !u!114 &7773611179429094950
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5329,21 +5329,6 @@ MonoBehaviour:
   cooldown: 4
   danoSerra: 6
   serraCDIM: {fileID: 0}
---- !u!114 &4982083216758370162
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9074662426996894289}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2014ec3e88854444585b7354463d2567, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  escudo: {fileID: 9151170500197457612}
-  escudoCDIM: {fileID: 0}
-  velocidadeRotacao: 10
 --- !u!65 &5690551041489826068
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6059,7 +6044,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5891513424844667112, guid: 9679eae0931bb624a9799f13489a26ad, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1099883670629336580}
   m_SourcePrefab: {fileID: 100100000, guid: 9679eae0931bb624a9799f13489a26ad, type: 3}
 --- !u!4 &2161081479380777188 stripped
 Transform:
@@ -6071,6 +6059,22 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5891513424844667112, guid: 9679eae0931bb624a9799f13489a26ad, type: 3}
   m_PrefabInstance: {fileID: 3404054101330372132}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1099883670629336580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9151170500197457612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2014ec3e88854444585b7354463d2567, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  escudo: {fileID: 9151170500197457612}
+  player: {fileID: 9074662426996894289}
+  escudoCDIM: {fileID: 0}
+  velocidadeRotacao: 10
 --- !u!1001 &3619934923991343593
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -30,7 +30,7 @@ public class MovimentoInimigoBesouro : MonoBehaviour
         controladorGame = GameObject.FindGameObjectWithTag("ControladorGame");
         alvo = GameObject.FindGameObjectWithTag("Player");
         // Busca materiais do inimigo
-        renderers = bosta.GetComponentsInChildren<MeshRenderer>();
+        renderers = besouro.GetComponentsInChildren<MeshRenderer>();
         materiais = new Material[renderers.Length];
         for (int i = 0; i < renderers.Length; i++)
         {

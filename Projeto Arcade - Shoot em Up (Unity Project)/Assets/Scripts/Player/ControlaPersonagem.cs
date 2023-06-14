@@ -25,7 +25,7 @@ public class ControlaPersonagem : MonoBehaviour
     private Color[] coresOriginais;
     // sons player
     public AudioSource tomaDano;
-    private bool isInvulneravel = false;
+    public bool isInvulneravel = false;
 
     void Start()
     {
@@ -231,7 +231,7 @@ public class ControlaPersonagem : MonoBehaviour
             materiais[i].color = Color.Lerp(materiais[i].color, coresOriginais[i], velocidadeCorMaterial * Time.deltaTime);
         }
     }
-    private IEnumerator Invulnerabilidade()
+    public IEnumerator Invulnerabilidade()
     {
         yield return new WaitForSeconds(timerInvulneravel);
         isInvulneravel = false;

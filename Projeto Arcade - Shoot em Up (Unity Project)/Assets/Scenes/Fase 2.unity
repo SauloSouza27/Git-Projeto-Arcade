@@ -5394,7 +5394,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &981386786
 Transform:
   m_ObjectHideFlags: 0
@@ -9669,7 +9669,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1724466337
 Transform:
   m_ObjectHideFlags: 0
@@ -10452,14 +10452,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1099883670629336580, guid: 6470e112d76167b4bac48cdaad12ef5d, type: 3}
+      propertyPath: escudoCDIM
+      value: 
+      objectReference: {fileID: 1611775070}
     - target: {fileID: 4974276118539672254, guid: 6470e112d76167b4bac48cdaad12ef5d, type: 3}
       propertyPath: serraCDIM
       value: 
       objectReference: {fileID: 992078762}
-    - target: {fileID: 4982083216758370162, guid: 6470e112d76167b4bac48cdaad12ef5d, type: 3}
-      propertyPath: escudoCDIM
-      value: 
-      objectReference: {fileID: 1611775070}
     - target: {fileID: 9074662426996894289, guid: 6470e112d76167b4bac48cdaad12ef5d, type: 3}
       propertyPath: m_Name
       value: Personagem Principal

@@ -8,7 +8,7 @@ public class Escudo : MonoBehaviour
     private bool isCollided = false;
     private float respawnTime = 10f;
     private float respawnTimer = 0f;
-    public GameObject escudo;
+    public GameObject escudo, player;
     public Image escudoCDIM;
     public float velocidadeRotacao = 10f;
 
@@ -50,6 +50,8 @@ public class Escudo : MonoBehaviour
             escudo.GetComponent<Collider>().enabled = false;
             isCollided = true;
             escudoCDIM.fillAmount = 1;
+            player.GetComponent<ControlaPersonagem>().isInvulneravel = true;
+            StartCoroutine(player.GetComponent<ControlaPersonagem>().Invulnerabilidade());
         }
     }
     private void Rotacao()
