@@ -34,13 +34,15 @@ public class MovimentoBossFase2 : MonoBehaviour
     // Materiais
     private MeshRenderer[] renderers;
     private Material[] materiais;
-    // fx
+    // FX
     public GameObject fxExplosionPrefab, fxExpHit, fxExpHitPet;
     // ui VItoria
     public GameObject uiVitoria;
     // partes corpo boss fase 2
     private Transform[] partesCorpo;
-
+    // SFX
+    public AudioSource[] somTiros = new AudioSource[3];
+    
     private void Start()
     {
         alvo = GameObject.FindGameObjectWithTag("Player");
@@ -150,6 +152,7 @@ public class MovimentoBossFase2 : MonoBehaviour
     private void TiroBalaRa()
     {
         Instantiate(balaRa, olhoRa.transform.position, olhoRa.transform.rotation);
+        somTiros[0].Play();
     }
     private IEnumerator IntervaloDisparoRa(float cooldown)
     {
@@ -186,6 +189,7 @@ public class MovimentoBossFase2 : MonoBehaviour
     {
         Instantiate(balaOlhos, olhoEsq.transform.position, olhoEsq.transform.rotation);
         Instantiate(balaOlhos, olhoDir.transform.position, olhoDir.transform.rotation);
+        somTiros[1].Play();
     }
     private IEnumerator IntervaloDisparoOlhos(float cooldown)
     {
@@ -221,6 +225,7 @@ public class MovimentoBossFase2 : MonoBehaviour
     {
         Instantiate(tornadoPrefab, spawnTornEsq.transform.position, tornadoPrefab.transform.rotation);
         Instantiate(tornadoPrefab, SpawnTornDir.transform.position, tornadoPrefab.transform.rotation);
+        somTiros[2].Play();
     }
     private IEnumerator IntervaloDisparoTornados(float cooldown)
     {
