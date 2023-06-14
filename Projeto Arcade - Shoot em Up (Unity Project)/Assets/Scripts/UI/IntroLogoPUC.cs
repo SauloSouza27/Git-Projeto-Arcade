@@ -10,14 +10,17 @@ public class IntroLogoPUC : MonoBehaviour
     public float timeLoadScene = 5.0f;
     private float timer;
 
-    public float tempoFade = 1.0f;
+    public float tempoFade = 0.5f;
     public Image logo;
-    private bool fadeIn = true, fechouCirculo = false;
+
+    private void Start()
+    {
+        StartCoroutine(FadeIn());
+    }
 
     private void Update()
     {
         Debug.Log(logo.color);
-        FadeInOut();
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -35,33 +38,19 @@ public class IntroLogoPUC : MonoBehaviour
         SceneManager.LoadScene(nomeCena);
     }
 
-    private void FadeInOut()
+    private IEnumerator FadeIn()
     {
-        if (!fechouCirculo)
+        float alpha = logo.color.a;
+
+        while (alpha < 1)
         {
-            if (fadeIn)
-            {
-                for (float i = 0; i <= 1; i += Time.deltaTime * tempoFade/1000)
-                {
-                    logo.color = new Color(1, 1, 1, i);
-                    if (i == 1)
-                    {
-                        fadeIn = false;
-                    }
-                }
-            }
-            if (!fadeIn)
-            {
-                for (float i = 1; i >= 0; i -= Time.deltaTime * tempoFade/1000)
-                {
-                    logo.color = new Color(1, 1, 1, i);
-                    if (i == 0)
-                    {
-                        fadeIn = true;
-                        fechouCirculo = true;
-                    }
-                }
-            }
+            alpha += Time.deltaTime * tempoFade;
+
+            logo.color = new Color(logo.color.r, logo.color.g, logo.color.b, alpha);
+            
+            yield return null;
         }
+
+        yield return null;
     }
 }
