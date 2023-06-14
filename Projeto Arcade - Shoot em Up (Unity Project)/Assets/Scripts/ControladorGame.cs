@@ -22,9 +22,9 @@ public class ControladorGame : MonoBehaviour
     public List<GameObject> spawnsCima, spawnsLaterais, spawnsBaixo;
     // Power UP
     public GameObject menuConfig, uiGameOver, uiVitoria, uiPowerUP, escudoCD, serraCD, armaPrincipal, armaDouble, armaTriple, escudo, buttonSubirNivel, buttonArmaDouble,
-        buttonArmaTriple, buttonDiminuiCooldown, buttonEscudo, buttonUPEscudo, buttonArmaPet, buttonPetDiminuiCooldown, buttonArmaOrbeGiratorio, buttonUpgradeOrbe1, buttonVelocidadeOrbe, buttonArmaSerra;
+        buttonArmaTriple, buttonDiminuiCooldown, buttonEscudo, buttonUPEscudo, buttonArmaPet, buttonPetDiminuiCooldown, buttonArmaOrbeGiratorio, buttonUpgradeOrbe1, buttonVelocidadeOrbe, buttonArmaSerra, buttonTamanhoSerra;
     public bool armaPrincipalAtivada = true, armaDoubleAtivada = false, armaTripleAtivada = false, armaPetAtivada = false, defesaEscudoAtivada = false, armaOrbeGiratorioAtivada = false, upgradeOrbe1 = false, armaSerraAtivada = false;
-    private int contadorMaxUpEscudo = 0, contadorMaxVelocidadeAtaque = 0, contadorMaxVelocidadeAtaquePet = 0, contadorMaxVelocidadeOrbe = 0;
+    private int contadorMaxUpEscudo = 0, contadorMaxVelocidadeAtaque = 0, contadorMaxVelocidadeAtaquePet = 0, contadorMaxVelocidadeOrbe = 0, contadorMaxTamanhoSerra = 0;
     private readonly float multVelAtak = 0.75f;
     // inimigos Morcego Drone
     public GameObject nivel1, nivel2, nivel3, nivel4, nivel5, nivel6, nivel7, nivel8, nivel9, nivel10;
@@ -291,11 +291,13 @@ public class ControladorGame : MonoBehaviour
         if (contadorMaxUpEscudo < 3)
         {
             escudo.GetComponent<Escudo>().respawnTime -= 1.5f;
+            escudo.GetComponent<Escudo>().escudoCDIM.fillAmount = 0f;
             contadorMaxUpEscudo++;
         }
         if (contadorMaxUpEscudo >= 3)
         {
             escudo.GetComponent<Escudo>().respawnTime -= 1.5f;
+            escudo.GetComponent<Escudo>().escudoCDIM.fillAmount = 0f;
             Destroy(buttonUPEscudo);
         }
         Time.timeScale = 1.0f;
@@ -347,6 +349,22 @@ public class ControladorGame : MonoBehaviour
         armaSerraAtivada = true;
         jogador.GetComponent<DisparoArmaSerra>().enabled = true;
         Destroy(buttonArmaSerra);
+        Time.timeScale = 1.0f;
+        AtivaSpawnInimigosPequenos();
+        uiPowerUP.SetActive(false);
+    }
+    public void PowerUPAumentaTamanhoSerra()
+    {
+        if (contadorMaxTamanhoSerra < 2)
+        {
+            jogador.GetComponent<DisparoArmaSerra>().projetilSerra.transform.localScale *= 1.1f;
+            contadorMaxTamanhoSerra++;
+        }
+        if (contadorMaxTamanhoSerra >= 2)
+        {
+            jogador.GetComponent<DisparoArmaSerra>().projetilSerra.transform.localScale *= 1.1f;
+            Destroy(buttonTamanhoSerra);
+        }
         Time.timeScale = 1.0f;
         AtivaSpawnInimigosPequenos();
         uiPowerUP.SetActive(false);

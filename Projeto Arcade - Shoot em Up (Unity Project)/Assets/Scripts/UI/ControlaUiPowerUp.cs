@@ -37,7 +37,7 @@ public class ControlaUiPowerUp : MonoBehaviour
             {
                 buttonsCena.Add(go);
             }
-            if (controladorGame.GetComponent<ControladorGame>().armaDoubleAtivada == true)
+            if (controladorGame.GetComponent<ControladorGame>().armaDoubleAtivada)
             {
                 if (go.CompareTag("PowerUPArmaPrincipal"))
                 {
@@ -51,23 +51,30 @@ public class ControlaUiPowerUp : MonoBehaviour
                     buttonsCena.Add(go);
                 }
             }
-            if (controladorGame.GetComponent<ControladorGame>().armaOrbeGiratorioAtivada == true)
+            if (controladorGame.GetComponent<ControladorGame>().armaOrbeGiratorioAtivada)
             {
                 if (go.CompareTag("PowerUPOrbe1"))
                 {
                     buttonsCena.Add(go);
                 }
             }
-            if (controladorGame.GetComponent<ControladorGame>().armaPetAtivada == true)
+            if (controladorGame.GetComponent<ControladorGame>().armaPetAtivada)
             {
                 if (go.CompareTag("PowerUPPet1"))
                 {
                     buttonsCena.Add(go);
                 }
             }
-            if (controladorGame.GetComponent<ControladorGame>().defesaEscudoAtivada == true)
+            if (controladorGame.GetComponent<ControladorGame>().defesaEscudoAtivada)
             {
                 if (go.CompareTag("PowerUPEscudo"))
+                {
+                    buttonsCena.Add(go);
+                }
+            }
+            if (controladorGame.GetComponent<ControladorGame>().armaSerraAtivada)
+            {
+                if (go.CompareTag("PowerUPSerra"))
                 {
                     buttonsCena.Add(go);
                 }
