@@ -5743,7 +5743,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &981386786
 Transform:
   m_ObjectHideFlags: 0
@@ -10094,7 +10094,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1724466337
 Transform:
   m_ObjectHideFlags: 0
@@ -10964,6 +10964,10 @@ PrefabInstance:
     - target: {fileID: 9074662426996894289, guid: 6470e112d76167b4bac48cdaad12ef5d, type: 3}
       propertyPath: m_Name
       value: Personagem Principal
+      objectReference: {fileID: 0}
+    - target: {fileID: 9151170500197457612, guid: 6470e112d76167b4bac48cdaad12ef5d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -14245,6 +14249,14 @@ PrefabInstance:
       propertyPath: uiVitoria
       value: 
       objectReference: {fileID: 8402639399741792853}
+    - target: {fileID: 762503939207037870, guid: 21ba06eb2d4749243a828c31e3e33f77, type: 3}
+      propertyPath: tiros.Array.data[0]
+      value: 
+      objectReference: {fileID: 4303278235935394144}
+    - target: {fileID: 762503939207037870, guid: 21ba06eb2d4749243a828c31e3e33f77, type: 3}
+      propertyPath: tiros.Array.data[1]
+      value: 
+      objectReference: {fileID: 4303278235935394143}
     - target: {fileID: 3854168282922302638, guid: 21ba06eb2d4749243a828c31e3e33f77, type: 3}
       propertyPath: m_Name
       value: Boss Fase 2
@@ -14301,6 +14313,16 @@ PrefabInstance:
 --- !u!4 &4303278235935394142 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3856218712620785793, guid: 21ba06eb2d4749243a828c31e3e33f77, type: 3}
+  m_PrefabInstance: {fileID: 4303278235935394141}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &4303278235935394143 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 4866031111521744657, guid: 21ba06eb2d4749243a828c31e3e33f77, type: 3}
+  m_PrefabInstance: {fileID: 4303278235935394141}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &4303278235935394144 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 8300487811283293067, guid: 21ba06eb2d4749243a828c31e3e33f77, type: 3}
   m_PrefabInstance: {fileID: 4303278235935394141}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4509171500576999490
