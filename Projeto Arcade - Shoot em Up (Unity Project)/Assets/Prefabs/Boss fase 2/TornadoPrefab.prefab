@@ -4838,11 +4838,11 @@ GameObject:
   m_Component:
   - component: {fileID: 8392766081322732562}
   - component: {fileID: 7463886475755076302}
-  - component: {fileID: 4436288513734462931}
   - component: {fileID: 6403724254407613819}
+  - component: {fileID: 4436288513734462931}
   m_Layer: 0
   m_Name: TornadoPrefab
-  m_TagString: Untagged
+  m_TagString: Tornado
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4890,22 +4890,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
---- !u!114 &4436288513734462931
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4774794035143701869}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bbacb1a899be16349b9d2e2ded015285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  velocidadeMovimento: -5
-  anguloRotacao: 35
-  cooldownMudaDirecao: 1.3
-  tornado: {fileID: 4774794035143701869}
 --- !u!136 &6403724254407613819
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -4929,6 +4913,22 @@ CapsuleCollider:
   m_Height: 5.3901253
   m_Direction: 1
   m_Center: {x: 0, y: 2.5321465, z: 0}
+--- !u!114 &4436288513734462931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4774794035143701869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbacb1a899be16349b9d2e2ded015285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocidadeMovimento: -5
+  anguloRotacao: 35
+  cooldownMudaDirecao: 1.3
+  tornado: {fileID: 4774794035143701869}
 --- !u!1 &7839268426275287988
 GameObject:
   m_ObjectHideFlags: 0

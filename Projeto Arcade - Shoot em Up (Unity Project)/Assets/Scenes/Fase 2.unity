@@ -4123,7 +4123,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6806732189430551957, guid: c54598a0cb033b24ebfb877ed654178d, type: 3}
       propertyPath: tempoDisparo
-      value: 1.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6806732189430551957, guid: c54598a0cb033b24ebfb877ed654178d, type: 3}
       propertyPath: atrasaDisparos
@@ -6207,7 +6207,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6806732189430551957, guid: c54598a0cb033b24ebfb877ed654178d, type: 3}
       propertyPath: tempoDisparo
-      value: 1.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6806732189430551957, guid: c54598a0cb033b24ebfb877ed654178d, type: 3}
       propertyPath: atrasaDisparos
@@ -8198,7 +8198,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6806732189430551957, guid: c54598a0cb033b24ebfb877ed654178d, type: 3}
       propertyPath: tempoDisparo
-      value: 1.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6806732189430551957, guid: c54598a0cb033b24ebfb877ed654178d, type: 3}
       propertyPath: atrasaDisparos
@@ -8381,7 +8381,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6806732189430551957, guid: c54598a0cb033b24ebfb877ed654178d, type: 3}
       propertyPath: tempoDisparo
-      value: 1.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6806732189430551957, guid: c54598a0cb033b24ebfb877ed654178d, type: 3}
       propertyPath: atrasaDisparos
@@ -12291,7 +12291,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6806732189430551957, guid: c54598a0cb033b24ebfb877ed654178d, type: 3}
       propertyPath: tempoDisparo
-      value: 1.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6806732189430551957, guid: c54598a0cb033b24ebfb877ed654178d, type: 3}
       propertyPath: atrasaDisparos
