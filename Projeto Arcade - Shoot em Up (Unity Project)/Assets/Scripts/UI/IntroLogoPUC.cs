@@ -12,10 +12,11 @@ public class IntroLogoPUC : MonoBehaviour
 
     public float tempoFade = 1.0f;
     public Image logo;
-    private bool fadeIn = true;
+    private bool fadeIn = true, fechouCirculo = false;
 
     private void Update()
     {
+        Debug.Log(logo.color);
         FadeInOut();
 
         if (Input.GetKeyDown(KeyCode.Space))
@@ -36,25 +37,29 @@ public class IntroLogoPUC : MonoBehaviour
 
     private void FadeInOut()
     {
-        if (fadeIn)
+        if (!fechouCirculo)
         {
-            for (float i = 0; i <= 1; i += Time.deltaTime * tempoFade)
+            if (fadeIn)
             {
-                logo.color = new Color(1, 1, 1, i);
-                if(i == 1)
+                for (float i = 0; i <= 1; i += Time.deltaTime * tempoFade/1000)
                 {
-                    fadeIn = false;
+                    logo.color = new Color(1, 1, 1, i);
+                    if (i == 1)
+                    {
+                        fadeIn = false;
+                    }
                 }
             }
-        }
-        else
-        {
-            for (float i = 1; i >= 0; i -= Time.deltaTime * tempoFade)
+            if (!fadeIn)
             {
-                logo.color = new Color(1, 1, 1, i);
-                if (i == 0)
+                for (float i = 1; i >= 0; i -= Time.deltaTime * tempoFade/1000)
                 {
-                    fadeIn = true;
+                    logo.color = new Color(1, 1, 1, i);
+                    if (i == 0)
+                    {
+                        fadeIn = true;
+                        fechouCirculo = true;
+                    }
                 }
             }
         }
