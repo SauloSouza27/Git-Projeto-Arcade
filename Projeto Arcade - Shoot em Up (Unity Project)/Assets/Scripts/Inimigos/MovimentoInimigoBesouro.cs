@@ -57,6 +57,7 @@ public class MovimentoInimigoBesouro : MonoBehaviour
         {
             pontosVida = 6;
             bostaVida = 8;
+            xpInimigo = 30;
         }
     }
     void Update()
