@@ -33,7 +33,9 @@ public class DisparoProjetilBalanca : MonoBehaviour
     }
     private void DisparaBalanca()
     {
-        Instantiate(projetilBalanca, pontaSaidaBalanca.transform.position, pontaSaidaBalanca.transform.rotation);
+        GameObject instancia = Instantiate(projetilBalanca, pontaSaidaBalanca.transform.position, pontaSaidaBalanca.transform.rotation);
+        instancia.GetComponent<ProjetilBalanca>().balanca = this.gameObject;
+        instancia.GetComponent<ProjetilBalanca>().balancaBase = this.transform.GetChild(1).gameObject;
     }
 
     private void MovimentoBalanca()
