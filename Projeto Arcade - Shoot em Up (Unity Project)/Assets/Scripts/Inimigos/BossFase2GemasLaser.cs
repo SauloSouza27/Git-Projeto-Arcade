@@ -38,6 +38,18 @@ public class BossFase2GemasLaser : MonoBehaviour
             AtiraDepoisAviso();
         }
     }
+
+    private void OnDisable()
+    {
+        Destroy(instaciaAvisoHitEsq);
+        Destroy(instanciaLaserSparks);
+        laserLine.enabled = false;
+        fireTimer = 0;
+        achouAlvo = false;
+        instanciouSparks = false;
+        avisoTimer = 0;
+        StopAllCoroutines();
+    }
     IEnumerator ShootLaser()
     {
         laserLine.enabled = true;

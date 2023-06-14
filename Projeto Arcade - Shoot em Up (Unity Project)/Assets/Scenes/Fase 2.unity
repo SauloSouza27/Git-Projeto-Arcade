@@ -13752,7 +13752,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3854168282922302638, guid: 21ba06eb2d4749243a828c31e3e33f77, type: 3}
       propertyPath: m_Name
-      value: Boss fase 2
+      value: Boss Fase 2
       objectReference: {fileID: 0}
     - target: {fileID: 3856218712620785793, guid: 21ba06eb2d4749243a828c31e3e33f77, type: 3}
       propertyPath: m_RootOrder
@@ -13772,11 +13772,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3856218712620785793, guid: 21ba06eb2d4749243a828c31e3e33f77, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.992005
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3856218712620785793, guid: 21ba06eb2d4749243a828c31e3e33f77, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.12619898
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3856218712620785793, guid: 21ba06eb2d4749243a828c31e3e33f77, type: 3}
       propertyPath: m_LocalRotation.y
@@ -13788,7 +13788,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3856218712620785793, guid: 21ba06eb2d4749243a828c31e3e33f77, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 14.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3856218712620785793, guid: 21ba06eb2d4749243a828c31e3e33f77, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y

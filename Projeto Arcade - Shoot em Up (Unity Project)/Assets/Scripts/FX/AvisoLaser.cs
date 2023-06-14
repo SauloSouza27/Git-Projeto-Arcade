@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class AvisoLaser : MonoBehaviour
 {
+    private GameObject bossFase2;
+
     public float tempoPisca = 1.0f;
     public float intensidadeCor = 1.1f, velocidadeMudaCor = 1.0f;
 

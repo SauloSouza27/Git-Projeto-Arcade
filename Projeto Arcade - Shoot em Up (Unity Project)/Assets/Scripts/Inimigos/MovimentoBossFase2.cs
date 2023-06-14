@@ -5,6 +5,9 @@ using UnityEngine;
 public class MovimentoBossFase2 : MonoBehaviour
 {
     private GameObject alvo;
+    //movimento
+    public GameObject cabeca;
+    public float velocidadeRotacaoCabeca = 1.0f, velocidadeRotacaoCorpo = 0.5f;
     //vida
     public int primeiraVida = 300, segundaVida = 300, terceiraVida = 300;
     private bool stage1 = true, stage2 = false, stage3 = false, stage4 = false;
@@ -36,8 +39,8 @@ public class MovimentoBossFase2 : MonoBehaviour
         alvo = GameObject.FindGameObjectWithTag("Player");
         // Busca materiais do inimigo
         renderers = GetComponentsInChildren<MeshRenderer>();
-        materiais = new Material[renderers.Length];
-        for (int i = 0; i < renderers.Length; i++)
+        materiais = new Material[renderers.Length - 2];
+        for (int i = 0; i < renderers.Length - 2; i++)
         {
             materiais[i] = renderers[i].material;
         }
@@ -47,6 +50,9 @@ public class MovimentoBossFase2 : MonoBehaviour
     }
     private void Update()
     {
+        MovimentoCabeca();
+        MovimentoCorpo();
+
         if (stage1)
         {
             ArmaRa();
@@ -59,10 +65,35 @@ public class MovimentoBossFase2 : MonoBehaviour
 
         if (stage3)
         {
+            ArmaRa();
             ArmaOlhos();
         }
     }
-
+    //Movimento
+    private void MovimentoCorpo()
+    {
+        // rotacao corpo
+        Vector3 direcao = alvo.transform.position - transform.position;
+        Debug.Log(direcao);
+        direcao.y = -17.20f;
+        if (direcao.x <= -4)
+        {
+            direcao.x = -4;
+        }
+        if (direcao.x >= 4)
+        {
+            direcao.x = 4;
+        }
+        direcao = direcao.normalized;
+        transform.up = Vector3.Slerp(transform.up, -1 * direcao, velocidadeRotacaoCorpo * Time.deltaTime);
+    }
+    private void MovimentoCabeca()
+    {
+        // rotacao cabeca
+        Vector3 direcao = alvo.transform.position - cabeca.transform.position;
+        direcao = direcao.normalized;
+        cabeca.transform.up = Vector3.Slerp(cabeca.transform.up, -1 * direcao, velocidadeRotacaoCabeca * Time.deltaTime);
+    }
     // ativa/desativa lasers
     private void AtivaLasers(bool ativa)
     {
