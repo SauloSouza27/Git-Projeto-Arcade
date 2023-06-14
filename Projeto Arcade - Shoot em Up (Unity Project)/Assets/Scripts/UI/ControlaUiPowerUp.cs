@@ -99,7 +99,7 @@ public class ControlaUiPowerUp : MonoBehaviour
         dir.SetActive(true);
         listaPowerUPs.Remove(itemLista);
 
-        GameObject[] buttonsAtivos = new GameObject[] {esq, dir};
+        GameObject[] buttonsAtivos = new GameObject[] {esq, centro, dir};
         return buttonsAtivos;
     }
 }
