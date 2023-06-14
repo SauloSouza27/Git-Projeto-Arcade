@@ -84,7 +84,7 @@ TrailRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.0727272
+        value: 0.52727234
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -159,7 +159,7 @@ GameObject:
   - component: {fileID: 8965080584138336255}
   - component: {fileID: 7804706804279653058}
   m_Layer: 0
-  m_Name: Bala BossFase2
+  m_Name: Bala BossFase2_Olhos
   m_TagString: BalaBossFase2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -174,8 +174,8 @@ Transform:
   m_GameObject: {fileID: 2133145952157808992}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -6.34, y: 18.95, z: 0}
-  m_LocalScale: {x: 0.9, y: 4.4357142, z: 0.9}
-  m_ConstrainProportionsScale: 1
+  m_LocalScale: {x: 1.5, y: 5.5, z: 1.5}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6334125515922647148}
   m_Father: {fileID: 0}
@@ -243,10 +243,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 784d37c2d0f8abf45ba68b6085a66c2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidade: 5
+  velocidade: 7
   velocidadeRotacao: 5
-  distanciaSeguir: 11
-  fatorAumentoVelocidade: 1
+  distanciaSeguir: 12
+  fatorAumentoVelocidade: 6
   projetil: {fileID: 2133145952157808992}
 --- !u!136 &7804706804279653058
 CapsuleCollider:

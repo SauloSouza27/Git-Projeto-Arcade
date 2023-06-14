@@ -9,7 +9,6 @@ public class BalaPersonagem : MonoBehaviour
     public bool destruidoPeloOrbe = false, destruidoPeloEscudo = false, rotacaoTiro = false;
     public GameObject projetilRotacao;
     public float velocidadeRotacao = 200.0f;
-    public int danoProjetil = 1;
 
 
     void Update()
