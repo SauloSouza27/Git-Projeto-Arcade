@@ -11549,23 +11549,27 @@ MonoBehaviour:
   uiGameOver: {fileID: 572169108}
   uiVitoria: {fileID: 2064210575}
   uiPowerUP: {fileID: 738572451}
+  escudoCD: {fileID: 0}
+  serraCD: {fileID: 0}
   armaPrincipal: {fileID: 0}
   armaDouble: {fileID: 0}
   armaTriple: {fileID: 0}
   buttonSubirNivel: {fileID: 566634844}
   buttonArmaDouble: {fileID: 1670105018}
   buttonArmaTriple: {fileID: 1821717368}
+  buttonDiminuiCooldown: {fileID: 376472608}
+  buttonEscudo: {fileID: 0}
   buttonArmaPet: {fileID: 550570411}
   buttonPetDiminuiCooldown: {fileID: 0}
   buttonArmaOrbeGiratorio: {fileID: 1761563946}
   buttonUpgradeOrbe1: {fileID: 0}
   buttonVelocidadeOrbe: {fileID: 0}
   buttonArmaSerra: {fileID: 554957450}
-  buttonDiminuiCooldown: {fileID: 376472608}
   armaPrincipalAtivada: 1
   armaDoubleAtivada: 0
   armaTripleAtivada: 0
   armaPetAtivada: 0
+  defesaEscudoAtivada: 0
   armaOrbeGiratorioAtivada: 0
   upgradeOrbe1: 0
   armaSerraAtivada: 0
@@ -15038,6 +15042,67 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2121462731}
   m_CullTransparentMesh: 1
+--- !u!1001 &2173731771934834937
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 189840469343468333, guid: e4a4481a120395943bf43b84b41b134a, type: 3}
+      propertyPath: m_Name
+      value: TornadoPF
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169938780655774477, guid: e4a4481a120395943bf43b84b41b134a, type: 3}
+      propertyPath: m_RootOrder
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169938780655774477, guid: e4a4481a120395943bf43b84b41b134a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169938780655774477, guid: e4a4481a120395943bf43b84b41b134a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169938780655774477, guid: e4a4481a120395943bf43b84b41b134a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169938780655774477, guid: e4a4481a120395943bf43b84b41b134a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169938780655774477, guid: e4a4481a120395943bf43b84b41b134a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169938780655774477, guid: e4a4481a120395943bf43b84b41b134a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169938780655774477, guid: e4a4481a120395943bf43b84b41b134a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169938780655774477, guid: e4a4481a120395943bf43b84b41b134a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169938780655774477, guid: e4a4481a120395943bf43b84b41b134a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169938780655774477, guid: e4a4481a120395943bf43b84b41b134a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e4a4481a120395943bf43b84b41b134a, type: 3}
 --- !u!1001 &5662018118566818977
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15049,6 +15114,10 @@ PrefabInstance:
     - target: {fileID: 3854168282922302638, guid: 21ba06eb2d4749243a828c31e3e33f77, type: 3}
       propertyPath: m_Name
       value: Boss fase 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3854168282922302638, guid: 21ba06eb2d4749243a828c31e3e33f77, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3856218712620785793, guid: 21ba06eb2d4749243a828c31e3e33f77, type: 3}
       propertyPath: m_RootOrder
