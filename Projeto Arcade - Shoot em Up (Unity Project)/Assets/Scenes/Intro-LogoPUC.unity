@@ -383,7 +383,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0728972cb8947b4cb88b82d158b2672, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeLoadScene: 4
+  timeLoadScene: 5
+  tempoFade: 1
+  logo: {fileID: 1770425932}
 --- !u!1 &1273971755
 GameObject:
   m_ObjectHideFlags: 0
