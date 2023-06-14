@@ -156,7 +156,7 @@ GameObject:
   - component: {fileID: 6505154980398507715}
   - component: {fileID: 5795779590187680921}
   - component: {fileID: 8934426696096469659}
-  - component: {fileID: 8965080584138336255}
+  - component: {fileID: 613744176941169311}
   - component: {fileID: 7804706804279653058}
   m_Layer: 0
   m_Name: Bala BossFase2_Olhos
@@ -231,7 +231,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &8965080584138336255
+--- !u!114 &613744176941169311
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -240,14 +240,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 2133145952157808992}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 784d37c2d0f8abf45ba68b6085a66c2b, type: 3}
+  m_Script: {fileID: 11500000, guid: 8d1b95509e97afb45ad56bb239a46003, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidade: 7
-  velocidadeRotacao: 5
-  distanciaSeguir: 12
-  fatorAumentoVelocidade: 6
+  velocidade: 40
   projetil: {fileID: 2133145952157808992}
+  destruidoPeloOrbe: 0
+  destruidoPeloEscudo: 1
+  rotacaoTiro: 0
+  projetilRotacao: {fileID: 0}
+  velocidadeRotacao: 0
 --- !u!136 &7804706804279653058
 CapsuleCollider:
   m_ObjectHideFlags: 0

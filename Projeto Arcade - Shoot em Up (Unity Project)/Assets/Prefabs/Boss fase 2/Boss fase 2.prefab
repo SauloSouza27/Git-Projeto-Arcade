@@ -979,7 +979,7 @@ Transform:
   - {fileID: 5683027630200566054}
   - {fileID: 7036453008989959777}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 17.83, y: 0, z: 0}
 --- !u!114 &762503939207037870
 MonoBehaviour:
@@ -993,12 +993,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdebac89bcbf20b4e95e60457292392d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  primeiraVida: 100
-  segundaVida: 10
+  primeiraVida: 20
+  segundaVida: 20
+  terceiraVida: 300
   balaRa: {fileID: 2133145952157808992, guid: 5e294fbf5015e524fb86adae5a2c3607, type: 3}
+  balaOlhos: {fileID: 2133145952157808992, guid: 6b93d77adec2d78418fe463c99fee988, type: 3}
+  olhoRa: {fileID: 3701600397790243733}
   olhoEsq: {fileID: 745751038983601963}
   olhoDir: {fileID: 6769337644010221450}
-  olhoRa: {fileID: 3701600397790243733}
   cooldownRa: 1.06
   tempoDisparoRa: 3
   numeroDisparosRa: 10

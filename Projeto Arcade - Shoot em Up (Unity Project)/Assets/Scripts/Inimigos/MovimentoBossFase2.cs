@@ -6,8 +6,8 @@ public class MovimentoBossFase2 : MonoBehaviour
 {
     private GameObject alvo;
     //vida
-    public int primeiraVida = 300, segundaVida = 300;
-    private bool stage1 = true, stage2 = false, stage3 = false;
+    public int primeiraVida = 300, segundaVida = 300, terceiraVida = 300;
+    private bool stage1 = true, stage2 = false, stage3 = false, stage4 = false;
 
     //tiros
     public GameObject balaRa, balaOlhos, olhoRa, olhoEsq, olhoDir;
@@ -37,7 +37,7 @@ public class MovimentoBossFase2 : MonoBehaviour
         // Busca materiais do inimigo
         renderers = GetComponentsInChildren<MeshRenderer>();
         materiais = new Material[renderers.Length];
-        for (int i = 0; i < renderers.Length - 2; i++)
+        for (int i = 0; i < renderers.Length; i++)
         {
             materiais[i] = renderers[i].material;
         }
@@ -53,6 +53,11 @@ public class MovimentoBossFase2 : MonoBehaviour
         }
         
         if (stage2)
+        {
+            ArmaOlhos();
+        }
+
+        if (stage3)
         {
             ArmaOlhos();
         }
@@ -126,13 +131,13 @@ public class MovimentoBossFase2 : MonoBehaviour
 
     private void TiroBalaOlhos()
     {
-        Instantiate(balaRa, olhoEsq.transform.position, olhoEsq.transform.rotation);
-        Instantiate(balaRa, olhoDir.transform.position, olhoDir.transform.rotation);
+        Instantiate(balaOlhos, olhoEsq.transform.position, olhoEsq.transform.rotation);
+        Instantiate(balaOlhos, olhoDir.transform.position, olhoDir.transform.rotation);
     }
     private IEnumerator IntervaloDisparoOlhos(float cooldown)
     {
         yield return new WaitForSeconds(cooldown);
-        ativaArmaRa = true;
+        ativaArmaOlhos = true;
     }
     // dano e Stágios
     private void CaluclaDanoInimigo(int dano)
@@ -171,6 +176,25 @@ public class MovimentoBossFase2 : MonoBehaviour
             {
                 stage2 = false;
                 stage3 = true;
+                AtivaLasers(false);
+            }
+        }
+
+        if (stage3)
+        {
+            if (terceiraVida > 0)
+            {
+                terceiraVida -= dano;
+
+                foreach (Material material in materiais)
+                {
+                    StartCoroutine(Utilidades.PiscaCorRoutine(material));
+                }
+            }
+            if (terceiraVida <= 0)
+            {
+                stage3 = false;
+                stage4 = true;
             }
         }
     }
