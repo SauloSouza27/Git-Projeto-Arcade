@@ -39,6 +39,7 @@ TagManager:
   - BalaBossFase2
   - PowerUPEscudo
   - Tornado
+  - PowerUPSerra
   layers:
   - Default
   - TransparentFX

@@ -144,7 +144,15 @@ public class MovimentoInimigoPiramide : MonoBehaviour
             CaluclaDanoInimigo(dano);
         }
     }
+    private void OnCollisionExit(Collision colisor)
+    {
+        if (colisor.gameObject.CompareTag("ProjetilSerra"))
+        {
+            int dano = alvo.GetComponent<DisparoArmaSerra>().danoSerra;
 
+            CaluclaDanoInimigo(dano);
+        }
+    }
     private void MovimentaInimigoPiramide()
     {
         // Rotacao corpo

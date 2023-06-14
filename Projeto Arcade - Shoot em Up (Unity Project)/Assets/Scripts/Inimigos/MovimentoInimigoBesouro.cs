@@ -55,8 +55,8 @@ public class MovimentoInimigoBesouro : MonoBehaviour
         nivelJogador = controladorGame.GetComponent<ControladorGame>().nivel;
         if (nivelJogador == 6)
         {
-            pontosVida = 6;
-            bostaVida = 8;
+            pontosVida = 4;
+            bostaVida = 6;
             xpInimigo = 30;
         }
     }
@@ -245,6 +245,27 @@ public class MovimentoInimigoBesouro : MonoBehaviour
             if (colisor.gameObject.CompareTag("Escudo"))
             {
                 int dano = alvo.GetComponent<ControlaPersonagem>().danoContato;
+
+                CaluclaDanoBesouro(dano);
+            }
+        }
+    }
+    private void OnCollisionExit(Collision colisor)
+    {
+        if (bosta != null)
+        {
+            if (colisor.gameObject.CompareTag("ProjetilSerra"))
+            {
+                int dano = alvo.GetComponent<DisparoArmaSerra>().danoSerra;
+
+                CaluclaDanoBosta(dano);
+            }
+        }
+        if (bosta == null)
+        {
+            if (colisor.gameObject.CompareTag("ProjetilSerra"))
+            {
+                int dano = alvo.GetComponent<DisparoArmaSerra>().danoSerra;
 
                 CaluclaDanoBesouro(dano);
             }

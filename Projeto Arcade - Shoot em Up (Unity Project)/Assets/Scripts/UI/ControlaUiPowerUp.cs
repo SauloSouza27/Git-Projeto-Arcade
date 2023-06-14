@@ -37,7 +37,7 @@ public class ControlaUiPowerUp : MonoBehaviour
             {
                 buttonsCena.Add(go);
             }
-            if (controladorGame.GetComponent<ControladorGame>().armaDoubleAtivada == true)
+            if (controladorGame.GetComponent<ControladorGame>().armaDoubleAtivada)
             {
                 if (go.CompareTag("PowerUPArmaPrincipal"))
                 {
@@ -51,23 +51,30 @@ public class ControlaUiPowerUp : MonoBehaviour
                     buttonsCena.Add(go);
                 }
             }
-            if (controladorGame.GetComponent<ControladorGame>().armaOrbeGiratorioAtivada == true)
+            if (controladorGame.GetComponent<ControladorGame>().armaOrbeGiratorioAtivada)
             {
                 if (go.CompareTag("PowerUPOrbe1"))
                 {
                     buttonsCena.Add(go);
                 }
             }
-            if (controladorGame.GetComponent<ControladorGame>().armaPetAtivada == true)
+            if (controladorGame.GetComponent<ControladorGame>().armaPetAtivada)
             {
                 if (go.CompareTag("PowerUPPet1"))
                 {
                     buttonsCena.Add(go);
                 }
             }
-            if (controladorGame.GetComponent<ControladorGame>().defesaEscudoAtivada == true)
+            if (controladorGame.GetComponent<ControladorGame>().defesaEscudoAtivada)
             {
                 if (go.CompareTag("PowerUPEscudo"))
+                {
+                    buttonsCena.Add(go);
+                }
+            }
+            if (controladorGame.GetComponent<ControladorGame>().armaSerraAtivada)
+            {
+                if (go.CompareTag("PowerUPSerra"))
                 {
                     buttonsCena.Add(go);
                 }
@@ -87,11 +94,11 @@ public class ControlaUiPowerUp : MonoBehaviour
         esq.SetActive(true);
         listaPowerUPs.Remove(itemLista);
 
-        //index = Random.Range(0, listaPowerUPs.Count);
-        //itemLista = listaPowerUPs[index];
-        //GameObject centro = Instantiate(itemLista.gameObject, buttonCentro.transform.position, buttonCentro.transform.rotation, this.transform);
-        //centro.SetActive(true);
-        //listaPowerUPs.Remove(itemLista);
+        index = Random.Range(0, listaPowerUPs.Count);
+        itemLista = listaPowerUPs[index];
+        GameObject centro = Instantiate(itemLista.gameObject, buttonCentro.transform.position, buttonCentro.transform.rotation, this.transform);
+        centro.SetActive(true);
+        listaPowerUPs.Remove(itemLista);
 
         index = Random.Range(0, listaPowerUPs.Count);
         itemLista = listaPowerUPs[index];
@@ -99,7 +106,7 @@ public class ControlaUiPowerUp : MonoBehaviour
         dir.SetActive(true);
         listaPowerUPs.Remove(itemLista);
 
-        GameObject[] buttonsAtivos = new GameObject[] {esq, dir};
+        GameObject[] buttonsAtivos = new GameObject[] {esq, centro, dir};
         return buttonsAtivos;
     }
 }
