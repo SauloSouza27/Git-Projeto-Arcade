@@ -67,6 +67,7 @@ public class MovimentoBossFase2 : MonoBehaviour
         {
             ArmaRa();
             ArmaOlhos();
+            Invoke(nameof(AtivaLasers), 10.0f);
         }
     }
     //Movimento
@@ -74,7 +75,6 @@ public class MovimentoBossFase2 : MonoBehaviour
     {
         // rotacao corpo
         Vector3 direcao = alvo.transform.position - transform.position;
-        Debug.Log(direcao);
         direcao.y = -17.20f;
         if (direcao.x <= -4)
         {
@@ -95,10 +95,15 @@ public class MovimentoBossFase2 : MonoBehaviour
         cabeca.transform.up = Vector3.Slerp(cabeca.transform.up, -1 * direcao, velocidadeRotacaoCabeca * Time.deltaTime);
     }
     // ativa/desativa lasers
-    private void AtivaLasers(bool ativa)
+    private void AtivaLasers()
     {
-        laserDir.SetActive(ativa);
-        laserEsq.SetActive(ativa);
+        laserDir.SetActive(true);
+        laserEsq.SetActive(true);
+    }
+    private void DesativaLasers()
+    {
+        laserDir.SetActive(false);
+        laserEsq.SetActive(false);
     }
 
     // arma olho de Ra
@@ -188,7 +193,7 @@ public class MovimentoBossFase2 : MonoBehaviour
             {
                 stage1 = false;
                 stage2 = true;
-                AtivaLasers(true);
+                AtivaLasers();
                 StartCoroutine(IntervaloDisparoOlhos(tempoDisparoOlhos));
             }
         }
@@ -208,7 +213,7 @@ public class MovimentoBossFase2 : MonoBehaviour
             {
                 stage2 = false;
                 stage3 = true;
-                AtivaLasers(false);
+                DesativaLasers();
             }
         }
 

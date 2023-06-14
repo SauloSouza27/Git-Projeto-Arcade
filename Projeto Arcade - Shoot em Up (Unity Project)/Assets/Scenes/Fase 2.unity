@@ -10456,22 +10456,10 @@ PrefabInstance:
       propertyPath: escudoCDIM
       value: 
       objectReference: {fileID: 1611775070}
-    - target: {fileID: 1859866850645625244, guid: 6470e112d76167b4bac48cdaad12ef5d, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4974276118539672254, guid: 6470e112d76167b4bac48cdaad12ef5d, type: 3}
       propertyPath: serraCDIM
       value: 
       objectReference: {fileID: 992078762}
-    - target: {fileID: 5690551041489826068, guid: 6470e112d76167b4bac48cdaad12ef5d, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7972953504568763118, guid: 6470e112d76167b4bac48cdaad12ef5d, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 9074662426996894289, guid: 6470e112d76167b4bac48cdaad12ef5d, type: 3}
       propertyPath: m_Name
       value: Personagem Principal
