@@ -14257,6 +14257,14 @@ PrefabInstance:
       propertyPath: tiros.Array.data[1]
       value: 
       objectReference: {fileID: 4303278235935394143}
+    - target: {fileID: 762503939207037870, guid: 21ba06eb2d4749243a828c31e3e33f77, type: 3}
+      propertyPath: somTiros.Array.data[0]
+      value: 
+      objectReference: {fileID: 4303278235935394144}
+    - target: {fileID: 762503939207037870, guid: 21ba06eb2d4749243a828c31e3e33f77, type: 3}
+      propertyPath: somTiros.Array.data[1]
+      value: 
+      objectReference: {fileID: 4303278235935394143}
     - target: {fileID: 3854168282922302638, guid: 21ba06eb2d4749243a828c31e3e33f77, type: 3}
       propertyPath: m_Name
       value: Boss Fase 2
