@@ -20,8 +20,6 @@ public class IntroLogoPUC : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(logo.color);
-
         if (Input.GetKeyDown(KeyCode.Space))
         {
             CarregaCena("Menu Inicial");
