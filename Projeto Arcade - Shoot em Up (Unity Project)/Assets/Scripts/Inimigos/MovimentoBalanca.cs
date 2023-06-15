@@ -7,9 +7,12 @@ public class MovimentoBalanca : MonoBehaviour
     private GameObject alvo;
     // Pontos de vida
     public int pontosVida = 60;
+    private float tempoAtrasaTomaDano = 5.0f;
+    private BoxCollider[] colisores = new BoxCollider[2];
     // XP quando morre
     public int xpInimigo = 300;
-    public GameObject balanca, projetilBalanca, pontaSaidaBalanca;
+    public GameObject balanca, projetilBalanca, pontaSaidaBalanca, balancaBase;
+    private GameObject instanciaProjetil;
     [Range(0, 6)] public float cooldown = 3.0f, velocidadeRotacao = 2.0f;
     private float contadorCooldown;
     public bool inverteRotacao = false;
@@ -37,11 +40,15 @@ public class MovimentoBalanca : MonoBehaviour
         {
             materiais[i] = renderers[i].material;
         }
+        // busca colisores
+        colisores = GetComponentsInChildren<BoxCollider>();
     }
     void Start()
     {
         alvo = GameObject.FindGameObjectWithTag("Player");
         contadorCooldown = 7.0f;
+
+        StartCoroutine(AtrasaColisores());
     }
 
     void Update()
@@ -66,10 +73,10 @@ public class MovimentoBalanca : MonoBehaviour
     }
     private void DisparaBalanca()
     {
-        GameObject instancia = Instantiate(projetilBalanca, pontaSaidaBalanca.transform.position, pontaSaidaBalanca.transform.rotation);
-        instancia.GetComponent<ProjetilBalanca>().balanca = this.gameObject;
-        instancia.GetComponent<ProjetilBalanca>().balancaBase = this.transform.GetChild(1).gameObject;
-        instancia.GetComponent<ProjetilBalanca>().invertRotacao = inverteRotacao;
+        instanciaProjetil = Instantiate(projetilBalanca, pontaSaidaBalanca.transform.position, pontaSaidaBalanca.transform.rotation);
+        instanciaProjetil.GetComponent<ProjetilBalanca>().balanca = this.gameObject;
+        instanciaProjetil.GetComponent<ProjetilBalanca>().balancaBase = this.transform.GetChild(1).gameObject;
+        instanciaProjetil.GetComponent<ProjetilBalanca>().invertRotacao = inverteRotacao;
     }
 
     private void MovimentoRotacaoBalanca()
@@ -96,6 +103,10 @@ public class MovimentoBalanca : MonoBehaviour
                 isPos2 = true;
                 seMovimenta = false;
                 contadorCooldown = cooldown;
+                if (instanciaProjetil == null)
+                {
+                    balancaBase.GetComponent<MeshRenderer>().enabled = true;
+                }
             }
             return;
         }
@@ -112,6 +123,10 @@ public class MovimentoBalanca : MonoBehaviour
                 isPos3 = true;
                 seMovimenta = false;
                 contadorCooldown = cooldown;
+                if (instanciaProjetil == null)
+                {
+                    balancaBase.GetComponent<MeshRenderer>().enabled = true;
+                }
             }
             return;
         }
@@ -128,6 +143,10 @@ public class MovimentoBalanca : MonoBehaviour
                 isPos4 = true;
                 seMovimenta = false;
                 contadorCooldown = cooldown;
+                if (instanciaProjetil == null)
+                {
+                    balancaBase.GetComponent<MeshRenderer>().enabled = true;
+                }
             }
             return;
         }
@@ -144,6 +163,10 @@ public class MovimentoBalanca : MonoBehaviour
                 isPos1 = true;
                 seMovimenta = false;
                 contadorCooldown = cooldown;
+                if (instanciaProjetil == null)
+                {
+                    balancaBase.GetComponent<MeshRenderer>().enabled = true;
+                }
             }
             return;
         }
@@ -222,6 +245,21 @@ public class MovimentoBalanca : MonoBehaviour
             int dano = alvo.GetComponent<DisparoArmaSerra>().danoSerra;
 
             CaluclaDanoInimigo(dano);
+        }
+    }
+
+    private IEnumerator AtrasaColisores()
+    {
+        foreach (BoxCollider bc in colisores)
+        {
+            bc.enabled = false;
+        }
+
+        yield return new WaitForSeconds(tempoAtrasaTomaDano);
+
+        foreach (BoxCollider bc in colisores)
+        {
+            bc.enabled = true;
         }
     }
 }

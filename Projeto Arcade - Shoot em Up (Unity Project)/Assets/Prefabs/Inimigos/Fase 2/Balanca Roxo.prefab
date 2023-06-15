@@ -294,6 +294,7 @@ MonoBehaviour:
   balanca: {fileID: 8641726351546445749}
   projetilBalanca: {fileID: 5909020533600289315, guid: d1502a3f7565e3f47895a359c11703ec, type: 3}
   pontaSaidaBalanca: {fileID: 7216461155201766273}
+  balancaBase: {fileID: 5572247360810852081}
   cooldown: 3
   velocidadeRotacao: 6
   inverteRotacao: 1

@@ -24,9 +24,8 @@ public class SpawnMumia : MonoBehaviour
     {
         if (Time.timeScale == 0) return;
 
-        if (atrasaSpawn > 0)
+        if (buttonNivel.activeSelf)
         {
-            atrasaSpawn -= Time.deltaTime;
             return;
         }
 
