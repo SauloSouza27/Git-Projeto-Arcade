@@ -246,10 +246,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   balanca: {fileID: 8641726351546445749}
+  controladorCorpo: {fileID: 0}
   projetilBalanca: {fileID: 5909020533600289315, guid: d1502a3f7565e3f47895a359c11703ec, type: 3}
   pontaSaidaBalanca: {fileID: 7216461155201766273}
   cooldown: 3
   velocidadeRotacao: 6
+  inverteRotacao: 1
+  velocidadeGiro: 7
+  isPos1: 1
+  isPos2: 0
+  isPos3: 0
+  isPos4: 0
+  distanciaMinNovaPos: 0.5
 --- !u!54 &4398812070727145835
 Rigidbody:
   m_ObjectHideFlags: 0

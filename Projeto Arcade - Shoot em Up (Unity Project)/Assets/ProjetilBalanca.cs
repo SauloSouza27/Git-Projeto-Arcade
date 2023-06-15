@@ -4,20 +4,27 @@ using UnityEngine;
 
 public class ProjetilBalanca : MonoBehaviour
 {
-    public float velocidadeRotacao = 250.0f;
+    public float velocidadeRotacao = 250.0f, tempoParado = 0.3f;
+    private float timerParado;
     private bool go;
     private Vector3 posicaoAnterior;
     public GameObject projetilBalanca;
     public GameObject balancaBase, balanca;
-    private Vector3 locationBalanca;
+    private Vector3 locationAlvo;
+    private GameObject alvo;
+    public bool invertRotacao = false;
 
+    private void Awake()
+    {
+        alvo = GameObject.FindGameObjectWithTag("Player");
+    }
     void Start()
     {
         go = true;
 
         posicaoAnterior = transform.position;
 
-        locationBalanca = new Vector3(balanca.transform.position.x, balanca.transform.position.y + 1, balanca.transform.position.z) - balanca.transform.up * 30f;
+        locationAlvo = alvo.transform.position;
     }
 
 
@@ -29,20 +36,34 @@ public class ProjetilBalanca : MonoBehaviour
     }
     private void ControleArmaBalanca()
     {
-        transform.Rotate(0, 0, Time.deltaTime * velocidadeRotacao);
+        if (!invertRotacao)
+        {
+            transform.Rotate(0, 0, Time.deltaTime * velocidadeRotacao);
+        }
+        if (invertRotacao)
+        {
+            transform.Rotate(0, 0, - Time.deltaTime * velocidadeRotacao);
+        }
 
-        Vector3 dir = locationBalanca - projetilBalanca.transform.position;
-        float distancia = dir.magnitude;
+        Vector3 dir = locationAlvo - projetilBalanca.transform.position;
+        float distancia = Vector3.Distance(projetilBalanca.transform.position, locationAlvo);
 
-        if (distancia > 4 && go)
+        if (distancia > 3 && go)
         {
             balancaBase.GetComponent<MeshRenderer>().enabled = false;
-            transform.position = Vector3.MoveTowards(transform.position, locationBalanca, Time.deltaTime * 40);
+            transform.position = Vector3.MoveTowards(transform.position, locationAlvo, Time.deltaTime * 40);
         }
-        if (distancia <= 4)
+        if (distancia <= 3)
         {
             go = false;
 
+            timerParado += Time.deltaTime;
+            if (timerParado <= tempoParado) return;
+
+            transform.position = Vector3.MoveTowards(transform.position, new Vector3(balancaBase.transform.position.x, balancaBase.transform.position.y + 1, balancaBase.transform.position.z), Time.deltaTime * 40);
+        }
+        if (distancia >= 3 && !go)
+        {
             transform.position = Vector3.MoveTowards(transform.position, new Vector3(balancaBase.transform.position.x, balancaBase.transform.position.y + 1, balancaBase.transform.position.z), Time.deltaTime * 40);
         }
         if (!go && Vector3.Distance(balancaBase.transform.position, transform.position) < 1.45)
