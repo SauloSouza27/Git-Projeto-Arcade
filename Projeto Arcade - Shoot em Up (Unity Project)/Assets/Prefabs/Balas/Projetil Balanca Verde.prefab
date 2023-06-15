@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 4288144772055057672}
   - component: {fileID: 2338401980744732826}
   - component: {fileID: 543062539220980329}
+  - component: {fileID: 8198429545883610794}
   m_Layer: 0
   m_Name: Projetil Balanca Verde
-  m_TagString: Untagged
+  m_TagString: BalaBalanca
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33,7 +34,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 25
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &4753648619960511505
 MeshFilter:
@@ -51,8 +52,8 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5909020533600289315}
   m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
   m_MotionVectors: 1
@@ -131,3 +132,26 @@ MonoBehaviour:
   balancaBase: {fileID: 0}
   balanca: {fileID: 0}
   invertRotacao: 0
+--- !u!136 &8198429545883610794
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5909020533600289315}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.3976691
+  m_Height: 4.2971826
+  m_Direction: 0
+  m_Center: {x: -0.13314247, y: 0.005197048, z: -0.01}

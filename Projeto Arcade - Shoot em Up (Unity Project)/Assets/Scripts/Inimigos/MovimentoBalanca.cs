@@ -41,7 +41,7 @@ public class MovimentoBalanca : MonoBehaviour
     void Start()
     {
         alvo = GameObject.FindGameObjectWithTag("Player");
-        contadorCooldown = cooldown;
+        contadorCooldown = 7.0f;
     }
 
     void Update()

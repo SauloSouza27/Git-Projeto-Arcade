@@ -187,7 +187,7 @@ public class ControladorGame : MonoBehaviour
         if (nivel == 9)
         {
             nivel8.SetActive(false);
-            StartCoroutine(AtivaInimigo(nivel9, 4.0f));
+            StartCoroutine(AtivaInimigo(nivel9, 3.0f));
         }
         if (nivel == 10)
         {
