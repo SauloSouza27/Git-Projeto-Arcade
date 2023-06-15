@@ -33,6 +33,8 @@ public class ControlaMenuConfig : MonoBehaviour
             {
                 go.SetActive(false);
             }
+
+            //qualidade resolução ativa
         }
         if (SceneManager.GetActiveScene().name == "Fase 1" || SceneManager.GetActiveScene().name == "Fase 2")
         {
@@ -40,6 +42,8 @@ public class ControlaMenuConfig : MonoBehaviour
             {
                 go.SetActive(true);
             }
+
+            //qualidade resolução desativa
         }
 
     }
