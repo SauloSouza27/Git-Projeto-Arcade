@@ -8,7 +8,7 @@ public class MovimentoBalanca : MonoBehaviour
     // Pontos de vida
     public int pontosVida = 60;
     // XP quando morre
-    public int xpInimigo = 100;
+    public int xpInimigo = 300;
     public GameObject balanca, projetilBalanca, pontaSaidaBalanca;
     [Range(0, 6)] public float cooldown = 3.0f, velocidadeRotacao = 2.0f;
     private float contadorCooldown;
@@ -46,6 +46,8 @@ public class MovimentoBalanca : MonoBehaviour
 
     void Update()
     {
+        if (Time.timeScale == 0) return;
+
         MovimentoRotacaoBalanca();
 
         if (seMovimenta)

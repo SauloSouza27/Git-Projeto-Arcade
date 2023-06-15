@@ -29,6 +29,11 @@ public class ProjetilBalanca : MonoBehaviour
     {
         if (Time.timeScale == 0) return;
 
+        if (balanca == null)
+        {
+            Destroy(gameObject);
+        }
+
         ControleArmaBalanca();
     }
     private void ControleArmaBalanca()

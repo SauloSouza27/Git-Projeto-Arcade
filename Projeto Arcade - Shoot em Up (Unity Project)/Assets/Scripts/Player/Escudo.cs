@@ -20,6 +20,8 @@ public class Escudo : MonoBehaviour
 
     void Update()
     {
+        if (Time.timeScale == 0) return;
+
         Rotacao();
         if (isCollided)
         {

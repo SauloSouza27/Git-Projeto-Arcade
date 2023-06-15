@@ -16,6 +16,8 @@ public class BalaSegueAcelera : MonoBehaviour
     }
     private void Update()
     {
+        if (Time.timeScale == 0) return;
+
         MovimentoProjetil();
 
         Utilidades.DestroyOutOfScreen(projetil.transform.position, gameObject);

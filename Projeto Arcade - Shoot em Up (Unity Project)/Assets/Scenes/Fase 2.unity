@@ -1710,6 +1710,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 938208836173243491, guid: 31cbfa08abd5728488ef01a5a9748da0, type: 3}
     - target: {fileID: 433629360291604640, guid: c10ebd997f13d254dac629d5778bcbb0, type: 3}
+      propertyPath: xpInimigo
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 433629360291604640, guid: c10ebd997f13d254dac629d5778bcbb0, type: 3}
       propertyPath: fxExpHitPet
       value: 
       objectReference: {fileID: 938208836173243491, guid: d02aadc186cdd13448f83e1f6b03b16a, type: 3}
@@ -8562,6 +8566,10 @@ PrefabInstance:
       value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 433629360291604640, guid: 33b733a339bfaee45ba461e4741a4fdf, type: 3}
+      propertyPath: xpInimigo
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 433629360291604640, guid: 33b733a339bfaee45ba461e4741a4fdf, type: 3}
       propertyPath: inverteRotacao
       value: 1
       objectReference: {fileID: 0}
@@ -9082,6 +9090,10 @@ PrefabInstance:
     - target: {fileID: 433629360291604640, guid: 33b733a339bfaee45ba461e4741a4fdf, type: 3}
       propertyPath: cooldown
       value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 433629360291604640, guid: 33b733a339bfaee45ba461e4741a4fdf, type: 3}
+      propertyPath: xpInimigo
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 433629360291604640, guid: 33b733a339bfaee45ba461e4741a4fdf, type: 3}
       propertyPath: velocidadeGiro
@@ -12330,6 +12342,10 @@ PrefabInstance:
     - target: {fileID: 433629360291604640, guid: c10ebd997f13d254dac629d5778bcbb0, type: 3}
       propertyPath: cooldown
       value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 433629360291604640, guid: c10ebd997f13d254dac629d5778bcbb0, type: 3}
+      propertyPath: xpInimigo
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 433629360291604640, guid: c10ebd997f13d254dac629d5778bcbb0, type: 3}
       propertyPath: velocidadeGiro

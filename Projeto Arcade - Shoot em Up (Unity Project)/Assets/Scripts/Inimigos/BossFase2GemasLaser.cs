@@ -26,6 +26,8 @@ public class BossFase2GemasLaser : MonoBehaviour
     }
     private void Update()
     {
+        if (Time.timeScale == 0) return;
+
         if (atrasoTimer < atrasoAtirar)
         {
             atrasoTimer += Time.deltaTime;

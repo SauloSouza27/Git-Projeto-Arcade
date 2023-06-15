@@ -18,6 +18,8 @@ public class MovimentoTornado : MonoBehaviour
 
     void Update()
     {
+        if (Time.timeScale == 0) return;
+
         Movimento();
 
         Utilidades.DestroyOutOfScreen(tornado.transform.position, gameObject);
