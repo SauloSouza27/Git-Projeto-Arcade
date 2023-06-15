@@ -103,15 +103,14 @@ public class MovimentoBossFase2 : MonoBehaviour
             direcao.x = 3.5f;
         }
         direcao = direcao.normalized;
-        transform.up = Vector3.Slerp(transform.up, -1f * direcao, velocidadeRotacaoCorpo * Time.deltaTime);
+        transform.up = Vector3.Slerp(transform.up, - direcao, velocidadeRotacaoCorpo * Time.deltaTime);
     }
     private void MovimentoCabeca()
     {
-        if (cabeca == null) return;
         // rotacao cabeca
         Vector3 direcao = alvo.transform.position - cabeca.transform.position;
         direcao = direcao.normalized;
-        cabeca.transform.up = Vector3.Slerp(cabeca.transform.up, -1f * direcao, velocidadeRotacaoCabeca * Time.deltaTime);
+        cabeca.transform.up = Vector3.Slerp(cabeca.transform.up, - direcao, velocidadeRotacaoCabeca * Time.deltaTime);
     }
     // ativa/desativa lasers
     private void AtivaLasers()

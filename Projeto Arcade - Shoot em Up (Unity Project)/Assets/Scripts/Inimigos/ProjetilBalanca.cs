@@ -50,6 +50,8 @@ public class ProjetilBalanca : MonoBehaviour
         Vector3 dir = locationAlvo - projetilBalanca.transform.position;
         float distancia = Vector3.Distance(projetilBalanca.transform.position, locationAlvo);
 
+        if (balancaBase == null) return;
+
         if (distancia > 3 && go)
         {
             balancaBase.GetComponent<MeshRenderer>().enabled = false;
