@@ -95,7 +95,7 @@ public class MovimentoAnubis : MonoBehaviour
         // rotacao cabeca
         Vector3 direcao = alvo.transform.position - anubis.transform.position;
         direcao = direcao.normalized;
-        anubis.transform.up = Vector3.Slerp(anubis.transform.up, -1 * direcao, velocidadeRotacao * Time.deltaTime);
+        anubis.transform.up = Vector3.Slerp(anubis.transform.up, -1f * direcao, velocidadeRotacao * Time.deltaTime);
     }
 
     private void CaluclaDanoInimigo(int dano)

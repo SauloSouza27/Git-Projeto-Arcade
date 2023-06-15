@@ -7,7 +7,6 @@ public class ProjetilBalanca : MonoBehaviour
     public float velocidadeProjetil = 40.0f, velocidadeRotacao = 250.0f, tempoParado = 0.3f;
     private float timerParado;
     private bool go;
-    private Vector3 posicaoAnterior;
     public GameObject projetilBalanca;
     public GameObject balancaBase, balanca;
     private Vector3 locationAlvo;
@@ -21,8 +20,6 @@ public class ProjetilBalanca : MonoBehaviour
     void Start()
     {
         go = true;
-
-        posicaoAnterior = transform.position;
 
         locationAlvo = alvo.transform.position;
     }

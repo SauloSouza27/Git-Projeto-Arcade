@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 638560406043612987}
   - component: {fileID: 6674092000899577379}
   - component: {fileID: 8743759369440973594}
+  - component: {fileID: 8679688281099276211}
   m_Layer: 0
   m_Name: Balanca Corpo
-  m_TagString: Untagged
+  m_TagString: Inimigo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -83,6 +84,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &8679688281099276211
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2288247526907902962}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 7.955676, y: 40.832737, z: 7.6981173}
+  m_Center: {x: 0.11695433, y: 6.3773365, z: -2.7384174}
 --- !u!1 &5572247360810852081
 GameObject:
   m_ObjectHideFlags: 0
@@ -109,7 +131,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5572247360810852081}
   m_LocalRotation: {x: 0.2288111, y: -0, z: -0, w: 0.97347087}
-  m_LocalPosition: {x: 0, y: -0.10255718, z: 0.14117599}
+  m_LocalPosition: {x: 0.28, y: -0.10255718, z: 0.14117599}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -209,8 +231,8 @@ GameObject:
   - component: {fileID: 433629360291604640}
   - component: {fileID: 4398812070727145835}
   m_Layer: 0
-  m_Name: Balanca
-  m_TagString: Untagged
+  m_Name: Balanca Roxo
+  m_TagString: Inimigo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -231,7 +253,7 @@ Transform:
   - {fileID: 901220534947427012}
   - {fileID: 472368633094188277}
   m_Father: {fileID: 0}
-  m_RootOrder: 24
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &433629360291604640
 MonoBehaviour:
@@ -245,8 +267,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91fa5456fbc21504fb0d3e420880a734, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pontosVida: 60
+  xpInimigo: 100
   balanca: {fileID: 8641726351546445749}
-  controladorCorpo: {fileID: 0}
   projetilBalanca: {fileID: 5909020533600289315, guid: d1502a3f7565e3f47895a359c11703ec, type: 3}
   pontaSaidaBalanca: {fileID: 7216461155201766273}
   cooldown: 3
@@ -257,7 +280,9 @@ MonoBehaviour:
   isPos2: 0
   isPos3: 0
   isPos4: 0
-  distanciaMinNovaPos: 0.5
+  fxExplosionPrefab: {fileID: 804697987816361510, guid: affb0f2209db2744184edb572dcbcf73, type: 3}
+  fxExpHit: {fileID: 938208836173243491, guid: 31cbfa08abd5728488ef01a5a9748da0, type: 3}
+  fxExpHitPet: {fileID: 938208836173243491, guid: d02aadc186cdd13448f83e1f6b03b16a, type: 3}
 --- !u!54 &4398812070727145835
 Rigidbody:
   m_ObjectHideFlags: 0
