@@ -125,7 +125,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocidadeRotacao: 250
-  tempoParado: 0.5
+  tempoParado: 0.75
   projetilBalanca: {fileID: 5909020533600289315}
   balancaBase: {fileID: 0}
   balanca: {fileID: 0}
+  invertRotacao: 0

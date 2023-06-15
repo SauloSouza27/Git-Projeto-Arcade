@@ -48,13 +48,13 @@ public class ProjetilSerra : MonoBehaviour
         if (go)
         {
             serraBase.GetComponent<MeshRenderer>().enabled = false;
-            transform.position = Vector3.MoveTowards(transform.position, locationInFrontOfPlayer, Time.deltaTime * 40);
+            transform.position = Vector3.MoveTowards(transform.position, locationInFrontOfPlayer, Time.deltaTime * 40f);
         }
         if (!go)
         {
-            transform.position = Vector3.MoveTowards(transform.position, new Vector3(jogador.transform.position.x, jogador.transform.position.y + 1, jogador.transform.position.z), Time.deltaTime * 40);
+            transform.position = Vector3.MoveTowards(transform.position, new Vector3(jogador.transform.position.x, jogador.transform.position.y + 1, jogador.transform.position.z), Time.deltaTime * 40f);
         }
-        if (!go && Vector3.Distance(jogador.transform.position, transform.position) < 1.45)
+        if (!go && Vector3.Distance(jogador.transform.position, transform.position) < 1.45f)
         {
             serraBase.GetComponent<MeshRenderer>().enabled = true;
             Destroy(projetilSerra);

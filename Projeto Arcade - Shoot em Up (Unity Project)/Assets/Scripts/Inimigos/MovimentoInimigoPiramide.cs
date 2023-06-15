@@ -158,9 +158,9 @@ public class MovimentoInimigoPiramide : MonoBehaviour
         // Rotacao corpo
         Vector3 direcao = alvo.transform.position - transform.position;
         direcao = direcao.normalized;
-        transform.up = Vector3.Slerp(transform.up, -1 * direcao, velocidadeRotacao * Time.deltaTime);
+        transform.up = Vector3.Slerp(transform.up, -1f * direcao, velocidadeRotacao * Time.deltaTime);
         // Mira cabeca
-        //cabecaPiramide.transform.up = Vector3.Slerp(cabecaPiramide.transform.up, -1 * direcao, 3 * anguloRotacao * Time.deltaTime);
+        //cabecaPiramide.transform.up = Vector3.Slerp(cabecaPiramide.transform.up, -1f * direcao, 3 * anguloRotacao * Time.deltaTime);
         cabecaPiramide.transform.rotation = Quaternion.LookRotation(cabecaPiramide.transform.forward, - direcao);
         pontaArma.transform.rotation = Quaternion.LookRotation(pontaArma.transform.forward, direcao);
     }
@@ -182,7 +182,7 @@ public class MovimentoInimigoPiramide : MonoBehaviour
         else
         {
             GameObject instaciaBala = Instantiate(balaPiramide, pontaArma.transform.position, pontaArma.transform.rotation);
-            instaciaBala.GetComponent<BalaPersonagem>().velocidadeRotacao *= -1;
+            instaciaBala.GetComponent<BalaPersonagem>().velocidadeRotacao *= -1f;
         }
     }
 }

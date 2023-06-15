@@ -111,7 +111,7 @@ public class ControlaPersonagem : MonoBehaviour
         y = Input.GetAxis("Vertical");
         if (x != 0 || y != 0)
         {
-            personagem.transform.Translate(x * Time.deltaTime * velocidadeMovimento, y * Time.deltaTime * velocidadeMovimento, 0, Space.World);
+            personagem.transform.Translate(x * Time.deltaTime * velocidadeMovimento, y * Time.deltaTime * velocidadeMovimento, 0f, Space.World);
             personagem.transform.position = Utilidades.TravaPosicao(personagem.transform.position);
         }
     }
@@ -120,7 +120,7 @@ public class ControlaPersonagem : MonoBehaviour
     private void ControleArmaPrincipal(GameObject armaPrincipalAtiva)
     {
         Vector3 position = Input.mousePosition;
-        Vector3 mousePos = Camera.main.ScreenToWorldPoint(new Vector3(position.x, position.y, 30));
+        Vector3 mousePos = Camera.main.ScreenToWorldPoint(new Vector3(position.x, position.y, 30f));
         Vector3 dirMouse = mousePos - armaPrincipalAtiva.transform.position;
         dirMouse = dirMouse.normalized;
         armaPrincipalAtiva.transform.rotation = Quaternion.LookRotation(armaPrincipalAtiva.transform.forward, dirMouse);

@@ -14,26 +14,24 @@ public class DisparoProjetilBalanca : MonoBehaviour
     public bool isPos1 = false, isPos2 = false, isPos3 = false, isPos4 = false;
     private Vector3 pos1, pos2, pos3, pos4;
     private bool seMovimenta = false;
-    public float distanciaMinNovaPos = 0.5f;
 
     private void Awake()
     {
-        pos1 = new Vector3(27f, 28f, 0f);
-        pos2 = new Vector3(-27f, 28f, 0f);
-        pos3 = new Vector3(-27f, 3.5f, 0f);
-        pos4 = new Vector3(27f, 3.5f, 0f);
+        pos1 = new Vector3(26f, 29f, 0f);
+        pos2 = new Vector3(-26f, 29f, 0f);
+        pos3 = new Vector3(-26f, 3.0f, 0f);
+        pos4 = new Vector3(26f, 3.0f, 0f);
     }
     void Start()
     {
         alvo = GameObject.FindGameObjectWithTag("Player");
+        contadorCooldown = cooldown;
     }
 
     void Update()
     {
-        if (!seMovimenta)
-        {
-            MovimentoBalanca();
-        }
+        MovimentoBalanca();
+
         if (seMovimenta)
         {
             MovimentoGiro();
@@ -62,22 +60,19 @@ public class DisparoProjetilBalanca : MonoBehaviour
         Vector3 direcao = alvo.transform.position - balanca.transform.position;
         direcao = direcao.normalized;
         direcao.z = 0;
-        balanca.transform.up = Vector3.Slerp(balanca.transform.up, -1 * direcao, velocidadeRotacao * Time.deltaTime);
+        balanca.transform.up = Vector3.Slerp(balanca.transform.up, -1f * direcao, velocidadeRotacao * Time.deltaTime);
     }
 
     private void MovimentoGiro()
     {
         if (isPos1)
         {
-            // rotacao olhar direcao nova posicao
-            Vector3 dir = pos2 - transform.position;
-            balanca.transform.up = Vector3.Slerp(balanca.transform.up, -1 * dir, velocidadeRotacao * Time.deltaTime);
-            // mover para pos nova
-            if (Vector3.Distance(transform.position, pos2) > distanciaMinNovaPos)
+            float velocidade = velocidadeGiro * 2f;
+            if (transform.position != pos2)
             {
-                transform.position = Vector3.Lerp(transform.position, pos2, Time.deltaTime * velocidadeGiro);
+                transform.position = Vector3.MoveTowards(transform.position, pos2, Time.deltaTime * velocidade);
             }
-            if (Vector3.Distance(transform.position, pos2) <= distanciaMinNovaPos)
+            else
             {
                 isPos1 = false;
                 isPos2 = true;
@@ -88,15 +83,12 @@ public class DisparoProjetilBalanca : MonoBehaviour
         }
         if (isPos2)
         {
-            // rotacao olhar direcao nova posicao
-            Vector3 dir = pos3 - transform.position;
-            balanca.transform.up = Vector3.Slerp(balanca.transform.up, -1 * dir, velocidadeRotacao * Time.deltaTime);
-            // mover para pos nova
-            if (Vector3.Distance(transform.position, pos3) > distanciaMinNovaPos)
+            float velocidade = velocidadeGiro;
+            if (transform.position != pos3)
             {
-                transform.position = Vector3.Lerp(transform.position, pos3, Time.deltaTime * velocidadeGiro);
+                transform.position = Vector3.MoveTowards(transform.position, pos3, Time.deltaTime * velocidade);
             }
-            if (Vector3.Distance(transform.position, pos3) <= distanciaMinNovaPos)
+            else
             {
                 isPos2 = false;
                 isPos3 = true;
@@ -107,15 +99,12 @@ public class DisparoProjetilBalanca : MonoBehaviour
         }
         if (isPos3)
         {
-            // rotacao olhar direcao nova posicao
-            Vector3 dir = pos4 - transform.position;
-            balanca.transform.up = Vector3.Slerp(balanca.transform.up, -1 * dir, velocidadeRotacao * Time.deltaTime);
-            // mover para pos nova
-            if (Vector3.Distance(transform.position, pos4) > distanciaMinNovaPos)
+            float velocidade = velocidadeGiro * 2f;
+            if (transform.position != pos4)
             {
-                transform.position = Vector3.Lerp(transform.position, pos4, Time.deltaTime * velocidadeGiro);
+                transform.position = Vector3.MoveTowards(transform.position, pos4, Time.deltaTime * velocidade);
             }
-            if (Vector3.Distance(transform.position, pos4) <= distanciaMinNovaPos)
+            else
             {
                 isPos3 = false;
                 isPos4 = true;
@@ -126,15 +115,12 @@ public class DisparoProjetilBalanca : MonoBehaviour
         }
         if (isPos4)
         {
-            // rotacao olhar direcao nova posicao
-            Vector3 dir = pos1 - transform.position;
-            balanca.transform.up = Vector3.Slerp(balanca.transform.up, -1 * dir, velocidadeRotacao * Time.deltaTime);
-            // mover para pos nova
-            if (Vector3.Distance(transform.position, pos1) > distanciaMinNovaPos)
+            float velocidade = velocidadeGiro;
+            if (transform.position != pos1)
             {
-                transform.position = Vector3.Lerp(transform.position, pos1, Time.deltaTime * velocidadeGiro);
+                transform.position = Vector3.MoveTowards(transform.position, pos1, Time.deltaTime * velocidade);
             }
-            if (Vector3.Distance(transform.position, pos1) <= distanciaMinNovaPos)
+            else
             {
                 isPos4 = false;
                 isPos1 = true;

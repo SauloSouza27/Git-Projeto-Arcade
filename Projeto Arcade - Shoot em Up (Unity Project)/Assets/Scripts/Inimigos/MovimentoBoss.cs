@@ -109,27 +109,27 @@ public class MovimentoBoss : MonoBehaviour
         {
             // Rotacao corpo
             corpoPiramide.transform.up = Vector3.Slerp(corpoPiramide.transform.up, - direcao, velocidadeRotacao * Time.deltaTime);
-            cabecaPiramide.transform.up = Vector3.Slerp(cabecaPiramide.transform.up, - direcao, velocidadeRotacao * Time.deltaTime * 2);
+            cabecaPiramide.transform.up = Vector3.Slerp(cabecaPiramide.transform.up, - direcao, velocidadeRotacao * Time.deltaTime * 2f);
         }
         if (cabecaPiramide != null)
         {
             // Mira cabeca
             Vector3 direcaoCabeca = alvo.transform.position - cabecaPiramide.transform.position;
             
-            if (corpoPiramide == null && posAlvo != new Vector3(0, 0, 0))
+            if (corpoPiramide == null && posAlvo != new Vector3(0f, 0f, 0f))
             {
                 cabecaPiramide.transform.rotation = Quaternion.LookRotation(cabecaPiramide.transform.forward, - direcaoCabeca);
                 Vector3 posCabeca = cabecaPiramide.transform.position;
-                if (Vector3.Distance(posAlvo, posCabeca) > 0.8)
+                if (Vector3.Distance(posAlvo, posCabeca) > 0.8f)
                 {
                     cabecaPiramide.transform.position = Vector3.Lerp(posCabeca, posAlvo, velocidadeCabeca * Time.deltaTime);
                     quantidadeTiros = 1;
                 }
-                if (Vector3.Distance(posAlvo, posCabeca) < 0.8)
+                if (Vector3.Distance(posAlvo, posCabeca) < 0.8f)
                 {
                     if (quantidadeTiros > 0)
                     {
-                        Invoke(nameof(DisparoBastoes), tempoParado / 32);
+                        Invoke(nameof(DisparoBastoes), tempoParado / 32f);
                         quantidadeTiros--;
                     }
                     Invoke(nameof(BuscaNovaPosicaoPlayer), tempoParado);

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ProjetilBalanca : MonoBehaviour
 {
-    public float velocidadeRotacao = 250.0f, tempoParado = 0.3f;
+    public float velocidadeProjetil = 40.0f, velocidadeRotacao = 250.0f, tempoParado = 0.3f;
     private float timerParado;
     private bool go;
     private Vector3 posicaoAnterior;
@@ -51,7 +51,7 @@ public class ProjetilBalanca : MonoBehaviour
         if (distancia > 3 && go)
         {
             balancaBase.GetComponent<MeshRenderer>().enabled = false;
-            transform.position = Vector3.MoveTowards(transform.position, locationAlvo, Time.deltaTime * 40);
+            transform.position = Vector3.MoveTowards(transform.position, locationAlvo, Time.deltaTime * velocidadeProjetil);
         }
         if (distancia <= 3)
         {
@@ -60,11 +60,11 @@ public class ProjetilBalanca : MonoBehaviour
             timerParado += Time.deltaTime;
             if (timerParado <= tempoParado) return;
 
-            transform.position = Vector3.MoveTowards(transform.position, new Vector3(balancaBase.transform.position.x, balancaBase.transform.position.y + 1, balancaBase.transform.position.z), Time.deltaTime * 40);
+            transform.position = Vector3.MoveTowards(transform.position, new Vector3(balancaBase.transform.position.x, balancaBase.transform.position.y + 1, balancaBase.transform.position.z), Time.deltaTime * velocidadeProjetil);
         }
         if (distancia >= 3 && !go)
         {
-            transform.position = Vector3.MoveTowards(transform.position, new Vector3(balancaBase.transform.position.x, balancaBase.transform.position.y + 1, balancaBase.transform.position.z), Time.deltaTime * 40);
+            transform.position = Vector3.MoveTowards(transform.position, new Vector3(balancaBase.transform.position.x, balancaBase.transform.position.y + 1, balancaBase.transform.position.z), Time.deltaTime * velocidadeProjetil);
         }
         if (!go && Vector3.Distance(balancaBase.transform.position, transform.position) < 1.45)
         {
