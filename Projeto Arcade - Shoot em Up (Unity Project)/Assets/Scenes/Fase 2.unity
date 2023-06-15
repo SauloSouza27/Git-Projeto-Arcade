@@ -4160,7 +4160,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &611196768
 Transform:
   m_ObjectHideFlags: 0
@@ -9112,6 +9112,10 @@ PrefabInstance:
       value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 433629360291604640, guid: 33b733a339bfaee45ba461e4741a4fdf, type: 3}
+      propertyPath: balancaBase
+      value: 
+      objectReference: {fileID: 1718597628}
+    - target: {fileID: 433629360291604640, guid: 33b733a339bfaee45ba461e4741a4fdf, type: 3}
       propertyPath: velocidadeGiro
       value: 5
       objectReference: {fileID: 0}
@@ -11016,6 +11020,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1695585694}
   m_CullTransparentMesh: 1
+--- !u!1 &1718597628 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5572247360810852081, guid: 33b733a339bfaee45ba461e4741a4fdf, type: 3}
+  m_PrefabInstance: {fileID: 1384074263}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1724466336
 GameObject:
   m_ObjectHideFlags: 0
@@ -11031,7 +11040,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1724466337
 Transform:
   m_ObjectHideFlags: 0
