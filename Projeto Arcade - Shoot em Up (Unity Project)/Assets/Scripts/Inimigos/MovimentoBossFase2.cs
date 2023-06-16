@@ -49,7 +49,7 @@ public class MovimentoBossFase2 : MonoBehaviour
     public AudioSource[] somTiros = new AudioSource[3];
     // duracao Animacao
     private float timerAnimacao;
-    public BoxCollider colisor;
+    public BoxCollider[] colisores = new BoxCollider[2];
     
     private void Start()
     {
@@ -64,10 +64,14 @@ public class MovimentoBossFase2 : MonoBehaviour
         corGemaOriginal = renderGema.material.GetColor("_EmissionColor");
         // busca partes Corpo
         partesCorpo = GetComponentsInChildren<Transform>();
-        // busca colisor
-        colisor.enabled = false;
+        // desativa colisor
+        foreach (BoxCollider bc in colisores)
+        {
+            bc.enabled = false;
+        }
 
         ativaArmaRa = false;
+        StartCoroutine(AtrasaColisorArma(20f));
         StartCoroutine(IntervaloDisparoRa(22.0f));
     }
     private void Update()
@@ -434,6 +438,15 @@ public class MovimentoBossFase2 : MonoBehaviour
             int dano = alvo.GetComponent<DisparoArmaSerra>().danoSerra;
 
             CaluclaDanoInimigo(dano);
+        }
+    }
+
+    private IEnumerator AtrasaColisorArma(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        foreach (BoxCollider bc in colisores)
+        {
+            bc.enabled = true;
         }
     }
 }

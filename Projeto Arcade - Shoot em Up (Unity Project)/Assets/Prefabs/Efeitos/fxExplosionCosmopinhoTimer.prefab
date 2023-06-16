@@ -51,7 +51,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   espinhoso: 1
-  tempoParaDestruir: 0.6
+  tempoParaDestruir: 0.4
 --- !u!198 &6963611155376658777
 ParticleSystem:
   m_ObjectHideFlags: 0
