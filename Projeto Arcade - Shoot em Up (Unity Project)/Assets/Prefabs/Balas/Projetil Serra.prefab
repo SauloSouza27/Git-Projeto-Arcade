@@ -131,7 +131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 337d332f9f0b8714bb10e48b321b48eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidadeRotacao: 125
+  velocidadeRotacao: 250
   projetilSerra: {fileID: 4037887501447905336}
 --- !u!54 &7749842811024469344
 Rigidbody:
