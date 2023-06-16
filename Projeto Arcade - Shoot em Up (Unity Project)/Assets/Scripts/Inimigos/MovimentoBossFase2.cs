@@ -63,8 +63,8 @@ public class MovimentoBossFase2 : MonoBehaviour
     {
         if (Time.timeScale == 0) return;
 
-        MovimentoCabeca();
         MovimentoCorpo();
+        MovimentoCabeca();
 
         if (stage1)
         {
