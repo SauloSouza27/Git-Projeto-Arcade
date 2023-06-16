@@ -49,6 +49,7 @@ public class MovimentoBossFase2 : MonoBehaviour
     public AudioSource[] somTiros = new AudioSource[3];
     // duracao Animacao
     private float timerAnimacao;
+    public BoxCollider colisor;
     
     private void Start()
     {
@@ -63,6 +64,8 @@ public class MovimentoBossFase2 : MonoBehaviour
         corGemaOriginal = renderGema.material.GetColor("_EmissionColor");
         // busca partes Corpo
         partesCorpo = GetComponentsInChildren<Transform>();
+        // busca colisor
+        colisor.enabled = false;
 
         ativaArmaRa = false;
         StartCoroutine(IntervaloDisparoRa(22.0f));
