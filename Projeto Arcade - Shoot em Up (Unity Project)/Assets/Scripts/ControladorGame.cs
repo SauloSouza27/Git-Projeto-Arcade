@@ -143,7 +143,7 @@ public class ControladorGame : MonoBehaviour
         {
             spawnsInimigoPequeno.SetActive(false);
             StartCoroutine(AtivaInimigo(bossFase1, 1.0f));
-            StartCoroutine(AtivaInimigo(petsBossFase1, 22.0f));
+            StartCoroutine(AtivaInimigo(petsBossFase1, 16.0f));
         }
     }
 
