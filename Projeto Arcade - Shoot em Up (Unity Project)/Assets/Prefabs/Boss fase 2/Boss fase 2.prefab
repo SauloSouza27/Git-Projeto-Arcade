@@ -1042,7 +1042,7 @@ MonoBehaviour:
   olhoEsq: {fileID: 745751038983601963}
   olhoDir: {fileID: 6769337644010221450}
   cooldownRa: 0.79
-  tempoDisparoRa: 3
+  tempoDisparoRa: 2
   numeroDisparosRa: 5
   cooldownOlhos: 0.3
   tempoDisparoOlhos: 3

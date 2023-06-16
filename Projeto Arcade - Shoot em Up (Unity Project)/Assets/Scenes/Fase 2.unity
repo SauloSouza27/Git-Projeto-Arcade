@@ -15375,6 +15375,10 @@ PrefabInstance:
       propertyPath: uiVitoria
       value: 
       objectReference: {fileID: 8402639399741792853}
+    - target: {fileID: 762503939207037870, guid: 21ba06eb2d4749243a828c31e3e33f77, type: 3}
+      propertyPath: tempoDisparoRa
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3854168282922302638, guid: 21ba06eb2d4749243a828c31e3e33f77, type: 3}
       propertyPath: m_Name
       value: Boss Fase 2

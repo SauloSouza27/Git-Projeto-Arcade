@@ -48,7 +48,8 @@ public class MovimentoBossFase2 : MonoBehaviour
     // SFX
     public AudioSource[] somTiros = new AudioSource[3];
     // duracao Animacao
-    private float timerAnimacao;
+    private float timerAnimacao = 20.0f;
+    private bool animacaoAcabou = false;
     
     private void Start()
     {
@@ -66,14 +67,11 @@ public class MovimentoBossFase2 : MonoBehaviour
 
         ativaArmaRa = false;
         StartCoroutine(IntervaloDisparoRa(22.0f));
+        StartCoroutine(EsperaAnimacao());
     }
     private void Update()
     {
-        if (timerAnimacao >= 20.0f)
-        {
-            timerAnimacao += Time.deltaTime;
-            return;
-        }
+        if (!animacaoAcabou) return;
 
         if (Time.timeScale == 0) return;
 
@@ -336,6 +334,9 @@ public class MovimentoBossFase2 : MonoBehaviour
                 stage3 = false;
                 stage4 = true;
                 AtivaLasers();
+                numeroDisparosOlhos = 2;
+                numeroDisparosTornado = 1;
+                cooldownTornado = 0f;
             }
         }
 
@@ -380,6 +381,8 @@ public class MovimentoBossFase2 : MonoBehaviour
     }
     private void OnCollisionEnter(Collision colisor)
     {
+        if (!animacaoAcabou) return;
+
         if (colisor.gameObject.CompareTag("BalaPersonagem"))
         {
             Destroy(colisor.gameObject);
@@ -423,11 +426,20 @@ public class MovimentoBossFase2 : MonoBehaviour
     }
     private void OnCollisionExit(Collision colisor)
     {
+        if (!animacaoAcabou) return;
+
         if (colisor.gameObject.CompareTag("ProjetilSerra"))
         {
             int dano = alvo.GetComponent<DisparoArmaSerra>().danoSerra;
 
             CaluclaDanoInimigo(dano);
         }
+    }
+
+    private IEnumerator EsperaAnimacao()
+    {
+        animacaoAcabou = false;
+        yield return new WaitForSeconds(timerAnimacao);
+        animacaoAcabou = true;
     }
 }
