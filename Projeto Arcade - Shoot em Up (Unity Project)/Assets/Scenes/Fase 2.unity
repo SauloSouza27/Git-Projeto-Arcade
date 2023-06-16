@@ -15372,9 +15372,21 @@ PrefabInstance:
     m_TransformParent: {fileID: 981386786}
     m_Modifications:
     - target: {fileID: 762503939207037870, guid: 21ba06eb2d4749243a828c31e3e33f77, type: 3}
+      propertyPath: colisor
+      value: 
+      objectReference: {fileID: 4303278235935394144}
+    - target: {fileID: 762503939207037870, guid: 21ba06eb2d4749243a828c31e3e33f77, type: 3}
       propertyPath: uiVitoria
       value: 
       objectReference: {fileID: 8402639399741792853}
+    - target: {fileID: 762503939207037870, guid: 21ba06eb2d4749243a828c31e3e33f77, type: 3}
+      propertyPath: colisores.Array.data[0]
+      value: 
+      objectReference: {fileID: 4303278235935394144}
+    - target: {fileID: 762503939207037870, guid: 21ba06eb2d4749243a828c31e3e33f77, type: 3}
+      propertyPath: colisores.Array.data[1]
+      value: 
+      objectReference: {fileID: 4303278235935394143}
     - target: {fileID: 3854168282922302638, guid: 21ba06eb2d4749243a828c31e3e33f77, type: 3}
       propertyPath: m_Name
       value: Boss Fase 2
@@ -15431,6 +15443,16 @@ PrefabInstance:
 --- !u!4 &4303278235935394142 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3856218712620785793, guid: 21ba06eb2d4749243a828c31e3e33f77, type: 3}
+  m_PrefabInstance: {fileID: 4303278235935394141}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &4303278235935394143 stripped
+BoxCollider:
+  m_CorrespondingSourceObject: {fileID: 6458624791515446205, guid: 21ba06eb2d4749243a828c31e3e33f77, type: 3}
+  m_PrefabInstance: {fileID: 4303278235935394141}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &4303278235935394144 stripped
+BoxCollider:
+  m_CorrespondingSourceObject: {fileID: 8159750211023736808, guid: 21ba06eb2d4749243a828c31e3e33f77, type: 3}
   m_PrefabInstance: {fileID: 4303278235935394141}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4509171500576999490

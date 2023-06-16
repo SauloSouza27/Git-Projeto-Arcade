@@ -71,12 +71,12 @@ public class MovimentoBossFase2 : MonoBehaviour
         }
 
         ativaArmaRa = false;
-        StartCoroutine(AtrasaColisorArma(20f));
-        StartCoroutine(IntervaloDisparoRa(22.0f));
+        StartCoroutine(AtrasaColisorArma(18.0f));
+        StartCoroutine(IntervaloDisparoRa(21.0f));
     }
     private void Update()
     {
-        if (timerAnimacao <= 20.0f)
+        if (timerAnimacao <= 19.0f)
         {
             timerAnimacao += Time.deltaTime;
             return;
