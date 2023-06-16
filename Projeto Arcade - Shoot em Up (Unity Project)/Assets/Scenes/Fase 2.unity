@@ -6119,7 +6119,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &981386786
 Transform:
   m_ObjectHideFlags: 0
@@ -11040,7 +11040,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1724466337
 Transform:
   m_ObjectHideFlags: 0
@@ -15375,70 +15375,6 @@ PrefabInstance:
       propertyPath: uiVitoria
       value: 
       objectReference: {fileID: 8402639399741792853}
-    - target: {fileID: 762503939207037870, guid: 21ba06eb2d4749243a828c31e3e33f77, type: 3}
-      propertyPath: quartaVida
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 762503939207037870, guid: 21ba06eb2d4749243a828c31e3e33f77, type: 3}
-      propertyPath: segundaVida
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 762503939207037870, guid: 21ba06eb2d4749243a828c31e3e33f77, type: 3}
-      propertyPath: primeiraVida
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 762503939207037870, guid: 21ba06eb2d4749243a828c31e3e33f77, type: 3}
-      propertyPath: terceiraVida
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 1209269038863250112, guid: 21ba06eb2d4749243a828c31e3e33f77, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.35
-      objectReference: {fileID: 0}
-    - target: {fileID: 1209269038863250112, guid: 21ba06eb2d4749243a828c31e3e33f77, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.35
-      objectReference: {fileID: 0}
-    - target: {fileID: 1209269038863250112, guid: 21ba06eb2d4749243a828c31e3e33f77, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.35
-      objectReference: {fileID: 0}
-    - target: {fileID: 1209269038863250112, guid: 21ba06eb2d4749243a828c31e3e33f77, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.59
-      objectReference: {fileID: 0}
-    - target: {fileID: 1209269038863250112, guid: 21ba06eb2d4749243a828c31e3e33f77, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1922079106891459124, guid: 21ba06eb2d4749243a828c31e3e33f77, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.53
-      objectReference: {fileID: 0}
-    - target: {fileID: 1922079106891459124, guid: 21ba06eb2d4749243a828c31e3e33f77, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.53
-      objectReference: {fileID: 0}
-    - target: {fileID: 1922079106891459124, guid: 21ba06eb2d4749243a828c31e3e33f77, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.53
-      objectReference: {fileID: 0}
-    - target: {fileID: 1922079106891459124, guid: 21ba06eb2d4749243a828c31e3e33f77, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.61
-      objectReference: {fileID: 0}
-    - target: {fileID: 1922079106891459124, guid: 21ba06eb2d4749243a828c31e3e33f77, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.84
-      objectReference: {fileID: 0}
-    - target: {fileID: 1922079106891459124, guid: 21ba06eb2d4749243a828c31e3e33f77, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3308118371259842278, guid: 21ba06eb2d4749243a828c31e3e33f77, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3854168282922302638, guid: 21ba06eb2d4749243a828c31e3e33f77, type: 3}
       propertyPath: m_Name
       value: Boss Fase 2
@@ -15453,7 +15389,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3856218712620785793, guid: 21ba06eb2d4749243a828c31e3e33f77, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 19.2
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 3856218712620785793, guid: 21ba06eb2d4749243a828c31e3e33f77, type: 3}
       propertyPath: m_LocalPosition.z

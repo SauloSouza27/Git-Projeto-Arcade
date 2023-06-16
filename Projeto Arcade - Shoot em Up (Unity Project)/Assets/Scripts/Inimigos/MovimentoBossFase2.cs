@@ -34,6 +34,11 @@ public class MovimentoBossFase2 : MonoBehaviour
     // Materiais
     private MeshRenderer[] renderers;
     private Material[] materiais;
+    // Render e Material Gemas
+    public MeshRenderer renderGema;
+    public float velocidadeAumentaBrilho = 2f;
+    private float intensity = 1f;
+    private Color corGemaOriginal, corGemaFinal;
     // FX
     public GameObject fxExplosionPrefab, fxExpHit, fxExpHitPet;
     // ui VItoria
@@ -42,6 +47,8 @@ public class MovimentoBossFase2 : MonoBehaviour
     private Transform[] partesCorpo;
     // SFX
     public AudioSource[] somTiros = new AudioSource[3];
+    // duracao Animacao
+    private float timerAnimacao;
     
     private void Start()
     {
@@ -53,14 +60,21 @@ public class MovimentoBossFase2 : MonoBehaviour
         {
             materiais[i] = renderers[i].material;
         }
+        corGemaOriginal = renderGema.material.GetColor("_EmissionColor");
         // busca partes Corpo
         partesCorpo = GetComponentsInChildren<Transform>();
 
         ativaArmaRa = false;
-        StartCoroutine(IntervaloDisparoRa(2.0f));
+        StartCoroutine(IntervaloDisparoRa(22.0f));
     }
     private void Update()
     {
+        if (timerAnimacao >= 20.0f)
+        {
+            timerAnimacao += Time.deltaTime;
+            return;
+        }
+
         if (Time.timeScale == 0) return;
 
         MovimentoCorpo();
@@ -117,13 +131,43 @@ public class MovimentoBossFase2 : MonoBehaviour
     {
         laserDir.SetActive(true);
         laserEsq.SetActive(true);
+        intensity = 1f;
+        StartCoroutine(AumentaBrilhoGema());
+        
     }
     private void DesativaLasers()
     {
         laserDir.SetActive(false);
         laserEsq.SetActive(false);
+        corGemaFinal = renderGema.material.GetColor("_EmissionColor");
+        intensity = 1f;
+        StartCoroutine(DiminuiBrilhoGema());
     }
+    // muda cor da Gema Laser 
+    private IEnumerator AumentaBrilhoGema()
+    {
+        while (intensity < 5f)
+        {
+            intensity += Time.deltaTime * velocidadeAumentaBrilho;
 
+            renderGema.material.SetColor("_EmissionColor", corGemaOriginal * intensity);
+
+            yield return null;
+        }
+        yield return null;
+    }
+    private IEnumerator DiminuiBrilhoGema()
+    {
+        while (intensity < 5f)
+        {
+            intensity += Time.deltaTime * velocidadeAumentaBrilho;
+
+            renderGema.material.SetColor("_EmissionColor", corGemaFinal / intensity);
+
+            yield return null;
+        }
+        yield return null;
+    }
     // arma olho de Ra
     private void ArmaRa()
     {
