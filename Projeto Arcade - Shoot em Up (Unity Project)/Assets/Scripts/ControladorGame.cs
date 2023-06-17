@@ -32,6 +32,8 @@ public class ControladorGame : MonoBehaviour
     public GameObject piramideSuperiores, piramideLaterais;
     // boss fase1
     public GameObject bossFase1, petsBossFase1;
+    // musicas
+    public AudioSource musicaPrincipal, musicaBoss;
 
     private void Awake()
     {
@@ -144,6 +146,7 @@ public class ControladorGame : MonoBehaviour
             spawnsInimigoPequeno.SetActive(false);
             StartCoroutine(AtivaInimigo(bossFase1, 1.0f));
             StartCoroutine(AtivaInimigo(petsBossFase1, 16.0f));
+            MudaMusicaBoss(musicaPrincipal, musicaBoss);
         }
     }
 
@@ -193,6 +196,7 @@ public class ControladorGame : MonoBehaviour
         {
             nivel9.SetActive(false);
             StartCoroutine(AtivaInimigo(nivel10, 2.0f));
+            MudaMusicaBoss(musicaPrincipal, musicaBoss);
         }
     }
 
@@ -438,5 +442,11 @@ public class ControladorGame : MonoBehaviour
         Time.timeScale = 1.0f;
         AtivaSpawnInimigosPequenos();
         uiPowerUP.SetActive(false);
+    }
+
+    public void MudaMusicaBoss(AudioSource musicaPrincipal, AudioSource musicaBoss)
+    {
+        musicaPrincipal.Pause();
+        musicaBoss.PlayDelayed(1.0f);
     }
 }
