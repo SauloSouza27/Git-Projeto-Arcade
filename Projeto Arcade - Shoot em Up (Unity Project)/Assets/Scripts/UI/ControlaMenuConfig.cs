@@ -14,10 +14,6 @@ public class ControlaMenuConfig : MonoBehaviour
     // som SFX
     public Slider sliderSFX;
 
-    private void Start()
-    {
-
-    }
     private void OnEnable()
     {
         // ajusta valor slider ao abrir
@@ -82,5 +78,19 @@ public class ControlaMenuConfig : MonoBehaviour
     public void ControlaSFX()
     {
         mixer.SetFloat("SFXVol", Mathf.Log10(sliderSFX.value) * 20.0f);
+    }
+
+    // configurações de qualidade
+    public void QualidadeBaixa()
+    {
+        QualitySettings.SetQualityLevel(1, true);
+    }
+    public void QualidadeMedia()
+    {
+        QualitySettings.SetQualityLevel(3, true);
+    }
+    public void QualidadeAlta()
+    {
+        QualitySettings.SetQualityLevel(5, true);
     }
 }
