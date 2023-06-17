@@ -27,6 +27,8 @@ public class MovimentoAnubis : MonoBehaviour
     private Material[] materiais;
     // efeito explosão
     public GameObject fxExplosionPrefab, fxExpHit, fxExpHitPet;
+    // SFX tiro
+    public AudioSource somTiro;
     private void Awake()
     {
         controladorGame = GameObject.FindGameObjectWithTag("ControladorGame");
@@ -178,6 +180,7 @@ public class MovimentoAnubis : MonoBehaviour
     // Tiro
     private void Tiro()
     {
+        somTiro.Play();
         StartCoroutine(BrilhaOlhoTiro());
         GameObject instaciaEsq = Instantiate(balaAnubisPrefab, pontaArmaEsq.transform.position, pontaArmaEsq.transform.rotation);
         GameObject instaciaDir = Instantiate(balaAnubisPrefab, pontaArmaDir.transform.position, pontaArmaDir.transform.rotation);

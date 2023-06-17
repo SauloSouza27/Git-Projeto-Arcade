@@ -21,6 +21,8 @@ public class ControleVidaArmasBoss : MonoBehaviour
     private BoxCollider colisor;
     // explosao
     public GameObject fxExplosionPrefab, fxExpHit, fxExpHitPet;
+    // SFX tiro
+    public AudioSource somTiro;
     private void Awake()
     {
         controladorGame = GameObject.FindGameObjectWithTag("ControladorGame");
@@ -70,6 +72,7 @@ public class ControleVidaArmasBoss : MonoBehaviour
     private void Tiro()
     {
         Instantiate(bala, pontArma.transform.position, pontArma.transform.rotation);
+        somTiro.Play();
     }
     private void MiraArmaBoss()
     {
