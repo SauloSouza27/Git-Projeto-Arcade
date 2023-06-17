@@ -157,7 +157,7 @@ GameObject:
   - component: {fileID: 5795779590187680921}
   - component: {fileID: 8934426696096469659}
   - component: {fileID: 8965080584138336255}
-  - component: {fileID: 7804706804279653058}
+  - component: {fileID: 932477863776204465}
   m_Layer: 0
   m_Name: Bala BossFase2_Ra
   m_TagString: BalaBossFase2
@@ -248,8 +248,8 @@ MonoBehaviour:
   distanciaSeguir: 12
   fatorAumentoVelocidade: 6
   projetil: {fileID: 2133145952157808992}
---- !u!136 &7804706804279653058
-CapsuleCollider:
+--- !u!135 &932477863776204465
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -266,8 +266,6 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5079327
-  m_Height: 12.61
-  m_Direction: 2
+  serializedVersion: 3
+  m_Radius: 0.53727144
   m_Center: {x: 0, y: 0, z: 0}

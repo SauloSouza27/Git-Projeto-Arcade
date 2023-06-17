@@ -1065,6 +1065,9 @@ MonoBehaviour:
   - {fileID: 8300487811283293067}
   - {fileID: 4866031111521744657}
   - {fileID: 9133947238458480415}
+  colisores:
+  - {fileID: 8159750211023736808}
+  - {fileID: 6458624791515446205}
 --- !u!65 &8159750211023736808
 BoxCollider:
   m_ObjectHideFlags: 0
