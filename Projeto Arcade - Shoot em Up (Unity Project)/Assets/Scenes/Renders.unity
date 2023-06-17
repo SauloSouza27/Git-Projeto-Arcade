@@ -602,7 +602,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2014ec3e88854444585b7354463d2567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  respawnTime: 10
   escudo: {fileID: 3864509195342792676}
+  player: {fileID: 0}
+  escudoCDIM: {fileID: 0}
   velocidadeRotacao: 10
 --- !u!1 &558075312919929736
 GameObject:
@@ -1077,6 +1080,7 @@ MonoBehaviour:
   pontaSaidaSerra: {fileID: 1751655439155375857}
   cooldown: 4
   danoSerra: 6
+  serraCDIM: {fileID: 0}
 --- !u!4 &1090807036230701116
 Transform:
   m_ObjectHideFlags: 0
@@ -2818,6 +2822,7 @@ MonoBehaviour:
   danoArmaPrincipal: 2
   particulasDano: {fileID: 6480136072214673557}
   tomaDano: {fileID: 8098984025469663373}
+  isInvulneravel: 0
 --- !u!96 &3995204012310975812
 TrailRenderer:
   serializedVersion: 3
@@ -15106,7 +15111,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
+  m_BackGroundColor: {r: 1, g: 1, b: 1, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
