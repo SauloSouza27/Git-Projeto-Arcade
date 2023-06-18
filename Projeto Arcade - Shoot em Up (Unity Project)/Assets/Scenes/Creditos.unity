@@ -992,16 +992,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "<size=44>Cr\xE9ditos</size>\n\n<size=56>Equipe</size>\n\nArthur Moura
-    Duarte Vieira \u200B\r\n\nGuilherme Biangolino de Oliveira\u200B\r\n\nPaulo Antonio
-    de Freitas Angelico\u200B\r\n\nPedro do Amaral Sabatino\u200B\r\n\nPedro  Henrique
-    Lima Tavares Leite\u200B\r\n\nSaulo Ant\xF4nio Souza\u200B\r\n\nThiago Yuichi
-    Pinati Hori\n\n\n<size=56>Professores</size>\n\nArtur Martins Mol\n\nLuis Felipe
-    Lip\xE3o\n\n\n\nEfeitos Sonoros :\n\nMixkit\n\nOpenGameARt\n\nZapSplat\n\nFreesound\n\nM\xFAsica
-    Menu Inicial :\n\n mixkit-cat-walk-371 \n\n https://mixkit.co/\n\nM\xFAsica Fase
-    1 : \n\nmixkit-cat-walk-371\n https://mixkit.co/\n\nM\xFAsica Fase 2 :\n\nmatt-oakley-mercury-ascendant\nhttps://freemusicarchive.org/\n\nM\xFAsica
-    boss 1 :\n\nMetaruka\n\nopengameart.org\n\nM\xFAsica boss 2 :\n\nOrbital Colossus 
-    -Matthew Pablo\n opengameart.org\n\n\n\n\n"
+  m_text: "<size=40>Cr\xE9ditos</size>\n\n<size=50>Equipe</size>\n\nSaulo Ant\xF4nio
+    Souza \u200B\r\n\nGuilherme Biangolino de Oliveira\u200B\r\n\nPaulo Antonio de
+    Freitas Angelico\u200B\r\n\nPedro do Amaral Sabatino\u200B\r\n\nPedro  Henrique
+    Lima Tavares Leite\u200B\r\n\nArthur Moura Duarte Vieira\u200B\r\n\nThiago Yuichi
+    Pinati Hori\n\n\n<size=50>Professores</size>\n\nArtur Martins Mol\n\nLuis Felipe
+    \"Lip\xE3o\" Garrocho\n\n\n<size=50>M\xFAsicas e Efeitos Sonoros</size>\n\nMixkit\n\nOpenGameArt\n\nZapSplat\n\nFreesound\n\nFreeMusicArchive\n\nMetaruka\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1028,8 +1024,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 32
+  m_fontSizeBase: 32
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
