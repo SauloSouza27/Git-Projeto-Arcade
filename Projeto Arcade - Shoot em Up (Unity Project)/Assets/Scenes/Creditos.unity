@@ -998,9 +998,10 @@ MonoBehaviour:
     Lima Tavares Leite\u200B\r\n\nArthur Moura Duarte Vieira\u200B\r\n\nThiago Yuichi
     Pinati Hori\n\n\n<size=50>Professores</size>\n\nArtur Martins Mol\n\nLuis Felipe
     \"Lip\xE3o\" Garrocho\n\n\n<size=50>Efeitos Sonoros</size>\n\nMixkit\n\nOpenGameArt\n\nZapSplat\n\nFreesound\n\nFreeMusicArchive\n\nMenu
-    Inicial  mixkit-cat-walk-371\r\n\r\nFase 1 mixkit-space-game-668 -mixkit.co\r\n\r\nBoss
-    Fase 1 Final Battle -Metaruka- opengameart.org\r\n\r\nFase 2 matt-oakley-mercury-ascendant-freemusicarchive.org\r\n\r\nBoss
-    Fase 2 - Orbital Colossus -Matthew Pablo- opengameart.org\n\n\n\n"
+    Inicial: mixkit-cat-walk-371\r -mixkit.co\n\r\nFase 1: \nmixkit-space-game-668
+    -mixkit.co\r\n\r\nBoss Fase 1:\nFinal Battle -Metaruka- opengameart.org\r\n\r\nFase
+    2: matt-oakley-mercury-ascendant-freemusicarchive.org\r\n\r\nBoss Fase 2\nOrbital
+    Colossus -Matthew Pablo- opengameart.org\n\n\n\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
