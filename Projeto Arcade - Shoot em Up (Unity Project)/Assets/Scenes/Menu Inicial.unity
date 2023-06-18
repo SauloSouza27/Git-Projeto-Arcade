@@ -48286,6 +48286,14 @@ PrefabInstance:
       propertyPath: planetaFase2
       value: 
       objectReference: {fileID: 3306848889175792046}
+    - target: {fileID: 5768414250313623877, guid: d210b8fe1e65b8747bd6195a50536fdb, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: baa82d8d71145a74f97a44afdb0beff0, type: 2}
+    - target: {fileID: 5768414250313623877, guid: d210b8fe1e65b8747bd6195a50536fdb, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -6913583736706566341, guid: baa82d8d71145a74f97a44afdb0beff0, type: 2}
     - target: {fileID: 5829175818630063238, guid: d210b8fe1e65b8747bd6195a50536fdb, type: 3}
       propertyPath: m_Sprite
       value: 
