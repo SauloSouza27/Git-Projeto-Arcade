@@ -20649,12 +20649,15 @@ MonoBehaviour:
   armaDouble: {fileID: 8678102045127967485}
   armaTriple: {fileID: 8678102045127967484}
   escudo: {fileID: 77755919}
+  armaOrbe: {fileID: 8678102045127967483}
+  armaPet: {fileID: 949242904282048176}
+  armaSerra: {fileID: 861404270}
   buttonSubirNivel: {fileID: 2886815341862553559}
   buttonArmaDouble: {fileID: 4765749974483968207}
   buttonArmaTriple: {fileID: 1637574869952154008}
   buttonDiminuiCooldown: {fileID: 615692596671974044}
   buttonEscudo: {fileID: 2001659412}
-  buttonUPEscudo: {fileID: 0}
+  buttonUPEscudo: {fileID: 1666412289}
   buttonArmaPet: {fileID: 2071515782731520724}
   buttonPetDiminuiCooldown: {fileID: 1609442636354016584}
   buttonArmaOrbeGiratorio: {fileID: 2029102520562304168}

@@ -26,6 +26,8 @@ public class ControlaPersonagem : MonoBehaviour
     // sons player
     public AudioSource tomaDano;
     public bool isInvulneravel = false;
+    // cheat codes
+    private bool cheatVida = false;
 
     void Start()
     {
@@ -45,6 +47,19 @@ public class ControlaPersonagem : MonoBehaviour
 
     void Update()
     {
+        // cheat vida
+        if (Input.GetButtonDown("cheat1"))
+        {
+            if (!cheatVida)
+            {
+                cheatVida = true;
+            }
+            else
+            {
+                cheatVida = false;
+            }
+        }
+
         if (Time.timeScale == 0) return;
 
         if (Input.GetMouseButtonDown(1))
@@ -74,6 +89,7 @@ public class ControlaPersonagem : MonoBehaviour
     // Dano Inimigos
     private void OnCollisionEnter(Collision colisor)
     {
+        if (cheatVida) return;
 
         if (colisor.gameObject.CompareTag("Inimigo") || colisor.gameObject.CompareTag("BalaPiramide") || colisor.gameObject.CompareTag("BalaBossPiramide") ||
             colisor.gameObject.CompareTag("BalaAnubis") || colisor.gameObject.CompareTag("LaserSparks") || colisor.gameObject.CompareTag("BalaBossFase2") || colisor.gameObject.CompareTag("Tornado")

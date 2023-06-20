@@ -21,7 +21,7 @@ public class ControladorGame : MonoBehaviour
     public GameObject spawnsInimigoPequeno;
     public List<GameObject> spawnsCima, spawnsLaterais, spawnsBaixo;
     // Power UP
-    public GameObject menuConfig, uiGameOver, uiVitoria, uiPowerUP, escudoCD, serraCD, armaPrincipal, armaDouble, armaTriple, escudo, buttonSubirNivel, buttonArmaDouble,
+    public GameObject menuConfig, uiGameOver, uiVitoria, uiPowerUP, escudoCD, serraCD, armaPrincipal, armaDouble, armaTriple, escudo, armaOrbe, armaPet, armaSerra, buttonSubirNivel, buttonArmaDouble,
         buttonArmaTriple, buttonDiminuiCooldown, buttonEscudo, buttonUPEscudo, buttonArmaPet, buttonPetDiminuiCooldown, buttonArmaOrbeGiratorio, buttonUpgradeOrbe1, buttonVelocidadeOrbe, buttonArmaSerra, buttonTamanhoSerra;
     public bool armaPrincipalAtivada = true, armaDoubleAtivada = false, armaTripleAtivada = false, armaPetAtivada = false, defesaEscudoAtivada = false, armaOrbeGiratorioAtivada = false, upgradeOrbe1 = false, armaSerraAtivada = false;
     private int contadorMaxUpEscudo = 0, contadorMaxVelocidadeAtaque = 0, contadorMaxVelocidadeAtaquePet = 0, contadorMaxVelocidadeOrbe = 0, contadorMaxTamanhoSerra = 0;
@@ -58,6 +58,9 @@ public class ControladorGame : MonoBehaviour
     
     void Update()
     {
+        CheatAtivaArmas();
+        CheatTrocaFases();
+
         if (Input.GetButtonDown("Configuracao"))
         {
             if (!menuConfig.activeSelf)
@@ -448,5 +451,88 @@ public class ControladorGame : MonoBehaviour
     {
         musicaPrincipal.Pause();
         musicaBoss.PlayDelayed(1.0f);
+    }
+
+    // cheat mudar fase
+    public void CarregaCena(string nomeCena)
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene(nomeCena);
+    }
+     private void CheatTrocaFases()
+    {
+        if (Input.GetButtonDown("cheat0"))
+        {
+            if (SceneManager.GetActiveScene().name == "Fase 1")
+            {
+                CarregaCena("Fase 2");
+            }
+            if (SceneManager.GetActiveScene().name == "Fase 2")
+            {
+                CarregaCena("Fase 1");
+            }
+        }
+    }
+
+    // cheat ativar armas extras
+    private void CheatAtivaArmas()
+    {
+        if (Input.GetButtonDown("cheat2"))
+        {
+            armaDouble.SetActive(true);
+            armaPrincipal.SetActive(false);
+            armaTriple.SetActive(false);
+            jogador.GetComponent<DisparoArma>().enabled = false;
+            jogador.GetComponent<DisparoArmaDouble>().enabled = true;
+            jogador.GetComponent<DisparoArmaTriple>().enabled = false;
+            armaPrincipalAtivada = false;
+            armaDoubleAtivada = true;
+            armaTripleAtivada = false;
+            jogador.GetComponent<ControlaPersonagem>().danoArmaPrincipal = 2;
+            Destroy(buttonArmaDouble);
+        }
+        if (Input.GetButtonDown("cheat3"))
+        {
+            armaDouble.SetActive(false);
+            armaPrincipal.SetActive(false);
+            armaTriple.SetActive(true);
+            jogador.GetComponent<DisparoArma>().enabled = false;
+            jogador.GetComponent<DisparoArmaDouble>().enabled = false;
+            jogador.GetComponent<DisparoArmaTriple>().enabled = true;
+            armaPrincipalAtivada = false;
+            armaDoubleAtivada = false;
+            armaTripleAtivada = true;
+            jogador.GetComponent<ControlaPersonagem>().danoArmaPrincipal = 1;
+            Destroy(buttonArmaTriple);
+        }
+        if (Input.GetButtonDown("cheat4"))
+        {
+            armaOrbe.SetActive(true);
+            armaOrbeGiratorioAtivada = true;
+            jogador.GetComponent<RespostaOrbeGiratorio>().enabled = true;
+            Destroy(buttonArmaOrbeGiratorio);
+        }
+        if (Input.GetButtonDown("cheat5"))
+        {
+            escudo.SetActive(true);
+            escudoCD.SetActive(true);
+            defesaEscudoAtivada = true;
+            Destroy(buttonEscudo);
+        }
+        if (Input.GetButtonDown("cheat6"))
+        {
+            armaPet.SetActive(true);
+            armaPetAtivada = true;
+            jogador.GetComponent<DisparoArmaPet>().enabled = true;
+            Destroy(buttonArmaPet);
+        }
+        if (Input.GetButtonDown("cheat7"))
+        {
+            armaSerra.SetActive(true);
+            serraCD.SetActive(true);
+            armaSerraAtivada = true;
+            jogador.GetComponent<DisparoArmaSerra>().enabled = true;
+            Destroy(buttonArmaSerra);
+        }
     }
 }

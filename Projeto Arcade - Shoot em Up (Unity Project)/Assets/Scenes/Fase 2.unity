@@ -13573,6 +13573,9 @@ MonoBehaviour:
   armaDouble: {fileID: 1908290751}
   armaTriple: {fileID: 1908290750}
   escudo: {fileID: 1908290758}
+  armaOrbe: {fileID: 1908290756}
+  armaPet: {fileID: 1908290754}
+  armaSerra: {fileID: 1908290753}
   buttonSubirNivel: {fileID: 6016145712043857090}
   buttonArmaDouble: {fileID: 1398843931}
   buttonArmaTriple: {fileID: 1205740314}
