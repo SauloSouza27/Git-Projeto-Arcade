@@ -54,6 +54,8 @@ public class ControladorGame : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+        // reseta tamanho serra
+        jogador.GetComponent<DisparoArmaSerra>().projetilSerra.transform.localScale = new Vector3(1, 1, 1);
     }
     
     void Update()
