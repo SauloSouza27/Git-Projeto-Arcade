@@ -370,7 +370,7 @@ public class MovimentoBossFase2 : MonoBehaviour
                     ts.gameObject.SetActive(false);
                 }
                 partesCorpo[0].gameObject.SetActive(true);
-                StartCoroutine(CarregaUIVItoria(uiVitoria, 2.0f));
+                StartCoroutine(CarregaUIVItoria(uiVitoria, 4.0f));
             }
         }
     }

@@ -172,7 +172,7 @@ public class MovimentoBoss : MonoBehaviour
     private void MorteCabeca()
     {
         bossIsDead = true;
-        StartCoroutine(AtivaMenuVitoria(uiVitoria, 2.0f));
+        StartCoroutine(AtivaMenuVitoria(uiVitoria, 4.0f));
         Instantiate(fxExplosionPrefab, cabecaPiramide.transform.position, cabecaPiramide.transform.rotation);
         progressoPlayer.GetComponent<ProgressoPlayer>().concluiuFase1 = true;
         Destroy(cabecaPiramide);
