@@ -11,6 +11,7 @@ public class SpawnMumia : MonoBehaviour
     private int contador;
     public GameObject mumiaPrefab;
     public bool ativar = true;
+
     private void Awake()
     {
         controladorGame = GameObject.FindGameObjectWithTag("ControladorGame");

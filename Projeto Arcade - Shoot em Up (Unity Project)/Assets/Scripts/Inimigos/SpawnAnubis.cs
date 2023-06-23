@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SpawnAnubis : MonoBehaviour
 {
+    private GameObject controladorGame, buttonNivel;
     private float contadorCooldown;
     public float atrasaSpawn = 0.0f, cooldownSpawnAnubis = 2.0f, velocidadeMovimento = 4.0f;
     public int quantidadeParaSpawnar = 2, pontosVida = 20, xpInimigo = 100, numeroDisparos = 3;
@@ -13,9 +14,20 @@ public class SpawnAnubis : MonoBehaviour
     public bool ativar = true;
     private GameObject instancia;
 
+    private void Awake()
+    {
+        controladorGame = GameObject.FindGameObjectWithTag("ControladorGame");
+        buttonNivel = controladorGame.GetComponent<ControladorGame>().buttonSubirNivel;
+    }
+
     void Update()
     {
         if (Time.timeScale == 0) return;
+
+        if (buttonNivel.activeSelf)
+        {
+            return;
+        }
 
         if (atrasaSpawn > 0)
         {
